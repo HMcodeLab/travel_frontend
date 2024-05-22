@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './navbar.module.css'
 import Image from 'next/image'
 import { nav_data } from '@/Data/nav_data'
+import Link from 'next/link'
 
 const Navmenu = () => {
     return (
@@ -10,7 +11,7 @@ const Navmenu = () => {
                 {
                     nav_data.map((item, ind) => {
                         return (
-                            <span><Image src={item.img} width={1000} height={1000} /> <p>{item.title}</p></span>
+                            <Link href='/destination'><span><Image src={item.img} width={1000} height={1000} /> <p>{item.title}</p></span></Link>
                         )
                     })
                 }
