@@ -1,0 +1,8 @@
+.destinationbg{
+    background-image: url('../../../public/ladakh.jpg');
+    background-size: 100vw 70vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: brightness(50%);
+   
+}
