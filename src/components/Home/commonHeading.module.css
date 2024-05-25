@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10vw;
+}
+
+.section1 {
+  border-left: 5px solid var(--primary);
+  padding-inline: 1vw;
+}
+.section1 h3 {
+  font-size: 2.1rem;
+}
+
+.section1 span {
+  color: var(--primary);
+}
+.section2 {
+  width: 30vw;
+  /* border: 1px solid red; */
+}
+.section2 p {
+  font-size: 1.1rem;
+}
