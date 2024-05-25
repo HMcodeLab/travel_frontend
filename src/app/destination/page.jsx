@@ -1,3 +1,4 @@
+import Allcards from '@/components/Allcards/page'
 import Destinationherosection from '@/components/destinationherosection/page'
 import Discount from '@/components/discount/page'
 import RequestCall from '@/components/requestcall/page'
@@ -9,6 +10,7 @@ const Destination = () => {
    
    <Destinationherosection/>
    <div className='px-[var(--padding-inline)] flex flex-col gap-10'>
+    <Allcards/>
    <Discount/>
    <Trending/>
    <RequestCall/>

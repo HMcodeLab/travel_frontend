@@ -1,7 +1,7 @@
 import Link from "next/link";
 import "./destination.css";
 import Bg from "../../../public/ladakh.jpg";
-import Down from "../../../public/Icons/page-down.svg";
+import Down from "../../../public/Icons/arrow.svg";
 import Image from "next/image";
 const Destinationherosection = () => {
   return (
@@ -26,10 +26,7 @@ const Destinationherosection = () => {
               EXPLORE LADAKH
             </Link>
           </div>
-          <Image
-            className="absolute top-[100%] translate-y-[60%] left-[50%] translate-x-[-50%] h-16"
-            src={Down}
-          />
+          <div className="absolute top-[100%] translate-y-[50%] left-[50%] translate-x-[-50%] h-16 p-1 border-2 border-white rounded-full bg-[var(--primary)]"><Image src={Down} className="h-10 p-auto"/></div>
         </div>
       </div>
     </>

@@ -16,11 +16,11 @@ module.exports = {
         'Gorditas': ['Gorditas'],
         'mons': ['Montserrat', 'sans-serif'],
         'outfit': ['Outfit'],
-        'pop': ['Poppins'],
+        'pop': ['Poppins','sans-serif'],
         'nu': ['Nunito Sans'],
-        'int': ['Inter'],
-        'Merri-sans':['Merriweather Sans'],
-        'Merri':['Merriweather']
+        'int': ['Inter','sans-serif'],
+        'Merri-sans':['Merriweather Sans','sans-serif'],
+        'Merri':['Merriweather','serif']
       },
     },
   },
