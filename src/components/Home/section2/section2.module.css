@@ -1,0 +1,47 @@
+.card_section_main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-block: 3vh;
+  gap: 1vw;
+  height: 90vh;
+}
+
+.card_section_main > div {
+  /* border: 1px solid red; */
+  height: 100%;
+}
+
+.vertical_cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+}
+
+.anim_cards {
+  overflow-y: hidden;
+}
+
+.anim_cards span {
+  display: grid;
+  gap: 1vw;
+  grid-template-columns: repeat(3, 1fr);
+  animation: translateCards 35s linear infinite;
+}
+
+.places_card {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+}
+
+@keyframes translateCards {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(calc(-110vh)); /* 100vw - card width */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
