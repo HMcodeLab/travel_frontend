@@ -12,7 +12,7 @@ import Image from "next/image";
 
 
 
-const Navbar = () => {
+const Navbar = ({setEnquiryModal}) => {
 
 
   const path = usePathname();
@@ -35,7 +35,7 @@ const Navbar = () => {
         </div>
         <div className={styles.btn_section}>
           <button className> <Image src={PlanTrip} /><p> PLAN A TRIP </p> </button>
-          <button> <p>Enquiry </p> <Image src={ArrowDown} /> </button>
+          <button onClick={() => setEnquiryModal(true)}> <p>Enquiry </p> <Image src={ArrowDown} /> </button>
         </div>
       </div>
 
