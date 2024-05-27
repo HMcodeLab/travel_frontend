@@ -1,6 +1,7 @@
 import HeroSection from "@/components/Hero/herosection";
 import Section2 from "@/components/Home/section2/section2";
 import Section4 from "@/components/Home/section4/section4";
+import Section6 from "@/components/Home/section6/section6";
 import Discount from "@/components/discount/page";
 import Image from "next/image";
 
@@ -12,6 +13,7 @@ export default function Home() {
         <Section2 />
         <Discount />
         <Section4 />
+        <Section6 />
       </div>
     </main>
   );
