@@ -10,8 +10,7 @@ const CommonHeading = ({ title, description }) => {
                 {title}
             </div>
             <div className={styles.section2}>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, modi? Lorem, ipsum dolor.
-                    Lorem ipsum dolor sit amet. Lorem, ipsum dolor.
+                <p>{description}
                 </p>
             </div>
         </div>
