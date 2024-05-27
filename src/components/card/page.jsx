@@ -18,7 +18,7 @@ const Cards = () => {
         <Image src={Card1} className="h-full"/>
         <div className='w-full flex justify-between absolute top-0 text-white p-3' >
           <span className='flex items-center bg-black px-2 rounded gap-1'>5 <Image src={Moon}/> / 6 <Image src={Sun}/></span>
-          <span className='bg-gradient-to-r from-[#010080] to-[#BC000B] text-white px-2 rounded'>Best Sale!</span>
+          <span className='bg-gradient-to-r from-[#010080] to-[#BC000B] text-white px-2 rounded' style={{fontFamily:'Montserrat'}}>Best Sale!</span>
         </div>
       </div>
       <div className='border-l-[3px] border-r-[3px] border-[#CA1C26] px-2 font-bold text-lg py-2 cardtitle ' >Thrilling Ladakh by Volvo Thrilling Ladakh by Volvo  </div>
@@ -31,7 +31,7 @@ const Cards = () => {
         <div className='flex items-center gap-1 text-xs font-semibold'><Image src={Sight}/>Sightseeing</div>
       </div>
 
-      <div className='w-full flex justify-between items-center '>
+      <div className='w-full flex justify-between items-center ' style={{fontFamily:'Montserrat'}}>
           <div className='flex items-center gap-1'>
             <p className='font-bold text-xl '>₹20,700/-</p>
             <strike className="text-[#5F5D5D] text-sm font-semibold">₹22,700/-</strike>
@@ -43,7 +43,7 @@ const Cards = () => {
           </div>
       </div>
       <div className='flex justify-between items-center h-9'>
-          <Link href='/' className='uppercase bg-[var(--primary)] text-white rounded px-5 h-full text-center flex items-center justify-center'>Explore now</Link>
+          <Link href='/' className='uppercase bg-[var(--primary)] text-white rounded px-5 h-full text-center flex items-center justify-center' style={{fontFamily:'Merriweather-sans'}}>Explore now</Link>
           <div className='flex items-center divide-x-[1.5px] divide-[var(--primary)] gap-1 border-2 border-[var(--primary)] rounded h-full'>
           <Image src={Call} className='p-1'/>
           <Image src={Wtsp} className=' border-[var(--primary)] '/>

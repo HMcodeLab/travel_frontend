@@ -19,8 +19,9 @@ module.exports = {
         'pop': ['Poppins','sans-serif'],
         'nu': ['Nunito Sans'],
         'int': ['Inter','sans-serif'],
-        'Merri-sans':['Merriweather Sans','sans-serif'],
-        'Merri':['Merriweather','serif']
+        'Merri-sans':['Merriweather-sans','sans-serif'],
+        'Merri':['Merriweather','serif'],
+        'Exo':['Exo']
       },
     },
   },
