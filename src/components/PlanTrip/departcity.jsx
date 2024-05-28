@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import  './plantrip.css'
 import Search from '../../../public/Icons/search.svg'
 import Image from 'next/image'
 import Commonheader from './commonheader'
+import { Tripprovider } from './page'
 const Destinationcity = () => {
   const cities=["Manali","Kasol","Shimla","Delhi","Bangalore"]
+  const {headerdata,setheaderdata,setrender}=useContext(Tripprovider)
+  function handleItem(item){
+    setheaderdata((prevItems) => [...prevItems, item])
+    setrender('staycount')
+  }
   return (
     <>
     <div className='pl-14 pt-14'>
@@ -18,7 +24,7 @@ const Destinationcity = () => {
             {
               cities?.map((item)=>{
                 return(<>
-                <p className='font-semibold text-xl'>{item}</p>
+                <p className='font-semibold text-xl cursor-pointer' onClick={()=>handleItem(item)}>{item}</p>
                 </>)
               })
             }

@@ -1,38 +1,45 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Commonheader from './commonheader'
 import Smallsun from '../../../public/Icons/smallsun.svg'
 import Favourite from '../../../public/Icons/favourite.svg'
 import Flower from '../../../public/Icons/flower.svg'
 import Snow from '../../../public/Icons/Snow.svg'
+import { Tripprovider } from './page'
 
 import Image from 'next/image'
 const Staycount = () => {
+    const {headerdata,setheaderdata,setrender}=useContext(Tripprovider)
+
    const Holidays=[
     {
-        title:'3-4 Nights',
+        title:'3-4Nights',
         color:'#FF9FA554',
         border:'#CA1C261F',
         special:false
     },
     {
-        title:'5-6 Nights',
+        title:'5-6Nights',
         color:'#C5C4FE36',
         border:'#CA1C261F',
         special:true
     },
     {
-        title:'7-8 Nights',
+        title:'7-8Nights',
         color:'#FF9FA554',
         border:'#CA1C261F',
         special:false
     },
     {
-        title:'6-5 Nights',
+        title:'6-5Nights',
         color:'#FFE5B254',
         border:'#CA1C261F',
         special:true
     },
    ]
+   function handleItem(item){
+    setheaderdata((prevItems) => [...prevItems, item])
+    setrender('peopletype')
+  }
   return (
     <>
    <div className='pl-14 pt-14'>
@@ -43,7 +50,7 @@ const Staycount = () => {
                 {
                     Holidays.map((item)=>{
                         return(<>
-                        <div className={`h-[137px] w-[130px] relative  rounded ` } style={{backgroundColor:item.color,border:`1px solid ${item.border}`}}>
+                        <div onClick={()=>handleItem(item.title)} className={`h-[137px] w-[130px] relative  rounded ` } style={{backgroundColor:item.color,border:`1px solid ${item.border}`}}>
                         {   
                         item.special &&
                         <div className=' absolute top-0 right-0'>
@@ -51,7 +58,7 @@ const Staycount = () => {
                         
                         </div>
                            }
-                            <div className='flex justify-center items-center  h-full   w-full'>
+                            <div  className='flex justify-center items-center  h-full   w-full'>
                                     <p className='text-center font-[500] text-lg font-Merri-sans capitalize'>{item.title}</p>
                              </div>
                         </div>

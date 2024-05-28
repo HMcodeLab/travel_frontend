@@ -10,7 +10,7 @@ import './footer.css'
 const Footer = () => {
   return (
 <>
-<div className="w-full h-[60vh] footerbg  flex justify-center mt-10">
+<div className="w-full h-[60vh] footerbg  flex justify-center mt-10 ">
    <div className='w-full h-full flex flex-col justify-around '>
    <div className='flex flex-col h-[80%] w-[80%] bg-[#CFCFEE2E] backdrop-blur-sm rounded-3xl shadow-md mx-auto'>
         <div className='w-28 h-20 mx-auto -translate-y-8'>
@@ -54,7 +54,7 @@ const Footer = () => {
                 <p className='text-[#595858] text-xl font-semibold'>Travel Destinations</p>
                 <div className='grid grid-cols-3 gap-2'>
                     <div className='flex justify-center items-center w-24 h-20 beaches text-white ' >
-                        Beaches
+                    Beaches
                     </div>
                     <div className='flex justify-center items-center w-24 h-20 bali text-white' >
                     Bali
