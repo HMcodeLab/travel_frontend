@@ -1,0 +1,78 @@
+.gallery_main h2 {
+  font-size: 1.45rem;
+}
+.gallery_main img {
+  height: 16rem;
+}
+
+/* contact page  */
+
+.contact_main {
+  margin-top: 3vh;
+  padding: 20px 40px;
+  box-shadow: 1.61px 2.01px 12px 0px #00000021;
+  border-radius: 5px;
+}
+.contact_inner h2 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.contact_inner {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 1.1rem;
+}
+.form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.form input {
+  border: 1px solid var(--primary);
+  height: 28px;
+  padding-inline: 10px;
+  outline: none;
+}
+.form button {
+  width: 100%;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 5px;
+  padding: 5px 0px;
+}
+
+.form li {
+  font-size: 0.8rem;
+  list-style-type: disc;
+}
+.card_main {
+  display: flex;
+  gap: 20px;
+  width: 55vw;
+  justify-content: space-between;
+  overflow-x: hidden;
+}
+.card_main > div {
+  /* width: 50vw; */
+  animation: translateCards 15s linear infinite;
+  flex-shrink: 0.1;
+}
+
+@keyframes translateCards {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(calc(-50vw)); /* 100vw - card width */
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
