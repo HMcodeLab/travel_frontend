@@ -19,7 +19,7 @@ const Navmenu = () => {
             <div className={styles.menu_btn_section}>
                 <span>
                     <button>TOUR</button>
-                    <button>ACTIVITIES</button>
+                    <Link href={'/activities'}>ACTIVITIES</Link>
                 </span>
             </div>
 
