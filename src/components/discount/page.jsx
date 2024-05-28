@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Boat from "../../../public/boat.png";
+import Boat from "../../../public/discountboat.png";
 const Discount = () => {
   return (
     <>
@@ -18,7 +18,7 @@ const Discount = () => {
           </button>
         </div>
 
-        <Image src={Boat} className="w-[30%] h-full rounded-xl" />
+        <Image src={Boat} className="w-[35%] h-full rounded-xl" />
       </div>
     </>
   );
