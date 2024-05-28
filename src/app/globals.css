@@ -8,6 +8,22 @@
   font-family: Merriweather-sans;
   src: url('../../public/fonts/MerriweatherSans.ttf');
 }
+@font-face {
+  font-family: Merriweather;
+  src: url('../../public/fonts/Merriweather.ttf');
+}
+@font-face {
+  font-family: Poppins;
+  src: url('../../public/fonts/Poppins.ttf');
+}
+@font-face {
+  font-family: Montserrat;
+  src: url('../../public/fonts/Montserrat.ttf');
+}
+@font-face {
+  font-family: Exo;
+  src: url('../../public/fonts/Exo.ttf');
+}
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
