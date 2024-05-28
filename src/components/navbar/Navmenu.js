@@ -18,7 +18,7 @@ const Navmenu = () => {
             </div>
             <div className={styles.menu_btn_section}>
                 <span>
-                    <button>TOUR</button>
+                    <Link href={'/'}>TOUR</Link>
                     <Link href={'/activities'}>ACTIVITIES</Link>
                 </span>
             </div>
