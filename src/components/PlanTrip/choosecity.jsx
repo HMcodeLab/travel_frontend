@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import  './plantrip.css'
 import Search from '../../../public/Icons/search.svg'
 import Image from 'next/image'
+import { Tripprovider } from './page'
 const Cities = () => {
   const cities=["Manali","Kasol","Shimla","Delhi","Bangalore"]
+  const {headerdata,setheaderdata,setrender}=useContext(Tripprovider)
+  function handleItem(item){
+    setheaderdata((prevItems) => [...prevItems, item])
+    setrender('month')
+  }
   return (
     <>
               <div className='flex items-center uppercase font-bold text-2xl w-full justify-center font-Merri-sans gap-1 mt-8 '>
@@ -20,7 +26,7 @@ const Cities = () => {
             {
               cities?.map((item)=>{
                 return(<>
-                <p className='font-semibold text-xl'>{item}</p>
+                <p className='font-semibold text-xl cursor-pointer' onClick={()=>handleItem(item)}>{item}</p>
                 </>)
               })
             }

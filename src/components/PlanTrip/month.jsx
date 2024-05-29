@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Commonheader from './commonheader'
 import Smallsun from '../../../public/Icons/smallsun.svg'
 import Favourite from '../../../public/Icons/favourite.svg'
@@ -6,7 +6,9 @@ import Flower from '../../../public/Icons/flower.svg'
 import Snow from '../../../public/Icons/Snow.svg'
 
 import Image from 'next/image'
+import { Tripprovider } from './page'
 const Month = () => {
+    const {headerdata,setheaderdata,setrender}=useContext(Tripprovider)
     const months=[
         {
             month:"may",
@@ -117,18 +119,22 @@ const Month = () => {
             border:'#B2FFFA8F'
         },
     ] 
+    function handleItem(item){
+        setheaderdata((prevItems) => [...prevItems, item])
+        setrender('date')
+      }
   return (
     
     <>
    <div className='pl-14 pt-14'>
-         <Commonheader/>
+         <Commonheader />
          <div className='flex flex-col mt-8'>
             <p className='capitalize font-[500] font-Merri-sans text-xl'>Which month are you travelling?</p>
             <div className='grid grid-cols-6 gap-3 pr-3 mt-12'>
                 {
-                    months.map((item)=>{
+                    months.map((item,ind)=>{
                         return(<>
-                        <div className={`h-[137px] w-[130px] relative  rounded ` } style={{backgroundColor:item.color,border:`1px solid ${item.border}`}}>
+                        <div onClick={()=>handleItem(item.month)} key={ind} className={`h-[137px] w-[130px] cursor-pointer relative  rounded ` } style={{backgroundColor:item.color,border:`1px solid ${item.border}`}}>
                         {   
                         item.special &&
                         <div className=' absolute top-0 right-0'>
@@ -140,7 +146,7 @@ const Month = () => {
                             <div className='flex flex-col justify-center gap-1'>
                         <p className='text-center font-[500] text-lg font-Merri-sans capitalize'>{item.month}</p>
                         <p className='flex items-center '>
-                            <Image src={item.icon}/>
+                            <Image src={item.icon} alt='icon'/>
                             <span>{item.min} -</span>
                             <span>{item.max}C</span>
 

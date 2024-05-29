@@ -1,14 +1,18 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import Image from 'next/image';
 
 import Commonheader from './commonheader';
 import Smallsun from '../../../public/Icons/smallsun.svg';
+import { Tripprovider } from './page';
 
 const DateComponent = () => {
   const [date, setDate] = useState(new Date());
-
+  const {headerdata,setrender,setheaderdata}=useContext(Tripprovider)
+function handleDateClick(d){
+setrender('destination')
+}
   const months = [
     {
       month: "may",
@@ -127,8 +131,9 @@ const DateComponent = () => {
         <p className='capitalize font-[500] font-Merri-sans text-xl'>When is your departure date?</p>
         <div className='flex justify-center w-full mt-10'>
           <Calendar
-          className='rounded font-semibold'
+          className='rounded font-semibold cursor-pointer'
             onChange={setDate}
+            onClickDay={handleDateClick}
             value={date}
           />
         </div>
