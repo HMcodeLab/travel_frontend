@@ -14,9 +14,11 @@ const Commonheader = () => {
     )
     }
     let ICONS=[Plane,Calender,Plane,Nights,Pax]
+    let Rendercomponentdata=['cities','month','date','destination','staycount','peopletype','form']
 
     function handleHeader(ind){
         setheaderdata(prevArray => prevArray.slice(0, ind+1))
+        setrender(Rendercomponentdata[ind])
     }
   return (
     <div className='flex flex-col gap-3 pr-3'>
@@ -25,7 +27,7 @@ const Commonheader = () => {
             {
                 headerdata?.map((item,ind)=>{
                     return(<>
-                    <div onClick={()=>handleHeader(ind)} className='border border-[#CA1C2654] rounded flex items-center gap-2  p-1 '>
+                    <div onClick={()=>handleHeader(ind)} className='border cursor-pointer border-[#CA1C2654] rounded flex items-center gap-2  p-1 '>
                         <Image src={ICONS[ind]} alt='icon'/>
                         <span className='font-[500] text-[#171717] text-lg font-Merri-sans capitalize'>{item}</span>
                 </div>

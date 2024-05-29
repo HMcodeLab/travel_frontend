@@ -52,7 +52,7 @@ const Peopletype = () => {
 
    function handleClick(title){
     setfamilygroup(title)
-    if(title!='Family' ||title!='Group' ){
+    if(title!='Family' && title!='Group' ){
       handleItem(title)
     }
    }
@@ -66,7 +66,7 @@ const Peopletype = () => {
                 {
                     Holidays.map((item)=>{
                         return(<>
-                        <div onClick={()=>handleClick(item.title)} className={`h-[140px] w-[130px] relative border border-[#CA1C261F] bg-white rounded ` } >
+                        <div onClick={()=>handleClick(item.title)} className={`h-[140px] cursor-pointer w-[130px] relative border border-[#CA1C261F] bg-white rounded ` } >
                         {   
                         item.special &&
                         <div className=' absolute top-0 right-0'>

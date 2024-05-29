@@ -50,7 +50,7 @@ const Staycount = () => {
                 {
                     Holidays.map((item)=>{
                         return(<>
-                        <div onClick={()=>handleItem(item.title)} className={`h-[137px] w-[130px] relative  rounded ` } style={{backgroundColor:item.color,border:`1px solid ${item.border}`}}>
+                        <div onClick={()=>handleItem(item.title)} className={`h-[137px] cursor-pointer w-[130px] relative  rounded ` } style={{backgroundColor:item.color,border:`1px solid ${item.border}`}}>
                         {   
                         item.special &&
                         <div className=' absolute top-0 right-0'>

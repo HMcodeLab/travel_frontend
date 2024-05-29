@@ -131,7 +131,7 @@ setrender('destination')
         <p className='capitalize font-[500] font-Merri-sans text-xl'>When is your departure date?</p>
         <div className='flex justify-center w-full mt-10'>
           <Calendar
-          className='rounded font-semibold'
+          className='rounded font-semibold cursor-pointer'
             onChange={setDate}
             onClickDay={handleDateClick}
             value={date}

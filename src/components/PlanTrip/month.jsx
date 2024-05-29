@@ -134,7 +134,7 @@ const Month = () => {
                 {
                     months.map((item,ind)=>{
                         return(<>
-                        <div onClick={()=>handleItem(item.month)} key={ind} className={`h-[137px] w-[130px] relative  rounded ` } style={{backgroundColor:item.color,border:`1px solid ${item.border}`}}>
+                        <div onClick={()=>handleItem(item.month)} key={ind} className={`h-[137px] w-[130px] cursor-pointer relative  rounded ` } style={{backgroundColor:item.color,border:`1px solid ${item.border}`}}>
                         {   
                         item.special &&
                         <div className=' absolute top-0 right-0'>
