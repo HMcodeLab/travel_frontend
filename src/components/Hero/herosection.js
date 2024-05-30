@@ -105,6 +105,8 @@ const HeroSection = () => {
                                             getAriaValueText={valuetext}
                                             min={0}
                                             max={100000}
+                                            color="#FFFFFF"
+                                            track="#B6B5B5"
                                         />
                                     </div>
                                     <div className='flex gap-2 w-[80%]'>
@@ -131,7 +133,7 @@ const HeroSection = () => {
                                 <div className='border-b border-[#DADADA] py-2'>
                                     <div className='flex items-center gap-1 text-[11px] text-[#514E4E]'>
                                         <input type='checkbox' name='confirm' id='confirm' />
-                                        <label htmlFor='confirm'>I want Flights to be Included</label>
+                                        <label htmlFor='confirm' className='cursor-pointer'>I want Flights to be Included</label>
                                     </div>
                                 </div>
                                 <div className='pt-2 flex justify-end'>
