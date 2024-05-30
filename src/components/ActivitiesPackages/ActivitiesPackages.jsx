@@ -6,7 +6,7 @@ const ActivitiesPackages = () => {
     <div className='px-[169px] py-6 flex flex-col gap-8'>
         <div className='flex justify-between'>
             <div className='w-[40%]'>
-                <p className='font-[Merriweather_Sans] border-l-4 border-[#CA1C26] pl-3 uppercase text-[24px] font-bold tracking-wider'>Explore Our <br /> Best <span className='text-[#CA1C26]'>Activities Packages</span></p>
+                <p className='font-Merri-sans border-l-4 border-[#CA1C26] pl-3 uppercase text-[24px] font-bold tracking-wider'>Explore Our <br /> Best <span className='text-[#CA1C26]'>Activities Packages</span></p>
             </div>
             <div className='w-[43%]'>
                 <p className='text-[#494545] text-[15px] text-balance font-[Exo]'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa cum sociis Theme natoque. Aenean massa cum sociis Theme natoque.</p>

@@ -17,8 +17,18 @@ const Commonheader = () => {
     let Rendercomponentdata=['cities','month','date','destination','staycount','peopletype','form']
 
     function handleHeader(ind){
-        setheaderdata(prevArray => prevArray.slice(0, ind+1))
-        setrender(Rendercomponentdata[ind])
+        if(ind==0){
+            setrender('cities')
+            setheaderdata(prevArray => prevArray.slice(0, ind))
+        }
+        else if(ind==1){
+            setheaderdata(prevArray => prevArray.slice(0, ind))
+        setrender('month')
+        }
+        else{
+            setheaderdata(prevArray => prevArray.slice(0, ind))
+        setrender(Rendercomponentdata[ind+1])
+        }
     }
   return (
     <div className='flex flex-col gap-3 pr-3'>

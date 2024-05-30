@@ -9,18 +9,20 @@ import Footer from '@/components/footer/page';
 import EnquiryForm from '@/components/EnquiryForm/EnquiryForm';
 import { useState } from 'react';
 import ContactUsHomeBtn from '@/components/ContactUsHomeBtn/ContactUsHomeBtn';
+import Planningtriphome from '@/components/PlanTrip/page';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export default function RootLayout({ children }) {
   const [enquiryModal, setEnquiryModal] = useState(false);
+  const [Planning, setPlanning] = useState(false)
 
   return (
     <html lang="en">
       <body className={`relative ${inter.className}`}>
         <div className={`${enquiryModal ? 'blurred-background' : ''}`}>
           <TopNav />
-          <Navbar setEnquiryModal={setEnquiryModal} />
+          <Navbar setEnquiryModal={setEnquiryModal} setPlanning={setPlanning}/>
           <Navmenu />
           {children}
           <Footer />
@@ -30,6 +32,9 @@ export default function RootLayout({ children }) {
             <EnquiryForm setEnquiryModal={setEnquiryModal} />
           </div>
         )}
+        {
+          Planning && <Planningtriphome setPlanning={setPlanning}/>
+        }
         <div className="fixed top-[76%] -right-[58px] -rotate-90 z-[999999]">
           <ContactUsHomeBtn />
         </div>
