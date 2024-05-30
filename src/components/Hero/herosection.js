@@ -3,11 +3,21 @@
 import { useState, useRef, useEffect } from 'react';
 import styles from './herosection.module.css';
 import Image from 'next/image';
+import { Slider } from '@mui/material';
+
+function valuetext(value) {
+    return `${value}°C`;
+}
 
 const HeroSection = () => {
     const [activeFacility, setactiveFacility] = useState("Tour");
     const [Search, setSearch] = useState(false);
+    const [value, setValue] = useState([20, 37]);
     const searchRef = useRef(null);
+
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+    };
 
     const handleClickOutside = (event) => {
         if (searchRef.current && !searchRef.current.contains(event.target)) {
@@ -85,8 +95,17 @@ const HeroSection = () => {
                                 </div>
                                 <div className='flex flex-col gap-3 border-b border-[#DADADA] py-2'>
                                     <p className='text-black text-[14px]'>Price Range</p>
-                                    <div>
+                                    <div className='w-[80%]'>
                                         {/* Range */}
+                                        <Slider
+                                            getAriaLabel={() => 'Temperature range'}
+                                            value={value}
+                                            onChange={handleChange}
+                                            valueLabelDisplay="auto"
+                                            getAriaValueText={valuetext}
+                                            min={0}
+                                            max={100000}
+                                        />
                                     </div>
                                     <div className='flex gap-2 w-[80%]'>
                                         <div className='flex '>
