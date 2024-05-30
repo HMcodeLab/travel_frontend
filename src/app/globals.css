@@ -31,6 +31,9 @@
   --padding-inline: 5vw;
   --primary: #ca1c26;
 }
+.trendingcard{
+  /* flex-shrink: 0; */
+}
 .trendingcard:nth-child(even){
   align-self: end;
 }

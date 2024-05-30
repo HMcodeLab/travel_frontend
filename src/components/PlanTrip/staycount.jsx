@@ -54,7 +54,7 @@ const Staycount = () => {
                         {   
                         item.special &&
                         <div className=' absolute top-0 right-0'>
-                            <Image src={Favourite}/>
+                            <Image alt='...' src={Favourite}/>
                         
                         </div>
                            }

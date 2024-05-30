@@ -11,7 +11,7 @@ const Navmenu = () => {
                 {
                     nav_data.map((item, ind) => {
                         return (
-                            <Link href='/destination'><span><Image src={item.img} width={1000} height={1000} /> <p>{item.title}</p></span></Link>
+                            <Link key={ind} href='/destination'><span><Image src={item.img} width={1000} height={1000} alt='...'/> <p>{item.title}</p></span></Link>
                         )
                     })
                 }

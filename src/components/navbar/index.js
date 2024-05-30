@@ -25,7 +25,7 @@ const Navbar = ({setEnquiryModal,setPlanning}) => {
       <div className={styles.container}>
         <div className={styles.logo_container}>
           <Link href="/">
-            <Image src={"/Assets/Images/logo.png"} alt="" width={1000} height={1000} />
+            <Image src={"/Assets/Images/logo.png"} alt="..." width={1000} height={1000} />
           </Link>
         </div>
         <div className={styles.navmenu}>
@@ -34,8 +34,8 @@ const Navbar = ({setEnquiryModal,setPlanning}) => {
           </span>
         </div>
         <div className={styles.btn_section}>
-          <button onClick={()=>setPlanning(true)} className> <Image src={PlanTrip} /><p> PLAN A TRIP </p> </button>
-          <button onClick={() => setEnquiryModal(true)}> <p>Enquiry </p> <Image src={ArrowDown} /> </button>
+          <button onClick={()=>setPlanning(true)} className> <Image src={PlanTrip} alt="..." /><p> PLAN A TRIP </p> </button>
+          <button onClick={() => setEnquiryModal(true)}> <p>Enquiry </p> <Image src={ArrowDown} alt="..."/> </button>
         </div>
       </div>
 

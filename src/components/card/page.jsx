@@ -15,9 +15,9 @@ const Cards = () => {
    <>
    <div className='rounded-lg flex flex-col shadow-lg bg-[#F4F4F4] pb-5'>
       <div className='relative h-[33vh] w-full rounded-t-sm'>
-        <Image src={Card1} className="h-full"/>
+        <Image src={Card1} alt='....' className="h-full"/>
         <div className='w-full flex justify-between absolute top-0 text-white p-3' >
-          <span className='flex items-center bg-black px-2 rounded gap-1'>5 <Image src={Moon}/> / 6 <Image src={Sun}/></span>
+          <span className='flex items-center bg-black px-2 rounded gap-1'>5 <Image src={Moon} alt='...'/> / 6 <Image src={Sun} alt='...'/></span>
           <span className='bg-gradient-to-r from-[#010080] to-[#BC000B] text-white px-2 rounded' style={{fontFamily:'Montserrat'}}>Best Sale!</span>
         </div>
       </div>
@@ -25,10 +25,10 @@ const Cards = () => {
       
       <div className='flex flex-col gap-4 px-3'>
       <div className='flex justify-between  items-center mt-3 font-int'>
-        <div className='flex items-center gap-1 text-xs font-semibold'><Image src={Hotel}/>Hotel Stay</div>
-        <div className='flex items-center gap-1 text-xs font-semibold'><Image src={Meals}/>Meals</div>
-        <div className='flex items-center gap-1 text-xs font-semibold'><Image src={Guide}/>Tour Guide</div>
-        <div className='flex items-center gap-1 text-xs font-semibold'><Image src={Sight}/>Sightseeing</div>
+        <div className='flex items-center gap-1 text-xs font-semibold'><Image src={Hotel} alt='...'/>Hotel Stay</div>
+        <div className='flex items-center gap-1 text-xs font-semibold'><Image src={Meals} alt='...'/>Meals</div>
+        <div className='flex items-center gap-1 text-xs font-semibold'><Image src={Guide} alt='...'/>Tour Guide</div>
+        <div className='flex items-center gap-1 text-xs font-semibold'><Image src={Sight} alt='...'/>Sightseeing</div>
       </div>
 
       <div className='w-full flex justify-between items-center ' style={{fontFamily:'Montserrat'}}>
@@ -37,7 +37,7 @@ const Cards = () => {
             <strike className="text-[#5F5D5D] text-sm font-semibold">₹22,700/-</strike>
           </div>
           <div className='flex items-center gap-1'>
-            <Image src={Star}/>
+            <Image src={Star} alt='...'/>
             <p className='font-semibold '>4.3</p>
             <p className='text-[#969191] text-xs'>(234)</p>
           </div>
@@ -45,8 +45,8 @@ const Cards = () => {
       <div className='flex justify-between items-center h-9'>
           <Link href='/' className='uppercase bg-[var(--primary)] text-white rounded px-5 h-full text-center flex items-center justify-center' style={{fontFamily:'Merriweather-sans'}}>Explore now</Link>
           <div className='flex items-center divide-x-[1.5px] divide-[var(--primary)] gap-1 border-2 border-[var(--primary)] rounded h-full'>
-          <Image src={Call} className='p-1'/>
-          <Image src={Wtsp} className=' border-[var(--primary)] '/>
+          <Image src={Call} className='p-1' alt='...'/>
+          <Image src={Wtsp} className=' border-[var(--primary)] ' alt='...'/>
           </div>
       </div>
       </div>

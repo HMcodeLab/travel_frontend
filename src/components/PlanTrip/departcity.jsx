@@ -17,7 +17,7 @@ const Destinationcity = () => {
            <Commonheader/>
            <p className='capitalize font-[500] font-Merri-sans text-xl mt-8'>Where are you travelling from?</p>
           <div className='relative w-full flex  h-8 mt-5 '>
-              <Image src={Search} className='absolute top-2 left-2 h-5 w-6'/>
+              <Image alt='...' src={Search} className='absolute top-2 left-2 h-5 w-6'/>
               <input className='w-[60%] rounded pl-9 focus:outline-none' placeholder='Type departing City '/>
           </div>
           <div className='flex flex-col gap-5 pl-5 mt-5 font-Merri-sans'>

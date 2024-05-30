@@ -1,22 +1,16 @@
+'use client'
 import React from 'react';
 import './paragraph.css';
 
 const Cap = ({ text }) => {
+  const styledText = text.split(' ').map((word, index) => (
+    <React.Fragment key={index}>
+      <span className="first-letter">{word.charAt(0)}</span>{word.slice(1)}{' '}
+    </React.Fragment>
+  ));
   return (
-    <p className="formatted-paragraph">
-      {[...text].map((char, index) => (
-        <span key={index}>
-          {index === 0 || text[index - 1] === ' ' ? (
-            <span className="first-letter">{char}</span>
-          ) : (
-            char
-          )}
-        </span>
-      ))}
-    </p>
+   <p>{styledText}</p>
   );
 };
 
 export default Cap;
-
-                                             

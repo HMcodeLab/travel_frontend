@@ -10,7 +10,7 @@ const HeroSection = () => {
     return (
         <div className={`font-[Merriweather_Sans] ${styles.hero_section}`}>
             <div className={styles.image_container}>
-                <Image className={styles.image} src={'/Assets/Images/hero_banner.jpg'} height={1000} width={1000} />
+                <Image alt='...' className={styles.image} src={'/Assets/Images/hero_banner.jpg'} height={1000} width={1000} />
             </div>
             <div className={styles.overlay_content}>
                 <h2>Empowering Your Travel Dreams</h2>
@@ -36,7 +36,7 @@ const HeroSection = () => {
                             <p>Search For <span className='text-[#000000]'>Himachal</span></p>
                         </div>
                         <div className='w-max bg-[#FFFFFF] p-2 rounded-full my-1 mx-2'>
-                            <img className='w-4 h-4' src={'/Assets/Icons/HeroSearch.svg'} alt=''/>
+                            <img className='w-4 h-4' src={'/Assets/Icons/HeroSearch.svg'} alt='...'/>
                         </div>
                     </div> */}
 
@@ -116,7 +116,7 @@ const HeroSection = () => {
                                 <p>Search For <span className='text-[#000000]'>Himachal</span></p>
                             </div>
                             <div className='w-max bg-[#FFFFFF] p-2 rounded-full my-1 mx-2'>
-                                <img className='w-4 h-4' src={'/Assets/Icons/HeroSearch.svg'} alt=''/>
+                                <img className='w-4 h-4' src={'/Assets/Icons/HeroSearch.svg'} alt='...'/>
                             </div>
                         </div>
                     }

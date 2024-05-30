@@ -1,14 +1,15 @@
 import Image from "next/image";
 import Boat from "../../../public/discountboat.png";
+import Cap from "../ParagraphWithLargeFirstLetters/page";
 const Discount = () => {
   return (
     <>
       <div className="w-full h-[35vh] bg-[#020241] flex justify-between items-center pl-[5%] rounded-xl">
         <div className="w-[50%] text-white space-y-2 ">
-          <p className="text-[#E3E3E3] uppercase">Enjoy Best Deals</p>
-          <p className="font-semibold text-2xl uppercase">
-            Up to 40% Discount!
-          </p>
+          <div className="text-[#E3E3E3] uppercase"><Cap text="Enjoy Best Deals"/></div>
+          <div className="font-semibold text-xl uppercase">
+            <Cap text="Up to 40% Discount!"/>
+          </div>
           <p className="text-sm ">
             Version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
             Aenean sollicituuis bibendum auctor
@@ -18,7 +19,7 @@ const Discount = () => {
           </button>
         </div>
 
-        <Image src={Boat} className="w-[35%] h-full rounded-xl" />
+        <Image src={Boat} className="w-[35%] h-full rounded-xl" alt="..."/>
       </div>
     </>
   );

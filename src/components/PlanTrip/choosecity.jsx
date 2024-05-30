@@ -19,7 +19,7 @@ const Cities = () => {
               </div>
             
           <div className='relative w-full flex pl-14 h-8 mt-8 '>
-              <Image src={Search} className='absolute top-2 left-16 h-5 w-6'/>
+              <Image alt='...' src={Search} className='absolute top-2 left-16 h-5 w-6'/>
               <input className='w-[60%] rounded pl-9 focus:outline-none' placeholder='Pick your destination'/>
           </div>
           <div className='flex flex-col gap-5 pl-20 mt-5 font-Merri-sans'>

@@ -14,7 +14,7 @@ const Footer = () => {
    <div className='w-full h-full flex flex-col justify-around '>
    <div className='flex flex-col h-[80%] w-[80%] bg-[#CFCFEE2E] backdrop-blur-sm rounded-3xl shadow-md mx-auto'>
         <div className='w-28 h-20 mx-auto -translate-y-8'>
-            <Image src={Tge}/>
+            <Image src={Tge} alt='...'/>
         </div>
 
         <div className='flex justify-between px-10 items-center'>
@@ -35,17 +35,17 @@ const Footer = () => {
                 <div className='flex flex-col gap-3'>
                     <p className='text-[18px] font-semibold '>CONTACT US </p>
                     <p className='flex items-center gap-1'>
-                        <Image src={Call}/>
+                        <Image src={Call} alt='...'/>
                         <span>+91 67535 57043</span>
                     </p>
                     <p className='flex items-center gap-1'>
-                        <Image src={Message}/>
+                        <Image src={Message} alt='...'/>
                         <span>tourwithtge23@gmail.com</span>
                     </p>
                     <p className='flex gap-4'>
-                        <Image src={Fb}/>
-                        <Image src={Insta}/>
-                        <Image src={Youtube}/>
+                        <Image src={Fb} alt='...'/>
+                        <Image src={Insta} alt='...'/>
+                        <Image src={Youtube} alt='...'/>
                     </p>
                 </div>
             </div>

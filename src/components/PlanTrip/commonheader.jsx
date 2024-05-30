@@ -38,7 +38,7 @@ const Commonheader = () => {
                 headerdata?.map((item,ind)=>{
                     return(<>
                     <div onClick={()=>handleHeader(ind)} className='border cursor-pointer border-[#CA1C2654] rounded flex items-center gap-2  p-1 '>
-                        <Image src={ICONS[ind]} alt='icon'/>
+                        <Image  src={ICONS[ind]} alt='icon'/>
                         <span className='font-[500] text-[#171717] text-lg font-Merri-sans capitalize'>{item}</span>
                 </div>
                     </>)

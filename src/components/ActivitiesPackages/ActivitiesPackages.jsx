@@ -16,7 +16,7 @@ const ActivitiesPackages = () => {
             <div className='activity-card1 h-[600px] flex font-[Merriweather_Sans] flex-col justify-end text-white rounded-md px-4 py-6 relative overflow-hidden'>
                 <div className='relative z-10 flex items-center gap-2'>
                     <p className='uppercase text-[20px] font-normal tracking-wider'>Rock Climbing</p>
-                    <img className='w-8 h-8' src='/Assets/Icons/activityleaf.svg' alt='' />
+                    <img className='w-8 h-8' src='/Assets/Icons/activityleaf.svg' alt='...' />
                 </div>
                 <p className='relative z-10 text-[12px] capitalize'>Let us look at some of the popular adventure sports in Himachal Pradesh that take the state by storm</p>
             </div>
@@ -24,21 +24,21 @@ const ActivitiesPackages = () => {
                 <div className='h-[33%] activity-card3a flex font-[Merriweather_Sans] flex-col justify-end text-white rounded-md px-4 py-6 relative overflow-hidden'>
                     <div className='relative z-10 flex items-center gap-2'>
                         <p className='uppercase text-[20px] font-normal tracking-wider'>Hiking</p>
-                        <img className='w-8 h-8' src='/Assets/Icons/activityleaf.svg' alt='' />
+                        <img className='w-8 h-8' src='/Assets/Icons/activityleaf.svg' alt='...' />
                     </div>
                     <p className='relative z-10 text-[12px] capitalize'>Let us look at some of the popular adventure sports in Himachal Pradesh that take the state by storm</p>
                 </div>
                 <div className='h-[33%] activity-card3b flex font-[Merriweather_Sans] flex-col justify-end text-white rounded-md px-4 py-6 relative overflow-hidden'>
                     <div className='relative z-10 flex items-center gap-2'>
                         <p className='uppercase text-[20px] font-normal tracking-wider'>Hiking</p>
-                        <img className='w-8 h-8' src='/Assets/Icons/activityleaf.svg' alt='' />
+                        <img className='w-8 h-8' src='/Assets/Icons/activityleaf.svg' alt='...' />
                     </div>
                     <p className='relative z-10 text-[12px] capitalize'>Let us look at some of the popular adventure sports in Himachal Pradesh that take the state by storm</p>
                 </div>
                 <div className='h-[33%] activity-card3c flex font-[Merriweather_Sans] flex-col justify-end text-white rounded-md px-4 py-6 relative overflow-hidden'>
                     <div className='relative z-10 flex items-center gap-2'>
                         <p className='uppercase text-[20px] font-normal tracking-wider'>Hiking</p>
-                        <img className='w-8 h-8' src='/Assets/Icons/activityleaf.svg' alt='' />
+                        <img className='w-8 h-8' src='/Assets/Icons/activityleaf.svg' alt='...' />
                     </div>
                     <p className='relative z-10 text-[12px] capitalize'>Let us look at some of the popular adventure sports in Himachal Pradesh that take the state by storm</p>
                 </div>
@@ -46,7 +46,7 @@ const ActivitiesPackages = () => {
             <div className='activity-card2 h-[600px] flex font-[Merriweather_Sans] flex-col justify-end text-white rounded-md px-4 py-6 relative overflow-hidden'>
                 <div className='relative z-10 flex items-center gap-2'>
                     <p className='uppercase text-[20px] font-normal tracking-wider'>Rock Climbing</p>
-                    <img className='w-8 h-8' src='/Assets/Icons/activityleaf.svg' alt='' />
+                    <img className='w-8 h-8' src='/Assets/Icons/activityleaf.svg' alt='...' />
                 </div>
                 <p className='relative z-10 text-[12px] capitalize'>Let us look at some of the popular adventure sports in Himachal Pradesh that take the state by storm</p>
             </div>

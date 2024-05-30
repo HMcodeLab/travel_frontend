@@ -138,7 +138,7 @@ const Month = () => {
                         {   
                         item.special &&
                         <div className=' absolute top-0 right-0'>
-                            <Image src={Favourite}/>
+                            <Image alt='...' src={Favourite}/>
                         
                         </div>
                            }
@@ -146,7 +146,7 @@ const Month = () => {
                             <div className='flex flex-col justify-center gap-1'>
                         <p className='text-center font-[500] text-lg font-Merri-sans capitalize'>{item.month}</p>
                         <p className='flex items-center '>
-                            <Image src={item.icon} alt='icon'/>
+                            <Image  src={item.icon} alt='icon'/>
                             <span>{item.min} -</span>
                             <span>{item.max}C</span>
 
