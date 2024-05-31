@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useEffect, useState } from 'react'
-import styles from './page.module.css'
+import styles from '../page.module.css'
 import Image from 'next/image'
 import Overview from '@/components/Detail/overview'
 import Itinerary from '@/components/Detail/itinerary'
@@ -15,10 +15,6 @@ import Trending from '@/components/trending/page'
 import LastSection from '@/components/Detail/lastSection'
 
 const Page = () => {
-
-useEffect(() => {
-  
-}, [])
 
     const [activeTab, setActiveTab] = useState(1);
 
