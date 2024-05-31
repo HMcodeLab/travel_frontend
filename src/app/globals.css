@@ -66,3 +66,33 @@
 .modal-overlay .EnquiryForm {
   filter: none; /* Ensure the form itself is not blurred */
 }
+
+.noScroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.noScroll {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.rdp {
+  --rdp-cell-size: 30px !important;
+  --rdp-caption-font-size: 16px !important;
+  --rdp-background-color: #F9EDE4 !important;
+  --rdp-accent-color: #CA1C26!important;
+  margin: 10px !important;
+}
+.rdp-day{
+  font-size: 14px !important;
+}
+
+.rdp-nav_button svg{
+  height: 12px !important;
+  width: 12px !important;
+}
+
+.css-7o8aqz-MuiSlider-rail{
+  background-color: #b6b6b6 !important;
+}
