@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './page.module.css'
 import Image from 'next/image'
 import Overview from '@/components/Detail/overview'
@@ -16,6 +16,9 @@ import LastSection from '@/components/Detail/lastSection'
 
 const Page = () => {
 
+useEffect(() => {
+  
+}, [])
 
     const [activeTab, setActiveTab] = useState(1);
 

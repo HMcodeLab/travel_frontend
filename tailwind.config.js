@@ -22,6 +22,7 @@ module.exports = {
         'Merri-sans':['Merriweather-sans','sans-serif'],
         'mrisan':['Merriweather-sans'],
         'Merri':['Merriweather','serif']
+      
       },
     },
     screens: {

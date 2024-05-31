@@ -1,0 +1,1 @@
+export const BASE_URL='https://staging.trackitinerary.com/apis/packages'

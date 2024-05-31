@@ -5,11 +5,11 @@ const CommonHeading = ({ title, description }) => {
 
     // console.log(title, description)
     return (
-        <div className={styles.container}>
-            <div className={styles.section1}>
+        <div className={styles.container} >
+            <div className={`${styles.section1} uppercase font-Merri-sans font-semibold`}>
                 {title}
             </div>
-            <div className={styles.section2}>
+            <div className={`${styles.section2} `}>
                 <p>{description}
                 </p>
             </div>
