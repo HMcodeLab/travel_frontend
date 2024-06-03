@@ -1,11 +1,10 @@
-const { default: Allcards } = require("@/components/Allcards/page");
-const { default: Destinationherosection } = require("@/components/destinationherosection/page");
-const { default: Discount } = require("@/components/discount/page");
-const { default: RequestCall } = require("@/components/requestcall/page");
-const { default: Trending } = require("@/components/trending/page");
-const { BASE_URL } = require("@/helpers/baseurl");
-const { useSearchParams } = require("next/navigation");
-const { useState, useRef, useEffect } = require("react");
+import Allcards from "@/components/Allcards/page";
+import Destinationherosection from "@/components/destinationherosection/page";
+import Discount from "@/components/discount/page";
+import Trending from "@/components/trending/page";
+import { BASE_URL } from "@/helpers/baseurl";
+import { useSearchParams } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 
 const DestinationContent = ({ scrollToComponentB }) => {
   const [Alldata, setAlldata] = useState([]);

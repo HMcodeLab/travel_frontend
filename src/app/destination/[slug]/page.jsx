@@ -1,4 +1,5 @@
 import Destinationcontent from "@/components/Destinationcontent/page";
+import { Suspense } from "react";
 
 const Destination = () => {
     const scrollToComponentB = () => {

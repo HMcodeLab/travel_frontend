@@ -3,16 +3,16 @@
 import React, { useEffect, useState } from 'react'
 import styles from './page.module.css'
 import Image from 'next/image'
-import Overview from '@/components/Detail/overview'
-import Itinerary from '@/components/Detail/itinerary'
-import Included from '@/components/Detail/included'
-import Policy from '@/components/Detail/policy'
-import Gallery from '@/components/Detail/gallery'
-import ContactForm from '@/components/Detail/contactForm'
-import Discount from '@/components/discount/page'
-import RequestCall from '@/components/requestcall/page'
-import Trending from '@/components/trending/page'
-import LastSection from '@/components/Detail/lastSection'
+import Overview from '../Detail/overview'
+import Itinerary from '../Detail/itinerary'
+import Included from '../Detail/included'
+import Policy from '../Detail/policy'
+import Gallery from '../Detail/gallery'
+import ContactForm from '../Detail/contactForm'
+import Discount from '../discount/page'
+import LastSection from '../Detail/lastSection'
+import RequestCall from '../requestcall/page'
+
 
 const Destinationcontent = () => {
 
@@ -38,7 +38,7 @@ const Destinationcontent = () => {
                         <ContactForm />
                     </div>
                 </div>
-                <Discount />
+                <Discount/>
                 <LastSection />
                 <RequestCall />
             </div>
