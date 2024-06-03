@@ -14,7 +14,7 @@ import RequestCall from '@/components/requestcall/page'
 import Trending from '@/components/trending/page'
 import LastSection from '@/components/Detail/lastSection'
 
-const Page = () => {
+const Destinationcontent = () => {
 
     const [activeTab, setActiveTab] = useState(1);
 
@@ -46,7 +46,7 @@ const Page = () => {
     )
 }
 
-export default Page
+export default Destinationcontent;
 
 
 

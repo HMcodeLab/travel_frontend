@@ -17,7 +17,7 @@ const Section6 = () => {
                 {
                     CardsData?.map((val, ind) => {
                         return (
-                            <Cards val={val}/>
+                            <Cards key={ind} val={val}/>
                         )
                     })
                 }

@@ -34,7 +34,7 @@ const Navbar = ({setEnquiryModal,setPlanning}) => {
           </span>
         </div>
         <div className={styles.btn_section}>
-          <button onClick={()=>setPlanning(true)} className> <Image src={PlanTrip} alt="..." /><p> PLAN A TRIP </p> </button>
+          <button onClick={()=>setPlanning(true)} > <Image src={PlanTrip} alt="..." /><p> PLAN A TRIP </p> </button>
           <button onClick={() => setEnquiryModal(true)}> <p>Enquiry </p> <Image src={ArrowDown} alt="..."/> </button>
         </div>
       </div>

@@ -17,27 +17,27 @@ const Section2Cards = () => {
                 <span>
                     <div className={styles.places_card}>
                         {
-                            animCardData1.map((data, ind) => {
+                            animCardData1?.map((data, ind) => {
                                 return (
-                                    <Image src={data.imagedata} alt={"..."} height={1000} width={1000} />
+                                    <Image key={ind} src={data.imagedata} alt={"..."} height={1000} width={1000} />
                                 )
                             })
                         }
                     </div>
                     <div className={styles.places_card}>
                         {
-                            animCardData2.map((data, ind) => {
+                            animCardData2?.map((data, ind) => {
                                 return (
-                                    <Image src={data.imagedata} alt={"..."} height={1000} width={1000} />
+                                    <Image key={ind} src={data.imagedata} alt={"..."} height={1000} width={1000} />
                                 )
                             })
                         }
                     </div>
                     <div className={styles.places_card}>
                         {
-                            animCardData3.map((data, ind) => {
+                            animCardData3?.map((data, ind) => {
                                 return (
-                                    <Image src={data.imagedata} alt={"..."} height={1000} width={1000} />
+                                    <Image key={ind} src={data.imagedata} alt={"..."} height={1000} width={1000} />
                                 )
                             })
                         }
