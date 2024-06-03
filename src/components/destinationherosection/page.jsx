@@ -3,7 +3,8 @@ import "./destination.css";
 import Bg from "../../../public/ladakh.jpg";
 import Down from "../../../public/Icons/arrow.svg";
 import Image from "next/image";
-const Destinationherosection = ({ scrollToComponentB }) => {
+const Destinationherosection = () => {
+ 
   return (
     <>
       <div className="h-[70vh] w-full  relative">
@@ -22,7 +23,7 @@ const Destinationherosection = ({ scrollToComponentB }) => {
             <span className="bg-[#CA1C26B2] px-1">60% off</span>
           </p>
           <div className="flex justify-center w-full">
-            <p onClick={scrollToComponentB}  className="px-5 py-2 cursor-pointer bg-red-700 text-white ">
+            <p  className="px-5 py-2 cursor-pointer bg-red-700 text-white ">
               EXPLORE LADAKH
             </p>
           </div>

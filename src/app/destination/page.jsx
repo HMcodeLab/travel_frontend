@@ -1,4 +1,5 @@
-"use client"
+"use client";
+
 import Allcards from "@/components/Allcards/page";
 import Destinationherosection from "@/components/destinationherosection/page";
 import Discount from "@/components/discount/page";
@@ -8,44 +9,59 @@ import { BASE_URL } from "@/helpers/baseurl";
 import { useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useRef, useState } from "react";
 
-const DestinationContent = ({ scrollToComponentB }) => {
+const DestinationContent = () => {
+
+
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <DestinationContentInner />
+    </Suspense>
+  );
+};
+
+const DestinationContentInner = () => {
   const [Alldata, setAlldata] = useState([]);
   const componentBRef = useRef(null);
-  const search = useSearchParams();
-  let city_id = search.get('cityid');
+  const searchParams = useSearchParams();
+  const city_id = searchParams.get('cityid');
 
   useEffect(() => {
-    async function Fetchdata() {
-      try {
-        const data = await fetch(BASE_URL + '/package_with_city', {
-          method: 'POST',
-          headers: {
-            accept: 'application/json',
-            'content-type': 'application/json',
-          },
-          body: JSON.stringify(city_id),
-        });
-        const response = await data.json();
-        setAlldata(response?.data);
-      } catch (error) {
-        console.error(error);
+    const fetchData = async () => {
+      if (city_id) {
+        try {
+          const response = await fetch(`${BASE_URL}/package_with_city`, {
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ city_id }),
+          });
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          const data = await response.json();
+          setAlldata(data?.data || []);
+        } catch (error) {
+          console.error('Failed to fetch data:', error);
+        }
       }
-    }
-    Fetchdata();
+    };
+
+    fetchData();
   }, [city_id]);
 
   return (
     <>
-    <Suspense fallback={<div>Loading...</div>}>
-      <Destinationherosection scrollToComponentB={scrollToComponentB} />
-      <div className='px-[var(--padding-inline)] flex flex-col gap-10'>
-        <Allcards data={Alldata} ref={componentBRef} />
+      <Destinationherosection  />
+      <div className="px-[var(--padding-inline)] flex flex-col gap-10">
+        <Allcards data={Alldata} />
         <Discount />
         <Trending />
         <RequestCall />
       </div>
-      </Suspense>
     </>
   );
 };
+
 export default DestinationContent;
