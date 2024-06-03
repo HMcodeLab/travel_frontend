@@ -1,3 +1,4 @@
+"use client"
 import Destinationcontent from "@/components/Destinationcontent/page";
 import { Suspense } from "react";
 

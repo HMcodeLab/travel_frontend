@@ -29,7 +29,7 @@ const Navmenu = () => {
                 {
                     allCategory?.map((item, ind) => {
                         return (
-                            <Link key={ind} href={`/destination?cityid=${item.city_id}`}><span><Image src={item.image || '/Assets/Icons/places/shimla.svg'} width={1000} height={1000} alt='...'/> <p>{item.name}</p></span></Link>
+                            <Link key={ind} href={`/destination`}><span><Image src={item.image || '/Assets/Icons/places/shimla.svg'} width={1000} height={1000} alt='...'/> <p>{item.name}</p></span></Link>
                         )
                     })
                 }
