@@ -58,7 +58,7 @@ const Cards = ({ val }) => {
           </div>
         </div>
         <div className='flex justify-between items-center h-9'>
-          <Link href={`/destination/${val?.id}/${val?.key}`} className='uppercase bg-[var(--primary)] text-white rounded px-5 h-full text-center flex items-center justify-center' style={{ fontFamily: 'Merriweather-sans' }}>Explore now</Link>
+          <Link href={`/destination/place?id=${val?.id}&key=${val?.key}`} className='uppercase bg-[var(--primary)] text-white rounded px-5 h-full text-center flex items-center justify-center' style={{ fontFamily: 'Merriweather-sans' }}>Explore now</Link>
           <div className='flex items-center divide-x-[1.5px] divide-[var(--primary)] gap-1 border-2 border-[var(--primary)] rounded h-full'>
             <Image src={Call} className='p-1' alt='Call icon' width={24} height={24} />
             <Image src={Wtsp} className='p-1' alt='WhatsApp icon' width={30} height={30} />

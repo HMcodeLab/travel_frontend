@@ -12,10 +12,32 @@ import ContactForm from '../Detail/contactForm'
 import Discount from '../discount/page'
 import LastSection from '../Detail/lastSection'
 import RequestCall from '../requestcall/page'
+import { useRouter, useSearchParams } from 'next/navigation'
+import { BASE_URL } from '@/helpers/baseurl'
 
 
 const Destinationcontent = () => {
-
+    const [responsedata, setresponsedata] = useState()
+   const search=useSearchParams()
+   let id=search.get('id')
+   let key=search.get('key')
+   useEffect(() => {
+  async function Fetchoverview(){
+    if(id && key){
+        try {
+            const data=await fetch(BASE_URL+'/details/'+id+'/'+key)
+            const response=await data.json()
+            console.log(response?.data);
+            setresponsedata(response?.data)
+        } catch (error) {
+            console.log(error);
+        }
+    }
+  }
+  Fetchoverview()
+   }, [])
+   
+//    console.log(responsedata);
     const [activeTab, setActiveTab] = useState(1);
 
     return (
@@ -24,14 +46,14 @@ const Destinationcontent = () => {
                 <Image src={'/Assets/Images/ladakhBanner.png'} height={1000} width={1000} alt="..." />
             </div>
             <div style={{ paddingInline: "10vw", display: "flex", flexDirection: "column", gap: "5vh" }}>
-                <CommonHead />
+                <CommonHead data={responsedata}/>
                 <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
                 <div className={styles.details_flex}>
                     <div>
-                        {activeTab == 1 && <Overview />}
-                        {activeTab == 2 && <Itinerary />}
-                        {activeTab == 3 && <Included />}
-                        {activeTab == 4 && <Policy />}
+                        {activeTab == 1 && <Overview data={responsedata}/>}
+                        {activeTab == 2 && <Itinerary data={responsedata}/>}
+                        {activeTab == 3 && <Included data={responsedata}/>}
+                        {activeTab == 4 && <Policy data={responsedata}/>}
                     </div>
                     <div className={styles.right_side}>
                         <Gallery />
@@ -51,7 +73,7 @@ export default Destinationcontent;
 
 
 
-export const CommonHead = () => {
+export const CommonHead = ({data}) => {
     return (
         <div className={styles.commonHeadcontainer}>
             <div className={styles.section1}>

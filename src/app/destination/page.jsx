@@ -10,8 +10,6 @@ import { useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useRef, useState } from "react";
 
 const DestinationContent = () => {
-
-
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <DestinationContentInner />
