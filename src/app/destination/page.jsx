@@ -1,4 +1,4 @@
-'use client'
+"use client"
 import Allcards from "@/components/Allcards/page";
 import Destinationherosection from "@/components/destinationherosection/page";
 import Discount from "@/components/discount/page";
@@ -45,3 +45,4 @@ const DestinationContent = ({ scrollToComponentB }) => {
     </>
   );
 };
+export default DestinationContent;
