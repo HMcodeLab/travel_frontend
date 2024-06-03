@@ -36,7 +36,7 @@ const DestinationContent = ({ scrollToComponentB }) => {
 
   return (
     <>
-    <Suspense>
+    <Suspense fallback={<div>Loading...</div>}>
       <Destinationherosection scrollToComponentB={scrollToComponentB} />
       <div className='px-[var(--padding-inline)] flex flex-col gap-10'>
         <Allcards data={Alldata} ref={componentBRef} />
