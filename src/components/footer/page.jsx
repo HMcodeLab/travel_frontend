@@ -7,6 +7,7 @@ import Insta from "../../../public/Icons/insta.svg";
 import Youtube from "../../../public/Icons/youtube.svg";
 
 import "./footer.css";
+import Link from "next/link";
 const Footer = () => {
   const pstyle = "text-[10px]";
 
@@ -25,17 +26,29 @@ const Footer = () => {
                   <p className="text-[18px] font-semibold xsm:text-[14px]">
                     ABOUT TGE
                   </p>
-                  <p className={`${pstyle}`}>About us</p>
-                  <p className={`${pstyle}`}>Support</p>
-                  <p className={`${pstyle}`}>Copyright Policies</p>
-                  <p className={`${pstyle}`}>Privacy</p>
+                  <Link href={"/about_us"} className={`${pstyle}`}>
+                    About us
+                  </Link>
+                  <Link href={"/support"} className={`${pstyle}`}>
+                    Support
+                  </Link>
+                  <Link href={"/policy/copyright"} className={`${pstyle}`}>
+                    Copyright Policies
+                  </Link>
+                  <Link href={"/policy/privacy"} className={`${pstyle}`}>
+                    Privacy
+                  </Link>
                 </div>
                 <div className="pr-5 border-r-[2px] flex flex-col gap-3">
                   <p className="text-[18px] font-semibold xsm:text-[12px] capitalize">
                     IMPORTANT LINKS
                   </p>
-                  <p className={`${pstyle}`}>Refund Policy</p>
-                  <p className={`${pstyle}`}>Teams & Conditions</p>
+                  <Link href={"/policy/refund"} className={`${pstyle}`}>
+                    Refund Policy
+                  </Link>
+                  <Link href={"/policy/terms"} className={`${pstyle}`}>
+                    Teams & Conditions
+                  </Link>
                   <p className={`${pstyle}`}>Posts</p>
                 </div>
                 <div className="flex flex-col gap-3">

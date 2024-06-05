@@ -1,10 +1,50 @@
 import React from 'react'
+import Image from 'next/image';
 
-const Overview = ({data}) => {
-    // console.log(data);
-    // console.log(data ? JSON?.parse(data?.daywise_meta): "");
+const Overview = ({ data }) => {
+    console.log(data);
+    // console.log(JSON.parse(data?.daywise_meta))
+
+    if (data === undefined) {
+        return (
+            <>Loading...</>
+        )
+    }
+
+
+    console.log(data[0]?.package_overview);
     return (<>
-        <div dangerouslySetInnerHTML= {{__html:`<p style=\\\"outline: 0px; font-family: Lato, sans-serif; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; font-size: 14px; vertical-align: baseline; line-height: inherit; color: red; margin-right: 0px !important; margin-bottom: 8px !important; margin-left: 0px !important;\\\">On your arrival at the Delhi airport railway station, you will be received by an agent\\u2019s representative who will escort you to ISBT Kashmere Gate. From there, you will board the volvo bus reserved for your travel to Shimla at 8 p.m. It is a journey of approximately 340 kilometers and it takes around 14 to 15 hours to reach Shimla.</p><p style=\\\"outline: 0px; font-family: Lato, sans-serif; padding: 0px; border: 0px; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; font-size: 14px; vertical-align: baseline; line-height: inherit; color: red; margin-right: 0px !important; margin-bottom: 8px !important; margin-left: 0px !important;\\\">This Shimla tour package provides you an opportunity to cherish a leisurely road trip through one of the best national highways, and the majestic Himalayan expressway which carves through the Shivalik mountains. Unlike other hilly roads, the route to Shimla is quite smooth and consistent. The overnight journey also gives you an opportunity to savour the food from roadside dhabas where the bus would stop for the passengers to freshen up</p>`}}></div>
+
+        <h1>OVERVIEW</h1>
+        <div dangerouslySetInnerHTML={{ __html: data[0]?.overview }} />
+        <h2>Explore the Area</h2>
+        <div dangerouslySetInnerHTML={{ __html: data[0]?.explore_the_area }} />
+        <div>
+            <h2 className='text-2xl mb-3'>Popular Amenities</h2>
+            <div className='grid grid-cols-3 my-4'>
+                {data[0]?.amenities.map((val, ind) => {
+                    return (
+                        <div className='flex justify-left items-center gap-3'>
+                            <Image src={val.icon} alt={'..'} height={50} width={50} className='h-[25px] w-[25px]' />
+                            <h3 className='text-[1.2rem] capitalize font-medium'>{val?.ammenity}</h3>
+                        </div>
+                    )
+                })}
+            </div>
+        </div>
+        <div>
+            <h2 className='text-2xl mb-3'> Activities</h2>
+            <div className='grid grid-cols-3 my-4'>
+                {data[0]?.activities.map((val, ind) => {
+                    return (
+                        <div className='flex justify-left items-center gap-3'>
+                            <Image src={val.icon} alt={'..'} height={50} width={50} className='h-[25px] w-[25px]' />
+                            <h3 className='text-[1.2rem] capitalize font-medium' >{val?.activity}</h3>
+                        </div>
+                    )
+                })}
+            </div>
+        </div>
     </>
     )
 }
