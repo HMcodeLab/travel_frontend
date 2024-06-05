@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <main style={{ display: "flex", flexDirection: "column", gap: "5vh" }}>
       <HeroSection />
-      <div style={{ paddingInline: "10vw", display: "flex", flexDirection: "column", gap: "5vh" }}>
+      <div className="px-[10vw] flex flex-col gap-[5vh] xsm:px-[3vw]">
         <Section2 />
         <Discount />
         <Section4 />

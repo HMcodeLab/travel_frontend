@@ -14,50 +14,50 @@ import { BASE_URL } from '@/helpers/baseurl';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export const GlobalProvider=createContext()
+export const GlobalProvider = createContext()
 export default function RootLayout({ children }) {
   const [enquiryModal, setEnquiryModal] = useState(false);
   const [Planning, setPlanning] = useState(false)
   const [CardsData, setCardsData] = useState([])
 
 
-  const Fetchcards = async() => {
-  try {
-    const data=await fetch(BASE_URL+'/index')
-    const response=await data.json();
+  const Fetchcards = async () => {
+    try {
+      const data = await fetch(BASE_URL + '/index')
+      const response = await data.json();
       setCardsData(response?.data)
-     
-  } catch (error) {
-    console.log(error);
-  }
+
+    } catch (error) {
+      console.log(error);
     }
-    useEffect(() => {
-   Fetchcards()
-    }, [])
-    
+  }
+  useEffect(() => {
+    Fetchcards()
+  }, [])
+
 
   return (
     <html lang="en">
       <body className={`relative ${inter.className}`}>
-        <GlobalProvider.Provider value={{Fetchcards,CardsData}}>
-        <div className={`${enquiryModal ? 'blurred-background' : ''}`}>
-          <TopNav />
-          <Navbar setEnquiryModal={setEnquiryModal} setPlanning={setPlanning}/>
-          <Navmenu />
-          {children}
-          <Footer />
-        </div>
-        {enquiryModal && (
-          <div className="modal-overlay">
-            <EnquiryForm setEnquiryModal={setEnquiryModal} />
+        <GlobalProvider.Provider value={{ Fetchcards, CardsData }}>
+          <div className={`${enquiryModal ? 'blurred-background' : ''}`}>
+            <TopNav />
+            <Navbar setEnquiryModal={setEnquiryModal} setPlanning={setPlanning} />
+            <Navmenu />
+            {children}
+            <Footer />
           </div>
-        )}
-        {
-          Planning && <Planningtriphome setPlanning={setPlanning}/>
-        }
-        <div className="fixed top-[76%] -right-[58px] -rotate-90 z-[999999]">
-          <ContactUsHomeBtn />
-        </div>
+          {enquiryModal && (
+            <div className="modal-overlay">
+              <EnquiryForm setEnquiryModal={setEnquiryModal} />
+            </div>
+          )}
+          {
+            Planning && <Planningtriphome setPlanning={setPlanning} />
+          }
+          <div className="fixed top-[76%] -right-[58px] -rotate-90 z-[999999]">
+            <ContactUsHomeBtn />
+          </div>
         </GlobalProvider.Provider>
       </body>
     </html>

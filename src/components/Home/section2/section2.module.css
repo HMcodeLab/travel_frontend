@@ -45,3 +45,26 @@
     transform: translateY(0);
   }
 }
+
+@media (max-width: 700px) {
+  .card_section_main {
+    display: grid;
+    grid-template-columns: unset;
+    margin-block: 3vh;
+    gap: 1vw;
+    height: fit-content;
+    width: 95vw;
+    overflow-x: auto;
+  }
+  .vertical_cards {
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+    width: 300vw;
+    overflow-x: auto;
+  }
+
+  .anim_cards {
+    display: none;
+  }
+}
