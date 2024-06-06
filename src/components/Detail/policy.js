@@ -2,7 +2,11 @@ import React from 'react'
 
 const Policy = ({ data }) => {
 
-
+    if (data === undefined) {
+        return (
+            <>Loading...</>
+        )
+    }
 
     return (
         <div>
