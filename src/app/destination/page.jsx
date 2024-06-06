@@ -9,7 +9,7 @@ import Trending from "../../components/trending/page";
 import RequestCall from "../../components/requestcall/page";
 import Discount from "../../components/discount/page";
 
-const DestinationContent = () => {
+const Destination = () => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <DestinationContentInner />
@@ -63,4 +63,4 @@ const DestinationContentInner = () => {
   );
 };
 
-export default DestinationContent;
+export default Destination;
