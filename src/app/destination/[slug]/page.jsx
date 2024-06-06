@@ -1,16 +1,13 @@
-"use client"
-import Destinationcontent from "@/components/Destinationcontent/page";
+"use client";
 import { Suspense } from "react";
+import DestinationContent from "../page";
 
 const Destination = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <DestinationContent />
+    </Suspense>
+  );
+};
 
-  
-    return (
-      <Suspense fallback={<div>Loading...</div>}>
-        <Destinationcontent  />
-      </Suspense>
-    );
-  };
-  
-  export default Destination;
-  
+export default Destination;
