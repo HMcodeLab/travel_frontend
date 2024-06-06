@@ -9,14 +9,14 @@ const Section7 = () => {
     </h3>
     return (
         <div className={styles.main_container}>
-            {window.innerWidth > 700 && <CommonHeading title={tl} description={""} />}
+            <span className={styles.hide_phone}> <CommonHeading title={tl} description={""} /></span>
             <div className={styles.main_section}>
                 <div className={styles.image_section}>
                     <Image src={'/Assets/Images/section7img2.png'} width={1000} height={1000} alt="..." />
                     <Image src={'/Assets/Images/section7img1.png'} width={1000} height={1000} alt="..." />
                 </div>
                 <div className={styles.content_section}>
-                    {window.innerWidth < 700 && <CommonHeading title={tl} description={""} />}
+                    <span className={styles.hide_desktop}>  <CommonHeading title={tl} description={""} /> </span>
                     <p>you're looking for a family holiday, a romantic escape, an adventure somewhere extraordinary, or a special event, we can arrange it.Whether you're looking for a family holiday, a romantic escape, an adventure somewhere extraordinary,</p>
                     <div className={styles.buttons}>
                         <button>

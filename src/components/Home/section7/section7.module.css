@@ -9,6 +9,10 @@
   background-position: left bottom;
   background-size: 20% auto;
 }
+.hide_desktop {
+  display: none;
+}
+
 .main_section {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -63,6 +67,13 @@
   width: 40px;
 }
 @media (max-width: 700px) {
+  .hide_phone {
+    display: none;
+  }
+  .hide_desktop {
+    display: block;
+  }
+
   .main_container {
     display: flex;
     flex-direction: column;
