@@ -6,19 +6,43 @@ const Included = ({ data }) => {
             <>Loading...</>
         )
     }
-    console.log(data[0].special_inc_meta)
+    console.log(data[0].inc_meta)
     return (
         <div className='flex flex-col gap-[13px]'>
             <h1 className='text-[1.5rem] '>INCLUDED</h1>
-            <p dangerouslySetInnerHTML={{ __html: data[0]?.special_inc_meta }} />
+            <ul className='list-disc flex flex-col gap-2'>
+                {
+                    data[0]?.special_inc_meta?.map((val, ind) => {
+                        return (
+                            <li key={ind}>{val.tour_special_inc}</li>
+                        )
+                    })
+                }
+            </ul>
             <hr />
             <div className='flex flex-col gap-[10px]'>
                 <h1 className='text-[1.3rem] '>TOUR INCLUSIONS</h1>
-                <div dangerouslySetInnerHTML={{ __html: data[0]?.inc_meta }} />
+                <ul className='list-disc flex flex-col gap-2'>
+                    {
+                        data[0]?.inc_meta?.map((val, ind) => {
+                            return (
+                                <li key={ind}>{val.tour_inc}</li>
+                            )
+                        })
+                    }
+                </ul>
             </div>
             <div className='flex flex-col gap-[10px]'>
                 <h1 className='text-[1.3rem] '>TOUR EXCLUSIONS</h1>
-                <div dangerouslySetInnerHTML={{ __html: data[0]?.exc_meta }} />
+                <ul className='list-disc flex flex-col gap-2'>
+                    {
+                        data[0]?.exc_meta?.map((val, ind) => {
+                            return (
+                                <li key={ind}>{val.tour_exc}</li>
+                            )
+                        })
+                    }
+                </ul>
             </div>
 
         </div>
