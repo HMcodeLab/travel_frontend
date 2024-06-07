@@ -37,8 +37,9 @@
 }
 
 .container img {
-  height: 8vh;
+  height: 10vh;
   width: auto;
+  /* border: 1px solid red; */
 }
 
 .navmenu {
@@ -118,7 +119,7 @@
   display: flex;
   gap: 2.5vw;
   max-width: 70vw;
-  overflow-x: hidden;
+  overflow-x: auto;
 }
 .places_images span {
   display: flex;

@@ -17,7 +17,12 @@ const Footer = () => {
         <div className="w-full h-full flex flex-col justify-around ">
           <div className="flex flex-col h-[80%] w-[80%] bg-[#CFCFEE2E] backdrop-blur-sm rounded-3xl shadow-md mx-auto xsm:w-[95%]">
             <div className="w-28 h-20 mx-auto -translate-y-8">
-              <Image src={Tge} alt="..." />
+              <Image
+                src={"/Assets/Images/logo.png"}
+                alt="..."
+                height={1000}
+                width={1000}
+              />
             </div>
 
             <div className="flex justify-between px-10 items-center xsm:flex-col xsm:px-5">

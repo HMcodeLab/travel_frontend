@@ -76,3 +76,13 @@
     transform: translateX(0);
   }
 }
+
+@media (max-width: 700px) {
+  .card_main {
+    display: flex;
+    gap: 20px;
+    width: 90vw;
+    justify-content: space-between;
+    overflow-x: hidden;
+  }
+}
