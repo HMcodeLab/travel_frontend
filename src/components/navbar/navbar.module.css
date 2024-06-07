@@ -121,6 +121,9 @@
   max-width: 70vw;
   overflow-x: auto;
 }
+.places_images::-webkit-scrollbar {
+  display: none;
+}
 .places_images span {
   display: flex;
   flex-direction: column;
