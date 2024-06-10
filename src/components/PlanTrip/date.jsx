@@ -1,18 +1,18 @@
-import React, { useContext, useState } from 'react';
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
-import Image from 'next/image';
+import React, { useContext, useState } from "react";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
+import Image from "next/image";
 
-import Commonheader from './commonheader';
-import Smallsun from '../../../public/Icons/smallsun.svg';
-import { Tripprovider } from './page';
+import Commonheader from "./commonheader";
+import Smallsun from "../../../public/Icons/smallsun.svg";
+import { Tripprovider } from "./page";
 
 const DateComponent = () => {
   const [date, setDate] = useState(new Date());
-  const {headerdata,setrender,setheaderdata}=useContext(Tripprovider)
-function handleDateClick(d){
-setrender('destination')
-}
+  const { headerdata, setrender, setheaderdata } = useContext(Tripprovider);
+  function handleDateClick(d) {
+    setrender("destination");
+  }
   const months = [
     {
       month: "may",
@@ -21,7 +21,7 @@ setrender('destination')
       color: "#FF9FA554",
       icon: Smallsun,
       special: false,
-      border: '#CA1C261F',
+      border: "#CA1C261F",
     },
     {
       month: "june",
@@ -30,7 +30,7 @@ setrender('destination')
       color: "#C5C4FE36",
       icon: Smallsun,
       special: false,
-      border: '#CA1C261F',
+      border: "#CA1C261F",
     },
     {
       month: "july",
@@ -39,7 +39,7 @@ setrender('destination')
       color: "#FF9FA554",
       icon: Smallsun,
       special: false,
-      border: '#CA1C261F',
+      border: "#CA1C261F",
     },
     {
       month: "august",
@@ -48,7 +48,7 @@ setrender('destination')
       color: "#FF9FA554",
       icon: Smallsun,
       special: true,
-      border: '#CA1C261F',
+      border: "#CA1C261F",
     },
     {
       month: "september",
@@ -57,7 +57,7 @@ setrender('destination')
       color: "#C5C4FE36",
       icon: Smallsun,
       special: false,
-      border: '#CA1C261F',
+      border: "#CA1C261F",
     },
     {
       month: "october",
@@ -66,7 +66,7 @@ setrender('destination')
       color: "#FF9FA554",
       icon: Smallsun,
       special: false,
-      border: '#CA1C261F',
+      border: "#CA1C261F",
     },
     {
       month: "november",
@@ -75,7 +75,7 @@ setrender('destination')
       color: "#D9FBF9B2",
       icon: Smallsun,
       special: false,
-      border: '#B2FFFA8A',
+      border: "#B2FFFA8A",
     },
     {
       month: "december",
@@ -84,7 +84,7 @@ setrender('destination')
       color: "#FF9FA554",
       icon: Smallsun,
       special: true,
-      border: '#CA1C261F',
+      border: "#CA1C261F",
     },
     {
       month: "january",
@@ -93,7 +93,7 @@ setrender('destination')
       color: "#D9FBF9B2",
       icon: Smallsun,
       special: false,
-      border: '#B2FFFA8F',
+      border: "#B2FFFA8F",
     },
     {
       month: "february",
@@ -102,7 +102,7 @@ setrender('destination')
       color: "#C5C4FE54",
       icon: Smallsun,
       special: false,
-      border: '#CA1C261F',
+      border: "#CA1C261F",
     },
     {
       month: "march",
@@ -111,7 +111,7 @@ setrender('destination')
       color: "#FF9FA554",
       icon: Smallsun,
       special: false,
-      border: '#CA1C261F',
+      border: "#CA1C261F",
     },
     {
       month: "april",
@@ -120,18 +120,20 @@ setrender('destination')
       color: "#D9FBF9B2",
       icon: Smallsun,
       special: false,
-      border: '#B2FFFA8F',
+      border: "#B2FFFA8F",
     },
   ];
 
   return (
-    <div className='pl-14 pt-14'>
+    <div className="pl-14 pt-14 xsm:pl-4">
       <Commonheader />
-      <div className='flex flex-col mt-8'>
-        <p className='capitalize font-[500] font-Merri-sans text-xl'>When is your departure date?</p>
-        <div className='flex justify-center w-full mt-10'>
+      <div className="flex flex-col mt-8">
+        <p className="capitalize font-[500] font-Merri-sans text-xl">
+          When is your departure date?
+        </p>
+        <div className="flex justify-center w-full mt-10">
           <Calendar
-          className='rounded font-semibold cursor-pointer'
+            className="rounded font-semibold cursor-pointer"
             onChange={setDate}
             onClickDay={handleDateClick}
             value={date}

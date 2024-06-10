@@ -6,7 +6,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-inline: var(--padding-inline);
+  padding-inline: 13vw;
 }
 
 .top_nav_main > div {
@@ -33,7 +33,7 @@
   border-bottom: 1px solid rgba(16, 25, 53, 0.1);
   justify-content: space-between;
   align-items: center;
-  padding-inline: var(--padding-inline);
+  padding-inline: 13vw;
 }
 
 .container img {
@@ -102,7 +102,7 @@
 
 .nav_menu_main {
   height: fit-content;
-  padding-inline: var(--padding-inline);
+  padding-inline: 13vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -111,14 +111,14 @@
 }
 
 .nav_menu_main img {
-  height: 30px;
-  width: 30px;
+  height: 22px;
+  width: 22px;
 }
 
 .places_images {
   display: flex;
   gap: 2.5vw;
-  max-width: 70vw;
+  max-width: 50vw;
   overflow-x: auto;
 }
 .places_images::-webkit-scrollbar {
@@ -130,6 +130,10 @@
   align-items: center;
   justify-content: center;
   gap: 3px;
+}
+.places_images span p {
+  white-space: nowrap;
+  font-size: 0.9rem;
 }
 
 .menu_btn_section span {
@@ -167,6 +171,13 @@
 
   .navmenu {
     display: none;
+  }
+
+  .places_images {
+    display: flex;
+    gap: 2.5vw;
+    max-width: 90vw;
+    overflow-x: auto;
   }
 
   .btn_section button {

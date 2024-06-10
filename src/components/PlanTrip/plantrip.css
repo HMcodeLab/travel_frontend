@@ -1,10 +1,18 @@
-.plantrip{
-    background-image: url('../../../public/boat.png');
-    background-repeat: no-repeat;
-    background-size: 65vw 100vh;
-    background-position: center;
+.plantrip {
+  background-image: url("../../../public/boat.png");
+  background-repeat: no-repeat;
+  background-size: 65vw 100vh;
+  background-position: center;
+}
+.roombutton {
+  filter: drop-shadow();
+}
 
+@media (max-width: 570px) {
+  .plantrip {
+    background-image: url("../../../public/boat.png");
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    background-position: center;
   }
-  .roombutton{
-    filter: drop-shadow()
-  }
+}

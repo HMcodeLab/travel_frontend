@@ -57,14 +57,11 @@ const HeroSection = () => {
       className={`font-[Merriweather_Sans] ${styles.hero_section}`}
       style={{ backgroundImage: "url(/Assets/Images/hero_banner.jpg)" }}
     >
-      {/* <div className={styles.image_container}>
-                <Image className={styles.image} src={'/Assets/Images/hero_banner.jpg'} height={1000} width={1000} />
-            </div> */}
       <div className="flex flex-col w-full h-full items-center pt-28 text-white">
-        <h2 className="text-[2.7rem] text-center">
+        <h2 className="text-[45px] text-center font-semibold">
           Empowering Your Travel Dreams
         </h2>
-        <h1 className="text-[4rem]">Explore</h1>
+        <h1 className="text-[93px] font-bold">Explore</h1>
         <p className="border-b border-[#CA1C26] text-[1.2rem] text-center">
           Curating Unparalleled Travel Experiences, One Journey at a Time
         </p>
@@ -77,7 +74,7 @@ const HeroSection = () => {
                 : ""
             }`}
           >
-            <p className="text-[10px]">Tour</p>
+            <p className="text-[15px]">Tour</p>
           </div>
           <div
             onClick={() => setactiveFacility("Activities")}
@@ -87,7 +84,7 @@ const HeroSection = () => {
                 : ""
             }`}
           >
-            <p className="text-[10px]">Activities</p>
+            <p className="text-[15px]">Activities</p>
           </div>
           <div
             onClick={() => setactiveFacility("Flight")}
@@ -97,7 +94,7 @@ const HeroSection = () => {
                 : ""
             }`}
           >
-            <p className="text-[10px]">Flight</p>
+            <p className="text-[15px]">Flight</p>
           </div>
           <div
             onClick={() => setactiveFacility("Railway")}
@@ -107,7 +104,7 @@ const HeroSection = () => {
                 : ""
             }`}
           >
-            <p className="text-[10px]">Railway</p>
+            <p className="text-[15px]">Railway</p>
           </div>
         </div>
         <div

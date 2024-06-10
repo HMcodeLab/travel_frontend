@@ -8,6 +8,7 @@ import Allcards from "../../components/Allcards/page";
 import Trending from "../../components/trending/page";
 import RequestCall from "../../components/requestcall/page";
 import Discount from "../../components/discount/page";
+import LastSection from "@/components/Detail/lastSection";
 
 const Destination = () => {
   return (
@@ -56,7 +57,7 @@ const DestinationContentInner = () => {
         <Allcards data={Alldata} />
 
         <Discount />
-        <Trending />
+        <LastSection />
         <RequestCall />
       </div>
     </>
