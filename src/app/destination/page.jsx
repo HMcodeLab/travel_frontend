@@ -5,7 +5,6 @@ import { useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useRef, useState } from "react";
 import Destinationherosection from "../../components/destinationherosection/page";
 import Allcards from "../../components/Allcards/page";
-import Trending from "../../components/trending/page";
 import RequestCall from "../../components/requestcall/page";
 import Discount from "../../components/discount/page";
 import LastSection from "@/components/Detail/lastSection";

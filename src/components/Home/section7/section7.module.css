@@ -43,6 +43,7 @@
   font-size: 1.08rem;
   line-height: 1.75rem;
   text-transform: capitalize;
+  font-family: "Exo", sans-serif;
 }
 
 .buttons {
@@ -56,10 +57,14 @@
   align-items: center;
   font-size: 1rem;
   gap: 6px;
-  justify-content: center;
+  justify-content: left;
   background-color: rgba(255, 255, 255, 0.5);
   text-transform: uppercase;
   border-radius: 3px;
+}
+.buttons button p {
+  text-align: left;
+  font-family: var(--primary-font);
 }
 
 .buttons img {

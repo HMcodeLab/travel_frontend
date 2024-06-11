@@ -32,7 +32,7 @@ const Cards = ({ val }) => {
           </span>
         </div>
       </div>
-      <div className="border-l-[3px] border-r-[3px] border-[#CA1C26] px-2 font-bold text-lg py-2 cardtitle">
+      <div className="border-l-[3px] border-r-[3px] border-[#CA1C26] px-2 font-bold text-[18px] py-2 cardtitle">
         {val?.package_name}
       </div>
 

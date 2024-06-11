@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Slider } from "@mui/material";
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
+import SearchScroll from "../flipAnimation/flipanimation";
 
 function valuetext(value) {
   return `${value}°C`;
@@ -54,57 +55,60 @@ const HeroSection = () => {
 
   return (
     <div
-      className={`font-[Merriweather_Sans]  ${styles.hero_section}`}
+      className={` font-Merri-sans  ${styles.hero_section}`}
       style={{ backgroundImage: "url(/Assets/Images/hero_banner.jpg)" }}
     >
       <div className="flex flex-col w-fit h-fit items-center text-white relative left-[50%] top-[50%] translate-y-[-50%] translate-x-[-50%]">
         <h2 className="text-[45px] text-center font-semibold leading-[48px]">
           Empowering Your Travel Dreams
         </h2>
-        <h1 className="text-[93px] font-bold">Explore</h1>
+        <SearchScroll
+          words={["Explore", "Connect", "Thrive", "Memories"]}
+          css={"text-[98px] font-bold"}
+        />
         <p className="border-b border-[#CA1C26] text-[1.2rem] text-center">
           Curating Unparalleled Travel Experiences, One Journey at a Time
         </p>
-        <div className="grid grid-cols-4 py-4 px-12 gap-6 uppercase text-center xsm:w-[100%]">
+        <div className="flex py-4 gap-4 uppercase text-center xsm:w-[100%] ">
           <div
             onClick={() => setactiveFacility("Tour")}
-            className={`flex justify-center items-center px-5 py-[6px] xsm:py-[3px] cursor-pointer ${
+            className={`w-fit flex justify-center items-center px-6 py-[6px] xsm:py-[3px] cursor-pointer ${
               activeFacility === "Tour"
                 ? "bg-white text-black rounded-full"
                 : ""
             }`}
           >
-            <p className="text-[15px]">Tour</p>
+            <p className="text-[15px] ">Tour</p>
           </div>
           <div
             onClick={() => setactiveFacility("Activities")}
-            className={`flex justify-center items-center px-5 py-[6px] xsm:py-[3px] cursor-pointer ${
+            className={`w-fit flex justify-center items-center px-6 py-[6px] xsm:py-[3px] cursor-pointer ${
               activeFacility === "Activities"
                 ? "bg-white text-black rounded-full"
                 : ""
             }`}
           >
-            <p className="text-[15px]">Activities</p>
+            <p className="text-[15px] ">Activities</p>
           </div>
           <div
             onClick={() => setactiveFacility("Flight")}
-            className={`flex justify-center items-center px-5 py-[6px] xsm:py-[3px] cursor-pointer ${
+            className={`w-fit flex justify-center items-center px-6 py-[6px] xsm:py-[3px] cursor-pointer ${
               activeFacility === "Flight"
                 ? "bg-white text-black rounded-full "
                 : ""
             }`}
           >
-            <p className="text-[15px]">Flight</p>
+            <p className="text-[15px] ">Flight</p>
           </div>
           <div
             onClick={() => setactiveFacility("Railway")}
-            className={`flex justify-center items-center px-5 py-[6px] xsm:py-[3px] cursor-pointer ${
+            className={`w-fit flex justify-center items-center px-6 py-[6px] xsm:py-[3px] cursor-pointer ${
               activeFacility === "Railway"
                 ? "bg-white text-black rounded-full "
                 : ""
             }`}
           >
-            <p className="text-[15px]">Railway</p>
+            <p className="text-[15px] ">Railway</p>
           </div>
         </div>
         <div

@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import PlanTrip from '../../../public/Assets/Icons/planATrip.svg'
 import ArrowDown from '../../../public/Assets/Images/downarrow.gif'
 import Image from "next/image";
+import Logo from '../../../public/Assets/Images/logo.png'
 
 
 
@@ -25,7 +26,7 @@ const Navbar = ({ setEnquiryModal, setPlanning }) => {
       <div className={styles.container}>
         <div className={styles.logo_container}>
           <Link href="/">
-            <Image src={"/Assets/Images/logo.png"} alt="..." width={1000} height={1000} />
+            <Image src={Logo} alt="..." />
           </Link>
         </div>
         <div className={styles.navmenu}>

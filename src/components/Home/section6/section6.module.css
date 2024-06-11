@@ -1,7 +1,7 @@
 .all_cards_main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  gap: 2.5rem;
   margin-top: 3vh;
 }
 @media (max-width: 700px) {

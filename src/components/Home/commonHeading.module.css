@@ -7,10 +7,11 @@
 .section1 {
   border-left: 5px solid var(--primary);
   padding-inline: 1vw;
-  font-family: "Merriweather-sans";
+  font-variant: small-caps;
 }
 .section1 h3 {
   font-size: 35px;
+  font-weight: 600;
 }
 
 .section1 span {

@@ -55,7 +55,7 @@ export default function RootLayout({ children }) {
           {
             Planning && <Planningtriphome setPlanning={setPlanning} />
           }
-          <div className="fixed top-[76%] -right-[58px] -rotate-90 z-[999999]">
+          <div className="fixed top-[76%] -right-[51px] -rotate-90 z-[999999]">
             <ContactUsHomeBtn />
           </div>
         </GlobalProvider.Provider>

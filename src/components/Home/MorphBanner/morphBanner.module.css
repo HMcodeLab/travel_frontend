@@ -3,6 +3,7 @@
   width: 100%;
   object-fit: cover;
   position: relative;
+  font-family: var(--primary-font);
 }
 .banner img {
   height: 100%;
@@ -46,8 +47,8 @@
   background-color: white;
   color: black;
   width: fit-content;
-  padding: 5px 10px;
-  font-size: 0.85rem;
+  padding: 7px 14px;
+  font-size: 0.8rem;
   border-radius: 5px;
 }
 @media (max-width: 700px) {
