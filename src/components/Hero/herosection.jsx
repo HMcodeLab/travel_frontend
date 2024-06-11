@@ -54,23 +54,23 @@ const HeroSection = () => {
 
   return (
     <div
-      className={`font-[Merriweather_Sans] ${styles.hero_section}`}
+      className={`font-[Merriweather_Sans]  ${styles.hero_section}`}
       style={{ backgroundImage: "url(/Assets/Images/hero_banner.jpg)" }}
     >
-      <div className="flex flex-col w-full h-full items-center pt-28 text-white">
-        <h2 className="text-[45px] text-center font-semibold">
+      <div className="flex flex-col w-fit h-fit items-center text-white relative left-[50%] top-[50%] translate-y-[-50%] translate-x-[-50%]">
+        <h2 className="text-[45px] text-center font-semibold leading-[48px]">
           Empowering Your Travel Dreams
         </h2>
         <h1 className="text-[93px] font-bold">Explore</h1>
         <p className="border-b border-[#CA1C26] text-[1.2rem] text-center">
           Curating Unparalleled Travel Experiences, One Journey at a Time
         </p>
-        <div className="grid grid-cols-4 py-4 px-12 gap-6 uppercase text-center w-[45%] xsm:w-[100%]">
+        <div className="grid grid-cols-4 py-4 px-12 gap-6 uppercase text-center xsm:w-[100%]">
           <div
             onClick={() => setactiveFacility("Tour")}
-            className={`flex justify-center items-center py-[6px] xsm:py-[3px] cursor-pointer ${
+            className={`flex justify-center items-center px-5 py-[6px] xsm:py-[3px] cursor-pointer ${
               activeFacility === "Tour"
-                ? "bg-white text-black rounded-full "
+                ? "bg-white text-black rounded-full"
                 : ""
             }`}
           >
@@ -78,9 +78,9 @@ const HeroSection = () => {
           </div>
           <div
             onClick={() => setactiveFacility("Activities")}
-            className={`flex justify-center items-center py-[6px] xsm:py-[3px] cursor-pointer ${
+            className={`flex justify-center items-center px-5 py-[6px] xsm:py-[3px] cursor-pointer ${
               activeFacility === "Activities"
-                ? "bg-white text-black rounded-full "
+                ? "bg-white text-black rounded-full"
                 : ""
             }`}
           >
@@ -88,7 +88,7 @@ const HeroSection = () => {
           </div>
           <div
             onClick={() => setactiveFacility("Flight")}
-            className={`flex justify-center items-center py-[6px] xsm:py-[3px] cursor-pointer ${
+            className={`flex justify-center items-center px-5 py-[6px] xsm:py-[3px] cursor-pointer ${
               activeFacility === "Flight"
                 ? "bg-white text-black rounded-full "
                 : ""
@@ -98,7 +98,7 @@ const HeroSection = () => {
           </div>
           <div
             onClick={() => setactiveFacility("Railway")}
-            className={`flex justify-center items-center py-[6px] xsm:py-[3px] cursor-pointer ${
+            className={`flex justify-center items-center px-5 py-[6px] xsm:py-[3px] cursor-pointer ${
               activeFacility === "Railway"
                 ? "bg-white text-black rounded-full "
                 : ""
@@ -108,22 +108,22 @@ const HeroSection = () => {
           </div>
         </div>
         <div
-          className={`px-5 z-[9999] ${
+          className={`px-8 z-[99999] relative ${
             activeFacility === "Tour"
-              ? "w-[50%] xsm:w-[100%]"
+              ? "w-[100%] xsm:w-[100%]"
               : activeFacility === "Activities"
-              ? "w-[50%] xsm:w-[100%]"
+              ? "w-[100%] xsm:w-[100%]"
               : activeFacility === "Flight"
-              ? "w-[60%] xsm:w-[100%]"
-              : "w-[60%] xsm:w-[100%]"
+              ? "w-[100%] xsm:w-[100%]"
+              : "w-[100%] xsm:w-[100%]"
           } `}
           ref={searchRef}
         >
           {activeFacility === "Tour" &&
             (Search ? (
-              <div className="bg-[#F6F6F6] rounded-t-3xl rounded-b flex flex-col shadow-lg shadow-[#00000021]">
+              <div className="bg-[#F6F6F6] rounded-t-3xl rounded-b flex flex-col shadow-lg shadow-[#00000021] absolute top-0">
                 <input
-                  className="w-full text-[#000000] placeholder:text-[#848383] bg-[#F6F6F6] flex justify-center text-[14px] rounded-full pl-16 py-2 shadow-sm shadow-[#00000021] outline-none"
+                  className="w-full text-[#000000] placeholder:text-[#848383] bg-[#F6F6F6] flex justify-center text-[14px] rounded-full pl-16 py-2 shadow-sm shadow-[#00000021] outline-none h-[55px]"
                   placeholder="Search For Destinations..."
                 />
                 <div className="px-16 py-4">
@@ -222,16 +222,16 @@ const HeroSection = () => {
             ) : (
               <div
                 onClick={() => setSearch(true)}
-                className="bg-[#F6F6F6] rounded-full flex items-center justify-between shadow-md shadow-[#00000021] cursor-pointer w-full"
+                className="bg-[#F6F6F6] rounded-full flex items-center justify-between shadow-md shadow-[#00000021] cursor-pointer w-full h-[55px]"
               >
                 <div className="w-full text-[#848383] flex justify-center text-[14px]">
                   <p>
                     Search For <span className="text-[#000000]">Himachal</span>
                   </p>
                 </div>
-                <div className="w-max bg-[#FFFFFF] p-2 rounded-full my-1 mx-2">
+                <div className="w-[44px] flex items-center justify-center h-[44px] bg-[#FFFFFF] p-2 rounded-full my-1 mx-2">
                   <img
-                    className="w-4 h-4"
+                    className="w-5 h-5"
                     src={"/Assets/Icons/HeroSearch.svg"}
                     alt=""
                   />

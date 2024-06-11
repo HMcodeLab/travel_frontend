@@ -15,6 +15,11 @@
   align-items: center;
   color: white;
   gap: 8px;
+  font-size: 13px;
+  font-family: var(--primary-font);
+}
+.top_nav_main p {
+  letter-spacing: 1px;
 }
 .top_nav_main > div > span {
   background-color: white;
@@ -28,7 +33,7 @@
 
 /* navbar css here  */
 .container {
-  height: 11vh;
+  height: 79px;
   display: flex;
   border-bottom: 1px solid rgba(16, 25, 53, 0.1);
   justify-content: space-between;
@@ -37,7 +42,7 @@
 }
 
 .container img {
-  height: 10vh;
+  height: 70px;
   width: auto;
   /* border: 1px solid red; */
 }
@@ -50,7 +55,9 @@
   /* border: 1px solid red; */
 }
 .navmenu span {
+  font-size: clamp(13px, calc(13px + 0.0667 * (100vw - 1440px)), 16px);
   display: flex;
+  font-family: var(--primary-font);
 }
 
 .navmenu h5 {
@@ -63,15 +70,18 @@
   gap: 20px;
   justify-content: space-between;
   align-items: center;
+  font-family: var(--primary-font);
 }
 
 .btn_section button:first-child {
   background-color: var(--primary);
   color: white;
+  font-weight: 400;
 }
 
 .btn_section button:last-child {
   border: 1px solid black;
+  font-weight: 700;
 }
 .btn_section button:last-child img {
   border: 1px dotted black;
@@ -96,6 +106,7 @@
 .btn_section button img {
   height: 25px;
   width: 25px;
+  mix-blend-mode: luminosity;
 }
 
 /* navmenu starts here  */
@@ -117,9 +128,13 @@
 
 .places_images {
   display: flex;
-  gap: 2.5vw;
-  max-width: 50vw;
+  gap: 2vw;
+  max-width: 55vw;
   overflow-x: auto;
+}
+.places_images img {
+  height: 35px;
+  width: 35px;
 }
 .places_images::-webkit-scrollbar {
   display: none;
@@ -134,22 +149,38 @@
 .places_images span p {
   white-space: nowrap;
   font-size: 0.9rem;
+  font-family: var(--secondary-font);
 }
 
 .menu_btn_section span {
   border: 1px solid black;
   border-radius: 3px;
-  padding: 2px 8px;
+  padding: 0px 0px;
   gap: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 2px;
 }
 .menu_btn_section button:first-child {
   background-color: var(--primary);
   color: white;
   padding: 2px 7px;
   border-radius: 3px;
+}
+.menu_btn_section a {
+  padding: 2px 8px;
+}
+.active {
+  background-color: var(--primary);
+  color: white;
+  transition: all 0.3s linear;
+  border-radius: 3px;
+}
+.inactive {
+  background-color: transparent;
+  color: black;
+  transition: all 0.3s linear;
 }
 
 @media (max-width: 700px) {

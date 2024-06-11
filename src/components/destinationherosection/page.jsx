@@ -3,7 +3,8 @@ import "./destination.css";
 import Bg from "../../../public/ladakh.jpg";
 import Down from "../../../public/Icons/arrow.svg";
 import Image from "next/image";
-const Destinationherosection = () => {
+const Destinationherosection = ({ name }) => {
+  // console.log(city_name);
   return (
     <>
       <div className="h-[70vh] w-full  relative">
@@ -16,7 +17,7 @@ const Destinationherosection = () => {
         </div>
         <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-white space-y-4">
           <p className="text-white font-extrabold text-5xl text-center">
-            Ladakh
+            {name}
           </p>
           <p className="text-3xl border-b-[1px] border-[#B6B6B696]">
             Thrills for Soul and Spirit!

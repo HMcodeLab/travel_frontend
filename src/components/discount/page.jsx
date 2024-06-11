@@ -4,7 +4,7 @@ import Cap from "../ParagraphWithLargeFirstLetters/page";
 const Discount = () => {
   return (
     <>
-      <div className=" relative w-full h-[35vh] bg-[#020241] flex justify-between items-center pl-[5%] rounded-xl xsm:h-[30vh]">
+      <div className="relative w-full h-[35vh] bg-[#020241] flex justify-between items-center pl-[5%] rounded-xl xsm:h-[30vh]">
         <div className="w-[50%] text-white space-y-2 xsm:w-[100%] xsm:z-[2]">
           <div className="text-[#E3E3E3] text-[18.75px] font-[400] uppercase xsm:text-sm">
             <Cap text="Enjoy Best Deals" />

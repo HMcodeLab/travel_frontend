@@ -9,6 +9,7 @@ import Trending from "../../components/trending/page";
 import RequestCall from "../../components/requestcall/page";
 import Discount from "../../components/discount/page";
 import LastSection from "@/components/Detail/lastSection";
+import axios from "axios";
 
 const Destination = () => {
   return (
@@ -23,24 +24,27 @@ const DestinationContentInner = () => {
   const componentBRef = useRef(null);
   const searchParams = useSearchParams();
   const city_id = searchParams.get("cityid");
+  const city_name = searchParams.get("city_name");
+  // console.log(city_name);
+  const formData = new FormData();
+  formData.append("city_id", city_id);
 
   useEffect(() => {
     const fetchData = async () => {
       if (city_id) {
         try {
-          const response = await fetch(`${BASE_URL}/package_with_city`, {
-            method: "POST",
-            headers: {
-              Accept: "application/json",
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ city_id }),
-          });
-          if (!response.ok) {
-            throw new Error("Network response was not ok");
-          }
-          const data = await response.json();
-          setAlldata(data?.data || []);
+          const response = await axios.post(
+            `${BASE_URL}/package_with_city`,
+            formData,
+            {
+              headers: {
+                "Content-Type": "multipart/form-data",
+              },
+            }
+          );
+
+          console.log(response.data.data);
+          setAlldata(response.data.data || []);
         } catch (error) {
           console.error("Failed to fetch data:", error);
         }
@@ -52,9 +56,9 @@ const DestinationContentInner = () => {
 
   return (
     <>
-      <Destinationherosection />
-      <div className="px-[var(--padding-inline)] flex flex-col gap-10">
-        <Allcards data={Alldata} />
+      <Destinationherosection name={city_name} />
+      <div className="px-[var(--padding-inline)] flex flex-col gap-[5vh] my-[5vh]">
+        <Allcards data={Alldata} name={city_name} />
 
         <Discount />
         <LastSection />

@@ -6,13 +6,13 @@ import Link from "next/link";
 
 import { useEffect, useState } from "react";
 import PlanTrip from '../../../public/Assets/Icons/planATrip.svg'
-import ArrowDown from '../../../public/Assets/Icons/arrow-down.svg'
+import ArrowDown from '../../../public/Assets/Images/downarrow.gif'
 import Image from "next/image";
 
 
 
 
-const Navbar = ({setEnquiryModal,setPlanning}) => {
+const Navbar = ({ setEnquiryModal, setPlanning }) => {
 
 
   const path = usePathname();
@@ -34,8 +34,8 @@ const Navbar = ({setEnquiryModal,setPlanning}) => {
           </span>
         </div>
         <div className={styles.btn_section}>
-          <button onClick={()=>setPlanning(true)} > <Image src={PlanTrip} alt="..." /><p> PLAN A TRIP </p> </button>
-          <button onClick={() => setEnquiryModal(true)}> <p>Enquiry </p> <Image src={ArrowDown} alt="..."/> </button>
+          <button onClick={() => setPlanning(true)} > <Image src={PlanTrip} alt="..." /><p> PLAN A TRIP </p> </button>
+          <button onClick={() => setEnquiryModal(true)}> <p>Enquiry </p> <Image src={ArrowDown} alt="..." /> </button>
         </div>
       </div>
 
