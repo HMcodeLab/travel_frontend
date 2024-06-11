@@ -9,19 +9,7 @@ const SearchScroll = ({ words, css }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [animationClass, setAnimationClass] = useState('slideDown');
 
-    // useEffect(() => {
-    //     let wordIndex = 0;
-    //     const intervalId = setInterval(() => {
-    //         setAnimationClass('fadeOut');
-    //         setTimeout(() => {
-    //             wordIndex = (wordIndex + 1) % words.length;
-    //             setDisplayText(words[wordIndex]);
-    //             setAnimationClass('fadeIn');
-    //         }, 500);
-    //     }, 2000);
 
-    //     return () => clearInterval(intervalId)
-    // }, []);
 
     useEffect(() => {
         const cycleWords = () => {
@@ -33,7 +21,7 @@ const SearchScroll = ({ words, css }) => {
             }, 500); // Duration of the slideUp animation
         };
 
-        const intervalId = setInterval(cycleWords, 4000); // Change word every 2 seconds
+        const intervalId = setInterval(cycleWords, 3000); // Change word every 2 seconds
 
         // Cleanup interval on component unmount
         return () => clearInterval(intervalId);
@@ -41,14 +29,7 @@ const SearchScroll = ({ words, css }) => {
 
 
     return (
-        // <div className='search-outer'>
-        //     <div className={`search-text ${value ? 'opacity-100' : 'opacity-100'}`}>
-        //         {/* <span>Search for&nbsp;</span> */}
-        //         <span className={`${css} ${animationClass}`}>{displayText}</span>
-        //     </div>
 
-
-        // </div>
         <div className='search-outer'>
             <div className={`search-text ${animationClass}`}>
                 <span className={css}>{words[currentIndex]}</span>

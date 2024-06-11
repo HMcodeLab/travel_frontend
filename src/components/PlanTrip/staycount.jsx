@@ -12,25 +12,25 @@ const Staycount = () => {
 
   const Holidays = [
     {
-      title: "3-4Nights",
+      title: "3-4 Nights",
       color: "#FF9FA554",
       border: "#CA1C261F",
       special: false,
     },
     {
-      title: "5-6Nights",
+      title: "5-6 Nights",
       color: "#C5C4FE36",
       border: "#CA1C261F",
       special: true,
     },
     {
-      title: "7-8Nights",
+      title: "7-8 Nights",
       color: "#FF9FA554",
       border: "#CA1C261F",
       special: false,
     },
     {
-      title: "6-5Nights",
+      title: "6-5 Nights",
       color: "#FFE5B254",
       border: "#CA1C261F",
       special: true,
@@ -54,7 +54,7 @@ const Staycount = () => {
                 <>
                   <div
                     onClick={() => handleItem(item.title)}
-                    className={`h-[137px] cursor-pointer w-[130px] relative  rounded `}
+                    className={`px-[10px] py-[20px] cursor-pointer relative  rounded `}
                     style={{
                       backgroundColor: item.color,
                       border: `1px solid ${item.border}`,

@@ -1,6 +1,7 @@
 "use client";
 import React, { createContext, useState } from "react";
 import Cities from "./choosecity";
+import "./plantrip.css";
 import Cross from "../../../public/Icons/cross.svg";
 import Image from "next/image";
 import Month from "./month";
@@ -22,8 +23,8 @@ const Planningtriphome = ({ setPlanning }) => {
   return (
     <>
       {render != "" ? (
-        <div className="w-full flex justify-end fixed top-0 z-[9999] bg-[#00000080]">
-          <div className="h-[100vh] w-[65vw] plantrip pt-2 xsm:w-[100vw]">
+        <div className="w-full flex justify-end fixed top-0 z-[9999] bg-[rgba(0,0,0,0.2)]">
+          <div className="h-[100vh] w-[50vw] fadeInLeft plantrip pt-2 xsm:w-[100vw]">
             <div className="h-12 w-12 rounded-full bg-[#FADDDD] flex justify-center items-center p-1 fixed right-2 top-2 z-20">
               <Image
                 className="cursor-pointer"
