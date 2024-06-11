@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Tge from "../../../public/tge.png";
-import Call from "../../../public/Icons/phone.svg";
-import Message from "../../../public/Icons/message.svg";
+import Call from "../../../public/Assets/Icons/phone.svg";
+import Message from "../../../public/Assets/Icons/message.svg";
 import Fb from "../../../public/Icons/fb.svg";
 import Insta from "../../../public/Icons/insta.svg";
 import Youtube from "../../../public/Icons/youtube.svg";
@@ -61,11 +61,15 @@ const Footer = () => {
                     CONTACT US{" "}
                   </p>
                   <p className="flex items-center gap-1">
-                    <Image src={Call} alt="..." />
+                    <span className="bg-[var(--primary)] rounded-full p-[6px] flex justify-center items-center">
+                      <Image src={Call} alt="..." />
+                    </span>
                     <span className={`${pstyle}`}>+91 67535 57043</span>
                   </p>
                   <p className="flex items-center gap-1">
-                    <Image src={Message} alt="..." />
+                    <span className="bg-[var(--primary)] rounded-full p-[6px] flex justify-center items-center">
+                      <Image src={Message} alt="..." />
+                    </span>
                     <span className={`${pstyle}`}>tourwithtge23@gmail.com</span>
                   </p>
                   <p className="flex gap-4">
