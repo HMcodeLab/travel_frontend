@@ -14,6 +14,8 @@ import LastSection from "../Detail/lastSection";
 import RequestCall from "../requestcall/page";
 import { useRouter, useSearchParams } from "next/navigation";
 import { BASE_URL } from "@/helpers/baseurl";
+import Down from "../../../public/Icons/arrow.svg";
+import Cap from "../ParagraphWithLargeFirstLetters/page";
 
 const Destinationcontent = () => {
   const [responsedata, setresponsedata] = useState();
@@ -48,11 +50,18 @@ const Destinationcontent = () => {
           width={1000}
           alt="..."
         />
+        <div className="absolute top-[82%] translate-y-[50%] left-[50%] translate-x-[-50%] h-16 p-1 border-2 border-white rounded-full bg-[var(--primary)]">
+            <Image
+              src={Down}
+              className={`h-5 py-2 px-1 ${styles.scaledowncenter}`}
+              alt="..."
+            />
+          </div>
       </div>
-      <div className="px-[10vw] flex flex-col gap-[5vw] xsm:px-[5vw]">
+      <div className=" flex flex-col gap-[5vw] xsm:px-[5vw]">
         <CommonHead data={responsedata} />
         <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
-        <div className={styles.details_flex}>
+        <div className={`pl-[13%] pr-[9%] ${styles.details_flex}`}>
           <div>
             {activeTab == 1 && <Overview data={responsedata} />}
             {activeTab == 2 && <Itinerary data={responsedata} />}
@@ -64,9 +73,11 @@ const Destinationcontent = () => {
             <ContactForm />
           </div>
         </div>
-        <Discount />
-        <LastSection />
-        <RequestCall />
+        <div className="pl-[13%] pr-[9%] flex flex-col gap-[5vw] xsm:px-[5vw]">
+          <Discount />
+          <LastSection />
+          <RequestCall />
+        </div>
       </div>
     </div>
   );
@@ -76,22 +87,44 @@ export default Destinationcontent;
 
 export const CommonHead = ({ data }) => {
   return (
-    <div className={styles.commonHeadcontainer}>
+    <div className={`pl-[13%] pr-[9%]  ${styles.commonHeadcontainer}`}>
       <div className={styles.section1}>
-        <h3>
-          <span>Panormic Ladakh </span> with umling <br />
-          <span>la pass</span> package
-        </h3>
+        <div className={`${styles.highlightfirstletter}`}>
+          {/* <Cap text="Panormic Ladakh with umling la pass package" /> */}
+          <p><span>Panormic Ladakh </span> with umling <br />
+          <span>la pass</span> package</p>
+          
+        </div>
       </div>
       <div className={styles.section2}>
         <h4>6 Nights / 7 Days</h4>
         <div className={styles.right}>
-          <Image
-            src={"/Assets/Images/Star.svg"}
-            width={1000}
-            height={1000}
-            alt="..."
-          />
+          <div className="flex gap-1">
+            <Image
+              src={"/Assets/Images/Star.svg"}
+              width={1000}
+              height={1000}
+              alt="..."
+            />
+            <Image
+              src={"/Assets/Images/Star.svg"}
+              width={1000}
+              height={1000}
+              alt="..."
+            />
+            <Image
+              src={"/Assets/Images/Star.svg"}
+              width={1000}
+              height={1000}
+              alt="..."
+            />
+            <Image
+              src={"/Assets/Images/Star.svg"}
+              width={1000}
+              height={1000}
+              alt="..."
+            />
+          </div>
           <h4>4.4 / 5</h4>
           <p>(354 reviews)</p>
         </div>
@@ -102,9 +135,9 @@ export const CommonHead = ({ data }) => {
 
 export const Tabs = ({ activeTab, setActiveTab }) => {
   return (
-    <div className={styles.tabs_container}>
+    <div className={`pl-[13%] pr-[9%] ${styles.tabs_container}`}>
       <div onClick={() => setActiveTab(1)}>
-        <span className={`${activeTab == 1 ? styles.active : ""}`}>
+        <span className={`py-1 ${activeTab == 1 ? styles.active : ""}`}>
           <Image
             src={"/Assets/Icons/Detailspage/overview.svg"}
             alt="..."
@@ -115,9 +148,9 @@ export const Tabs = ({ activeTab, setActiveTab }) => {
         </span>
       </div>
       <div onClick={() => setActiveTab(2)}>
-        <span className={`${activeTab == 2 ? styles.active : ""}`}>
+        <span className={`py-1 ${activeTab == 2 ? styles.active : ""}`}>
           <Image
-            src={"/Assets/Icons/Detailspage/overview.svg"}
+            src={"/Assets/Icons/earth.svg"}
             alt="..."
             height={1000}
             width={1000}
@@ -126,9 +159,9 @@ export const Tabs = ({ activeTab, setActiveTab }) => {
         </span>
       </div>
       <div onClick={() => setActiveTab(3)}>
-        <span className={`${activeTab == 3 ? styles.active : ""}`}>
+        <span className={`py-1 ${activeTab == 3 ? styles.active : ""}`}>
           <Image
-            src={"/Assets/Icons/Detailspage/overview.svg"}
+            src={"/Assets/Icons/coin.svg"}
             alt="..."
             height={1000}
             width={1000}
@@ -137,9 +170,9 @@ export const Tabs = ({ activeTab, setActiveTab }) => {
         </span>
       </div>
       <div onClick={() => setActiveTab(4)}>
-        <span className={`${activeTab == 4 ? styles.active : ""}`}>
+        <span className={`py-1 ${activeTab == 4 ? styles.active : ""}`}>
           <Image
-            src={"/Assets/Icons/Detailspage/overview.svg"}
+            src={"/Assets/Icons/policy.svg"}
             alt="..."
             height={1000}
             width={1000}

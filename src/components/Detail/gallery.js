@@ -18,26 +18,26 @@ const Gallery = () => {
         speed: 2500,
 
         delay: 3,
-        // pauseOnHover: true,
+        pauseOnHover: false,
         drag: true,
-        breakpoints: {
-            900: {
-                perPage: 1
-            },
-            700: {
-                perPage: 2,
-            },
-            500: {
-                perPage: 1,
-            },
-        },
+        // breakpoints: {
+        //     900: {
+        //         perPage: 1
+        //     },
+        //     700: {
+        //         perPage: 2,
+        //     },
+        //     500: {
+        //         perPage: 1,
+        //     },
+        // },
     };
     return (
         <div className={styles.gallery_main}>
             <h2>Gallery</h2>
             <Splide aria-label="My Favorite Images" options={options}>
                 <SplideSlide >
-                    <Image src={'/Assets/Images/section2cards/amritsar.png'} alt="..." height={1000} width={1000} />
+                    <Image src={'/Assets/Images/placeimg1.png'} alt="..." height={500} width={1000} />
                 </SplideSlide>
 
             </Splide >

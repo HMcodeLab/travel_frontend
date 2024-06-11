@@ -4,8 +4,9 @@
   gap: 5vh;
 }
 .heroBanner {
-  height: 60vh;
+  height: 64vh;
   width: 100%;
+  position: relative;
 }
 .heroBanner img {
   height: 100%;
@@ -23,21 +24,50 @@
 .section1 {
   border-left: 5px solid var(--primary);
   padding-inline: 1vw;
+  font-family: 'Merriweather-Sans';
 }
-.section1 h3 {
-  font-size: 2.1rem;
+.section1 div {
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-family: 'Merriweather-Sans';
 }
+/* .section1 div span::first-letter{
+  font-size: 2.2rem;
+} */
+/* .section1 h3::first-letter {
+  font-size: 2.2rem;
+} */
+
+/* .highlightfirstletter{
+  display: inline-block;
+} */
+.highlightfirstletter span::first-letter {
+  font-size: 4.2rem;
+  display: inline-block; 
+  line-height: 1; 
+}
+
+.firstLetterHighlight {
+  font-size: 2.2rem;
+}
+
+
 
 .section1 span {
   color: var(--primary);
 }
 .section2 {
   width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 7px;
   /* border: 1px solid red; */
 }
 .section2 h4 {
   font-size: 1.4rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 .right {
   display: flex;
@@ -45,24 +75,36 @@
   align-items: center;
 }
 
+.right h4{
+  font-size: 1.1rem;
+}
+.right p{
+  font-family: 'Merriweather-Sans';
+  color: #6D6D6D;
+  font-size: 14px;
+  font-weight: 300;
+}
+
 .right img {
-  height: 30px;
-  width: 30px;
+  height: 25px;
+  width: 25px;
 }
 
 .tabs_container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-content: space-between;
+  gap: 14%;
   box-shadow: 1.61px 2.01px 12px 0px #00000021;
   padding-block: 2vh;
+  font-family: 'Merriweather-Sans';
 }
 .tabs_container img {
   height: 40px;
   width: 40px;
 }
 .tabs_container > div {
-  padding-inline: 4vw;
+  /* padding-inline: 4vw; */
 }
 .tabs_container span {
   display: flex;
@@ -81,7 +123,7 @@
 .details_flex {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
-  gap: 2vw;
+  gap: 4vw;
 }
 .right_side {
   display: flex;
@@ -118,5 +160,22 @@
 
   .section2 {
     display: none;
+  }
+}
+
+
+.scaledowncenter {
+	-webkit-animation: scale-down-center 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite both;
+	        animation: scale-down-center 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite both;
+}
+
+@-webkit-keyframes scale-down-center {
+  50% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  0%,100% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
   }
 }
