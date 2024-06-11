@@ -2,27 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Metrophobic&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Metrophobic&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap");
 
 @font-face {
   font-family: Merriweather-sans;
-  src: url('../../public/fonts/MerriweatherSans.ttf');
+  src: url("../../public/fonts/MerriweatherSans.ttf");
 }
 @font-face {
   font-family: Merriweather;
-  src: url('../../public/fonts/Merriweather.ttf');
+  src: url("../../public/fonts/Merriweather.ttf");
 }
 @font-face {
   font-family: Poppins;
-  src: url('../../public/fonts/Poppins.ttf');
+  src: url("../../public/fonts/Poppins.ttf");
 }
 @font-face {
   font-family: Montserrat;
-  src: url('../../public/fonts/Montserrat.ttf');
+  src: url("../../public/fonts/Montserrat.ttf");
 }
 @font-face {
   font-family: Exo;
-  src: url('../../public/fonts/Exo.ttf');
+  src: url("../../public/fonts/Exo.ttf");
 }
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -30,21 +33,22 @@
   --background-end-rgb: 255, 255, 255;
   --padding-inline: 5vw;
   --primary: #ca1c26;
+  --primary-font: "Merriweather Sans", sans-serif;
+  --secondary-font: "Metrophobic", sans-serif;
 }
-.trendingcard{
+.trendingcard {
   /* flex-shrink: 0; */
 }
-.trendingcard:nth-child(even){
+.trendingcard:nth-child(even) {
   align-self: end;
 }
-.cardtitle{
+.cardtitle {
   font-family: Merriweather-sans;
 }
 
 .blurred-background {
   transition: filter 0.3s ease;
 }
-
 
 .blurred-background {
   transition: filter 0.3s ease;
@@ -73,26 +77,26 @@
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .noScroll {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .rdp {
   --rdp-cell-size: 30px !important;
   --rdp-caption-font-size: 16px !important;
-  --rdp-background-color: #F9EDE4 !important;
-  --rdp-accent-color: #CA1C26!important;
+  --rdp-background-color: #f9ede4 !important;
+  --rdp-accent-color: #ca1c26 !important;
   margin: 10px !important;
 }
-.rdp-day{
+.rdp-day {
   font-size: 14px !important;
 }
 
-.rdp-nav_button svg{
+.rdp-nav_button svg {
   height: 12px !important;
   width: 12px !important;
 }
 
-.css-7o8aqz-MuiSlider-rail{
+.css-7o8aqz-MuiSlider-rail {
   background-color: #b6b6b6 !important;
 }

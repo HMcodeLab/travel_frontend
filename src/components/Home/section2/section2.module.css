@@ -3,7 +3,9 @@
   grid-template-columns: 1fr 1fr;
   margin-block: 3vh;
   gap: 1vw;
-  height: 90vh;
+  height: 85vh;
+  position: relative;
+  z-index: -1;
 }
 
 .card_section_main > div {
@@ -15,6 +17,7 @@
   display: flex;
   flex-direction: column;
   gap: 1vw;
+  justify-content: space-between;
 }
 
 .anim_cards {
