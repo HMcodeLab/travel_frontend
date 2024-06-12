@@ -3,7 +3,7 @@ import "./plantrip.css";
 import Search from "../../../public/Icons/search.svg";
 import Image from "next/image";
 import { Tripprovider } from "./page";
-const Cities = () => {
+const Cities = ({ formData }) => {
   const cities = [
     "Manali",
     "Kasol",

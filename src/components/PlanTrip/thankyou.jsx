@@ -6,7 +6,7 @@ import React, { useEffect, useState } from "react";
 import "./thankyou.css";
 
 const Thankyou = ({ setPlanning }) => {
-  console.log(setPlanning);
+  // console.log(setPlanning);
   const router = useRouter();
   const [animationClass, setAnimationClass] = useState("fadeInT");
 

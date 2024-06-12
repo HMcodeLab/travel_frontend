@@ -58,57 +58,57 @@ const HeroSection = () => {
       className={` font-Merri-sans  ${styles.hero_section}`}
       style={{ backgroundImage: "url(/Assets/Images/hero_banner.jpg)" }}
     >
-      <div className="flex flex-col w-fit h-fit items-center text-white relative left-[50%] top-[50%] translate-y-[-50%] translate-x-[-50%]">
-        <h2 className="text-[45px] text-center font-semibold leading-[48px]">
+      <div className="flex flex-col w-fit h-fit items-center text-white relative left-[50%] top-[50%] translate-y-[-50%] translate-x-[-50%] xsm:w-[80vw]">
+        <h2 className="text-[45px] text-center font-semibold leading-[48px] xsm:text-[30px] ">
           Empowering Your Travel Dreams
         </h2>
         <SearchScroll
           words={["Explore", "Connect", "Thrive", "Memories"]}
-          css={"text-[98px] font-bold"}
+          css={"text-[98px] font-bold xsm:text-[50px]"}
         />
         <p className="border-b border-[#CA1C26] text-[1.2rem] text-center">
           Curating Unparalleled Travel Experiences, One Journey at a Time
         </p>
-        <div className="flex py-4 gap-4 uppercase text-center xsm:w-[100%] ">
+        <div className="flex py-4 gap-4 uppercase text-center xsm:w-[100%] xsm:gap-1">
           <div
             onClick={() => setactiveFacility("Tour")}
-            className={`w-fit flex justify-center items-center px-6 py-[6px] xsm:py-[3px] cursor-pointer ${
+            className={`w-fit flex justify-center items-center px-6 py-[6px] xsm:py-[3px] xsm:px-2 cursor-pointer ${
               activeFacility === "Tour"
                 ? "bg-white text-black rounded-full"
                 : ""
             }`}
           >
-            <p className="text-[15px] ">Tour</p>
+            <p className="text-[15px] xsm:text-[12px] ">Tour</p>
           </div>
           <div
             onClick={() => setactiveFacility("Activities")}
-            className={`w-fit flex justify-center items-center px-6 py-[6px] xsm:py-[3px] cursor-pointer ${
+            className={`w-fit flex justify-center items-center px-6 py-[6px] xsm:py-[3px] xsm:px-2 cursor-pointer ${
               activeFacility === "Activities"
                 ? "bg-white text-black rounded-full"
                 : ""
             }`}
           >
-            <p className="text-[15px] ">Activities</p>
+            <p className="text-[15px] xsm:text-[12px] ">Activities</p>
           </div>
           <div
             onClick={() => setactiveFacility("Flight")}
-            className={`w-fit flex justify-center items-center px-6 py-[6px] xsm:py-[3px] cursor-pointer ${
+            className={`w-fit flex justify-center items-center px-6 py-[6px] xsm:py-[3px] xsm:px-2 cursor-pointer ${
               activeFacility === "Flight"
                 ? "bg-white text-black rounded-full "
                 : ""
             }`}
           >
-            <p className="text-[15px] ">Flight</p>
+            <p className="text-[15px] xsm:text-[12px] ">Flight</p>
           </div>
           <div
             onClick={() => setactiveFacility("Railway")}
-            className={`w-fit flex justify-center items-center px-6 py-[6px] xsm:py-[3px] cursor-pointer ${
+            className={`w-fit flex justify-center items-center px-6 py-[6px] xsm:py-[3px] xsm:px-2 cursor-pointer ${
               activeFacility === "Railway"
                 ? "bg-white text-black rounded-full "
                 : ""
             }`}
           >
-            <p className="text-[15px] ">Railway</p>
+            <p className="text-[15px] xsm:text-[12px] ">Railway</p>
           </div>
         </div>
         <div

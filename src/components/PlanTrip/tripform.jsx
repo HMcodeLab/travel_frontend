@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import Image from "next/image";
@@ -9,20 +9,22 @@ import Phone from "../../../public/Icons/phoneicon.svg";
 import Email from "../../../public/Icons/emailicon.svg";
 import { Tripprovider } from "./page";
 import Thankyou from "./thankyou";
+import axios from "axios";
 
 const Tripform = () => {
+  const formData = new FormData();
+  const { headerdata, setrender } = useContext(Tripprovider);
   const [userData, setUserData] = useState({
     name: "",
     phone: "",
     email: "",
   });
+  console.log(headerdata);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUserData({ ...userData, [name]: value });
   };
-
-  const { setrender } = useContext(Tripprovider);
 
   function handleSubmit() {
     if (!userData.name || !userData.phone || !userData?.email) {
@@ -30,6 +32,23 @@ const Tripform = () => {
       setrender("");
     }
   }
+
+  const applyFilter = async () => {
+    try {
+      const res = await axios.post(
+        `${process.env.NEXT_PUBLIC_URL}/packages/search_filter_packages`,
+        formData
+      );
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    applyFilter();
+  }, []);
+
   return (
     <>
       <div className="pl-14 pt-14 xsm:pl-4">

@@ -12,8 +12,13 @@ import Peopletype from "./peopletype";
 import Tripform from "./tripform";
 import Thankyou from "./thankyou";
 export const Tripprovider = createContext();
+
+const BASE_URL = process.env.NEXT_PUBLIC_URL;
+console.log(BASE_URL);
+
 const Planningtriphome = ({ planning, setPlanning }) => {
   const [render, setrender] = useState("cities");
+
   const [headerdata, setheaderdata] = useState([]);
   const [animationClass, setAnimationClass] = useState("fadeInLeft");
   const [totalpeople, settotalpeople] = useState({
@@ -21,6 +26,8 @@ const Planningtriphome = ({ planning, setPlanning }) => {
     adult: 1,
     children: 0,
   });
+
+  console.log(headerdata);
 
   const closeModal = () => {
     setAnimationClass("fadeOutLeft");
