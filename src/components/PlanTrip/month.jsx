@@ -138,7 +138,7 @@ const Month = () => {
                   <div
                     onClick={() => handleItem(item.month)}
                     key={ind}
-                    className={`py-[20px] px-[7px] cursor-pointer relative  rounded xsm:h-[80px] xsm:w-fit xsm:px-2`}
+                    className={`py-[34px] px-[7px] cursor-pointer relative  rounded xsm:h-[80px] xsm:w-fit xsm:px-2`}
                     style={{
                       backgroundColor: item.color,
                       border: `1px solid ${item.border}`,

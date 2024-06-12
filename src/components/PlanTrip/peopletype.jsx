@@ -77,6 +77,17 @@ const Peopletype = () => {
       const newValue =
         operation === "plus"
           ? prevState[name] + 1
+          : prevState[name] >= 1
+          ? prevState[name] - 1
+          : 1;
+      return { ...prevState, [name]: newValue };
+    });
+  };
+  const handleRooms = (name, operation) => {
+    settotalpeople((prevState) => {
+      const newValue =
+        operation === "plus"
+          ? prevState[name] + 1
           : prevState[name] > 1
           ? prevState[name] - 1
           : 1;
@@ -142,7 +153,7 @@ const Peopletype = () => {
                   <button
                     className="h-8 w-8 roombutton rounded-full bg-[#F6F6F6] shadow-xl text-xl flex justify-center items-center"
                     name="room"
-                    onClick={() => handleButtons("room", "minus")}
+                    onClick={() => handleRooms("room", "minus")}
                   >
                     <FaMinus className="text-[#010080]" />
                   </button>
@@ -150,7 +161,7 @@ const Peopletype = () => {
                   <button
                     className="h-8 w-8 roombutton rounded-full bg-[#F6F6F6] shadow-xl text-xl flex justify-center items-center"
                     name="room"
-                    onClick={() => handleButtons("room", "plus")}
+                    onClick={() => handleRooms("room", "plus")}
                   >
                     <FaPlus className="text-[#010080]" />
                   </button>
@@ -164,7 +175,7 @@ const Peopletype = () => {
                     <button
                       className="h-8 w-8 roombutton rounded-full bg-[#F6F6F6] shadow-xl text-xl flex justify-center items-center"
                       name="adult"
-                      onClick={() => handleButtons("adult", "minus")}
+                      onClick={() => handleRooms("adult", "minus")}
                     >
                       <FaMinus className="text-[#010080]" />
                     </button>
@@ -172,7 +183,7 @@ const Peopletype = () => {
                     <button
                       className="h-8 w-8 roombutton rounded-full bg-[#F6F6F6] shadow-xl text-xl flex justify-center items-center"
                       name="adult"
-                      onClick={() => handleButtons("adult", "plus")}
+                      onClick={() => handleRooms("adult", "plus")}
                     >
                       <FaPlus className="text-[#010080]" />
                     </button>

@@ -11,9 +11,24 @@ import { Tripprovider } from "./page";
 import Thankyou from "./thankyou";
 
 const Tripform = () => {
+  const [userData, setUserData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUserData({ ...userData, [name]: value });
+  };
+
   const { setrender } = useContext(Tripprovider);
+
   function handleSubmit() {
-    setrender("");
+    if (!userData.name || !userData.phone || !userData?.email) {
+    } else {
+      setrender("");
+    }
   }
   return (
     <>
@@ -30,6 +45,9 @@ const Tripform = () => {
                 type="text"
                 className="w-full h-10 pl-14 focus:outline-none rounded border border-[#E4E4E4]"
                 placeholder="Name"
+                name="name"
+                value={userData?.name}
+                onChange={handleChange}
               />
             </div>
             <div className="relative ">
@@ -38,6 +56,9 @@ const Tripform = () => {
                 type="number"
                 className="w-full h-10 pl-14 focus:outline-none rounded border border-[#E4E4E4]"
                 placeholder="Phone No."
+                name="phone"
+                value={userData?.phone}
+                onChange={handleChange}
               />
             </div>
             <div className="relative ">
@@ -46,6 +67,9 @@ const Tripform = () => {
                 type="text"
                 className="w-full h-10 pl-14 focus:outline-none rounded border border-[#E4E4E4]"
                 placeholder="Email"
+                name="email"
+                value={userData?.email}
+                onChange={handleChange}
               />
             </div>
             <button

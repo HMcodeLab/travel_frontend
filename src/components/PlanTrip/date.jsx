@@ -133,7 +133,7 @@ const DateComponent = () => {
         </p>
         <div className="flex justify-center w-full mt-10">
           <Calendar
-            className="rounded font-semibold cursor-pointer"
+            className="rounded font-semibold cursor-pointer h-[45vh] w-full"
             onChange={setDate}
             onClickDay={handleDateClick}
             value={date}

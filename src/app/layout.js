@@ -42,7 +42,7 @@ export default function RootLayout({ children }) {
         <GlobalProvider.Provider value={{ Fetchcards, CardsData }}>
           <div className={`${enquiryModal ? 'blurred-background' : ''}`}>
             <TopNav />
-            <Navbar setEnquiryModal={setEnquiryModal} setPlanning={setPlanning} />
+            <Navbar setEnquiryModal={setEnquiryModal} planning={Planning} setPlanning={setPlanning} />
             <Navmenu />
             {children}
             <Footer />
@@ -53,7 +53,7 @@ export default function RootLayout({ children }) {
             </div>
           )}
           {
-            Planning && <Planningtriphome setPlanning={setPlanning} />
+            Planning && <Planningtriphome planning={Planning} setPlanning={setPlanning} />
           }
           <div className="fixed top-[76%] -right-[51px] -rotate-90 z-[999999]">
             <ContactUsHomeBtn />

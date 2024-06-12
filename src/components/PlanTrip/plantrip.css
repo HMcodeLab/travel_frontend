@@ -1,5 +1,10 @@
 .plantrip {
-  background-image: url("../../../public/boat.png");
+  background-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.2)
+    ),
+    url("../../../public/boat.png");
   background-repeat: no-repeat;
   background-size: 65vw 100vh;
   background-position: center;
@@ -12,15 +17,30 @@
   animation-name: fadeInleft;
   animation-duration: 1s;
 }
+
 @keyframes fadeInleft {
   0% {
-    opacity: 0;
+    /* opacity: 0; */
     transform: translateX(100%);
   }
 
   100% {
-    opacity: 1;
+    /* opacity: 1; */
     transform: translateX(0%);
+  }
+}
+
+.fadeOutLeft {
+  animation-name: fadeOutleft;
+  animation-duration: 1s;
+}
+
+@keyframes fadeOutleft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
   }
 }
 

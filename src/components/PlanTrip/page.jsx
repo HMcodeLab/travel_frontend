@@ -12,23 +12,34 @@ import Peopletype from "./peopletype";
 import Tripform from "./tripform";
 import Thankyou from "./thankyou";
 export const Tripprovider = createContext();
-const Planningtriphome = ({ setPlanning }) => {
+const Planningtriphome = ({ planning, setPlanning }) => {
   const [render, setrender] = useState("cities");
   const [headerdata, setheaderdata] = useState([]);
+  const [animationClass, setAnimationClass] = useState("fadeInLeft");
   const [totalpeople, settotalpeople] = useState({
     room: 1,
     adult: 1,
-    children: 1,
+    children: 0,
   });
+
+  const closeModal = () => {
+    setAnimationClass("fadeOutLeft");
+    setTimeout(() => {
+      setPlanning(false);
+    }, 1000); // Match this duration to your CSS animation-duration
+  };
+
   return (
     <>
       {render != "" ? (
         <div className="w-full flex justify-end fixed top-0 z-[9999] bg-[rgba(0,0,0,0.2)]">
-          <div className="h-[100vh] w-[50vw] fadeInLeft plantrip pt-2 xsm:w-[100vw]">
+          <div
+            className={`h-[100vh] w-[60vw] px-[40px]  plantrip pt-2 xsm:w-[100vw] ${animationClass}`}
+          >
             <div className="h-12 w-12 rounded-full bg-[#FADDDD] flex justify-center items-center p-1 fixed right-2 top-2 z-20">
               <Image
                 className="cursor-pointer"
-                onClick={() => setPlanning(false)}
+                onClick={() => closeModal()}
                 src={Cross}
                 alt="cross"
               />
@@ -57,7 +68,7 @@ const Planningtriphome = ({ setPlanning }) => {
               ) : render == "form" ? (
                 <Tripform />
               ) : render == "thankyou" ? (
-                <Thankyou />
+                <Thankyou setPlanning={setPlanning} />
               ) : (
                 ""
               )}
@@ -65,7 +76,7 @@ const Planningtriphome = ({ setPlanning }) => {
           </div>
         </div>
       ) : (
-        <Thankyou />
+        <Thankyou setPlanning={setPlanning} />
       )}
     </>
   );
