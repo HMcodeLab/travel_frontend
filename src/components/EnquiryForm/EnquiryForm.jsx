@@ -13,21 +13,36 @@ const EnquiryForm = ({ setEnquiryModal }) => {
     destination: "",
     total_no_travelers: "",
     message: "",
+    // departuredate: "5/10/24",
+    // returndate: "9/10/24",
+    // adminEamil: "sales@eligocs.com",
   });
+  const formData = new FormData();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
+    // if (formData.has(name)) {
+    //   formData.delete(name);
+    // }
+    // formData.append(name, value);
   };
 
   const handleSendQuery = async () => {
-    // const formData = new FormData();
-    // formData.append(user);
+    for (const key in user) {
+      if (user.hasOwnProperty(key)) {
+        formData.append(key, user[key]);
+      }
+    }
+    console.log(formData);
+    formData.forEach((value, key) => {
+      console.log(`${key}: ${value}`);
+    });
     console.log(user);
     try {
       const res = await axios.post(
-        "https://staging.trackitinerary.com/apis/query/savequery",
-        user
+        `${process.env.NEXT_PUBLIC_URL}/query/savequery`,
+        formData
       );
       console.log(res);
       toast.success("Send Query Successfully");
