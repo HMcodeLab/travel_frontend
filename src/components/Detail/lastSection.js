@@ -14,7 +14,7 @@ const LastSection = () => {
                 </div>
                 <p className='text-[#494545] xsm:hidden'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, sunt?</p>
             </div>
-            <div className={`flex h-fit  justify-between ${styles.card_main}`}>
+            <div className={`flex h-fit justify-between ${styles.card_main}`}>
 
                 {
                     [1, 1, 1, 1].map((val, ind) => {
