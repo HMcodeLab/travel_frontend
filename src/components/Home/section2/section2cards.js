@@ -1,11 +1,29 @@
 "use client"
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './section2.module.css';
 import Image from 'next/image';
 import { animCardData1, animCardData2, animCardData3 } from '@/Data/cardImageData';
 
 const Section2Cards = () => {
+    const [movingCard, setMovingCard] = useState();
+    
+    const fetchData = async (req,res) => {
+        try {
+            const data = await fetch("https://staging.trackitinerary.com/apis/packages/package_category_with_city")
+            const response = await data.json();
+            setMovingCard(response?.data)
+            console.log(response?.data?.data);
+        } catch (error) {
+            console.error("Failed to fetch data:", error);
+        }
+    }
+
+    useEffect(() => {
+        fetchData();
+    }, [])
+    
+
     return (
         <div className={styles.card_section_main}>
             <div className={styles.vertical_cards}>

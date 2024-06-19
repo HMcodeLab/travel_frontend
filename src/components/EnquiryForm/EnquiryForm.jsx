@@ -13,6 +13,7 @@ const EnquiryForm = ({ setEnquiryModal }) => {
     destination: "",
     total_no_travelers: "",
     message: "",
+    adminEamil:"sales@eligocs.com"
   });
 
   const handleChange = (e) => {
@@ -27,7 +28,7 @@ const EnquiryForm = ({ setEnquiryModal }) => {
     try {
       const res = await axios.post(
         "https://staging.trackitinerary.com/apis/query/savequery",
-        user
+        user,
       );
       console.log(res);
       toast.success("Send Query Successfully");
@@ -140,13 +141,13 @@ const EnquiryForm = ({ setEnquiryModal }) => {
             </div>
           </div>
           <div>
-            <button className="flex items-center gap-2 px-5 py-2 bg-[#CA1C26] text-white text-[13px] rounded">
+            <button onClick={handleSendQuery} className="flex items-center gap-2 px-5 py-2 bg-[#CA1C26] text-white text-[13px] rounded">
               <img
                 src={"/Assets/Icons/map.svg"}
                 alt=""
                 className="w-[23px] h-[21px]"
               />
-              <p onClick={handleSendQuery}>Book Now</p>
+              <p >Book Now</p>
             </button>
           </div>
         </div>

@@ -3,10 +3,12 @@
 import { useState, useRef, useEffect } from "react";
 import styles from "./herosection.module.css";
 import Image from "next/image";
-import { Slider } from "@mui/material";
+import { Slider, duration } from "@mui/material";
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
 import SearchScroll from "../flipAnimation/flipanimation";
+import toast from "react-hot-toast";
+import axios from "axios";
 
 function valuetext(value) {
   return `${value}°C`;
@@ -26,9 +28,21 @@ const HeroSection = () => {
   const [FlightDate, setFlightDate] = useState(false);
   const searchRef = useRef(null);
   const dateInputRef = useRef(null);
+  const [toursearchData,setTourSearchData] = useState({
+    duration: "",
+    minPrice: "",
+    maxPrice: ""
+  });
+
+  const[activitiesSearchData, setActivitiesSearchData] = useState({
+    location: "",
+    adults: "1",
+    child: "1"
+  })
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
+    setTourSearchData(minPrice)
   };
 
   const handleLabelClick = () => {
@@ -52,6 +66,76 @@ const HeroSection = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [Search]);
+  
+  const handleTourSearch = async () => {
+    try {
+      const apiUrl = "https://staging.trackitinerary.com/apis/packages/search_filter_packages";
+      const res = await axios.post(apiUrl, toursearchData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      
+      console.log(res); // Log the response for debugging
+      
+      if (res.status === 200) {
+        toast.success("Query sent successfully");
+      } else {
+        toast.error("Failed to send query");
+      }
+
+    } catch (error) {
+      console.log(error);
+      toast.error("Failed To send Query");
+    }
+  }
+
+  const handleLocationSelect = (selectedLocation) => {
+    setActivitiesSearchData(prevData => ({
+      ...prevData,
+      location: selectedLocation
+    }));
+  };
+  
+  const handleAdultsChange = (count) => {
+    setActivitiesSearchData(prevData => ({
+      ...prevData,
+      adults: count
+    }));
+  };
+  
+  const handleChildrenChange = (count) => {
+    setActivitiesSearchData(prevData => ({
+      ...prevData,
+      child: count
+    }));
+  };
+
+  const handleActivitySearch = async () => {
+    try {
+      const apiUrl = "https://staging.trackitinerary.com/apis/packages/activities_filter";
+      const res = await axios.post(apiUrl, activitiesSearchData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      
+      console.log(res); // Log the response for debugging
+      
+      if (res.status === 200) {
+        toast.success("Query sent successfully");
+      } else {
+        toast.error("Failed to send query");
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error("Failed To send Query");
+    }
+  }
 
   return (
     <div
@@ -125,36 +209,45 @@ const HeroSection = () => {
         >
           {activeFacility === "Tour" &&
             (Search ? (
-              <div className="bg-[#F6F6F6] rounded-t-3xl rounded-b flex flex-col shadow-lg shadow-[#00000021] absolute top-0">
+              <div className="bg-[#F6F6F6] rounded-t-3xl rounded-b flex flex-col shadow-lg shadow-[#00000021] absolute top-0 w-full">
                 <input
                   className="w-full text-[#000000] placeholder:text-[#848383] bg-[#F6F6F6] flex justify-center text-[14px] rounded-full pl-16 py-2 shadow-sm shadow-[#00000021] outline-none h-[55px]"
                   placeholder="Search For Destinations..."
                 />
                 <div className="px-16 py-4">
-                  <div className="flex flex-col gap-3 border-b border-[#DADADA] pb-2">
-                    <p className="text-black text-[14px]">Product Type</p>
-                    <div className="flex items-center gap-2 text-[#848181] text-[14px]">
-                      <div className="bg-white border border-[#EAE6E6] rounded-full px-3 py-1">
-                        <p>Tour</p>
-                      </div>
-                      <div className="bg-white border border-[#EAE6E6] rounded-full px-3 py-1">
-                        <p>Activity</p>
-                      </div>
-                    </div>
-                  </div>
                   <div className="flex flex-col gap-3 border-b border-[#DADADA] py-2">
                     <p className="text-black text-[14px]">Trip Durations</p>
                     <div className="flex items-center gap-3 text-[#848181] text-[14px]">
-                      <div className="bg-white border border-[#EAE6E6] rounded-full px-3 py-1">
+                      <div
+                        className={`bg-white border border-[#EAE6E6] rounded-full px-3 py-1 cursor-pointer ${
+                          toursearchData.duration === "upto1day" ? "bg-[#D7D6FD59]" : "bg-white"
+                        }`}
+                        onClick={() => setTourSearchData({ ...toursearchData, duration: "upto1day" })}
+                      >
                         <p>Upto 1 day</p>
                       </div>
-                      <div className="bg-white border border-[#EAE6E6] rounded-full px-3 py-1">
+                      <div
+                        className={`bg-white border border-[#EAE6E6] rounded-full px-3 py-1 cursor-pointer ${
+                          toursearchData.duration === "2to3days" ? "bg-[#D7D6FD59]" : ""
+                        }`}
+                        onClick={() => setTourSearchData({ ...toursearchData, duration: "2to3days" })}
+                      >
                         <p>2 to 3 days</p>
                       </div>
-                      <div className="bg-white border border-[#EAE6E6] rounded-full px-3 py-1">
+                      <div
+                        className={`bg-white border border-[#EAE6E6] rounded-full px-3 py-1 cursor-pointer ${
+                          toursearchData.duration === "5to7days" ? "bg-[#D7D6FD59]" : ""
+                        }`}
+                        onClick={() => setTourSearchData({ ...toursearchData, duration: "5to7days" })}
+                      >
                         <p>5 to 7 days</p>
                       </div>
-                      <div className="bg-white border border-[#EAE6E6] rounded-full px-3 py-1">
+                      <div
+                        className={`bg-white border border-[#EAE6E6] rounded-full px-3 py-1 cursor-pointer ${
+                          toursearchData.duration === "7plusdays" ? "bg-[#D7D6FD59]" : ""
+                        }`}
+                        onClick={() => setTourSearchData({ ...toursearchData, duration: "7plusdays" })}
+                      >
                         <p>7 + days</p>
                       </div>
                     </div>
@@ -162,62 +255,32 @@ const HeroSection = () => {
                   <div className="flex flex-col gap-3 border-b border-[#DADADA] py-2">
                     <p className="text-black text-[14px]">Price Range</p>
                     <div className="w-[80%]">
-                      {/* Range */}
+                      {/* Your Slider component */}
                       <Slider
-                        getAriaLabel={() => "Temperature range"}
-                        value={value}
-                        onChange={handleChange}
+                        getAriaLabel={() => "Price range"}
+                        value={[toursearchData.minPrice, toursearchData.maxPrice]}
+                        onChange={(_, newValue) =>
+                          {setTourSearchData({
+                            ...toursearchData,
+                            minPrice: newValue[0],
+                            maxPrice: newValue[1]
+                          })
+                          console.log(toursearchData);}
+                        }
                         valueLabelDisplay="auto"
-                        getAriaValueText={valuetext}
+                        aria-labelledby="range-slider"
                         min={0}
                         max={100000}
                         color="#FFFFFF"
                         track="#B6B5B5"
                       />
                     </div>
-                    <div className="flex gap-2 w-[80%]">
-                      <div className="flex ">
-                        <div className="bg-[#C1C1C33D] text-[#848282] text-[13px] flex items-center px-2 py-1 border border-[#DDDDDE]">
-                          <p>Min</p>
-                        </div>
-                        <div
-                          className={`bg-[#FFFFFF3D] text-[#000000] text-[13px] flex items-center gap-1 px-2 border border-[#DDDDDE] border-l-0 ${styles.HeroPrice}`}
-                        >
-                          <p>INR</p>
-                          <input
-                            type="number"
-                            placeholder="0"
-                            className="bg-[#FFFFFF3D] placeholder:text-[#000000] outline-none w-full"
-                          />
-                        </div>
-                      </div>
-                      <div className="flex ">
-                        <div className="bg-[#C1C1C33D] text-[#848282] text-[13px] flex items-center px-2 py-1 border border-[#DDDDDE]">
-                          <p>Max</p>
-                        </div>
-                        <div
-                          className={`bg-[#FFFFFF3D] text-[#000000] text-[13px] flex items-center gap-1 px-2 border border-[#DDDDDE] border-l-0 ${styles.HeroPrice}`}
-                        >
-                          <p>INR</p>
-                          <input
-                            type="number"
-                            placeholder="0"
-                            className="bg-[#FFFFFF3D] placeholder:text-[#000000] outline-none w-full"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="border-b border-[#DADADA] py-2">
-                    <div className="flex items-center gap-1 text-[11px] text-[#514E4E]">
-                      <input type="checkbox" name="confirm" id="confirm" />
-                      <label htmlFor="confirm" className="cursor-pointer">
-                        I want Flights to be Included
-                      </label>
-                    </div>
                   </div>
                   <div className="pt-2 flex justify-end">
-                    <button className="bg-[#CA1C26] text-white uppercase font-int text-[14px] px-4 py-[6px] rounded-sm hover:border hover:border-dotted xsm:text-[13px] xsm:px-7 xsm:py-[6px]">
+                    <button
+                      onClick={handleTourSearch}
+                      className="bg-[#CA1C26] text-white uppercase font-int text-[14px] px-4 py-[6px] rounded-sm hover:border hover:border-dotted xsm:text-[13px] xsm:px-7 xsm:py-[6px]"
+                    >
                       Search For Trip
                     </button>
                   </div>
@@ -258,29 +321,17 @@ const HeroSection = () => {
                     />
                     <div>
                       <p className="text-[#000000] text-[12.5px]">Location</p>
-                      <p className="text-[#9E9E9E] text-[10px]">
-                        Where Are You Going ?
-                      </p>
+                      <p className="text-[#9E9E9E] text-[10px]">{activitiesSearchData.location === "" ? "Where Are You Going ?" : activitiesSearchData.location}</p>
                     </div>
                   </div>
-                  {locationFilter ? (
+                  {locationFilter && (
                     <div className="absolute bg-[#F6F6F6] top-[100%] right-0 px-3 py-2 rounded shadow-lg shadow-[#00000021]">
-                      <h1 className="text-[#000000] text-[12.5px]">
-                        Popular destinations
-                      </h1>
+                      <h1 className="text-[#000000] text-[12.5px]">Popular destinations</h1>
                       <div className="text-[#515556] text-[11.5px] mt-1 overflow-y-auto h-[70px] noScroll">
-                        <p>Shimla</p>
-                        <p>Manali</p>
-                        <p>Shimla</p>
-                        <p>Manali</p>
-                        <p>Shimla</p>
-                        <p>Manali</p>
-                        <p>Shimla</p>
-                        <p>Manali</p>
+                        <p onClick={() => handleLocationSelect("Shimla")}>Shimla</p>
+                        <p onClick={() => handleLocationSelect("Manali")}>Manali</p>
                       </div>
                     </div>
-                  ) : (
-                    <></>
                   )}
                 </div>
                 <div className="border-r border-[#01008036] py-1 cursor-pointer relative">
@@ -320,12 +371,8 @@ const HeroSection = () => {
                       alt=""
                     />
                     <div>
-                      <p className="text-[#000000] text-[12.5px]">
-                        No. of Person
-                      </p>
-                      <p className="text-[#9E9E9E] text-[10px]">
-                        2 Adult 1 Child
-                      </p>
+                      <p className="text-[#000000] text-[12.5px]">No. of Person</p>
+                      <p className="text-[#9E9E9E] text-[10px]">{`${activitiesSearchData.adults} Adult ${activitiesSearchData.child} Child`}</p>
                     </div>
                   </div>
                   {personcntFilter && (
@@ -338,14 +385,16 @@ const HeroSection = () => {
                               className="w-3 h-3"
                               src={"/Assets/Icons/Herominus.svg"}
                               alt=""
+                              onClick={() => handleAdultsChange(parseInt(activitiesSearchData.adults) - 1)}
                             />
                           </div>
-                          <p className="text-[#000000] text-[16px]">1</p>
+                          <p className="text-[#000000] text-[16px]">{activitiesSearchData.adults}</p>
                           <div className="bg-[#FFFFFF] rounded-full p-1">
                             <img
                               className="w-3 h-3"
                               src={"/Assets/Icons/Heroplus.svg"}
                               alt=""
+                              onClick={() => handleAdultsChange(parseInt(activitiesSearchData.adults) + 1)}
                             />
                           </div>
                         </div>
@@ -358,14 +407,16 @@ const HeroSection = () => {
                               className="w-3 h-3"
                               src={"/Assets/Icons/Herominus.svg"}
                               alt=""
+                              onClick={() => handleChildrenChange(parseInt(activitiesSearchData.child) - 1)}
                             />
                           </div>
-                          <p className="text-[#000000] text-[16px]">1</p>
+                          <p className="text-[#000000] text-[16px]">{activitiesSearchData.child}</p>
                           <div className="bg-[#FFFFFF] rounded-full p-1">
                             <img
                               className="w-3 h-3"
                               src={"/Assets/Icons/Heroplus.svg"}
                               alt=""
+                              onClick={() => handleChildrenChange(parseInt(activitiesSearchData.child) + 1)}
                             />
                           </div>
                         </div>
@@ -374,11 +425,12 @@ const HeroSection = () => {
                   )}
                 </div>
                 <div className="w-full flex justify-end">
-                  <button className="bg-[#CA1C26] text-white uppercase font-int text-[12px] px-3 py-[6px] rounded hover:border hover:border-dotted xsm:text-[13px] xsm:px-7 xsm:py-[6px]">
+                  <button onClick={handleActivitySearch} className="bg-[#CA1C26] text-white uppercase font-int text-[12px] px-3 py-[6px] rounded hover:border hover:border-dotted xsm:text-[13px] xsm:px-7 xsm:py-[6px]">
                     Search Now{" "}
                   </button>
                 </div>
               </div>
+
             </div>
           )}
 

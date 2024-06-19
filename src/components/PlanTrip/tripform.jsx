@@ -13,7 +13,7 @@ import axios from "axios";
 
 const Tripform = () => {
   const formData = new FormData();
-  const { headerdata, setrender } = useContext(Tripprovider);
+  const { headerdata, setheaderdata, setrender } = useContext(Tripprovider);
   const [userData, setUserData] = useState({
     name: "",
     phone: "",
@@ -21,14 +21,44 @@ const Tripform = () => {
   });
   console.log(headerdata);
 
+  // const setHeaderData = (newUserData) => {
+  //   setHeaderData((prevUserData) => ({
+  //     ...prevUserData,
+  //     ...newUserData,
+  //   }));
+    // Additional logic to update header using newUserData
+    // For example:
+    // updateHeader(newUserData); // Assume updateHeader is a function to update header
+  // };
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUserData({ ...userData, [name]: value });
   };
 
-  function handleSubmit() {
+  const handleSubmit = async () => {
     if (!userData.name || !userData.phone || !userData?.email) {
+
     } else {
+      setheaderdata((prevUserData) => ({
+        ...prevUserData,
+        name: userData.name,
+        phone: userData.phone,
+        email: userData.email,      
+      }));
+      console.log(headerdata);
+      // console.log(userData);
+
+      try {
+        const res = await axios.post(
+          "https://staging.trackitinerary.com/apis/packages/query",
+          headerdata,
+        );
+        console.log(res);
+        toast.success("Send Query Successfully");
+      } catch (error) {
+        console.log(error);
+      }
       setrender("");
     }
   }
