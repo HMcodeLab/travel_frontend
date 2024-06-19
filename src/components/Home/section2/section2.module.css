@@ -14,10 +14,31 @@
 }
 
 .vertical_cards {
-  display: flex;
-  flex-direction: column;
-  gap: 1vw;
-  justify-content: space-between;
+  /* border: 1px solid red; */
+  height: 85vh;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 3.33vh;
+}
+
+.vertical_cards > div {
+  height: 25.3vh;
+  width: 100%;
+  position: relative;
+}
+
+.vertical_cards p {
+  position: absolute;
+  bottom: 1rem;
+  left: 2rem;
+  text-transform: capitalize;
+  color: white;
+}
+
+.vertical_cards img {
+  height: 100%;
+  /* border: 2px solid black; */
+  object-fit: cover;
 }
 
 .anim_cards {
@@ -35,6 +56,34 @@
   display: flex;
   flex-direction: column;
   gap: 1vw;
+}
+.places_card > div {
+  position: relative;
+}
+
+.places_card > div:nth-child(2n + 1) {
+  height: 33vh;
+}
+.places_card > div:nth-child(2n) {
+  height: 26vh;
+}
+.places_card img {
+  height: 100%;
+}
+.places2 > div:nth-child(2n + 1) {
+  height: 26vh;
+}
+.places2 > div:nth-child(2n) {
+  height: 33vh;
+}
+
+.places_card p {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  text-transform: capitalize;
 }
 
 @keyframes translateCards {

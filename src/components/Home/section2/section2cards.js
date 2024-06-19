@@ -7,12 +7,12 @@ import { animCardData1, animCardData2, animCardData3 } from '@/Data/cardImageDat
 
 const Section2Cards = () => {
     const [movingCard, setMovingCard] = useState();
-    
-    const fetchData = async (req,res) => {
+
+    const fetchData = async (req, res) => {
         try {
             const data = await fetch("https://staging.trackitinerary.com/apis/packages/package_category_with_city")
             const response = await data.json();
-            setMovingCard(response?.data)
+            setMovingCard(response?.data?.data)
             console.log(response?.data?.data);
         } catch (error) {
             console.error("Failed to fetch data:", error);
@@ -22,40 +22,56 @@ const Section2Cards = () => {
     useEffect(() => {
         fetchData();
     }, [])
-    
+
 
     return (
         <div className={styles.card_section_main}>
             <div className={styles.vertical_cards}>
-                <Image src={'/Assets/Images/section2cards/c1.png'} alt="image 1" width={1000} height={1000} />
-                <Image src={'/Assets/Images/section2cards/c2.png'} alt="image 1" width={1000} height={1000} />
-                <Image src={'/Assets/Images/section2cards/c3.png'} alt="image 1" width={1000} height={1000} />
+                {
+                    movingCard?.slice(0, 3).map((val, ind) => {
+                        return (
+                            <div>
+                                <Image src={val.image} height={1000} width={1000} />
+                                <p>{val?.title}</p>
+                            </div>
+                        )
+                    })
+                }
             </div>
             <div className={styles.anim_cards}>
                 <span>
                     <div className={styles.places_card}>
                         {
-                            animCardData1?.map((data, ind) => {
+                            movingCard?.slice(3, 9)?.map((data, ind) => {
                                 return (
-                                    <Image key={ind} src={data.imagedata} alt={"..."} height={1000} width={1000} />
+                                    <div>
+                                        <Image src={data.image} height={1000} width={1000} />
+                                        <p>{data?.title}</p>
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
+                    <div className={`${styles.places_card} ${styles.places2}`}>
+                        {
+                            movingCard?.slice(3, 9)?.map((data, ind) => {
+                                return (
+                                    <div>
+                                        <Image src={data.image} height={1000} width={1000} />
+                                        <p>{data?.title}</p>
+                                    </div>
                                 )
                             })
                         }
                     </div>
                     <div className={styles.places_card}>
                         {
-                            animCardData2?.map((data, ind) => {
+                            movingCard?.slice(3, 9)?.map((data, ind) => {
                                 return (
-                                    <Image key={ind} src={data.imagedata} alt={"..."} height={1000} width={1000} />
-                                )
-                            })
-                        }
-                    </div>
-                    <div className={styles.places_card}>
-                        {
-                            animCardData3?.map((data, ind) => {
-                                return (
-                                    <Image key={ind} src={data.imagedata} alt={"..."} height={1000} width={1000} />
+                                    <div>
+                                        <Image src={data.image} height={1000} width={1000} />
+                                        <p>{data?.title}</p>
+                                    </div>
                                 )
                             })
                         }
