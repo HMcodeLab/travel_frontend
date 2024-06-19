@@ -187,6 +187,13 @@
   .top_nav_main p {
     font-size: 0.6rem;
   }
+  .top_nav_main{
+    padding-inline: 30px;
+  }
+
+  .container {
+    padding-inline: 30px;
+  }
 
   .top_nav_main > div > span {
     background-color: white;
@@ -233,6 +240,10 @@
 
   /* navmenu  */
 
+  
+.nav_menu_main {
+  padding-inline: 30px;
+}
   .nav_menu_main p {
     font-size: 0.75rem;
   }
