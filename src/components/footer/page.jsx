@@ -14,7 +14,7 @@ const Footer = () => {
   return (
     <>
       <div className="w-full h-[60vh] footerbg  flex justify-center mt-10 xsm:h-fit font-Merri-sans">
-        <div className="w-full h-full flex flex-col justify-around ">
+        <div className="w-full h-full flex flex-col justify-around xsm:gap-3 xsm:pb-4">
           <div className="flex flex-col h-[80%] w-[80%] bg-[#CFCFEE2E] backdrop-blur-sm rounded-3xl shadow-md mx-auto xsm:w-[95%]">
             <div className="w-28 h-20 mx-auto -translate-y-8">
               <Image
@@ -109,8 +109,10 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="text-center text-[#838282] font-semibold ">
-            © 2024 TGE ALL RIGHTS RESERVED.
+          <div className="flex justify-center">
+            <p className="text-center text-[#838282] font-semibold bg-white w-max px-4 py-2 xsm:py-1 xsm:px-2">
+              © 2024 TGE ALL RIGHTS RESERVED.
+            </p>
           </div>
         </div>
       </div>

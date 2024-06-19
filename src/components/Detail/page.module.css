@@ -113,7 +113,7 @@
 }
 @media (min-width: 320px) and (max-width: 519px) {
   .card_main {
-    width: 240vw;
+    width: 260vw;
     overflow-x: hidden;
   }
 }
