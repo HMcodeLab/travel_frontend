@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect, useState } from 'react'
+import React, { Suspense, useEffect, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Cards from '@/components/card/page';
 import axios from 'axios';
@@ -38,19 +38,21 @@ const Search = () => {
 
     // console.log(cardsData)
     return (
-        <div className='px-[10vw]'>
-            <div className={styles.all_cards_main}>
-                {
-                    cardsData?.map((cardData, ind) => {
-                        return (
-                            <>
-                                <Cards key={ind} val={cardData} />
-                            </>
-                        )
-                    })
-                }
+        <Suspense>
+            <div className='px-[10vw]'>
+                <div className={styles.all_cards_main}>
+                    {
+                        cardsData?.map((cardData, ind) => {
+                            return (
+                                <>
+                                    <Cards key={ind} val={cardData} />
+                                </>
+                            )
+                        })
+                    }
+                </div>
             </div>
-        </div>
+        </Suspense>
     )
 }
 
