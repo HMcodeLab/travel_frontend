@@ -9,6 +9,7 @@ import "react-day-picker/dist/style.css";
 import SearchScroll from "../flipAnimation/flipanimation";
 import toast from "react-hot-toast";
 import axios from "axios";
+import SearchFilter from "../Home/searchFilter/searchfilter";
 
 function valuetext(value) {
   return `${value}°C`;

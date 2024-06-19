@@ -21,7 +21,7 @@ const Itinerary = ({ data }) => {
 
     const handleDropdownToggle = (index) => {
         setdropdown(prevState =>
-            prevState.map((item, ind) => (ind === index ? !item : item))
+            prevState?.map((item, ind) => (ind === index ? !item : item))
         );
     };
     return (

@@ -21,16 +21,16 @@ const Navmenu = () => {
         }
         Fetchdata()
     }, [])
-
+    console.log(allCategory)
     return (
         <div className={styles.nav_menu_main}>
             <div className={styles.places_images}>
                 <Link href='/' className='px-2  border-b border-b-[var(--primary)]' ><span><Image src={'/Assets/Icons/places/explore.svg'} width={1000} height={1000} alt='...' /> <p className='text-[var(--primary)] '>Explore</p></span></Link>
 
-                {
+                {allCategory?.length > 0 &&
                     allCategory?.map((item, ind) => {
                         return (
-                            <Link key={ind} href={`/destination?city_name=${item.name}&cityid=${item.city_id}`}><span><Image src={item.image || '/Assets/Icons/places/shimla.svg'} width={1000} height={1000} alt='...' /> <p>{item.name}</p></span></Link>
+                            <Link key={ind} href={`/destination?city_name=${item?.name}&cityid=${item?.city_id}`}><span><Image src={item?.image || '/Assets/Icons/places/shimla.svg'} width={1000} height={1000} alt='...' /> <p>{item?.name}</p></span></Link>
                         )
                     })
                 }
