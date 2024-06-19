@@ -14,13 +14,13 @@ const Section6 = () => {
     return (
         <div> <CommonHeading title={tl} description={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, modi? Lorem, ipsum dolor."} />
             <div className={styles.all_cards_main}>
-                {/* {
-                    CardsData?.map((val, ind) => {
+                {
+                    CardsData?.data?.map((val, ind) => {
                         return (
                             <Cards key={ind} val={val} />
                         )
                     })
-                } */}
+                }
             </div>
         </div>
     )

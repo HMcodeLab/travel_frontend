@@ -13,31 +13,35 @@ const Staycount = () => {
   const Holidays = [
     {
       title: "3-4 Nights",
+      value: "4 days 3 nights",
       color: "#FF9FA554",
       border: "#CA1C261F",
       special: false,
     },
     {
       title: "5-6 Nights",
+      value: "5 days 6 nights",
       color: "#C5C4FE36",
       border: "#CA1C261F",
       special: true,
     },
     {
       title: "7-8 Nights",
+      value: "7 days 8 nights",
       color: "#FF9FA554",
       border: "#CA1C261F",
       special: false,
     },
     {
       title: "6-5 Nights",
+      value: "6 days 5 nights",
       color: "#FFE5B254",
       border: "#CA1C261F",
       special: true,
     },
   ];
   function handleItem(item) {
-    setheaderdata((prevItems) => [...prevItems, item]);
+    setheaderdata((prevItems) => ({ ...prevItems, duration: item.value }));
     setrender("peopletype");
   }
   return (
@@ -53,7 +57,7 @@ const Staycount = () => {
               return (
                 <>
                   <div
-                    onClick={() => handleItem(item.title)}
+                    onClick={() => handleItem(item)}
                     className={`px-[10px] py-[20px] cursor-pointer relative  rounded `}
                     style={{
                       backgroundColor: item.color,

@@ -10,13 +10,14 @@ import Email from "../../../public/Icons/emailicon.svg";
 import { Tripprovider } from "./page";
 import Thankyou from "./thankyou";
 import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
 
 const Tripform = () => {
   const formData = new FormData();
   const { headerdata, setheaderdata, setrender } = useContext(Tripprovider);
   const [userData, setUserData] = useState({
     name: "",
-    phone: "",
+    mobile: "",
     email: "",
   });
   console.log(headerdata);
@@ -26,42 +27,45 @@ const Tripform = () => {
   //     ...prevUserData,
   //     ...newUserData,
   //   }));
-    // Additional logic to update header using newUserData
-    // For example:
-    // updateHeader(newUserData); // Assume updateHeader is a function to update header
+  // Additional logic to update header using newUserData
+  // For example:
+  // updateHeader(newUserData); // Assume updateHeader is a function to update header
   // };
-  
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUserData({ ...userData, [name]: value });
+    setheaderdata((prevUserData) => ({
+      ...prevUserData,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = async () => {
-    if (!userData.name || !userData.phone || !userData?.email) {
-
+    const formData = new FormData();
+    Object.keys(headerdata).forEach((val) => {
+      formData.append(val, headerdata[val]);
+    });
+    if (!userData.name || !userData.mobile || !userData?.email) {
+      toast.error("Enter valid Details");
     } else {
-      setheaderdata((prevUserData) => ({
-        ...prevUserData,
-        name: userData.name,
-        phone: userData.phone,
-        email: userData.email,      
-      }));
-      console.log(headerdata);
+      // console.log(headerdata);
       // console.log(userData);
 
       try {
         const res = await axios.post(
           "https://staging.trackitinerary.com/apis/packages/query",
-          headerdata,
+          formData
         );
-        console.log(res);
-        toast.success("Send Query Successfully");
+        // console.log(res);
+        setrender("");
+        // toast.success("Booking confirmed");
       } catch (error) {
+        toast.error("Enter Fields Properly");
         console.log(error);
       }
-      setrender("");
     }
-  }
+  };
 
   const applyFilter = async () => {
     try {
@@ -81,6 +85,7 @@ const Tripform = () => {
 
   return (
     <>
+      <Toaster />
       <div className="pl-14 pt-14 xsm:pl-4">
         <Commonheader />
         <div className="flex flex-col mt-8">
@@ -105,8 +110,8 @@ const Tripform = () => {
                 type="number"
                 className="w-full h-10 pl-14 focus:outline-none rounded border border-[#E4E4E4]"
                 placeholder="Phone No."
-                name="phone"
-                value={userData?.phone}
+                name="mobile"
+                value={userData?.mobile}
                 onChange={handleChange}
               />
             </div>

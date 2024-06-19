@@ -120,7 +120,7 @@ const Month = () => {
     },
   ];
   function handleItem(item) {
-    setheaderdata((prevItems) => [...prevItems, item]);
+    setheaderdata((prevItems) => ({ ...prevItems, month: item }));
     setrender("date");
   }
   return (

@@ -17,7 +17,7 @@ const Thankyou = ({ setPlanning }) => {
   }, [router]);
 
   const closeModal = () => {
-    console.log("first");
+    // console.log("first");
     setAnimationClass("fadeOutT");
     setTimeout(() => {
       handleClose();
@@ -29,7 +29,7 @@ const Thankyou = ({ setPlanning }) => {
   };
   return (
     <div
-      className="fixed top-0 h-screen w-full flex justify-center items-center z-50 bg-[#00000090]"
+      className="fixed top-0 h-screen w-full flex justify-center items-center z-[99999] bg-[#00000090]"
       onClick={closeModal}
     >
       <div

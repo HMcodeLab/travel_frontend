@@ -1,5 +1,5 @@
 "use client";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Commonheader from "./commonheader";
 import Favourite from "../../../public/Icons/favourite.svg";
 import Solo from "../../../public/Icons/solo.svg";
@@ -17,7 +17,7 @@ const Peopletype = () => {
     useContext(Tripprovider);
 
   const handleItem = (item) => {
-    setheaderdata((prevItems) => [...prevItems, item]);
+    setheaderdata((prevItems) => ({ ...prevItems, type: item }));
     setrender("form");
   };
 
@@ -94,6 +94,15 @@ const Peopletype = () => {
       return { ...prevState, [name]: newValue };
     });
   };
+
+  useEffect(() => {
+    setheaderdata((prev) => ({
+      ...prev,
+      adults: totalpeople?.adult,
+      children: totalpeople?.children,
+      roomsRequired: totalpeople?.room,
+    }));
+  }, [totalpeople]);
 
   return (
     <div className="pl-14 pt-10 relative xsm:pl-4">

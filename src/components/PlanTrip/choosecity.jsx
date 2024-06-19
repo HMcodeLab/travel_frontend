@@ -18,7 +18,7 @@ const Cities = ({ formData }) => {
   ];
   const { headerdata, setheaderdata, setrender } = useContext(Tripprovider);
   function handleItem(item) {
-    setheaderdata((prevItems) => [...prevItems, item]);
+    setheaderdata((prevItems) => ({ ...prevItems, to: item }));
     setrender("month");
   }
   return (

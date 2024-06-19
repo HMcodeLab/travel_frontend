@@ -19,7 +19,7 @@ console.log(BASE_URL);
 const Planningtriphome = ({ planning, setPlanning }) => {
   const [render, setrender] = useState("cities");
 
-  const [headerdata, setheaderdata] = useState([]);
+  const [headerdata, setheaderdata] = useState();
   const [animationClass, setAnimationClass] = useState("fadeInLeft");
   const [totalpeople, settotalpeople] = useState({
     room: 1,

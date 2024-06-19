@@ -6,12 +6,16 @@ import Image from "next/image";
 import Commonheader from "./commonheader";
 import Smallsun from "../../../public/Icons/smallsun.svg";
 import { Tripprovider } from "./page";
+import { formatDate } from "@/helpers/formatDate";
 
 const DateComponent = () => {
-  const [date, setDate] = useState(new Date());
+  const [date, setDate] = useState();
   const { headerdata, setrender, setheaderdata } = useContext(Tripprovider);
   function handleDateClick(d) {
+    console.log(d);
+    setDate(d);
     setrender("destination");
+    setheaderdata((prev) => ({ ...prev, departureDate: formatDate(d) }));
   }
   const months = [
     {
@@ -123,7 +127,7 @@ const DateComponent = () => {
       border: "#B2FFFA8F",
     },
   ];
-
+  console.log(date);
   return (
     <div className="pl-14 pt-14 xsm:pl-4">
       <Commonheader />

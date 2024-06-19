@@ -8,7 +8,7 @@ const Destinationcity = () => {
   const cities = ["Manali", "Kasol", "Shimla", "Delhi", "Bangalore"];
   const { headerdata, setheaderdata, setrender } = useContext(Tripprovider);
   function handleItem(item) {
-    setheaderdata((prevItems) => [...prevItems, item]);
+    setheaderdata((prevItems) => ({ ...prevItems, from: item }));
     setrender("staycount");
   }
   return (
