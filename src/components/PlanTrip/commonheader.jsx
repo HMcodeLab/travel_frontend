@@ -45,7 +45,7 @@ const Commonheader = () => {
       setrender(Rendercomponentdata[ind + 1]);
     }
   }
-  console.log(Object.keys(headerdata));
+  //   console.log(Object.keys(headerdata));
   return (
     <div className="flex flex-col gap-3 pr-3">
       <p className="text-xl font-Merri-sans font-semibold ">

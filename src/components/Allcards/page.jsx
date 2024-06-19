@@ -3,13 +3,14 @@ import Cards from "../card/page";
 import Image from "next/image";
 import Pointer from "../../../public/Icons/pointer.svg";
 const Allcards = ({ data, name }) => {
+  // console.log(data);
   return (
     <>
       <div className=" text-center font-bold text-3xl  w-fit border-b-4 border-[var(--primary)] mx-auto py-2 font-int">
         Explore {name}
       </div>
       <div className="grid grid-cols-3 w-full  gap-[50px]  h-auto bg-[#FAFAFA]">
-        {data?.map((item, ind) => {
+        {data?.data?.map((item, ind) => {
           return (
             <>
               <Cards key={ind} val={item} />
