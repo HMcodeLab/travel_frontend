@@ -9,7 +9,7 @@ const page = () => {
     <div>
         <HeroSection />
         <ActivitiesPackages/>
-        <div className='px-[169px] py-14' >
+        <div className='px-[169px] py-14 xsm:px-[15px] xsm:py-6' >
             <MorphBanner />
         </div>
         <Section7 />

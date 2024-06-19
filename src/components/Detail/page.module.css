@@ -111,3 +111,9 @@
     overflow-x: hidden;
   }
 }
+@media (min-width: 320px) and (max-width: 519px) {
+  .card_main {
+    width: 240vw;
+    overflow-x: hidden;
+  }
+}
