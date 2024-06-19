@@ -38,7 +38,7 @@ const Search = () => {
 
     // console.log(cardsData)
     return (
-        <Suspense>
+        <Suspense fallback={<div>Loading...</div>} >
             <div className='px-[10vw]'>
                 <div className={styles.all_cards_main}>
                     {
@@ -52,7 +52,7 @@ const Search = () => {
                     }
                 </div>
             </div>
-        </Suspense>
+        </Suspense >
     )
 }
 
