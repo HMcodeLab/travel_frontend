@@ -179,3 +179,21 @@
     transform: scale(0.5);
   }
 }
+
+
+
+@media (min-width: 320px) and (max-width: 519px) {
+  .heroBanner {
+    height: 300px;
+    width: 100%;
+  }
+  .section1 div {
+    font-size: 1.5rem;
+  }
+  .section2{
+    display: none;
+  }
+  .tabs_container {
+    gap: 0;
+  }
+}

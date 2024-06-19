@@ -49,6 +49,7 @@ const Destinationcontent = () => {
           height={1000}
           width={1000}
           alt="..."
+          className="xsm:h-[200px]"
         />
         <div className="absolute top-[82%] translate-y-[50%] left-[50%] translate-x-[-50%] h-16 p-1 border-2 border-white rounded-full bg-[var(--primary)]">
             <Image
@@ -58,10 +59,10 @@ const Destinationcontent = () => {
             />
           </div>
       </div>
-      <div className=" flex flex-col gap-[5vw] xsm:px-[5vw]">
+      <div className=" flex flex-col gap-[5vw] xsm:px-0">
         <CommonHead data={responsedata} />
         <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
-        <div className={`pl-[13%] pr-[9%] ${styles.details_flex}`}>
+        <div className={`pl-[13%] pr-[9%] xsm:px-[20px] ${styles.details_flex}`}>
           <div>
             {activeTab == 1 && <Overview data={responsedata} />}
             {activeTab == 2 && <Itinerary data={responsedata} />}
@@ -73,7 +74,7 @@ const Destinationcontent = () => {
             <ContactForm />
           </div>
         </div>
-        <div className="pl-[13%] pr-[9%] flex flex-col gap-[5vw] xsm:px-[5vw]">
+        <div className="pl-[13%] pr-[9%] flex flex-col gap-[5vw] xsm:px-[20px]">
           <Discount />
           <LastSection />
           <RequestCall />
@@ -87,11 +88,11 @@ export default Destinationcontent;
 
 export const CommonHead = ({ data }) => {
   return (
-    <div className={`pl-[13%] pr-[9%]  ${styles.commonHeadcontainer}`}>
+    <div className={`pl-[13%] pr-[9%] xsm:px-[20px] ${styles.commonHeadcontainer}`}>
       <div className={styles.section1}>
-        <div className={`${styles.highlightfirstletter}`}>
+        <div className={`xsm:text-[16px] ${styles.highlightfirstletter}`}>
           {/* <Cap text="Panormic Ladakh with umling la pass package" /> */}
-          <p><span>Panormic Ladakh </span> with umling <br />
+          <p><span>Panormic Ladakh </span> with umling <br className="xsm:hidden"/>
           <span>la pass</span> package</p>
           
         </div>
@@ -135,7 +136,7 @@ export const CommonHead = ({ data }) => {
 
 export const Tabs = ({ activeTab, setActiveTab }) => {
   return (
-    <div className={`pl-[13%] pr-[9%] ${styles.tabs_container}`}>
+    <div className={`pl-[13%] pr-[9%] xsm:px-[20px] ${styles.tabs_container}`}>
       <div onClick={() => setActiveTab(1)}>
         <span className={`py-1 ${activeTab == 1 ? styles.active : ""}`}>
           <Image

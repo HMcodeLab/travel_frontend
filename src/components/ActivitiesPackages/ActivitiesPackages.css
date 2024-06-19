@@ -112,3 +112,7 @@
     position: relative;
     z-index: 1;
   }
+
+.smallcaps{
+  font-variant: small-caps;
+}
