@@ -175,7 +175,7 @@ const HeroSection = () => {
             </div>
           </div>
           <div
-            className={`px-8 z-[99999] relative ${
+            className={`px-8 z-[999999999] relative ${
               activeFacility === "Tour"
                 ? "w-[100%] xsm:w-[100%]"
                 : activeFacility === "Activities"
@@ -198,7 +198,7 @@ const HeroSection = () => {
                       <p className="text-black text-[14px]">Trip Durations</p>
                       <div className="flex items-center gap-3 text-[#848181] text-[14px]">
                         <div
-                          className={`bg-white border border-[#EAE6E6] rounded-full px-3 py-1 cursor-pointer ${
+                          className={`border border-[#EAE6E6] rounded-full px-3 py-1 cursor-pointer ${
                             toursearchData.duration === "upto1day"
                               ? "bg-[#D7D6FD59]"
                               : "bg-white"
@@ -213,10 +213,10 @@ const HeroSection = () => {
                           <p>Upto 1 day</p>
                         </div>
                         <div
-                          className={`bg-white border border-[#EAE6E6] rounded-full px-3 py-1 cursor-pointer ${
+                          className={`border border-[#EAE6E6] rounded-full px-3 py-1 cursor-pointer ${
                             toursearchData.duration === "2to3days"
                               ? "bg-[#D7D6FD59]"
-                              : ""
+                              : "bg-white"
                           }`}
                           onClick={() =>
                             setTourSearchData({
@@ -228,10 +228,10 @@ const HeroSection = () => {
                           <p>2 to 3 days</p>
                         </div>
                         <div
-                          className={`bg-white border border-[#EAE6E6] rounded-full px-3 py-1 cursor-pointer ${
+                          className={`border border-[#EAE6E6] rounded-full px-3 py-1 cursor-pointer ${
                             toursearchData.duration === "5to7days"
                               ? "bg-[#D7D6FD59]"
-                              : ""
+                              : "bg-white"
                           }`}
                           onClick={() =>
                             setTourSearchData({
@@ -243,10 +243,10 @@ const HeroSection = () => {
                           <p>5 to 7 days</p>
                         </div>
                         <div
-                          className={`bg-white border border-[#EAE6E6] rounded-full px-3 py-1 cursor-pointer ${
+                          className={`border border-[#EAE6E6] rounded-full px-3 py-1 cursor-pointer ${
                             toursearchData.duration === "7plusdays"
                               ? "bg-[#D7D6FD59]"
-                              : ""
+                              : "bg-white"
                           }`}
                           onClick={() =>
                             setTourSearchData({
@@ -322,7 +322,11 @@ const HeroSection = () => {
                 <div className="grid grid-cols-4 items-center py-3 w-full px-5">
                   <div className="border-r border-[#01008036] py-1 cursor-pointer relative">
                     <div
-                      onClick={() => setLocationFilter(!locationFilter)}
+                      onClick={() => {
+                        setLocationFilter(!locationFilter)
+                        setactivityDate(false);
+                        setPersonFilter(false);
+                      }}
                       className="flex items-center gap-1"
                     >
                       <img
@@ -357,7 +361,11 @@ const HeroSection = () => {
                   </div>
                   <div className="border-r border-[#01008036] py-1 cursor-pointer relative">
                     <div
-                      onClick={() => setactivityDate(!ActivityDate)}
+                      onClick={() => {
+                        setLocationFilter(false)
+                        setactivityDate(!ActivityDate);
+                        setPersonFilter(false);
+                      }}
                       className="flex items-center justify-center gap-1"
                     >
                       <img
@@ -385,7 +393,11 @@ const HeroSection = () => {
                   </div>
                   <div className="py-1 cursor-pointer relative">
                     <div
-                      onClick={() => setPersonFilter(!personcntFilter)}
+                      onClick={() => {
+                        setLocationFilter(false)
+                        setactivityDate(false);
+                        setPersonFilter(!personcntFilter);
+                      }}
                       className="flex items-center justify-center gap-1 "
                     >
                       <img
