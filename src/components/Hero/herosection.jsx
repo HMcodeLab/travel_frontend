@@ -9,7 +9,7 @@ import "react-day-picker/dist/style.css";
 import SearchScroll from "../flipAnimation/flipanimation";
 import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
-import SearchFilter from "../Home/searchFilter/searchfilter";
+import { useRouter } from "next/navigation";
 
 function valuetext(value) {
   return `${value}°C`;
@@ -34,6 +34,7 @@ const HeroSection = () => {
     minPrice: "",
     maxPrice: "",
   });
+  const router = useRouter();
 
   const [activitiesSearchData, setActivitiesSearchData] = useState({
     location: "",
@@ -65,26 +66,8 @@ const HeroSection = () => {
   }, [Search]);
 
   const handleTourSearch = async () => {
-    try {
-      const apiUrl =
-        "https://staging.trackitinerary.com/apis/packages/search_filter_packages";
-      const res = await axios.post(apiUrl, toursearchData, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-
-      console.log(res);
-
-      if (res.data.status === 200) {
-        toast.success("Query sent successfully");
-      } else {
-        toast.error("Failed to send query");
-      }
-    } catch (error) {
-      console.log(error);
-      toast.error("Failed To send Query");
-    }
+    console.log(toursearchData);
+    router.push("/search?data=" + JSON.stringify(toursearchData));
   };
 
   const handleLocationSelect = (selectedLocation) => {
