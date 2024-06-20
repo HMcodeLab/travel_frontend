@@ -36,7 +36,7 @@ const Section2Cards = () => {
                             <div>
                                 <Link href={`/destination/?city_name=${val.name}&cityid=${val.city_id}`}>
                                 <Image src={val.image} height={1000} width={1000} />
-                                <p>{val?.title}</p>
+                                <p>{val?.name}</p>
                                 </Link>
                           
                             </div>
@@ -53,7 +53,7 @@ const Section2Cards = () => {
                                     <div>
                                         <Link href={`/destination/?city_name=${data?.name}&cityid=${data?.city_id}`}>
                                         <Image src={data.image} height={1000} width={1000} />
-                                        <p>{data?.title}</p>
+                                        <p>{data?.name}</p>
                                         </Link>
                                     </div>
                                 )
@@ -67,7 +67,7 @@ const Section2Cards = () => {
                                     <div>
                                            <Link href={`/destination/?city_name=${data?.name}&cityid=${data?.city_id}`}>
                                         <Image src={data.image} height={1000} width={1000} />
-                                        <p>{data?.title}</p>
+                                        <p>{data?.name}</p>
                                         </Link>
                                     </div>
                                 )
@@ -81,7 +81,7 @@ const Section2Cards = () => {
                                     <div>
                                            <Link href={`/destination/?city_name=${data?.name}&cityid=${data?.city_id}`}>
                                         <Image src={data.image} height={1000} width={1000} />
-                                        <p>{data?.title}</p>
+                                        <p>{data?.name}</p>
                                         </Link>
                                     </div>
                                 )
