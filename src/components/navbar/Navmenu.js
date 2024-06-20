@@ -21,7 +21,7 @@ const Navmenu = () => {
         }
         Fetchdata()
     }, [])
-    console.log(allCategory)
+    // console.log(allCategory)
     return (
         <div className={styles.nav_menu_main}>
             <div className={styles.places_images}>
