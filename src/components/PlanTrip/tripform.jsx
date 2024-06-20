@@ -89,10 +89,10 @@ const Tripform = () => {
       <div className="pl-14 pt-14 xsm:pl-4">
         <Commonheader />
         <div className="flex flex-col mt-8">
-          <p className="capitalize font-[500] font-Merri-sans text-xl">
+          <p className="capitalize font-[500] font-Merri-sans text-xl xsm:text-[0.9rem]">
             Enter your details to personalise your trip
           </p>
-          <div className="flex flex-col gap-5 w-[40%] font-Merri-sans pt-5">
+          <div className="flex flex-col gap-5 w-[40%] font-Merri-sans pt-5 xsm:w-[100%]">
             <div className="relative ">
               <Image alt="..." className="absolute top-2 left-5 " src={User} />
               <input

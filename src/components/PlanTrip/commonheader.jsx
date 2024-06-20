@@ -48,10 +48,10 @@ const Commonheader = () => {
   //   console.log(Object.keys(headerdata));
   return (
     <div className="flex flex-col gap-3 pr-3">
-      <p className="text-xl font-Merri-sans font-semibold ">
+      <p className="text-xl font-Merri-sans font-semibold xsm:text-[1rem]">
         NOW PLANNING YOUR HOLIDAY TO
       </p>
-      <div className="grid grid-cols-6 gap-2">
+      <div className="grid grid-cols-6 gap-2 xsm:flex xsm:flex-wrap">
         {Object.keys(trimmedData)?.map((item, ind) => {
           return (
             <>
@@ -60,7 +60,7 @@ const Commonheader = () => {
                 className="border cursor-pointer border-[#CA1C2654] rounded flex items-center gap-2  p-1 "
               >
                 <Image src={ICONS[ind]} alt="icon" />
-                <span className="font-[500] text-[#171717] text-lg font-Merri-sans capitalize">
+                <span className="font-[500] text-[#171717] text-lg font-Merri-sans capitalize xsm:text-[0.9rem]">
                   {headerdata[item]}
                 </span>
               </div>

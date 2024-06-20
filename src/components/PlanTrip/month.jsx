@@ -125,10 +125,10 @@ const Month = () => {
   }
   return (
     <>
-      <div className="pl-14 pt-14 xsm:pl-4">
+      <div className="pl-14 pt-14 xsm:pl-2">
         <Commonheader />
         <div className="flex flex-col mt-8">
-          <p className="capitalize font-[500] font-Merri-sans text-xl">
+          <p className="capitalize font-[500] font-Merri-sans text-xl xsm:text-md">
             Which month are you travelling?
           </p>
           <div className="grid grid-cols-6 gap-3 pr-3 mt-12 xsm:grid-cols-3 xsm:gap-1 xsm:pr-2 xsm:mt-5">
@@ -138,7 +138,7 @@ const Month = () => {
                   <div
                     onClick={() => handleItem(item.month)}
                     key={ind}
-                    className={`py-[34px] px-[7px] cursor-pointer relative  rounded xsm:h-[80px] xsm:w-fit xsm:px-2`}
+                    className={`py-[34px] px-[7px] cursor-pointer relative  rounded xsm:h-[80px] xsm:w-full xsm:gap-2 xsm:px-2`}
                     style={{
                       backgroundColor: item.color,
                       border: `1px solid ${item.border}`,
@@ -151,13 +151,13 @@ const Month = () => {
                     )}
                     <div className="flex justify-center items-center h-full w-full">
                       <div className="flex flex-col justify-center gap-1">
-                        <p className="text-center font-[500] text-lg font-Merri-sans capitalize">
+                        <p className="text-center font-[500] text-lg font-Merri-sans capitalize text-[1rem]">
                           {item.month}
                         </p>
-                        <p className="flex items-center ">
+                        <p className="flex items-center xsm:hidden">
                           <Image src={item.icon} alt="icon" />
-                          <span>{item.min} -</span>
-                          <span>{item.max}C</span>
+                          <span className="text-[0.85rem]">{item.min} -</span>
+                          <span className="text-[0.85rem]">{item.max}C</span>
                         </p>
                       </div>
                     </div>

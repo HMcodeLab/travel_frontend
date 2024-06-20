@@ -15,7 +15,7 @@ import Logo from '../../../public/Assets/Images/logo.png'
 
 const Navbar = ({ setEnquiryModal, setPlanning }) => {
 
-
+  const [activeCat, setActiveCat] = useState('tour');
   const path = usePathname();
 
   const router = useRouter();
@@ -36,7 +36,15 @@ const Navbar = ({ setEnquiryModal, setPlanning }) => {
         </div>
         <div className={styles.btn_section}>
           <button onClick={() => setPlanning(true)} > <Image src={PlanTrip} alt="..." /><p> PLAN A TRIP </p> </button>
-          <button onClick={() => setEnquiryModal(true)}> <p>Enquiry </p> <Image src={ArrowDown} alt="..." /> </button>
+          <button onClick={() => setEnquiryModal(true)} className="xsm:hidden"> <p>Enquiry </p> <Image src={ArrowDown} alt="..." /> </button>
+
+
+        </div>
+        <div className={styles.menu_btn_section_sm}>
+          <span>
+            <Link href={'/'} onClick={() => setActiveCat('tour')} className={activeCat == "tour" ? `${styles.active}` : `${styles.inactive}`}>TOUR</Link>
+            <Link href={'/activities'} onClick={() => setActiveCat('activity')} className={activeCat == "activity" ? `${styles.active}` : `${styles.inactive}`}>ACTIVITIES</Link>
+          </span>
         </div>
       </div>
 
