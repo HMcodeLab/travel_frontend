@@ -9,11 +9,10 @@
 
 .contact_main {
   margin-top: 3vh;
-  
+
   border: 1px solid #01008036;
   border-radius: 5px;
 }
-
 
 .contact_inner {
   margin: 4px;
@@ -24,7 +23,7 @@
 
 .contact_inner h2 {
   font-size: 1.4rem;
-  font-family: 'Merriweather-Sans';
+  font-family: "Merriweather-Sans";
   font-weight: 700;
   text-transform: uppercase;
   text-align: center;
@@ -45,7 +44,7 @@
 .form label {
   font-size: 14px;
   font-weight: 600;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   color: #000000;
 }
 .form > div {
@@ -54,8 +53,8 @@
   gap: 5px;
 }
 .form input {
-  border: 1px solid #CA1C265E;
-  border-radius: 4px; 
+  border: 1px solid #ca1c265e;
+  border-radius: 4px;
   padding-block: 4px;
   /* height: 28px; */
   padding-inline: 10px;
@@ -75,12 +74,12 @@
   list-style-type: disc;
   margin-left: 1.4rem;
   font-weight: 500;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
 }
 .card_main {
   display: flex;
   gap: 20px;
-  width: 55vw;
+  width: 50vw;
   justify-content: space-between;
   overflow-x: hidden;
 }

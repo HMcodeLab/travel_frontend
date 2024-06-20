@@ -52,9 +52,7 @@ const Footer = () => {
                   <Link href={"/about_us"} className={`${pstyle}`}>
                     About us
                   </Link>
-                  <Link href={"/support"} className={`${pstyle}`}>
-                    Support
-                  </Link>
+
                   <Link href={"/policy/copyright"} className={`${pstyle}`}>
                     Copyright Policies
                   </Link>
