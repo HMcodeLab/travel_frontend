@@ -5,7 +5,8 @@ import Kerela from '../../../public/kerala.png'
 import Cards from '../card/page'
 import styles from './page.module.css'
 
-const LastSection = () => {
+const LastSection = ({ data }) => {
+    console.log(data)
     return (
         <div className='w-full flex justify-between xsm:flex-col xsm:overflow-hidden' >
             <div className='flex flex-col w-[30%]  flex-wrap gap-3 xsm:w-[80%]'>
@@ -17,11 +18,12 @@ const LastSection = () => {
             <div className={`flex h-fit justify-between ${styles.card_main}`}>
 
                 {
-                    [1, 1, 1, 1].map((val, ind) => {
+                    data?.data?.slice(0, 4).map((val, ind) => {
                         return (
-                            <div>
-                                <Cards />
+                            <div className='w-[50%]'>
+                                <Cards val={val} />
                             </div>
+
 
                         )
                     })
