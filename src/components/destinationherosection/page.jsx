@@ -31,7 +31,7 @@ const Destinationherosection = ({ resp }) => {
           </p>
           <div className="flex justify-center w-full">
             <p className="px-5 py-2 cursor-pointer bg-red-700 text-white rounded xsm:text-[12px] xsm:px-3 xsm:py-1">
-              EXPLORE LADAKH
+              EXPLORE : {ele.package_name}
             </p>
           </div>
           <div className="absolute top-[100%]  translate-y-[50%] left-[50%] translate-x-[-50%] h-16 p-1 border-2 border-white rounded-full bg-[var(--primary)] xsm:top-[80%]">
