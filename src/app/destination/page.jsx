@@ -55,7 +55,7 @@ const DestinationContentInner = () => {
 
   return (
     <>
-      <Destinationherosection name={city_name} />
+      <Destinationherosection  resp={Alldata}  />
       <div className="px-[var(--padding-inline)] flex flex-col gap-[5vh] my-[5vh]">
         <Allcards data={Alldata} name={city_name} />
 
