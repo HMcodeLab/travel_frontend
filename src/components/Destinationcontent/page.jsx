@@ -42,15 +42,18 @@ const Destinationcontent = () => {
   const [activeTab, setActiveTab] = useState(1);
 
   return (
-    <div className={styles.main_container}>
+    <div className= {styles.main_container}>
+      {responsedata?.map((ele)=>{
+        return <div className="desti_details_wrapper">
       <div className={styles.heroBanner}>
         <Image
-          src={"/Assets/Images/ladakhBanner.png"}
+          src={ele.pdf_image}
           height={1000}
           width={1000}
           alt="..."
           className="xsm:h-[200px]"
         />
+        <h1 className="desti_details_heading">{ele.package_name}</h1>
         <div className="absolute top-[82%] translate-y-[50%] left-[50%] translate-x-[-50%] h-16 p-1 border-2 border-white rounded-full bg-[var(--primary)]">
             <Image
               src={Down}
@@ -80,6 +83,9 @@ const Destinationcontent = () => {
           <RequestCall />
         </div>
       </div>
+
+        </div>
+      })}
     </div>
   );
 };

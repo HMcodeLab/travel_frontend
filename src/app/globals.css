@@ -105,3 +105,13 @@ img.destinations_background_image {
   background-size: cover!important;
   height: 100%!important;
 }
+h1.desti_details_heading {
+  position: absolute;
+  text-align: center;
+  left: 0;
+  right: 0;
+  bottom: 200px;
+  font-size: 56px;
+  font-weight: bold;
+  color: #ca1c26;
+}
