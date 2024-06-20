@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 
 const ActivitiesPackages = ({ data }) => {
   const router = useRouter();
-  console.log(data);
+  //   console.log(data);
   if (data?.length == 0 || data == undefined) {
     return <>Loading...</>;
   }
@@ -28,7 +28,7 @@ const ActivitiesPackages = ({ data }) => {
         </div>
       </div>
       <div className="xsm:block hidden">
-        <PhoneActivitiesPackage />
+        <PhoneActivitiesPackage data={data} />
       </div>
       <div className="grid grid-cols-3 gap-3 xsm:hidden">
         <div
@@ -138,6 +138,11 @@ const ActivitiesPackages = ({ data }) => {
           style={{
             backgroundImage: `url(${data[4]?.pdf_image})`,
           }}
+          onClick={() =>
+            router.push(
+              `/destination?city_name=${data[4]?.package_name}&cityid=${data[4]?.city_id}`
+            )
+          }
         >
           <div className="relative z-10 flex items-center gap-2">
             <p className="uppercase text-[20px] font-normal tracking-wider">

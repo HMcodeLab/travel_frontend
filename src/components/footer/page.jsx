@@ -54,7 +54,6 @@ const Footer = () => {
                   <Link href={"/policy/terms"} className={`${pstyle}`}>
                     Teams & Conditions
                   </Link>
-                  <p className={`${pstyle}`}>Posts</p>
                 </div>
                 <div className="flex flex-col gap-3">
                   <p className="text-[16px] font-semibold xsm:text-[12px] ">

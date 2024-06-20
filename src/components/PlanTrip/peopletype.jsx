@@ -111,23 +111,27 @@ const Peopletype = () => {
         <p className="capitalize font-[550] font-Merri-sans text-xl">
           Who is travelling with you?
         </p>
-        <div className="grid grid-cols-5 pr-3 mt-6">
+        <div className="grid grid-cols-5 pr-3 mt-6 xsm:grid-cols-2 xsm:gap-2">
           {Holidays.map((item) => (
             <div
               key={item.title}
               onClick={() => handleClick(item.title)}
-              className={`h-[140px] cursor-pointer w-[130px] relative border ${item.border} bg-white rounded`}
+              className={`h-[140px] cursor-pointer w-[130px] relative border ${item.border} bg-white rounded xsm:w-[110px] xsm:h-[120px]`}
             >
               {item.special && (
                 <div className="absolute top-0 right-0">
                   <Image src={Favourite} alt="favourite" />
                 </div>
               )}
-              <div className="flex justify-center items-center h-full w-full">
-                <div className="flex flex-col gap-1">
-                  <Image src={item.icon} alt="icon" />
+              <div className="flex justify-center items-center h-full w-full ">
+                <div className="flex flex-col gap-1 xsm:items-center xsm:justify-center">
+                  <Image
+                    src={item.icon}
+                    alt="icon"
+                    className="xsm:h-[80%] w-[80%]"
+                  />
                   <p
-                    className="text-center font-[500] text-[18px] font-Merri-sans capitalize"
+                    className="text-center font-[500] text-[18px] font-Merri-sans capitalize xsm:text-[15px]"
                     style={{ color: item.color }}
                   >
                     {item.title}

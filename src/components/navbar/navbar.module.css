@@ -182,17 +182,25 @@
   color: black;
   transition: all 0.3s linear;
 }
+.menu_btn_section_sm {
+  display: none;
+}
 
 @media (max-width: 700px) {
   .top_nav_main p {
     font-size: 0.6rem;
   }
-  .top_nav_main{
+  .top_nav_main {
     padding-inline: 30px;
   }
 
   .container {
     padding-inline: 30px;
+  }
+  .container img {
+    height: 48px;
+    width: auto;
+    /* border: 1px solid red; */
   }
 
   .top_nav_main > div > span {
@@ -205,7 +213,9 @@
     width: 13px;
   }
 
-  /* navbar */
+  .btn_section > button:nth-child(2) {
+    display: none;
+  }
 
   .navmenu {
     display: none;
@@ -226,7 +236,7 @@
     align-items: center;
     justify-content: center;
     padding: 2px 5px;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     border-radius: 5px;
   }
   .btn_section p {
@@ -234,16 +244,15 @@
   }
 
   .btn_section button img {
-    height: 20px;
-    width: 20px;
+    height: 17px;
+    width: 17px;
   }
 
   /* navmenu  */
 
-  
-.nav_menu_main {
-  padding-inline: 30px;
-}
+  .nav_menu_main {
+    padding-inline: 30px;
+  }
   .nav_menu_main p {
     font-size: 0.75rem;
   }
@@ -254,5 +263,23 @@
   }
   .menu_btn_section {
     display: none;
+  }
+  .menu_btn_section_sm {
+    display: grid;
+  }
+  .menu_btn_section_sm span {
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 0px 0px;
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    font-size: 0.8rem;
+  }
+
+  .menu_btn_section_sm a {
+    padding-inline: 3px;
   }
 }

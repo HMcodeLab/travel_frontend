@@ -52,7 +52,7 @@ const Staycount = () => {
           <p className="capitalize font-[500] font-Merri-sans text-xl">
             What is the duration of your holiday?
           </p>
-          <div className="grid grid-cols-6 gap-3 pr-3 mt-12">
+          <div className="grid grid-cols-6 gap-3 pr-3 mt-12 xsm:grid-cols-2">
             {Holidays.map((item) => {
               return (
                 <>

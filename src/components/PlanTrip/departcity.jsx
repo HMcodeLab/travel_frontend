@@ -25,16 +25,16 @@ const Destinationcity = () => {
             className="absolute top-2 left-2 h-5 w-6"
           />
           <input
-            className="w-[60%] rounded pl-9 focus:outline-none"
+            className="w-[60%] rounded pl-9 focus:outline-none xsm:w-full"
             placeholder="Type departing City "
           />
         </div>
-        <div className="flex flex-col gap-5 pl-5 mt-5 font-Merri-sans">
+        <div className="flex flex-col gap-5 pl-5 mt-5 font-Merri-sans xsm:gap-3">
           {cities?.map((item) => {
             return (
               <>
                 <p
-                  className="font-semibold text-xl cursor-pointer"
+                  className="font-semibold text-xl cursor-pointer xsm:text-[1.1rem]"
                   onClick={() => handleItem(item)}
                 >
                   {item}

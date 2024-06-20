@@ -188,15 +188,15 @@ const HeroSection = () => {
           >
             {activeFacility === "Tour" &&
               (Search ? (
-                <div className="bg-[#F6F6F6] rounded-t-3xl rounded-b flex flex-col shadow-lg shadow-[#00000021] absolute top-0 w-full">
+                <div className="bg-[#F6F6F6] rounded-t-3xl rounded-b flex flex-col shadow-lg shadow-[#00000021] absolute top-0 w-[65vw]">
                   <input
-                    className="w-full text-[#000000] placeholder:text-[#848383] bg-[#F6F6F6] flex justify-center text-[14px] rounded-full pl-16 py-2 shadow-sm shadow-[#00000021] outline-none h-[55px]"
+                    className="w-full text-[#000000] placeholder:text-[#848383] bg-[#F6F6F6] flex justify-center text-[14px] rounded-full pl-16 py-2 shadow-sm shadow-[#00000021] outline-none h-[55px] xsm:h-[45px] xsm:pl-5"
                     placeholder="Search For Destinations..."
                   />
-                  <div className="px-16 py-4">
+                  <div className="px-16 py-4 xsm:px-5">
                     <div className="flex flex-col gap-3 border-b border-[#DADADA] py-2">
                       <p className="text-black text-[14px]">Trip Durations</p>
-                      <div className="flex items-center gap-3 text-[#848181] text-[14px]">
+                      <div className="flex items-center gap-3 text-[#848181] text-[14px] xsm:gap-3 xsm:grid xsm:grid-cols-2">
                         <div
                           className={`border border-[#EAE6E6] rounded-full px-3 py-1 cursor-pointer ${
                             toursearchData.duration === "upto1day"
@@ -289,7 +289,7 @@ const HeroSection = () => {
                     <div className="pt-2 flex justify-end">
                       <button
                         onClick={handleTourSearch}
-                        className="bg-[#CA1C26] text-white uppercase font-int text-[14px] px-4 py-[6px] rounded-sm hover:border hover:border-dotted xsm:text-[13px] xsm:px-7 xsm:py-[6px]"
+                        className="bg-[#CA1C26] text-white uppercase font-int text-[14px] px-4 py-[6px] rounded-sm hover:border hover:border-dotted xsm:px-7 xsm:py-[6px] xsm:text-[10px]"
                       >
                         Search For Trip
                       </button>
@@ -299,9 +299,9 @@ const HeroSection = () => {
               ) : (
                 <div
                   onClick={() => setSearch(true)}
-                  className="bg-[#F6F6F6] rounded-full flex items-center justify-between shadow-md shadow-[#00000021] cursor-pointer w-full h-[55px]"
+                  className="bg-[#F6F6F6] rounded-full flex items-center justify-between shadow-md shadow-[#00000021] cursor-pointer w-full h-[55px] xsm:h-[45px]"
                 >
-                  <div className="w-full text-[#848383] flex justify-center text-[14px]">
+                  <div className="w-full text-[#848383] flex justify-center text-[14px] xsm:text-[13px]">
                     <p>
                       Search For{" "}
                       <span className="text-[#000000]">Himachal</span>
@@ -323,7 +323,7 @@ const HeroSection = () => {
                   <div className="border-r border-[#01008036] py-1 cursor-pointer relative">
                     <div
                       onClick={() => {
-                        setLocationFilter(!locationFilter)
+                        setLocationFilter(!locationFilter);
                         setactivityDate(false);
                         setPersonFilter(false);
                       }}
@@ -362,7 +362,7 @@ const HeroSection = () => {
                   <div className="border-r border-[#01008036] py-1 cursor-pointer relative">
                     <div
                       onClick={() => {
-                        setLocationFilter(false)
+                        setLocationFilter(false);
                         setactivityDate(!ActivityDate);
                         setPersonFilter(false);
                       }}
@@ -394,7 +394,7 @@ const HeroSection = () => {
                   <div className="py-1 cursor-pointer relative">
                     <div
                       onClick={() => {
-                        setLocationFilter(false)
+                        setLocationFilter(false);
                         setactivityDate(false);
                         setPersonFilter(!personcntFilter);
                       }}
