@@ -11,13 +11,13 @@ const TopNav = () => {
                 <span>
                     <Image alt='...' src={'Assets/Icons/email.svg'} width={1000} height={1000} />
                 </span>
-                <p>tourwithtge23@gmail.com</p>
+                <a href='mailto:tourwithtge23@gmail.com'>tourwithtge23@gmail.com</a>
             </div>
             <div>
                 <span>
                     <Image alt='...' src={'/Assets/Icons/phone_nav.svg'} width={1000} height={1000} />
                 </span>
-                <p>+91 67535 57043</p>
+                <a href='tel:+91 67535 57043'>+91 67535 57043</a>
             </div>
         </div>
     )

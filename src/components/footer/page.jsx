@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Tge from "../../../public/tge.png";
 import Call from "../../../public/Assets/Icons/phone.svg";
@@ -8,8 +10,24 @@ import Youtube from "../../../public/Icons/youtube.svg";
 
 import "./footer.css";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { BASE_URL } from "@/helpers/baseurl";
 const Footer = () => {
   const pstyle = "text-[14px]";
+
+  const [allCategory, setallCategory] = useState([]);
+  useEffect(() => {
+    async function Fetchdata() {
+      try {
+        const data = await fetch(BASE_URL + "/package_category_with_city_tge");
+        const response = await data.json();
+        setallCategory(response?.data);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    Fetchdata();
+  }, []);
 
   return (
     <>
@@ -52,24 +70,31 @@ const Footer = () => {
                     Refund Policy
                   </Link>
                   <Link href={"/policy/terms"} className={`${pstyle}`}>
-                    Teams & Conditions
+                    Terms & Conditions
                   </Link>
                 </div>
                 <div className="flex flex-col gap-3">
-                  <p className="text-[16px] font-semibold xsm:text-[12px] ">
+                  {/* <p className="text-[16px] font-semibold xsm:text-[12px] ">
                     CONTACT US{" "}
-                  </p>
+                  </p>  */}
                   <p className="flex items-center gap-1">
                     <span className="bg-[var(--primary)] rounded-full p-[6px] flex justify-center items-center">
                       <Image src={Call} alt="..." />
                     </span>
-                    <span className={`${pstyle}`}>+91 67535 57043</span>
+                    <a href={"tel:+91 67535 57043"} className={`${pstyle}`}>
+                      +91 67535 57043
+                    </a>
                   </p>
                   <p className="flex items-center gap-1">
                     <span className="bg-[var(--primary)] rounded-full p-[6px] flex justify-center items-center">
                       <Image src={Message} alt="..." />
                     </span>
-                    <span className={`${pstyle}`}>tourwithtge23@gmail.com</span>
+                    <a
+                      href="mailto:tourwithtge23@gmail.com"
+                      className={`${pstyle}`}
+                    >
+                      tourwithtge23@gmail.com
+                    </a>
                   </p>
                   <p className="flex gap-4">
                     <Image src={Fb} alt="..." />
@@ -83,27 +108,32 @@ const Footer = () => {
                 <p className="text-[#595858] text-xl font-semibold">
                   Travel Destinations
                 </p>
-                <div className="grid grid-cols-3 gap-2">
-                  <div className="flex justify-center items-center w-24 h-24 beaches text-white ">
-                    Beaches
-                  </div>
-                  <div className="flex justify-center items-center w-24 h-24 bali text-white">
-                    Bali
-                  </div>
-                  <div className="flex justify-center items-center w-24 h-24 prague text-white">
-                    Prague
-                  </div>
-                </div>
-                <div className="grid grid-cols-3 gap-2 mt-2">
-                  <div className="flex justify-center items-center w-24 h-24 usa text-white">
-                    USA
-                  </div>
-                  <div className="flex justify-center items-center w-24 h-24 china text-white">
-                    China
-                  </div>
-                  <div className="flex justify-center items-center w-24 h-24 paris text-white">
-                    Paris
-                  </div>
+                <div className="grid grid-cols-3 gap-2 ">
+                  {allCategory?.length > 0 &&
+                    allCategory?.slice(0, 6)?.map((item, ind) => {
+                      return (
+                        <Link
+                          key={ind}
+                          href={`/destination?city_name=${item?.name}&cityid=${item?.city_id}`}
+                          className="h-[5rem] w-[5rem]"
+                        >
+                          <span className="relative">
+                            <Image
+                              src={
+                                item?.image || "/Assets/Icons/places/shimla.svg"
+                              }
+                              width={1000}
+                              height={1000}
+                              alt="..."
+                              className="h-full w-full"
+                            />{" "}
+                            <p className="text-white absolute bottom-2 text-[0.6rem] text-center w-full">
+                              {item?.name}
+                            </p>
+                          </span>
+                        </Link>
+                      );
+                    })}
                 </div>
               </div>
             </div>
