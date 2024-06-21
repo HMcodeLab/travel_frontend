@@ -11,22 +11,27 @@
   font-family: Merriweather-sans;
   src: url("../../public/fonts/MerriweatherSans.ttf");
 }
+
 @font-face {
   font-family: Merriweather;
   src: url("../../public/fonts/Merriweather.ttf");
 }
+
 @font-face {
   font-family: Poppins;
   src: url("../../public/fonts/Poppins.ttf");
 }
+
 @font-face {
   font-family: Montserrat;
   src: url("../../public/fonts/Montserrat.ttf");
 }
+
 @font-face {
   font-family: Exo;
   src: url("../../public/fonts/Exo.ttf");
 }
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -40,6 +45,7 @@
 .trendingcard:nth-child(even) {
   align-self: end;
 }
+
 .cardtitle {
   font-family: Merriweather-sans;
 }
@@ -58,15 +64,18 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  background: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent background */
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000; /* Ensure it is above other content */
+  z-index: 1000;
+  /* Ensure it is above other content */
 }
 
 .modal-overlay .EnquiryForm {
-  filter: none; /* Ensure the form itself is not blurred */
+  filter: none;
+  /* Ensure the form itself is not blurred */
 }
 
 .noScroll::-webkit-scrollbar {
@@ -75,8 +84,10 @@
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .noScroll {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 .rdp {
@@ -86,6 +97,7 @@
   --rdp-accent-color: #ca1c26 !important;
   margin: 10px !important;
 }
+
 .rdp-day {
   font-size: 14px !important;
 }
@@ -98,11 +110,13 @@
 .css-7o8aqz-MuiSlider-rail {
   background-color: #b6b6b6 !important;
 }
+
 img.destinations_background_image {
-  width: 100%!important;
-  background-size: cover!important;
-  height: 100%!important;
+  width: 100% !important;
+  background-size: cover !important;
+  height: 100% !important;
 }
+
 h1.desti_details_heading {
   position: absolute;
   text-align: center;
@@ -230,34 +244,74 @@ p {
 
 /* css by neo sharma */
 
-
-
+@media (max-width:1440px) {
+  .last_section_inner{
+    padding: 20px 40px;
+  }
+}
+@media (min-width: 1025px) and (max-width:1440px) {
+  .px-\[12\.5vw\].flex.flex-col.gap-\[5vh\].xsm\:px-\[3vw\]{
+    padding: 20px 40px;
+  }
+}
 
 @media (min-width: 769px) and (max-width:1024px) {
 
-  .px-\[12\.5vw\].flex.flex-col.gap-\[5vh\].xsm\:px-\[3vw\]{
+  .px-\[12\.5vw\].flex.flex-col.gap-\[5vh\].xsm\:px-\[3vw\] {
     padding: 20px 50px;
   }
 
 }
+
 @media (max-width:1024px) {
-  .footerbg .justify-between{
-    flex-wrap: wrap;
+  .last_section_inner{
+    padding:  20px;
   }
-  .footerbg .flex-col{
+  .grid-cols-3{
+    grid-template-columns: 1fr 1fr;
+  }
+  .footerbg .justify-between {
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px auto;
+  }
+
+  .footerbg .flex-col {
     padding: 10px 20px;
     width: 100%;
     height: max-content;
   }
-  .footerbg .w-full{
-    width: 100% ;
+
+  .footerbg .w-full {
+    width: 100%;
   }
-  .footerbg .h-full{
-    height: 100% ;
+
+  .footerbg .h-full {
+    height: 100%;
   }
 }
+
 @media (max-width:768px) {
-  .px-\[12\.5vw\].flex.flex-col.gap-\[5vh\].xsm\:px-\[3vw\]{
+  .px-\[12\.5vw\].flex.flex-col.gap-\[5vh\].xsm\:px-\[3vw\] {
     padding: 10px 20px;
+  }
+  .last_section_inner{
+    padding:  10px;
+  }
+  .w-full.flex.justify-between.xsm\:flex-col.xsm\:overflow-hidden {
+    gap: 20px;
+  }
+  h1.desti_details_heading{
+    top: 200px;
+  }
+}
+
+@media (max-width:700px) {}
+
+
+@media (max-width:468px) {
+  .xsm\:h-\[22vh\] {
+    height: auto !important;
+    padding: 20px;
   }
 }

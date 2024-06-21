@@ -77,7 +77,7 @@ const Destinationcontent = () => {
             <ContactForm />
           </div>
         </div>
-        <div className="pl-[13%] pr-[9%] flex flex-col gap-[5vw] xsm:px-[20px]">
+        <div className="pl-[13%] pr-[9%] flex flex-col gap-[5vw] xsm:px-[20px] last_section_inner">
           <Discount />
           <LastSection />
           <RequestCall />
