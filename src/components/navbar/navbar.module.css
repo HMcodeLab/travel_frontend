@@ -121,13 +121,12 @@
 /* navmenu starts here  */
 
 .nav_menu_main {
- 
+  height: fit-content;
   padding-inline: 13vw;
-  display: grid;
-  grid-template-columns: 80% 1fr;
+  display: flex;
   align-items: center;
-  column-gap: 62px;
-  padding-block: 1vh;
+  justify-content: space-between;
+  padding-block: 10px;
 }
 
 .nav_menu_main img {
@@ -135,14 +134,15 @@
   width: 22px;
 }
 
-/* .places_images {
-  display: flex;
-  gap: 2vw;
+.places_images {
   max-width: 55vw;
   overflow-x: auto;
-} */
-
-
+}
+.inner {
+  display: flex;
+  gap: 2vw;
+  animation: translateCards 20s linear infinite;
+}
 .places_images img {
   height: 35px;
   width: 35px;
@@ -162,13 +162,15 @@
   font-size: 0.9rem;
   font-family: var(--secondary-font);
 }
-.menu_btn_section {
+.menu_btn_section{
   border: 1px solid;
   padding: 5px 6px;
   display: flex;
   justify-content: space-between;
   gap: 10px;
 }
+
+
 .menu_btn_section span {
   border: 1px solid #aba7a7;
   border-radius: 3px;
@@ -185,7 +187,12 @@
   padding: 2px 7px;
   border-radius: 3px;
 }
- 
+.menu_btn_section a {
+  padding: 2px 8px;
+  font-size: 18px;
+  font-family: "Merriweather-sans";
+  font-weight: 300;
+}
 .active {
   background-color: var(--primary);
   color: white;
@@ -265,8 +272,13 @@
   .navmenu {
     display: none;
   }
- 
-  
+
+  .places_images {
+    display: flex;
+    gap: 2.5vw;
+    max-width: 90vw;
+    overflow-x: auto;
+  }
 
   .btn_section button {
     display: flex;
@@ -325,5 +337,3 @@
     padding-inline: 3px;
   }
 }
-
-
