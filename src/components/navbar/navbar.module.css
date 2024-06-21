@@ -11,10 +11,9 @@
   padding-bottom: 5px;
 }
 
-
 .top_nav_main a {
   letter-spacing: 1px !important;
-  font-family: 'Merriweather-sans';
+  font-family: "Merriweather-sans";
   font-size: 13px;
 }
 
@@ -136,10 +135,13 @@
 }
 
 .places_images {
-  display: flex;
-  gap: 2vw;
   max-width: 55vw;
   overflow-x: auto;
+}
+.inner {
+  display: flex;
+  gap: 2vw;
+  animation: translateCards 20s linear infinite;
 }
 .places_images img {
   height: 35px;
@@ -162,7 +164,7 @@
 }
 
 .menu_btn_section span {
-  border: 1px solid #ABA7A7;
+  border: 1px solid #aba7a7;
   border-radius: 3px;
   padding: 0px 0px;
   gap: 10px;
@@ -180,8 +182,8 @@
 .menu_btn_section a {
   padding: 2px 8px;
   font-size: 18px;
-    font-family: 'Merriweather-sans';
-    font-weight: 300;
+  font-family: "Merriweather-sans";
+  font-weight: 300;
 }
 .active {
   background-color: var(--primary);
@@ -196,6 +198,17 @@
 }
 .menu_btn_section_sm {
   display: none;
+}
+@keyframes translateCards {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(calc(-50vw));
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 @media (max-width: 700px) {
