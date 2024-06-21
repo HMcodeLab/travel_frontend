@@ -52,15 +52,13 @@ const Navmenu = () => {
 
     return (
         <div className={styles.nav_menu_main}>
-            <div className={`${styles.places_images} desti_images-wrapper`}>
-                <div className="destination_nav_button">
+            <div className={`${styles.places_images} desti_images-wrapper destination_nav_button`}>
+                
                     <button onClick={handlePrev} className="prev-button">
                         <ChevronLeftIcon className="h-5 w-5" />
                     </button>
-                    <button onClick={handleNext} className="next-button">
-                        <ChevronRightIcon className="h-5 w-5" />
-                    </button>
-                </div>
+                    
+                
                 <div className="slider-container">
                     {allCategory.length > 0 && (
                         <div className="slider">
@@ -77,6 +75,9 @@ const Navmenu = () => {
                         </div>
                     )}
                 </div>
+                <button onClick={handleNext} className="next-button">
+                        <ChevronRightIcon className="h-5 w-5" />
+                    </button>
             </div>
             <div className={`${styles.menu_btn_section} act_tour_buttons`}>
                 <Link href={'/'} onClick={() => setActiveCat('tour')} className={activeCat === 'tour' ? `${styles.active}` : `${styles.inactive}`}>
