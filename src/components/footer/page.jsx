@@ -37,7 +37,7 @@ const Footer = () => {
             <div className="w-28 h-20 mx-auto -translate-y-8">
               <Image
                 src={"/Assets/Images/logo.png"}
-                alt="..."
+                alt="footer-logo"
                 height={1000}
                 width={1000}
               />
