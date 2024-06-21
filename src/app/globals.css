@@ -122,3 +122,31 @@ h1.desti_details_heading {
 
 
 
+@media (min-width: 769px) and (max-width:1024px) {
+
+  .px-\[12\.5vw\].flex.flex-col.gap-\[5vh\].xsm\:px-\[3vw\]{
+    padding: 20px 50px;
+  }
+
+}
+@media (max-width:1024px) {
+  .footerbg .justify-between{
+    flex-wrap: wrap;
+  }
+  .footerbg .flex-col{
+    padding: 10px 20px;
+    width: 100%;
+    height: max-content;
+  }
+  .footerbg .w-full{
+    width: 100% ;
+  }
+  .footerbg .h-full{
+    height: 100% ;
+  }
+}
+@media (max-width:768px) {
+  .px-\[12\.5vw\].flex.flex-col.gap-\[5vh\].xsm\:px-\[3vw\]{
+    padding: 10px 20px;
+  }
+}
