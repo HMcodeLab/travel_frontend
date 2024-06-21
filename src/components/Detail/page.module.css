@@ -96,6 +96,8 @@
   flex-shrink: 0.1;
 }
 
+
+
 @keyframes translateCards {
   0% {
     transform: translateX(0);

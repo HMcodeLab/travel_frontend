@@ -237,7 +237,14 @@ padding: 6px 0px;
 }
 
 
-
+.faq_section_inner {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.faq_contents {
+  padding: 20px 10px;
+}
 
 /* css by neo sharma */
 

@@ -25,17 +25,17 @@ const Itinerary = ({ data }) => {
         );
     };
     return (
-        <div>
+        <div className='faq_section_inner'>
             {
                 newdata?.map((val, ind) => {
 
                     return (
-                        <div>
+                        <div className='faq_section'>
                             <div className=" py-[12px] bg-[var(--primary)] text-white px-[10px] rounded-xl cursor-pointer" onClick={() => handleDropdownToggle(ind)}>
                                 Day {val.tour_day}  ({val?.tour_name})
                             </div>
-                            <div style={{ display: !dropdown[ind] ? "none" : "" }} >
-                                <span dangerouslySetInnerHTML={{ __html: val?.tour_des }} />
+                            <div style={{ display: !dropdown[ind] ? "none" : "" }}  >
+                                <div dangerouslySetInnerHTML={{ __html: val?.tour_des }} className='faq_contents'/>
                             </div>
                         </div>
                     )
