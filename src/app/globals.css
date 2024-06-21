@@ -171,7 +171,6 @@ padding: 6px 0px;
 .places_images {
   display: grid;
   grid-template-columns: 5% 1fr 5%;
-  align-items: center;
 }
 
 .desti_images-wrapper {
@@ -188,16 +187,17 @@ padding: 6px 0px;
   position: relative;
   display: flex;
   flex-wrap: nowrap;
+  align-items: center;
 }
 .destination_nav_button.prev-button{
   position: absolute;
   left: 0;
-  top: 40px;
+  top: 20px;
 }
 .destination_nav_button.next-button{
   position: absolute;
   right: 0;
-  top: 40px;
+  top: 20px;
 }
 .destination_nav_button button {
   background: #ffeced;
