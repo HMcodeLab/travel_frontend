@@ -51,7 +51,7 @@ const Section2Cards = () => {
                                 movingCard?.slice(3, 9)?.map((data, ind) => {
                                     return (
                                         <div>
-                                            <Link href={`/destination/?city_name=${data?.name}&cityid=${data?.city_id}`}>
+                                            <Link href={`/destination/?city_name=${data?.name}&cityid=${data?.city_id}`} key={ind}>
                                                 <Image src={data.image} height={1000} width={1000} />
                                                 <p>{data?.name}</p>
                                             </Link>
@@ -62,10 +62,10 @@ const Section2Cards = () => {
                         </div>
                         <div className={`${styles.places_card} ${styles.places2}`}>
                             {
-                                movingCard?.slice(9, 15)?.map((data, ind) => {
+                                movingCard?.slice(3, 9)?.map((data, ind) => {
                                     return (
                                         <div>
-                                            <Link href={`/destination/?city_name=${data?.name}&cityid=${data?.city_id}`}>
+                                            <Link href={`/destination/?city_name=${data?.name}&cityid=${data?.city_id}`} key={ind}>
                                                 <Image src={data.image} height={1000} width={1000} />
                                                 <p>{data?.name}</p>
                                             </Link>
@@ -76,10 +76,10 @@ const Section2Cards = () => {
                         </div>
                         <div className={styles.places_card}>
                             {
-                                movingCard?.slice(15, 21)?.map((data, ind) => {
+                                movingCard?.slice(3, 9)?.map((data, ind) => {
                                     return (
                                         <div>
-                                            <Link href={`/destination/?city_name=${data?.name}&cityid=${data?.city_id}`}>
+                                            <Link href={`/destination/?city_name=${data?.name}&cityid=${data?.city_id}`} key={ind}>
                                                 <Image src={data.image} height={1000} width={1000} />
                                                 <p>{data?.name}</p>
                                             </Link>

@@ -127,6 +127,117 @@ h1.desti_details_heading {
   font-weight: bold;
   color: #ca1c26;
 }
+.destinations_wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+.all_destinations {
+  position: relative;
+}
+.all_destinations p {
+  position: absolute;
+  bottom: 0px;
+  color: #fff;
+  padding: 14px;
+}
+/* styles/globals.css */
+.slider-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+padding: 6px 0px;
+  overflow: hidden;
+
+}
+.desti-contect-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 6px;
+}
+.desti-contect-wrapper p {
+  white-space: nowrap;
+}
+.desti-contect-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 6px;
+}
+.desti-contect-wrapper p {
+  white-space: nowrap;
+}
+.places_images {
+  display: grid;
+  grid-template-columns: 5% 1fr 5%;
+}
+
+.desti_images-wrapper {
+  position: relative;
+}
+.act_tour_buttons a {
+  padding: 5px 16px;
+}
+.act_tour_buttons {
+  border: 1px solid #ABA7A7!important;
+  border-radius: 2px;
+}
+.destination_nav_button {
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  bottom: 16px;
+  gap: 4px;
+}
+.destination_nav_button button {
+  background: #ffeced;
+  color: #ca1c26;
+  height: 28px;
+  width: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px;
+}
+.desti_images-wrapper {
+  position: relative;
+}
+.slider {
+  display: flex;
+  align-items: center;
+}
+
+.prev-button, .next-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.prev-button {
+  margin-right: 10px;
+}
+
+.next-button {
+  margin-left: 10px;
+}
+
+span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+p {
+  margin-top: 10px;
+}
+.slider-content {
+  display: flex;
+  gap: 30px;
+}
+
 
 
 
