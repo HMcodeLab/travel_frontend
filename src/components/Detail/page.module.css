@@ -148,4 +148,8 @@
 
 }
 
-@media (min-width: 320px) and (max-width: 519px) {}
+@media (min-width: 320px) and (max-width: 519px) {
+  .contact_inner{
+    padding: 20px 10px;
+  }
+}

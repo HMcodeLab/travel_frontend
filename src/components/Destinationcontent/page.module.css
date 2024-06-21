@@ -222,6 +222,10 @@
 
 
 @media (min-width: 320px) and (max-width: 519px) {
+  .tabs_container{
+    padding: 20px 0px;
+  }
+  
   .heroBanner {
     height: 300px;
     width: 100%;

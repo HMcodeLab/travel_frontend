@@ -27,3 +27,7 @@
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
 }
+
+@media (min-width:320px) and (max-width:519px) {
+    
+}
