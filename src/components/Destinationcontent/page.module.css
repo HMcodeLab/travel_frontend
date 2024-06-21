@@ -13,12 +13,15 @@
   width: 100%;
 }
 
+
+
 /* common Heading  */
 
 .commonHeadcontainer {
   display: flex;
   justify-content: space-between;
   gap: 10vw;
+  padding-bottom: 20px;
 }
 
 .section1 {
@@ -103,9 +106,7 @@
   height: 40px;
   width: 40px;
 }
-.tabs_container > div {
-  /* padding-inline: 4vw; */
-}
+
 .tabs_container span {
   display: flex;
   align-items: center;

@@ -5,6 +5,7 @@
   gap: 1vw;
   height: 85vh;
   position: relative;
+  padding-top: 20px;
   /* z-index: -1; */
 }
 
@@ -33,12 +34,15 @@
   left: 2rem;
   text-transform: capitalize;
   color: white;
+  font-family: 'Merriweather-sans';
+  font-size: 22px;
 }
 
 .vertical_cards img {
   height: 100%;
   /* border: 2px solid black; */
   object-fit: cover;
+  border-radius: 15px;
 }
 
 .anim_cards {
@@ -69,6 +73,7 @@
 }
 .places_card img {
   height: 100%;
+  border-radius: 15px;
 }
 .places2 > div:nth-child(2n + 1) {
   height: 26vh;
@@ -84,6 +89,8 @@
   transform: translateX(-50%);
   color: white;
   text-transform: capitalize;
+  font-size:22px;
+  font-family: 'Merriweather-sans';
 }
 
 @keyframes translateCards {

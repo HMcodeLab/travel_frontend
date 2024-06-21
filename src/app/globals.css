@@ -33,12 +33,10 @@
   --background-end-rgb: 255, 255, 255;
   --padding-inline: 5vw;
   --primary: #ca1c26;
-  --primary-font: "Merriweather Sans", sans-serif;
+  --primary-font: "Merriweather-sans", sans-serif;
   --secondary-font: "Metrophobic", sans-serif;
 }
-.trendingcard {
-  /* flex-shrink: 0; */
-}
+
 .trendingcard:nth-child(even) {
   align-self: end;
 }
@@ -115,3 +113,12 @@ h1.desti_details_heading {
   font-weight: bold;
   color: #ca1c26;
 }
+
+
+
+
+/* css by neo sharma */
+
+
+
+
