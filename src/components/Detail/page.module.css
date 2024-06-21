@@ -1,6 +1,7 @@
 .gallery_main h2 {
   font-size: 1.45rem;
 }
+
 .gallery_main img {
   height: 9rem;
 }
@@ -34,6 +35,7 @@
   flex-direction: column;
   gap: 8px;
 }
+
 .form {
   display: flex;
   flex-direction: column;
@@ -47,11 +49,13 @@
   font-family: "Montserrat";
   color: #000000;
 }
-.form > div {
+
+.form>div {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
+
 .form input {
   border: 1px solid #ca1c265e;
   border-radius: 4px;
@@ -60,6 +64,7 @@
   padding-inline: 10px;
   outline: none;
 }
+
 .form button {
   width: 100%;
   background-color: var(--primary);
@@ -76,6 +81,7 @@
   font-weight: 500;
   font-family: "Montserrat";
 }
+
 .card_main {
   display: flex;
   gap: 20px;
@@ -83,7 +89,8 @@
   justify-content: space-between;
   overflow-x: hidden;
 }
-.card_main > div {
+
+.card_main>div {
   /* width: 50vw; */
   animation: translateCards 15s linear infinite;
   flex-shrink: 0.1;
@@ -93,26 +100,50 @@
   0% {
     transform: translateX(0);
   }
+
   50% {
-    transform: translateX(calc(-50vw)); /* 100vw - card width */
+    transform: translateX(calc(-50vw));
+    /* 100vw - card width */
   }
+
   100% {
     transform: translateX(0);
   }
 }
 
+@media (min-width: 769px) and (max-width: 1024px) {
+  .card_main>div {
+    width: 100%;
+  }
+}
+
+@media (max-width:768px) {
+
+  .card_main {
+    max-width: 700px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .card_main::-webkit-scrollbar {
+    opacity: 0;
+  }
+
+  .card_main>div {
+    animation: none;
+    width: 100%;
+  }
+
+}
+
 @media (max-width: 700px) {
   .card_main {
-    display: flex;
-    gap: 20px;
-    width: 90vw;
-    justify-content: space-between;
-    overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
+    overflow: auto;
   }
+
 }
-@media (min-width: 320px) and (max-width: 519px) {
-  .card_main {
-    width: 260vw;
-    overflow-x: hidden;
-  }
-}
+
+@media (min-width: 320px) and (max-width: 519px) {}

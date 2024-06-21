@@ -210,6 +210,13 @@
     transform: translateX(0);
   }
 }
+@media (min-width: 1025px) and (max-width:1440px) {
+  .top_nav_main,
+  .container,
+  .nav_menu_main{
+    padding: 20px 40px;
+  }
+}
 @media (min-width: 769px) and (max-width:1024px) {
   .top_nav_main,
   .container,
