@@ -204,18 +204,29 @@
 
 
 .scaledowncenter {
-	-webkit-animation: scale-down-center 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite both;
-	        animation: scale-down-center 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite both;
+  -webkit-animation: scale-down-center 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite both;
+  animation: scale-down-center 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite both;
 }
 
 @-webkit-keyframes scale-down-center {
   50% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
+      -webkit-transform: scale(1);
+      transform: scale(1);
   }
-  0%,100% {
-    -webkit-transform: scale(0.5);
-    transform: scale(0.5);
+  0%, 100% {
+      -webkit-transform: scale(0.5);
+      transform: scale(0.5);
+  }
+}
+
+@keyframes scale-down-center {
+  50% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+  }
+  0%, 100% {
+      -webkit-transform: scale(0.5);
+      transform: scale(0.5);
   }
 }
 
