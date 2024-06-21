@@ -33,12 +33,10 @@
   --background-end-rgb: 255, 255, 255;
   --padding-inline: 5vw;
   --primary: #ca1c26;
-  --primary-font: "Merriweather Sans", sans-serif;
+  --primary-font: "Merriweather-sans", sans-serif;
   --secondary-font: "Metrophobic", sans-serif;
 }
-.trendingcard {
-  /* flex-shrink: 0; */
-}
+
 .trendingcard:nth-child(even) {
   align-self: end;
 }
@@ -226,3 +224,40 @@ p {
   gap: 30px;
 }
 
+
+
+
+
+/* css by neo sharma */
+
+
+
+
+@media (min-width: 769px) and (max-width:1024px) {
+
+  .px-\[12\.5vw\].flex.flex-col.gap-\[5vh\].xsm\:px-\[3vw\]{
+    padding: 20px 50px;
+  }
+
+}
+@media (max-width:1024px) {
+  .footerbg .justify-between{
+    flex-wrap: wrap;
+  }
+  .footerbg .flex-col{
+    padding: 10px 20px;
+    width: 100%;
+    height: max-content;
+  }
+  .footerbg .w-full{
+    width: 100% ;
+  }
+  .footerbg .h-full{
+    height: 100% ;
+  }
+}
+@media (max-width:768px) {
+  .px-\[12\.5vw\].flex.flex-col.gap-\[5vh\].xsm\:px-\[3vw\]{
+    padding: 10px 20px;
+  }
+}

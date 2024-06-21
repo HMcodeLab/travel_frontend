@@ -2,11 +2,19 @@
 
 .top_nav_main {
   background-color: black;
-  height: 7vh;
+  height: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-inline: 13vw;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.top_nav_main a {
+  letter-spacing: 1px !important;
+  font-family: "Merriweather-sans";
+  font-size: 13px;
 }
 
 .top_nav_main > div {
@@ -57,7 +65,7 @@
 .navmenu span {
   font-size: clamp(13px, calc(13px + 0.0667 * (100vw - 1440px)), 16px);
   display: flex;
-  font-family: var(--primary-font);
+  font-family: var(--primary-font) !important;
 }
 
 .navmenu h5 {
@@ -77,6 +85,7 @@
   background-color: var(--primary);
   color: white;
   font-weight: 400;
+  padding: 10px 17px;
 }
 
 .btn_section button:last-child {
@@ -90,7 +99,7 @@
 
 .btn_section button {
   display: flex;
-  gap: 5px;
+  gap: 10px;
   height: fit-content;
   width: max-content;
   align-items: center;
@@ -161,7 +170,7 @@
   gap: 10px;
 }
 .menu_btn_section span {
-  border: 1px solid black;
+  border: 1px solid #aba7a7;
   border-radius: 3px;
   padding: 0px 0px;
   gap: 10px;
@@ -191,17 +200,40 @@
 .menu_btn_section_sm {
   display: none;
 }
+@keyframes translateCards {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(calc(-50vw));
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@media (min-width: 769px) and (max-width:1024px) {
+  .top_nav_main,
+  .container,
+  .nav_menu_main{
+    padding: 20px 50px;
+  }
+}
 
-@media (max-width: 700px) {
+
+@media (max-width: 768px) {
   .top_nav_main p {
     font-size: 0.6rem;
   }
   .top_nav_main {
-    padding-inline: 30px;
+    padding-inline: 10px;
+    gap: 10px;
   }
-
+  .top_nav_main a{
+    font-size: 9px;
+  }
   .container {
-    padding-inline: 30px;
+    padding-inline: 10px;
+    gap: 10px;
   }
   .container img {
     height: 48px;
@@ -236,13 +268,15 @@
     width: max-content;
     align-items: center;
     justify-content: center;
-    padding: 2px 5px;
+    padding: 10px !important;
     font-size: 0.7rem;
     border-radius: 5px;
   }
   .btn_section p {
     white-space: nowrap;
+    font-size: 10px;
   }
+  
 
   .btn_section button img {
     height: 17px;
@@ -252,7 +286,7 @@
   /* navmenu  */
 
   .nav_menu_main {
-    padding-inline: 30px;
+    padding-inline: 10px;
   }
   .nav_menu_main p {
     font-size: 0.75rem;

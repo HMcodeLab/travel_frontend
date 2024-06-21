@@ -14,7 +14,7 @@ const Section2Cards = () => {
             const data = await fetch("https://staging.trackitinerary.com/apis/packages/package_category_with_city")
             const response = await data.json();
             setMovingCard(response?.data?.data)
-            console.log(response?.data?.data);
+            // console.log(response?.data?.data);
         } catch (error) {
             console.error("Failed to fetch data:", error);
         }
@@ -23,7 +23,7 @@ const Section2Cards = () => {
     useEffect(() => {
         fetchData();
     }, [])
-
+    // console.log(movingCard?.length)
 
     return (
         <>
