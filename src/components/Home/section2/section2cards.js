@@ -1,184 +1,103 @@
-// "use client"
+"use client"
 
-// import React, { useEffect, useState } from 'react'
-// import styles from './section2.module.css';
-// import Image from 'next/image';
-// import { animCardData1, animCardData2, animCardData3 } from '@/Data/cardImageData';
-// import Link from 'next/link';
-
-// const Section2Cards = () => {
-//     const [movingCard, setMovingCard] = useState();
-
-//     const fetchData = async (req, res) => {
-//         try {
-//             const data = await fetch("https://staging.trackitinerary.com/apis/packages/package_category_with_city")
-//             const response = await data.json();
-//             setMovingCard(response?.data?.data)
-//             // console.log(response?.data?.data);
-//         } catch (error) {
-//             console.error("Failed to fetch data:", error);
-//         }
-//     }
-
-//     useEffect(() => {
-//         fetchData();
-//     }, [])
-//     // console.log(movingCard?.length)
-
-//     return (
-//         <>
-
-//             <div className={styles.card_section_main}>
-//                 <div className={styles.vertical_cards}>
-//                     {
-//                         movingCard?.slice(0, 3).map((val, ind) => {
-//                             return (
-//                                 <div>
-//                                     <Link href={`/destination/?city_name=${val.name}&cityid=${val.city_id}`}>
-//                                         <Image src={val.image} height={1000} width={1000} />
-//                                         <p>{val?.name}</p>
-//                                     </Link>
-
-//                                 </div>
-//                             )
-//                         })
-//                     }
-//                 </div>
-//                 <div className={styles.anim_cards}>
-//                     <span>
-//                         <div className={styles.places_card}>
-//                             {
-//                                 movingCard?.slice(3, 9)?.map((data, ind) => {
-//                                     return (
-//                                         <div>
-//                                             <Link href={`/destination/?city_name=${data?.name}&cityid=${data?.city_id}`} key={ind}>
-//                                                 <Image src={data.image} height={1000} width={1000} />
-//                                                 <p>{data?.name}</p>
-//                                             </Link>
-//                                         </div>
-//                                     )
-//                                 })
-//                             }
-//                         </div>
-//                         <div className={`${styles.places_card} ${styles.places2}`}>
-//                             {
-//                                 movingCard?.slice(3, 9)?.map((data, ind) => {
-//                                     return (
-//                                         <div>
-//                                             <Link href={`/destination/?city_name=${data?.name}&cityid=${data?.city_id}`} key={ind}>
-//                                                 <Image src={data.image} height={1000} width={1000} />
-//                                                 <p>{data?.name}</p>
-//                                             </Link>
-//                                         </div>
-//                                     )
-//                                 })
-//                             }
-//                         </div>
-//                         <div className={styles.places_card}>
-//                             {
-//                                 movingCard?.slice(3, 9)?.map((data, ind) => {
-//                                     return (
-//                                         <div>
-//                                             <Link href={`/destination/?city_name=${data?.name}&cityid=${data?.city_id}`} key={ind}>
-//                                                 <Image src={data.image} height={1000} width={1000} />
-//                                                 <p>{data?.name}</p>
-//                                             </Link>
-//                                         </div>
-//                                     )
-//                                 })
-//                             }
-//                         </div>
-//                     </span>
-//                 </div>
-//             </div>
-
-//         </>
-//     )
-// }
-
-// export default Section2Cards
-
-
-
-"use client";
-
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
 import styles from './section2.module.css';
 import Image from 'next/image';
+import { animCardData1, animCardData2, animCardData3 } from '@/Data/cardImageData';
 import Link from 'next/link';
 
 const Section2Cards = () => {
-    const [movingCard, setMovingCard] = useState([]);
+    const [movingCard, setMovingCard] = useState();
 
-    const fetchData = async () => {
+    const fetchData = async (req, res) => {
         try {
-            const data = await fetch("https://staging.trackitinerary.com/apis/packages/package_category_with_city");
+            const data = await fetch("https://staging.trackitinerary.com/apis/packages/package_category_with_city")
             const response = await data.json();
-            setMovingCard(response?.data?.data || []);
+            setMovingCard(response?.data?.data)
+            // console.log(response?.data?.data);
         } catch (error) {
             console.error("Failed to fetch data:", error);
         }
-    };
+    }
 
     useEffect(() => {
         fetchData();
-    }, []);
-
-    // Function to distribute items across rows with alternating pattern
-    const distributeItems = (items) => {
-        const distributedRows = [[], [], []];
-        let i = 0;
-
-        // Determine the number of items to display
-        const displayItemCount = Math.floor(items.length / 3) * 3;
-
-        for (let j = 0; j < displayItemCount; j++) {
-            distributedRows[i].push(items[j]);
-            i = (i + 1) % 3;
-        }
-
-        return distributedRows;
-    };
-
-    const rows = distributeItems(movingCard);
+    }, [])
+    // console.log(movingCard?.length)
 
     return (
-        <div className={styles.card_section_main}>
-            <div className={styles.vertical_cards}>
-                {movingCard?.slice(0, 3).map((val, ind) => (
-                    <div key={ind}>
-                        <Link href={`/destination/?city_name=${val.name}&cityid=${val.city_id}`}>
-                            <Image src={val.image} height={1000} width={1000} alt={val.name} />
-                            <p>{val.name}</p>
-                        </Link>
-                    </div>
-                ))}
-            </div>
-            <div className={styles.anim_cards}>
-                <span>
-                    {rows.map((row, rowIndex) => (
-                        <div className={styles.places_card} key={rowIndex}>
-                            {row.map((data, index) => (
-                                <div key={index}>
-                                    <Link href={`/destination/?city_name=${data.name}&cityid=${data.city_id}`}>
-                                        <Image
-                                            src={data.image}
-                                            width={1000}
-                                            height={1000}
-                                            alt={data.name}
-                                            loading="lazy"
-                                            decoding="async"
-                                        />
-                                        <p>{data.name}</p>
-                                    </Link>
-                                </div>
-                            ))}
-                        </div>
-                    ))}
-                </span>
-            </div>
-        </div>
-    );
-};
+        <>
 
-export default Section2Cards;
+            <div className={styles.card_section_main}>
+                <div className={styles.vertical_cards}>
+                    {
+                        movingCard?.slice(0, 3).map((val, ind) => {
+                            return (
+                                <div>
+                                    <Link href={`/destination/?city_name=${val.name}&cityid=${val.city_id}`}>
+                                        <Image src={val.image} height={1000} width={1000} />
+                                        <p>{val?.name}</p>
+                                    </Link>
+
+                                </div>
+                            )
+                        })
+                    }
+                </div>
+                <div className={styles.anim_cards}>
+                    <span>
+                        <div className={styles.places_card}>
+                            {
+                                movingCard?.slice(3, 9)?.map((data, ind) => {
+                                    return (
+                                        <div>
+                                            <Link href={`/destination/?city_name=${data?.name}&cityid=${data?.city_id}`} key={ind}>
+                                                <Image src={data.image} height={1000} width={1000} />
+                                                <p>{data?.name}</p>
+                                            </Link>
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
+                        <div className={`${styles.places_card} ${styles.places2}`}>
+                            {
+                                movingCard?.slice(3, 9)?.map((data, ind) => {
+                                    return (
+                                        <div>
+                                            <Link href={`/destination/?city_name=${data?.name}&cityid=${data?.city_id}`} key={ind}>
+                                                <Image src={data.image} height={1000} width={1000} />
+                                                <p>{data?.name}</p>
+                                            </Link>
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
+                        <div className={styles.places_card}>
+                            {
+                                movingCard?.slice(3, 9)?.map((data, ind) => {
+                                    return (
+                                        <div>
+                                            <Link href={`/destination/?city_name=${data?.name}&cityid=${data?.city_id}`} key={ind}>
+                                                <Image src={data.image} height={1000} width={1000} />
+                                                <p>{data?.name}</p>
+                                            </Link>
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
+                    </span>
+                </div>
+            </div>
+
+        </>
+    )
+}
+
+export default Section2Cards
+
+
+
+
