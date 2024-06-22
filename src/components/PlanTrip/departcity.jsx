@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./plantrip.css";
 import Search from "../../../public/Icons/search.svg";
 import Image from "next/image";
@@ -11,6 +11,9 @@ const Destinationcity = () => {
     setheaderdata((prevItems) => ({ ...prevItems, from: item }));
     setrender("staycount");
   }
+  let [searchTerm, setSearchTerm] = useState('')
+
+  let filterCities = cities.filter((e) =>  e.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase()) )
   return (
     <>
       <div className="pl-14 pt-14 xsm:pl-4">
@@ -27,21 +30,26 @@ const Destinationcity = () => {
           <input
             className="w-[60%] rounded pl-9 focus:outline-none xsm:w-full"
             placeholder="Type departing City "
+            value={searchTerm}
+            onChange={(e) => { setSearchTerm(e.target.value) }}
           />
         </div>
         <div className="flex flex-col gap-5 pl-5 mt-5 font-Merri-sans xsm:gap-3">
-          {cities?.map((item) => {
-            return (
-              <>
-                <p
-                  className="font-semibold text-xl cursor-pointer xsm:text-[1.1rem]"
-                  onClick={() => handleItem(item)}
-                >
-                  {item}
-                </p>
-              </>
-            );
-          })}
+          {filterCities.length !== 0 ? (
+            filterCities.map((item, index) => (
+              <p
+                key={index}
+                className="font-semibold text-xl cursor-pointer xsm:text-[1.1rem]"
+                onClick={() => handleItem(item)}
+              >
+                {item}
+              </p>
+            ))
+          ) : (
+            <p className="font-semibold text-xl xsm:text-[1.1rem]">No results found</p>
+          )}
+
+
         </div>
       </div>
     </>

@@ -235,7 +235,39 @@ padding: 6px 0px;
   display: flex;
   gap: 30px;
 }
+.step_up_buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 22px;
+}
+.button_wrapper {
+  position: relative;
+  max-width: 934px;
+  margin: auto;
+}
+.step_up_buttons button {
+  border: 1px solid #ca1c26;
+  padding: 8px 40px;
+  background: unset;
+  color: #000;
+  border-radius: 4px;
+}
 
+button.btn {
+      border: 1px solid #ca1c26;
+  padding: 8px 40px;
+  background: #ca1c26;
+  color: #fff;
+  border-radius: 4px;
+}
+button.disabled {
+  border: 1px solid #ca1c26;
+  padding: 8px 40px;
+  background: unset!important;
+  color: #000;
+  border-radius: 4px;
+}
 
 .faq_section_inner {
   display: flex;

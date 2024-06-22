@@ -21,7 +21,7 @@ const ContactUsForm = () => {
                 </div>
                 <div className='flex flex-col gap-3 xsm:gap-1'>
                     <p className='uppercase text-[21.5px] pl-1 xsm:text-[15px]'>Message.</p>
-                    <textarea type="email" name="" id="" className='bg-transparent border-b-[2px] border-[#CA1C2682] w-full outline-none py-2 pl-2 xsm:text-[13px] xsm:py-1'/>
+                    <textarea  name="" id="" className='bg-transparent border-b-[2px] border-[#CA1C2682] w-full outline-none py-2 pl-2 xsm:text-[13px] xsm:py-1'/>
                 </div>
             </div>
             <div className='flex justify-between items-center'>
