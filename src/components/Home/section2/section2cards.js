@@ -100,7 +100,6 @@
 
 
 
-
 "use client";
 
 import React, { useEffect, useState } from 'react';
@@ -125,22 +124,17 @@ const Section2Cards = () => {
         fetchData();
     }, []);
 
-    // Function to distribute items equally into three rows with specific distribution
+    // Function to distribute items across rows with alternating pattern
     const distributeItems = (items) => {
-        const rowCount = 3; // Number of rows
-        const totalItems = items.length;
-        const itemsPerRow = Math.floor(totalItems / rowCount); // Minimum items per row
+        const distributedRows = [[], [], []];
+        let i = 0;
 
-        let distributedRows = [];
+        // Determine the number of items to display
+        const displayItemCount = Math.floor(items.length / 3) * 3;
 
-        let startIndex = 0;
-        for (let i = 0; i < rowCount; i++) {
-            let endIndex = startIndex + itemsPerRow;
-            if (i < totalItems % rowCount) {
-                endIndex++;
-            }
-            distributedRows.push(items.slice(startIndex, endIndex));
-            startIndex = endIndex;
+        for (let j = 0; j < displayItemCount; j++) {
+            distributedRows[i].push(items[j]);
+            i = (i + 1) % 3;
         }
 
         return distributedRows;
@@ -151,20 +145,15 @@ const Section2Cards = () => {
     return (
         <div className={styles.card_section_main}>
             <div className={styles.vertical_cards}>
-                    {
-                        movingCard?.slice(0, 3).map((val, ind) => {
-                            return (
-                                 <div>
-                                     <Link href={`/destination/?city_name=${val.name}&cityid=${val.city_id}`}>
-                                         <Image src={val.image} height={1000} width={1000} />
-                                         <p>{val?.name}</p>
-                                     </Link>
-
-                                 </div>
-                            )
-                         })
-                     }
-                 </div>
+                {movingCard?.slice(0, 3).map((val, ind) => (
+                    <div key={ind}>
+                        <Link href={`/destination/?city_name=${val.name}&cityid=${val.city_id}`}>
+                            <Image src={val.image} height={1000} width={1000} alt={val.name} />
+                            <p>{val.name}</p>
+                        </Link>
+                    </div>
+                ))}
+            </div>
             <div className={styles.anim_cards}>
                 <span>
                     {rows.map((row, rowIndex) => (
@@ -193,4 +182,3 @@ const Section2Cards = () => {
 };
 
 export default Section2Cards;
-
