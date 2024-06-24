@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState, useRef } from 'react';
 import styles from './navbar.module.css';
 import Image from 'next/image';
@@ -9,6 +10,7 @@ const Navmenu = () => {
     const [allCategory, setAllCategory] = useState([]);
     const [activeCat, setActiveCat] = useState('tour');
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [loading, setLoading] = useState(true); // Add loading state
     const intervalRef = useRef(null);
 
     useEffect(() => {
@@ -19,6 +21,8 @@ const Navmenu = () => {
                 setAllCategory(response?.data || []);
             } catch (error) {
                 console.log(error);
+            } finally {
+                setLoading(false); // Set loading to false after fetching data
             }
         };
 
@@ -53,31 +57,32 @@ const Navmenu = () => {
     return (
         <div className={styles.nav_menu_main}>
             <div className={`${styles.places_images} desti_images-wrapper destination_nav_button`}>
-                
-                    <button onClick={handlePrev} className="prev-button">
-                        <ChevronLeftIcon className="h-5 w-5" />
-                    </button>
-                    
-                
+                <button onClick={handlePrev} className="prev-button">
+                    <ChevronLeftIcon className="h-5 w-5" />
+                </button>
                 <div className="slider-container">
-                    {allCategory.length > 0 && (
-                        <div className="slider">
-                            <div className="slider-content">
-                                {allCategory.slice(currentIndex, currentIndex + 12).map((item, ind) => (
-                                    <Link key={ind} href={`/destination?city_name=${item?.name}&cityid=${item?.city_id}`}>
-                                        <div className="desti-contect-wrapper">
-                                            <Image src="/Assets/Icons/places/explore.svg" width={100} height={100} alt={item?.name} />
-                                            <p>{item?.name}</p>
-                                        </div>
-                                    </Link>
-                                ))}
+                    {loading ? (
+                        <EmptyComponent />
+                    ) : (
+                        allCategory.length > 0 && (
+                            <div className="slider">
+                                <div className="slider-content">
+                                    {allCategory.slice(currentIndex, currentIndex + 12).map((item, ind) => (
+                                        <Link key={ind} href={`/destination?city_name=${item?.name}&cityid=${item?.city_id}`}>
+                                            <div className="desti-contect-wrapper">
+                                                <Image src="/Assets/Icons/places/explore.svg" width={100} height={100} alt={item?.name} />
+                                                <p>{item?.name}</p>
+                                            </div>
+                                        </Link>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
+                        )
                     )}
                 </div>
                 <button onClick={handleNext} className="next-button">
-                        <ChevronRightIcon className="h-5 w-5" />
-                    </button>
+                    <ChevronRightIcon className="h-5 w-5" />
+                </button>
             </div>
             <div className={`${styles.menu_btn_section} act_tour_buttons`}>
                 <Link href={'/'} onClick={() => setActiveCat('tour')} className={activeCat === 'tour' ? `${styles.active}` : `${styles.inactive}`}>
@@ -94,5 +99,25 @@ const Navmenu = () => {
         </div>
     );
 };
+
+function EmptyComponent() {
+    return (
+     
+                <div className="slider-container">
+                    <div className="slider">
+                        <div className="slider-content">
+                            {Array(12).fill().map((_, index) => (
+                                <Link href={'/'}  key={index}>
+                                <div className="desti-contect-wrapper" >
+                                    <Image src="/Assets/Icons/places/explore.svg" width={100} height={100} alt="Loading..." />
+                                    <p>loading...</p>
+                                </div>
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+    );
+}
 
 export default Navmenu;
