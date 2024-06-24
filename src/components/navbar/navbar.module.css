@@ -168,6 +168,7 @@
   display: flex;
   justify-content: space-between;
   gap: 10px;
+  align-items: center;
 }
 
 
@@ -180,6 +181,7 @@
   justify-content: center;
   align-items: center;
   padding: 2px;
+  
 }
 .menu_btn_section button:first-child {
   background-color: var(--primary);
@@ -187,11 +189,12 @@
   padding: 2px 7px;
   border-radius: 3px;
 }
+
 .menu_btn_section a {
   padding: 2px 8px;
   font-size: 18px;
   font-family: "Merriweather-sans";
-  font-weight: 300;
+  font-weight: 400;
 }
 .active {
   background-color: var(--primary);

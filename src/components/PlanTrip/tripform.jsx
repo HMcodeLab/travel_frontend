@@ -107,7 +107,7 @@ const Tripform = () => {
             <div className="relative ">
               <Image alt="..." className="absolute top-2 left-5 " src={Phone} />
               <input
-                type="number"
+                type="text"
                 className="w-full h-10 pl-14 focus:outline-none rounded border border-[#E4E4E4]"
                 placeholder="Phone No."
                 name="mobile"

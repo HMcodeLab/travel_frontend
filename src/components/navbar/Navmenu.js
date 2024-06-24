@@ -58,7 +58,7 @@ const Navmenu = () => {
         <div className={styles.nav_menu_main}>
             <div className={`${styles.places_images} desti_images-wrapper destination_nav_button`}>
                 <button onClick={handlePrev} className="prev-button">
-                    <ChevronLeftIcon className="h-5 w-5" />
+                    <ChevronLeftIcon className="h-7 w-5" />
                 </button>
                 <div className="slider-container">
                     {loading ? (
@@ -81,7 +81,7 @@ const Navmenu = () => {
                     )}
                 </div>
                 <button onClick={handleNext} className="next-button">
-                    <ChevronRightIcon className="h-5 w-5" />
+                    <ChevronRightIcon className="h-7 w-5" />
                 </button>
             </div>
             <div className={`${styles.menu_btn_section} act_tour_buttons`}>

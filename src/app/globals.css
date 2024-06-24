@@ -32,6 +32,11 @@
   src: url("../../public/fonts/Exo.ttf");
 }
 
+@font-face {
+  font-family: Metrophobic;
+  src: url("../../public/fonts/Metrophobic-Regular.ttf");
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -127,14 +132,17 @@ h1.desti_details_heading {
   font-weight: bold;
   color: #ca1c26;
 }
+
 .destinations_wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
 }
+
 .all_destinations {
   position: relative;
 }
+
 .all_destinations p {
   position: absolute;
   bottom: 0px;
@@ -146,28 +154,31 @@ h1.desti_details_heading {
   display: flex;
   justify-content: center;
   align-items: center;
-padding: 6px 0px;
+  padding: 6px 0px;
   overflow: hidden;
 
 }
+
 .desti-contect-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   row-gap: 6px;
 }
+
 .desti-contect-wrapper p {
   white-space: nowrap;
+  font-family: Metrophobic;
+  font-weight: 400;
 }
+
 .desti-contect-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   row-gap: 6px;
 }
-.desti-contect-wrapper p {
-  white-space: nowrap;
-}
+
 .places_images {
   display: grid;
   grid-template-columns: 5% 1fr 5%;
@@ -176,53 +187,69 @@ padding: 6px 0px;
 .desti_images-wrapper {
   position: relative;
 }
+
 .act_tour_buttons a {
   padding: 5px 16px;
 }
+
 .act_tour_buttons {
-  border: 1px solid #ABA7A7!important;
+  border: 1px solid #ABA7A7 !important;
   border-radius: 2px;
 }
+
 .destination_nav_button {
   position: relative;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
 }
-.destination_nav_button.prev-button{
+
+.destination_nav_button.prev-button {
   position: absolute;
   left: 0;
   top: 20px;
 }
-.destination_nav_button.next-button{
+
+.destination_nav_button.next-button {
   position: absolute;
   right: 0;
   top: 20px;
 }
+
 .destination_nav_button button {
   background: #ffeced;
   color: #ca1c26;
-  height: 28px;
-  width: 28px;
+  height: 40px;
+  max-width: 40px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0px;
+  padding: 5px;
+  border-radius: 50px;
 }
+
 .desti_images-wrapper {
   position: relative;
 }
+
 .slider {
   display: flex;
   align-items: center;
 }
 
-.prev-button, .next-button {
+.prev-button,
+.next-button {
   background: none;
   border: none;
   cursor: pointer;
 }
-
+.prev-button svg,
+.next-button svg{
+  width: 40px;
+  height: 50px;
+}
 .prev-button {
   margin-right: 10px;
 }
@@ -235,17 +262,20 @@ padding: 6px 0px;
   display: flex;
   gap: 30px;
 }
+
 .step_up_buttons {
   display: flex;
   justify-content: space-between;
   width: 100%;
   padding-top: 22px;
 }
+
 .button_wrapper {
   position: relative;
   max-width: 934px;
   margin: auto;
 }
+
 .step_up_buttons button {
   border: 1px solid #ca1c26;
   padding: 8px 40px;
@@ -255,16 +285,17 @@ padding: 6px 0px;
 }
 
 button.btn {
-      border: 1px solid #ca1c26;
+  border: 1px solid #ca1c26;
   padding: 8px 40px;
   background: #ca1c26;
   color: #fff;
   border-radius: 4px;
 }
+
 button.disabled {
   border: 1px solid #ca1c26;
   padding: 8px 40px;
-  background: unset!important;
+  background: unset !important;
   color: #000;
   border-radius: 4px;
 }
@@ -274,6 +305,7 @@ button.disabled {
   flex-direction: column;
   gap: 10px;
 }
+
 .faq_contents {
   padding: 20px 10px;
 }
@@ -281,12 +313,13 @@ button.disabled {
 /* css by neo sharma */
 
 @media (max-width:1440px) {
-  .last_section_inner{
+  .last_section_inner {
     padding: 20px 40px;
   }
 }
+
 @media (min-width: 1025px) and (max-width:1440px) {
-  .px-\[12\.5vw\].flex.flex-col.gap-\[5vh\].xsm\:px-\[3vw\]{
+  .px-\[12\.5vw\].flex.flex-col.gap-\[5vh\].xsm\:px-\[3vw\] {
     padding: 20px 40px;
   }
 }
@@ -300,12 +333,14 @@ button.disabled {
 }
 
 @media (max-width:1024px) {
-  .last_section_inner{
-    padding:  20px;
+  .last_section_inner {
+    padding: 20px;
   }
-  .grid-cols-3{
+
+  .grid-cols-3 {
     grid-template-columns: 1fr 1fr;
   }
+
   .footerbg .justify-between {
     flex-wrap: wrap;
     gap: 20px;
@@ -331,13 +366,16 @@ button.disabled {
   .px-\[12\.5vw\].flex.flex-col.gap-\[5vh\].xsm\:px-\[3vw\] {
     padding: 10px 20px;
   }
-  .last_section_inner{
-    padding:  10px;
+
+  .last_section_inner {
+    padding: 10px;
   }
+
   .w-full.flex.justify-between.xsm\:flex-col.xsm\:overflow-hidden {
     gap: 20px;
   }
-  h1.desti_details_heading{
+
+  h1.desti_details_heading {
     top: 98px;
     font-size: 40px;
   }
@@ -348,11 +386,8 @@ button.disabled {
     height: auto !important;
     padding: 20px;
   }
-  
+
 }
 
 
-@media (max-width:468px) {
-  
-}
-
+@media (max-width:468px) {}

@@ -58,7 +58,7 @@ const Staycount = () => {
                 <>
                   <div
                     onClick={() => handleItem(item)}
-                    className={`px-[10px] py-[20px] cursor-pointer relative  rounded `}
+                    className={`px-[10px] py-[20px] cursor-pointer relative  rounded styacount_wrapper`}
                     style={{
                       backgroundColor: item.color,
                       border: `1px solid ${item.border}`,

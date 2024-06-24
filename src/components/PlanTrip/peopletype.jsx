@@ -107,11 +107,11 @@ const Peopletype = () => {
   return (
     <div className="pl-14 pt-10 relative xsm:pl-4">
       <Commonheader />
-      <div className="flex flex-col mt-6">
+      <div className="flex flex-col  people_type_wrapper_outer">
         <p className="capitalize font-[550] font-Merri-sans text-xl">
           Who is travelling with you?
         </p>
-        <div className="grid grid-cols-5 pr-3 mt-6 xsm:grid-cols-2 xsm:gap-2">
+        <div className="grid grid-cols-5 pr-3 xsm:grid-cols-2 xsm:gap-2 people_type_wrapper">
           {Holidays.map((item) => (
             <div
               key={item.title}
@@ -235,15 +235,17 @@ const Peopletype = () => {
             </div>
           </div>
         )}
-
+        <div className="group_selection_btn_wrapper">
         {(familyGroup === "Family" || familyGroup === "Group") && (
           <div
             onClick={() => handleItem(familyGroup)}
-            className="bg-[#CA1C26] text-white px-6 py-2 fixed bottom-10 right-3 rounded-md uppercase cursor-pointer"
+            className="bg-[#CA1C26] text-white px-6 py-2  rounded-md uppercase cursor-pointer group_selection_btn"
           >
             Continue
           </div>
         )}
+        </div>
+        
       </div>
     </div>
   );

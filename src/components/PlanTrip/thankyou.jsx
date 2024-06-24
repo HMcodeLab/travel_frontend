@@ -33,9 +33,9 @@ const Thankyou = ({ setPlanning }) => {
       onClick={closeModal}
     >
       <div
-        className={`flex flex-col h-[50vh] w-[40vw] bg-white items-center justify-center gap-5 rounded ${animationClass} xsm:w-[90vw] xsm:h-fit xsm:p-5`}
+        className={`flex flex-col h-[40vh] w-[40vw] bg-white items-center justify-center gap-5 rounded ${animationClass} xsm:w-[90vw] xsm:h-fit xsm:p-5`}
       >
-        <span className="flex flex-col uppercase text-3xl w-full justify-center items-center font-bold gap-2">
+        <span className="flex flex-col uppercase text-3xl w-full justify-center items-center font-bold gap-2 thankyou_heading">
           <p>Thank You for</p>
           <div className="flex items-center gap-2">
             <p className="text-[#CA1C26]">Booking</p>

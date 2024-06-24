@@ -10,7 +10,7 @@ const Section4Cards = () => {
                 {
                     section4Data?.map((val, ind) => {
                         return (
-                            <div className={styles.card}>
+                            <div className={styles.card} key={ind}>
                                 <Image src={val.img} alt={"..."} height={1000} width={1000} />
                                 <div className={styles.content}>
                                     <Image src={val.logo} alt={"..."} height={1000} width={1000} />

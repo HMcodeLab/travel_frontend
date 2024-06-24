@@ -87,7 +87,7 @@ const Planningtriphome = ({ planning, setPlanning }) => {
             className={`h-[100vh] w-[60vw] px-[40px] plantrip pt-2 xsm:w-[100vw] ${animationClass}`}
           >
            
-            <div className="h-12 w-12 rounded-full bg-[#FADDDD] flex justify-center items-center p-1 fixed right-2 top-2 z-20">
+            <div className="h-12 w-12 rounded-full close_plan_tip flex justify-center items-center p-1 fixed right-2 top-2 z-20">
               <Image
                 className="cursor-pointer"
                 onClick={() => closeModal()}

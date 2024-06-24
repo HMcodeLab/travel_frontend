@@ -42,10 +42,10 @@ const Cities = ({ formData }) => {
         <Image
           alt="..."
           src={Search}
-          className="absolute top-2 left-[5.3rem] h-5 w-6 xsm:left-[0.5rem]"
+          className="absolute top-3 left-[5.3rem] h-5 w-6 xsm:left-[0.5rem]"
         />
         <input
-          className="w-[100%] h-[35px] rounded pl-9 focus:outline-none xsm:w-full"
+          className="w-[100%] h-[35px] rounded pl-9 focus:outline-none xsm:w-full search_for_destinations"
           placeholder="Pick your destination"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
