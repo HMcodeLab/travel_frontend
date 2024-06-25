@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { use, useState } from "react";
 import "./EnquiryForm.css";
 import { toast, Toaster } from "react-hot-toast";
 import axios from "axios";
@@ -13,42 +13,46 @@ const EnquiryForm = ({ setEnquiryModal }) => {
     destination: "",
     total_no_travelers: "",
     message: "",
-    // departuredate: "5/10/24",
-    // returndate: "9/10/24",
-    // adminEamil: "sales@eligocs.com",
+    
   });
-  const formData = new FormData();
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
-    // if (formData.has(name)) {
-    //   formData.delete(name);
-    // }
-    // formData.append(name, value);
   };
 
   const handleSendQuery = async () => {
-    for (const key in user) {
-      if (user.hasOwnProperty(key)) {
-        formData.append(key, user[key]);
-      }
-    }
-    console.log(formData);
-    formData.forEach((value, key) => {
-      console.log(`${key}: ${value}`);
-    });
-    console.log(user);
+   let formData=new FormData()
+   formData.append('name',user.name)
+   formData.append('email',user.email)
+   formData.append('mobile',user.mobile)
+   formData.append('destination',user.destination)
+   formData.append('total_no_travelers',user.total_no_travelers)
+   formData.append('message',user.message)
+   formData.append('adminEamil',"sales@eligocs.com")
+
     try {
       const res = await axios.post(
         `${process.env.NEXT_PUBLIC_URL}/query/savequery`,
         formData
       );
-      console.log(res);
-      toast.success("Send Query Successfully");
+      console.log(res)
+      if(res.status){
+        toast.success('query sent successfully');
+        setUser({
+          name: "",
+          email: "",
+          mobile: "",
+          destination: "",
+          total_no_travelers: "",
+          message: "",
+          
+        })
+      }
     } catch (error) {
       console.log(error);
-      toast.error("Failed To send Query");
+      toast.success("error query not sent ");
     }
   };
 
