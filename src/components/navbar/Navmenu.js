@@ -52,7 +52,7 @@ const Navmenu = () => {
                         allCategory.length > 0 && (
                             <div className="slider">
                                 <div className="slider-content">
-                                    {allCategory.slice(0, 7).map((item, ind) => (
+                                    {allCategory.slice(0, 9).map((item, ind) => (
                                         <Link key={ind} href={`/destination?city_name=${item?.name}&cityid=${item?.city_id}`}>
                                             <div className="desti-contect-wrapper">
                                                 <Image src="/Assets/Icons/places/explore.svg" width={100} height={100} alt={item?.name} />
@@ -88,10 +88,10 @@ const Navmenu = () => {
 function EmptyComponent() {
     return (
 
-        <div className="slider-container">
+        <div className="slider-container emptycontainer">
             <div className="slider">
                 <div className="slider-content">
-                    {Array(7).fill().map((_, index) => (
+                    {Array(9).fill().map((_, index) => (
                         <Link href={'/'} key={index}>
                             <div className="desti-contect-wrapper" >
                                 <Image src="/Assets/Icons/places/explore.svg" width={100} height={100} alt="Loading..." />

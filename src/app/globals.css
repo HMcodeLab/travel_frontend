@@ -172,7 +172,9 @@ h1.desti_details_heading {
   align-items: center;
   row-gap: 6px;
 }
-
+.emptycontainer .desti-contect-wrapper img {
+  filter: grayscale(1);
+}
 .desti-contect-wrapper p {
   white-space: nowrap;
   font-family: Metrophobic;

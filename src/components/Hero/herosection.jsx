@@ -127,7 +127,7 @@ const HeroSection = () => {
           </h2>
           <SearchScroll
             words={["Explore", "Connect", "Thrive", "Memories"]}
-            css={"text-[98px] font-bold xsm:text-[50px]"}
+            css={"text-[93px] font-bold xsm:text-[50px]"}
           />
           <p className="border-b border-[#CA1C26] text-[1.2rem] text-center">
             Curating Unparalleled Travel Experiences, One Journey at a Time
