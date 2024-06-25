@@ -37,7 +37,7 @@ const EnquiryForm = ({ setEnquiryModal }) => {
         `${process.env.NEXT_PUBLIC_URL}/query/savequery`,
         formData
       );
-      console.log(res)
+    
       if(res.status){
         toast.success('query sent successfully');
         setUser({
