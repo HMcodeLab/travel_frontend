@@ -52,12 +52,17 @@
     justify-content: center;
     gap: 50px;
 }
-
+.footer_dest_heading{
+    margin-bottom: 10px;
+}
 .footer_gallary_wrapper {
     gap: 2.7rem;
     font-weight: 600;
 }
-.empty_image{
+.footer_links a{
+    font-size: 15.37px;
+}
+.travel_image_wrapper .empty_image{
     max-width: 114px;
     width: 114px;
     min-height: 117px;
@@ -86,9 +91,18 @@
         grid-template-columns: 1fr 1fr 1fr;
         width: 100%;
     }
+    
+    .footer_destination_link{
+        width: 100%;
+        height: auto;
+    }
+    .footer_gallary_wrapper {
+        gap: .5rem;
+    }
 }
 
 @media (max-width:768px) {
+    
     .xsm\:my-5 {
         width: 100%;
     }
@@ -99,6 +113,9 @@
 }
 
 @media (max-width:520px) {
+    .footer_links a{
+        font-size: 12.37px;
+    }
     .flex.justify-between.w-\[60\%\].xsm\:w-\[100\%\] {
         grid-template-columns: 1fr;
     }

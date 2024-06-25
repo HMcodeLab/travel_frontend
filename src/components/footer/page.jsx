@@ -48,8 +48,8 @@ const Footer = () => {
 
             <div className="flex justify-between  items-center xsm:flex-col xsm:px-5 footer_column_wrapper">
               <div className="flex justify-between w-[60%] xsm:w-[100%]">
-                <div className="pr-5 border-r-[2px] flex flex-col gap-3 xsm:hidden">
-                  <p className="text-[16px] font-semibold xsm:text-[14px]">
+                <div className="pr-5 border-r-[2px] flex flex-col gap-3 xsm:hidden footer_links">
+                  <p className="text-[17.57px] font-semibold xsm:text-[15px]">
                     ABOUT TGE
                   </p>
                   <Link href={"/about_us"} className={`${pstyle}`}>
@@ -63,8 +63,8 @@ const Footer = () => {
                     Privacy
                   </Link>
                 </div>
-                <div className="pr-5 border-r-[2px] flex flex-col gap-3">
-                  <p className="text-[16px] font-semibold xsm:text-[12px] capitalize">
+                <div className="pr-5 border-r-[2px] flex flex-col gap-3 footer_links">
+                  <p className="text-[17.57px] font-semibold xsm:text-[13px] capitalize">
                     IMPORTANT LINKS
                   </p>
                   <Link href={"/policy/refund"} className={`${pstyle}`}>
@@ -74,7 +74,7 @@ const Footer = () => {
                     Terms & Conditions
                   </Link>
                 </div>
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-3 footer_links">
                   {/* <p className="text-[16px] font-semibold xsm:text-[12px] ">
                     CONTACT US{" "}
                   </p>  */}
@@ -106,7 +106,7 @@ const Footer = () => {
               </div>
 
               <div className="xsm:my-5">
-                <p className="text-[#595858] text-[17.57px] font-semibold">
+                <p className="text-[#595858] text-[17.57px] font-semibold footer_dest_heading">
                   Travel Destinations
                 </p>
                 <div className="grid grid-cols-3 gap-2 footer_gallary_wrapper">
@@ -119,7 +119,7 @@ const Footer = () => {
                         <Link
                           key={ind}
                           href={`/destination?city_name=${item?.name}&cityid=${item?.city_id}`}
-                          className="h-[5rem] w-[5rem]"
+                          className="h-[5rem] w-[5rem] footer_destination_link"
                         >
                           <span className="relative travel_image_wrapper">
                             <Image
