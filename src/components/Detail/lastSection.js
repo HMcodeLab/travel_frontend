@@ -13,7 +13,7 @@ const LastSection = ({ data }) => {
                 <div className='uppercase border-l-4 border-[var(--primary)]  font-bold text-2xl  flex flex-wrap pl-1 w-[80%] xsm:w-[90%] '>
                     <p className='lastsection_left_heading'>Trending, Best Selling <span className='text-[var(--primary)]'>Tours</span> And Fun <span className='text-[var(--primary)]'>Destinations</span></p>
                 </div>
-                <p className='text-[#494545] xsm:hidden'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, sunt?</p>
+                <p className='text-[#494545] xsm:hidden lastsection_left_para'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, sunt?</p>
             </div>
             <div className={`flex h-fit justify-between ${styles.card_main}`}>
 

@@ -6,7 +6,7 @@ const RequestCall = () => {
   return (
     <>
       <div className="flex w-full justify-between ">
-        <p className="w-[40%] xsm:w-[60%] xsm:text-[0.8rem]">
+        <p className="w-[40%] xsm:w-[60%] xsm:text-[0.8rem] resuest_call_para">
           Affordable <strong>adventures</strong>, our Pocket Friendly Guarantee
           ensures unforgettable{" "}
           <span className="font-semibold text-[var(--primary)]">
