@@ -341,7 +341,11 @@ button.disabled {
   padding: 10px 20px;
 }
 
-
+.lastsection_left_heading{
+  font-size: 34.86px;
+  font-weight: 700;
+  line-height: 43.82px;
+}
 /* css by neo sharma */
 
 @media (max-width:1440px) {
@@ -401,6 +405,7 @@ button.disabled {
 
   .footerbg .w-full {
     width: 100%;
+    max-width: fit-content;
   }
 
   .footerbg .h-full {
@@ -409,6 +414,10 @@ button.disabled {
 }
 
 @media (max-width:768px) {
+  .lastsection_left_heading {
+    font-size: 21px;
+    line-height: 26.4px;
+}
   .px-\[12\.5vw\].flex.flex-col.gap-\[5vh\].xsm\:px-\[3vw\] {
     padding: 10px 20px;
   }
