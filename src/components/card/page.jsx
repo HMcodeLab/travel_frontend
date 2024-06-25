@@ -64,7 +64,7 @@ const Cards = ({ val }) => {
           <div className="flex items-center gap-1">
             <p className="font-bold text-xl ">₹{val?.starting_cost}/-</p>
             <strike className="text-[#5F5D5D] text-sm font-semibold">
-              ₹{val?.discount || 200}/-
+              {val?.discount || ""}
             </strike>
           </div>
           <div className="flex items-center gap-1">

@@ -85,8 +85,13 @@
   background-color: var(--primary);
   color: white;
   font-weight: 400;
-  padding: 10px 17px;
+  padding: 8px 15px;
 }
+.btn_section button:first-child:hover{
+  border: 2px dotted;
+  padding: 7px 14px;
+}
+
 
 .btn_section button:last-child {
   border: 1px solid black;
@@ -294,6 +299,7 @@
     font-size: 0.7rem;
     border-radius: 5px;
   }
+  
   .btn_section p {
     white-space: nowrap;
     font-size: 10px;

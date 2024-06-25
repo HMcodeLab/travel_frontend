@@ -34,8 +34,8 @@ const Navbar = ({ setEnquiryModal, setPlanning }) => {
             <p> JODHPUR, RISHIKESH, JAIPUR, MCLEODGANJ & AMRITSAR </p>
           </span>
         </div>
-        <div className={styles.btn_section}>
-          <button onClick={() => setPlanning(true)} > <Image src={PlanTrip} alt="..." /><p> PLAN A TRIP </p> </button>
+        <div className={`${styles.btn_section} trip_enquiry_wrapper`}>
+          <button onClick={() => setPlanning(true)}  > <Image src={PlanTrip} alt="..." /><p> PLAN A TRIP </p> </button>
           <button onClick={() => setEnquiryModal(true)} className="xsm:hidden"> <p>Enquiry </p> <Image src={ArrowDown} alt="..." /> </button>
 
 
