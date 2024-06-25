@@ -36,6 +36,10 @@
   font-family: Metrophobic;
   src: url("../../public/fonts/Metrophobic-Regular.ttf");
 }
+@font-face {
+  font-family: GT-Pressura;
+  src: url("../../public/fonts/GT\ Pressura\ Regular.ttf");
+}
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -155,8 +159,11 @@ h1.desti_details_heading {
   justify-content: center;
   align-items: center;
   padding: 6px 0px;
-  overflow: hidden;
+  overflow: auto;
+}
 
+.slider-container::-webkit-scrollbar {
+  opacity: 0;
 }
 
 .desti-contect-wrapper {
@@ -165,7 +172,9 @@ h1.desti_details_heading {
   align-items: center;
   row-gap: 6px;
 }
-
+.emptycontainer .desti-contect-wrapper img {
+  filter: grayscale(1);
+}
 .desti-contect-wrapper p {
   white-space: nowrap;
   font-family: Metrophobic;
@@ -197,38 +206,34 @@ h1.desti_details_heading {
   border-radius: 2px;
 }
 
+
 .destination_nav_button {
   position: relative;
-  display: flex;
   flex-wrap: nowrap;
-  align-items: center;
-}
-
-.destination_nav_button.prev-button {
-  position: absolute;
-  left: 0;
-  top: 20px;
-}
-
-.destination_nav_button.next-button {
-  position: absolute;
-  right: 0;
-  top: 20px;
-}
-
-.destination_nav_button button {
-  background: #ffeced;
-  color: #ca1c26;
-  height: 40px;
-  max-width: 40px;
-  width: 100%;
   display: flex;
+  gap: 40px;
   align-items: center;
   justify-content: center;
-  margin: 0px;
-  padding: 5px;
-  border-radius: 50px;
 }
+
+
+
+.view_all_tours_btn {
+  position: relative;
+  font-size: 17px;
+  font-family: var(--primary-font);
+  font-weight: 400;
+  display: flex;
+  gap: 5px;
+  white-space: nowrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 5px;
+  color: var(--primary);
+  border-bottom: 1px solid var(--primary);
+}
+
 
 .desti_images-wrapper {
   position: relative;
@@ -245,11 +250,13 @@ h1.desti_details_heading {
   border: none;
   cursor: pointer;
 }
+
 .prev-button svg,
-.next-button svg{
+.next-button svg {
   width: 40px;
   height: 50px;
 }
+
 .prev-button {
   margin-right: 10px;
 }
@@ -310,6 +317,31 @@ button.disabled {
   padding: 20px 10px;
 }
 
+
+.discount_heading_top_first p {
+  font-size: 24.75px;
+  font-weight: 400;
+}
+
+.discount_heading_top_second p {
+  font-size: 31.97px;
+  font-weight: 700;
+}
+
+.discount_section_para{
+  font-size: 17.53px;
+  font-weight: 300;
+  font-family: GT-Pressura;
+}
+.discount_section_wrapper button{
+  border: 1px solid #CA1C2680;
+  font-size: 18.56px;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding: 10px 20px;
+}
+
+
 /* css by neo sharma */
 
 @media (max-width:1440px) {
@@ -333,6 +365,20 @@ button.disabled {
 }
 
 @media (max-width:1024px) {
+  .discount_heading_top_first p {
+    font-size: 12px;
+  }
+  
+  .discount_heading_top_second p {
+    font-size: 22px;
+  }
+  
+  .discount_section_para{
+    font-size: 14px;
+  }
+  .discount_section_wrapper button{
+    font-size: 12px;
+  }
   .last_section_inner {
     padding: 20px;
   }
@@ -365,6 +411,11 @@ button.disabled {
 @media (max-width:768px) {
   .px-\[12\.5vw\].flex.flex-col.gap-\[5vh\].xsm\:px-\[3vw\] {
     padding: 10px 20px;
+  }
+  
+  .view_all_tours_btn {
+    font-size: 13px;
+    top: -5px;
   }
 
   .last_section_inner {

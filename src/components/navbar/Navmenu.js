@@ -9,7 +9,6 @@ import { BASE_URL } from '@/helpers/baseurl';
 const Navmenu = () => {
     const [allCategory, setAllCategory] = useState([]);
     const [activeCat, setActiveCat] = useState('tour');
-    const [currentIndex, setCurrentIndex] = useState(0);
     const [loading, setLoading] = useState(true); // Add loading state
     const intervalRef = useRef(null);
 
@@ -33,32 +32,18 @@ const Navmenu = () => {
         };
     }, []);
 
-    useEffect(() => {
-        clearInterval(intervalRef.current);
-        intervalRef.current = setInterval(() => {
-            handleNext();
-        }, 2500);
 
-        return () => clearInterval(intervalRef.current);
-    }, [currentIndex, allCategory]);
+    const viewAllTours = () => {
 
-    const handlePrev = () => {
-        setCurrentIndex((prevIndex) =>
-            prevIndex === 0 ? allCategory.length - 12 : Math.max(prevIndex - 1, 0)
-        );
     };
 
-    const handleNext = () => {
-        setCurrentIndex((prevIndex) =>
-            prevIndex === allCategory.length - 12 ? 0 : Math.min(prevIndex + 1, allCategory.length - 12)
-        );
-    };
 
     return (
         <div className={styles.nav_menu_main}>
             <div className={`${styles.places_images} desti_images-wrapper destination_nav_button`}>
-                <button onClick={handlePrev} className="prev-button">
-                    <ChevronLeftIcon className="h-7 w-5" />
+                <button onClick={viewAllTours} className="view_all_tours_btn">
+                    <Image src="/Assets/Icons/places/explore.svg" width={100} height={100} alt="explore_all" />
+                    Explore All
                 </button>
                 <div className="slider-container">
                     {loading ? (
@@ -67,7 +52,7 @@ const Navmenu = () => {
                         allCategory.length > 0 && (
                             <div className="slider">
                                 <div className="slider-content">
-                                    {allCategory.slice(currentIndex, currentIndex + 12).map((item, ind) => (
+                                    {allCategory.slice(0, 9).map((item, ind) => (
                                         <Link key={ind} href={`/destination?city_name=${item?.name}&cityid=${item?.city_id}`}>
                                             <div className="desti-contect-wrapper">
                                                 <Image src="/Assets/Icons/places/explore.svg" width={100} height={100} alt={item?.name} />
@@ -80,9 +65,9 @@ const Navmenu = () => {
                         )
                     )}
                 </div>
-                <button onClick={handleNext} className="next-button">
+                {/* <button onClick={handleNext} className="next-button">
                     <ChevronRightIcon className="h-7 w-5" />
-                </button>
+                </button> */}
             </div>
             <div className={`${styles.menu_btn_section} act_tour_buttons`}>
                 <Link href={'/'} onClick={() => setActiveCat('tour')} className={activeCat === 'tour' ? `${styles.active}` : `${styles.inactive}`}>
@@ -102,21 +87,21 @@ const Navmenu = () => {
 
 function EmptyComponent() {
     return (
-     
-                <div className="slider-container">
-                    <div className="slider">
-                        <div className="slider-content">
-                            {Array(12).fill().map((_, index) => (
-                                <Link href={'/'}  key={index}>
-                                <div className="desti-contect-wrapper" >
-                                    <Image src="/Assets/Icons/places/explore.svg" width={100} height={100} alt="Loading..." />
-                                    <p>loading...</p>
-                                </div>
-                                </Link>
-                            ))}
-                        </div>
-                    </div>
+
+        <div className="slider-container emptycontainer">
+            <div className="slider">
+                <div className="slider-content">
+                    {Array(9).fill().map((_, index) => (
+                        <Link href={'/'} key={index}>
+                            <div className="desti-contect-wrapper" >
+                                <Image src="/Assets/Icons/places/explore.svg" width={100} height={100} alt="Loading..." />
+                                <p>loading...</p>
+                            </div>
+                        </Link>
+                    ))}
                 </div>
+            </div>
+        </div>
     );
 }
 

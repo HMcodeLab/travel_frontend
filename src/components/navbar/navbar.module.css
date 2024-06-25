@@ -85,13 +85,23 @@
   background-color: var(--primary);
   color: white;
   font-weight: 400;
-  padding: 10px 17px;
+  padding: 8px 15px;
+}
+.btn_section button:first-child:hover{
+  border: 2px dotted;
+  padding: 7px 14px;
 }
 
 .btn_section button:last-child {
   border: 1px solid black;
   font-weight: 700;
 }
+
+.btn_section button:last-child:hover{
+  border: 1px solid #01008082;
+  color: #030240;
+}
+
 .btn_section button:last-child img {
   border: 1px dotted black;
   border-radius: 100%;
@@ -284,7 +294,7 @@
   .places_images {
     display: flex;
     gap: 2.5vw;
-    max-width: 90vw;
+    max-width: 100vw;
     overflow-x: auto;
   }
 
@@ -299,6 +309,7 @@
     font-size: 0.7rem;
     border-radius: 5px;
   }
+  
   .btn_section p {
     white-space: nowrap;
     font-size: 10px;
@@ -345,3 +356,4 @@
     padding-inline: 3px;
   }
 }
+

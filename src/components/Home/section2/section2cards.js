@@ -46,7 +46,7 @@ const Section2Cards = () => {
                 </div>
                 <div className={styles.anim_cards}>
                     <span>
-                        <div className={styles.places_card}>
+                        <div className={`anim_card_row_first ${styles.places_card}`}>
                             {
                                 movingCard?.slice(3, 9)?.map((data, ind) => {
                                     return (
@@ -60,7 +60,7 @@ const Section2Cards = () => {
                                 })
                             }
                         </div>
-                        <div className={`${styles.places_card} ${styles.places2}`}>
+                        <div className={`anim_card_row_second ${styles.places_card} ${styles.places2}`}>
                             {
                                 movingCard?.slice(3, 9)?.map((data, ind) => {
                                     return (
@@ -74,7 +74,7 @@ const Section2Cards = () => {
                                 })
                             }
                         </div>
-                        <div className={styles.places_card}>
+                        <div className={`anim_card_row_third ${styles.places_card} ${styles.places3}`}>
                             {
                                 movingCard?.slice(3, 9)?.map((data, ind) => {
                                     return (

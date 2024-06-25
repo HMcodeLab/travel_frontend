@@ -51,34 +51,27 @@ const Commonheader = () => {
       <p className="text-xl font-Merri-sans font-semibold xsm:text-[1rem]">
         NOW PLANNING YOUR HOLIDAY TO
       </p>
-      <div className="grid grid-cols-6 gap-2 xsm:flex xsm:flex-wrap">
+      <div className="flex  gap-4 xsm:flex xsm:flex-wrap selected_query_wrapper">
         {Object.keys(trimmedData)?.map((item, ind) => {
           return (
             <>
+            <div className="values_wrapper">
               <div
                 onClick={() => handleHeader(ind)}
-                className="border cursor-pointer border-[#CA1C2654] rounded flex items-center gap-2  p-1 "
+                className="border cursor-pointer border-[#CA1C2654] rounded flex items-center gap-2  p-1 selected_query_values"
               >
                 <Image src={ICONS[ind]} alt="icon" />
                 <span className="font-[500] text-[#171717] text-lg font-Merri-sans capitalize xsm:text-[0.9rem]">
                   {headerdata[item]}
                 </span>
               </div>
+              <span className="query_values_border"></span>
+              </div>
             </>
           );
         })}
       </div>
-      <div className="grid grid-cols-6 gap-2">
-        {Object.keys(trimmedData)?.map((item) => {
-          return (
-            <>
-              <div className="h-[6px] bg-[var(--primary)]"></div>
-            </>
-          );
-        })}
-
-        {/* {items} */}
-      </div>
+     
     </div>
   );
 };
