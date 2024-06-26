@@ -40,7 +40,7 @@
   gap: 8px;
 }
 .contact_inner li{
-  font-size: 14px;
+  font-size: 14px !important;
   font-weight: 500;
 }
 .faq_section_inner {
@@ -182,7 +182,7 @@
 
 @media (max-width:768px) {
   .contact_inner li{
-    font-size: 12px;
+    font-size: 12px !important;
   }
   .contact_inner h2 {
     font-size: 25px;
