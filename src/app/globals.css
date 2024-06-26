@@ -179,9 +179,11 @@ h1.desti_details_heading {
   align-items: center;
   row-gap: 6px;
 }
+
 .emptycontainer .desti-contect-wrapper img {
   filter: grayscale(1);
 }
+
 .desti-contect-wrapper p {
   white-space: nowrap;
   font-family: Metrophobic;
@@ -314,17 +316,6 @@ button.disabled {
   border-radius: 4px;
 }
 
-.faq_section_inner {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.faq_contents {
-  padding: 20px 10px;
-}
-
-
 .discount_heading_top_first p {
   font-size: 24.75px;
   font-weight: 400;
@@ -335,12 +326,13 @@ button.disabled {
   font-weight: 700;
 }
 
-.discount_section_para{
+.discount_section_para {
   font-size: 17.53px;
   font-weight: 300;
   font-family: GT-Pressura;
 }
-.discount_section_wrapper button{
+
+.discount_section_wrapper button {
   border: 1px solid #CA1C2680;
   font-size: 18.56px;
   font-weight: 400;
@@ -348,23 +340,34 @@ button.disabled {
   padding: 10px 20px;
 }
 
-.lastsection_left_heading{
+.lastsection_left_heading {
   font-size: 34.86px;
   font-weight: 700;
   line-height: 43.82px;
 }
-.lastsection_left_para{
+
+.lastsection_left_para {
   font-size: 19.92px;
   line-height: 29.88px;
   font-weight: 400;
   font-family: Exo;
 }
-.resuest_call_para{
+
+.resuest_call_para {
   font-size: 23px;
   font-weight: 500;
   line-height: 30px;
   font-family: Manrope;
 }
+
+
+.panormic_ladakh_heading {
+  font-size: 45px;
+  font-weight: 700;
+}
+
+
+
 /* css by neo sharma */
 
 @media (max-width:1440px) {
@@ -391,17 +394,19 @@ button.disabled {
   .discount_heading_top_first p {
     font-size: 12px;
   }
-  
+
   .discount_heading_top_second p {
     font-size: 22px;
   }
-  
-  .discount_section_para{
+
+  .discount_section_para {
     font-size: 14px;
   }
-  .discount_section_wrapper button{
+
+  .discount_section_wrapper button {
     font-size: 12px;
   }
+
   .last_section_inner {
     padding: 20px;
   }
@@ -433,22 +438,31 @@ button.disabled {
 }
 
 @media (max-width:768px) {
-  .lastsection_left_para{
+  .panormic_ladakh_heading {
+    font-size: 25px;
+  }
+
+  
+
+  .lastsection_left_para {
     font-size: 15px;
     line-height: 20px;
   }
-  .resuest_call_para{
+
+  .resuest_call_para {
     font-size: 12px;
     line-height: 14.4px;
   }
+
   .lastsection_left_heading {
     font-size: 21px;
     line-height: 26.4px;
-}
+  }
+
   .px-\[12\.5vw\].flex.flex-col.gap-\[5vh\].xsm\:px-\[3vw\] {
     padding: 10px 20px;
   }
-  
+
   .view_all_tours_btn {
     font-size: 13px;
     top: -5px;
