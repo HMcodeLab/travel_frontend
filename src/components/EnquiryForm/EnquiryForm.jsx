@@ -51,6 +51,7 @@ const EnquiryForm = ({ setEnquiryModal }) => {
 
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
+    setError({...error,[name]:''})
   };
 
   const handleSendQuery = async () => {
