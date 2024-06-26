@@ -30,6 +30,10 @@
   text-align: center;
 }
 
+.contact_inner span{
+  color: #ca1c26;
+}
+
 .contact_inner {
   display: flex;
   flex-direction: column;
