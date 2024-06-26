@@ -331,7 +331,11 @@ button.disabled {
   font-weight: 300;
   font-family: GT-Pressura;
 }
-
+span.errors {
+  text-transform: capitalize;
+  color: #ff00007a;
+  font-size: 14px;
+}
 .discount_section_wrapper button {
   border: 1px solid #CA1C2680;
   font-size: 18.56px;

@@ -15,45 +15,79 @@ const EnquiryForm = ({ setEnquiryModal }) => {
     message: "",
     
   });
+
+  let [error,setError]=useState({})
+
+  let handelErrors=()=>{
+    let {name,email,mobile,destination,total_no_travelers}=user
+    let valid=true
+    let errorFields={}
+    if(!name){
+      valid=false
+      errorFields.name='name is required'
+    }
+    if(!email){
+      valid=false
+      errorFields.email='email is required'
+    }
+    if(!mobile){
+      valid=false
+      errorFields.mobile='phone no. is required'
+    }
+    if(!destination){
+      valid=false
+      errorFields.destination='field is required'
+    }
+    if(!total_no_travelers){
+      valid=false
+      errorFields.total_no_travelers='field is required'
+    }
+    setError(errorFields)
+    return valid
+  }
   
 
   const handleChange = (e) => {
+
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
   };
 
   const handleSendQuery = async () => {
-   let formData=new FormData()
-   formData.append('name',user.name)
-   formData.append('email',user.email)
-   formData.append('mobile',user.mobile)
-   formData.append('destination',user.destination)
-   formData.append('total_no_travelers',user.total_no_travelers)
-   formData.append('message',user.message)
-   formData.append('adminEamil',"sales@eligocs.com")
-
-    try {
-      const res = await axios.post(
-        `${process.env.NEXT_PUBLIC_URL}/query/savequery`,
-        formData
-      );
-    
-      if(res.status){
-        toast.success('query sent successfully');
-        setUser({
-          name: "",
-          email: "",
-          mobile: "",
-          destination: "",
-          total_no_travelers: "",
-          message: "",
-          
-        })
-      }
-    } catch (error) {
-      console.log(error);
-      toast.success("error query not sent ");
+    if(handelErrors()){
+      let formData=new FormData()
+      formData.append('name',user.name)
+      formData.append('email',user.email)
+      formData.append('mobile',user.mobile)
+      formData.append('destination',user.destination)
+      formData.append('total_no_travelers',user.total_no_travelers)
+      formData.append('message',user.message)
+      formData.append('adminEamil',"sales@eligocs.com")
+   
+       try {
+         const res = await axios.post(
+           `${process.env.NEXT_PUBLIC_URL}/query/savequery`,
+           formData
+         );
+       
+         if(res.status){
+           toast.success('query sent successfully');
+           setUser({
+             name: "",
+             email: "",
+             mobile: "",
+             destination: "",
+             total_no_travelers: "",
+             message: "",
+             
+           })
+         }
+       } catch (error) {
+         console.log(error);
+         toast.success("error query not sent ");
+       }
     }
+   
   };
 
   return (
@@ -86,6 +120,7 @@ const EnquiryForm = ({ setEnquiryModal }) => {
                   name="name"
                   onChange={handleChange}
                 />
+                {error.name && <span className='errors' >{error.name}</span>}
               </div>
               <div className="flex flex-col gap-[2px]">
                 <p className="text-[11px] text-[#000000] font-semibold">
@@ -98,6 +133,7 @@ const EnquiryForm = ({ setEnquiryModal }) => {
                   name="email"
                   onChange={handleChange}
                 />
+                 {error.email && <span className='errors' >{error.email}</span>}
               </div>
               <div className="flex flex-col gap-[2px]">
                 <p className="text-[11px] text-[#000000] font-semibold">
@@ -110,6 +146,7 @@ const EnquiryForm = ({ setEnquiryModal }) => {
                   value={user?.mobile}
                   onChange={handleChange}
                 />
+                 {error.mobile && <span className='errors' >{error.mobile}</span>}
               </div>
               <div className="flex flex-col gap-[2px]">
                 <p className="text-[11px] text-[#000000] font-semibold">
@@ -119,6 +156,7 @@ const EnquiryForm = ({ setEnquiryModal }) => {
                   type="text"
                   className="border-[1.09px] border-[#B6B0B0] w-full rounded-sm p-1 outline-none"
                 />
+                
               </div>
               <div className="flex flex-col gap-[2px]">
                 <p className="text-[11px] text-[#000000] font-semibold">
@@ -131,6 +169,7 @@ const EnquiryForm = ({ setEnquiryModal }) => {
                   value={user?.destination}
                   onChange={handleChange}
                 />
+                 {error.destination && <span className='errors' >{error.destination}</span>}
               </div>
               <div className="flex flex-col gap-[2px]">
                 <p className="text-[11px] text-[#000000] font-semibold">
@@ -143,6 +182,7 @@ const EnquiryForm = ({ setEnquiryModal }) => {
                   value={user?.total_no_travelers}
                   onChange={handleChange}
                 />
+                 {error.total_no_travelers && <span className='errors' >{error.total_no_travelers}</span>}
               </div>
             </div>
             <div className="w-full flex flex-col gap-[2px]">
