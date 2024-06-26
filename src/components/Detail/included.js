@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import styles from './page.module.css'
 
 const Included = ({ data }) => {
     if (data === undefined) {
@@ -8,6 +9,7 @@ const Included = ({ data }) => {
     }
     console.log(data[0].inc_meta)
     return (
+        <div className={styles.included_tab_content_wrapper}>
         <div className='flex flex-col gap-[13px]'>
             <h1 className='text-[1.5rem] '>INCLUDED</h1>
             <ul className='list-disc flex flex-col gap-2'>
@@ -44,7 +46,7 @@ const Included = ({ data }) => {
                     }
                 </ul>
             </div>
-
+            </div>
         </div>
     )
 }
