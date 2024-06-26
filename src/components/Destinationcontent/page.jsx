@@ -52,6 +52,7 @@ const Destinationcontent = () => {
           width={1000}
           alt="..."
           className="xsm:h-[200px]"
+          style={{objectFit: 'cover',objectPosition: 'bottom center'}}
         />
         <h1 className="desti_details_heading">{ele.package_name}</h1>
         <div className="absolute top-[82%] translate-y-[50%] left-[50%] translate-x-[-50%] h-16 p-1 border-2 border-white rounded-full bg-[var(--primary)]">
@@ -66,7 +67,7 @@ const Destinationcontent = () => {
         <CommonHead data={responsedata} />
         <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
         <div className={`pl-[13%] pr-[9%] xsm:px-[20px] ${styles.details_flex}`}>
-          <div>
+          <div >
             {activeTab == 1 && <Overview data={responsedata} />}
             {activeTab == 2 && <Itinerary data={responsedata} />}
             {activeTab == 3 && <Included data={responsedata} />}
@@ -98,7 +99,7 @@ export const CommonHead = ({ data }) => {
       <div className={styles.section1}>
         <div className={`xsm:text-[16px] ${styles.highlightfirstletter}`}>
           {/* <Cap text="Panormic Ladakh with umling la pass package" /> */}
-          <p><span>Panormic Ladakh </span> with umling <br className="xsm:hidden"/>
+          <p className="panormic_ladakh_heading"><span>Panormic Ladakh </span> with umling <br className="xsm:hidden"/>
           <span>la pass</span> package</p>
           
         </div>
@@ -142,7 +143,7 @@ export const CommonHead = ({ data }) => {
 
 export const Tabs = ({ activeTab, setActiveTab }) => {
   return (
-    <div className={`pl-[13%] pr-[9%] xsm:px-[20px] ${styles.tabs_container}`}>
+    <div className={`pl-[13%] pr-[9%] xsm:px-[20px] tab_title_wrapper ${styles.tabs_container}`}>
       <div onClick={() => setActiveTab(1)}>
         <span className={`py-1 ${activeTab == 1 ? styles.active : ""}`}>
           <Image

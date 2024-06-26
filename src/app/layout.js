@@ -11,7 +11,7 @@ import { createContext, useEffect, useState } from 'react';
 import ContactUsHomeBtn from '@/components/ContactUsHomeBtn/ContactUsHomeBtn';
 import Planningtriphome from '@/components/PlanTrip/page';
 import { BASE_URL } from '@/helpers/baseurl';
-
+ 
 const inter = Inter({ subsets: ['latin'] });
 
 export const GlobalProvider = createContext()
@@ -39,6 +39,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`relative ${inter.className}`}>
+ 
         <GlobalProvider.Provider value={{ Fetchcards, CardsData }}>
           <div className={`${enquiryModal ? 'blurred-background' : ''}`}>
             <div className='sticky top-0 z-[99] bg-white'>

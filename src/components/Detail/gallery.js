@@ -33,7 +33,7 @@ const Gallery = () => {
         // },
     };
     return (
-        <div className={styles.gallery_main}>
+        <div className={`${styles.gallery_main} ${styles.gallary_wrapper}`}>
             <h2>Gallery</h2>
             <Splide aria-label="My Favorite Images" options={options}>
                 <SplideSlide >

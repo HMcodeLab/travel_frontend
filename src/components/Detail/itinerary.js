@@ -1,6 +1,7 @@
 "use client"
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import styles from './page.module.css'
 
 
 const Itinerary = ({ data }) => {
@@ -25,17 +26,17 @@ const Itinerary = ({ data }) => {
         );
     };
     return (
-        <div className='faq_section_inner'>
+        <div className={styles.faq_section_inner}>
             {
                 newdata?.map((val, ind) => {
 
                     return (
-                        <div className='faq_section'>
+                        <div className={styles.faq_section}>
                             <div className=" py-[12px] bg-[var(--primary)] text-white px-[10px] rounded-xl cursor-pointer" onClick={() => handleDropdownToggle(ind)}>
                                 Day {val.tour_day}  ({val?.tour_name})
                             </div>
                             <div style={{ display: !dropdown[ind] ? "none" : "" }}  >
-                                <div dangerouslySetInnerHTML={{ __html: val?.tour_des }} className='faq_contents'/>
+                                <div dangerouslySetInnerHTML={{ __html: val?.tour_des }} className={styles.faq_contents} />
                             </div>
                         </div>
                     )
