@@ -55,7 +55,7 @@ const Navmenu = () => {
                                     {allCategory.slice(0, 9).map((item, ind) => (
                                         <Link key={ind} href={`/destination?city_name=${item?.name}&cityid=${item?.city_id}`}>
                                             <div className="desti-contect-wrapper">
-                                                <Image src="/Assets/Icons/places/explore.svg" width={100} height={100} alt={item?.name} />
+                                                <Image src={item.image || "/Assets/Icons/places/explore.svg"} width={100} height={100} alt={item?.name} />
                                                 <p>{item?.name}</p>
                                             </div>
                                         </Link>
