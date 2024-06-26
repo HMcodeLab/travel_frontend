@@ -235,8 +235,13 @@
   .top_nav_main,
   .container,
   .nav_menu_main{
-    padding: 20px 40px;
+    padding: 10px 40px;
   }
+  
+.places_images {
+  max-width: 65vw;
+  overflow-x: auto;
+}
 }
 @media (min-width: 769px) and (max-width:1024px) {
   .top_nav_main,

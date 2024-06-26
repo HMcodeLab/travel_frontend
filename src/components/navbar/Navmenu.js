@@ -5,12 +5,14 @@ import Image from 'next/image';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid';
 import Link from 'next/link';
 import { BASE_URL } from '@/helpers/baseurl';
+import { useRouter } from 'next/navigation';
 
 const Navmenu = () => {
     const [allCategory, setAllCategory] = useState([]);
     const [activeCat, setActiveCat] = useState('tour');
     const [loading, setLoading] = useState(true); // Add loading state
     const intervalRef = useRef(null);
+    const router=useRouter()
 
     useEffect(() => {
         const fetchData = async () => {
@@ -34,7 +36,7 @@ const Navmenu = () => {
 
 
     const viewAllTours = () => {
-
+          router.push('/all_destination')
     };
 
 

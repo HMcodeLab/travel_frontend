@@ -38,14 +38,14 @@ const Cities = ({ formData }) => {
         <p>To Go ?</p>
       </div>
 
-      <div className="relative w-full flex pl-20 h-10 mt-8 xsm:pl-0">
+      <div className="relative w-full flex gap-2 pl-20 h-10 mt-8 xsm:pl-0">
         <Image
           alt="..."
           src={Search}
-          className="absolute top-3 left-[5.3rem] h-5 w-6 xsm:left-[0.5rem]"
+          className="absolute top-4 left-[5.3rem] h-5 w-6 xsm:left-[0.5rem]"
         />
         <input
-          className="w-[100%] h-[35px] rounded pl-9 focus:outline-none xsm:w-full search_for_destinations"
+          className="w-[90%] h-[30px] rounded pl-9 focus:outline-none xsm:w-full search_for_destinations"
           placeholder="Pick your destination"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}

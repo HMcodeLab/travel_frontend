@@ -14,7 +14,7 @@ import Thankyou from "./thankyou";
 export const Tripprovider = createContext();
 
 const BASE_URL = process.env.NEXT_PUBLIC_URL;
-console.log(BASE_URL);
+// console.log(BASE_URL);
 
 const Planningtriphome = ({ planning, setPlanning }) => {
   const [render, setrender] = useState("cities");
@@ -125,7 +125,7 @@ const Planningtriphome = ({ planning, setPlanning }) => {
               )}
              
             </Tripprovider.Provider>
-            <div className="button_wrapper">
+            {/* <div className="button_wrapper">
              <div className="step_up_buttons">
                 <button
                   onClick={handlePrev}
@@ -143,7 +143,7 @@ const Planningtriphome = ({ planning, setPlanning }) => {
                 </button>
               </div>
 
-            </div>
+            </div> */}
           </div>
           
         </div>
