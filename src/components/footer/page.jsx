@@ -16,6 +16,7 @@ const Footer = () => {
   const pstyle = "text-[14px]";
 
   const [allCategory, setallCategory] = useState([]);
+  const [loading, setLoading] = useState(true)
   useEffect(() => {
     async function Fetchdata() {
       try {
@@ -24,6 +25,8 @@ const Footer = () => {
         setallCategory(response?.data);
       } catch (error) {
         console.log(error);
+      } finally {
+        setLoading(false); // Set loading to false after fetching data
       }
     }
     Fetchdata();
@@ -33,7 +36,7 @@ const Footer = () => {
     <>
       <div className="w-full h-[60vh] footerbg  flex justify-center mt-10 xsm:h-fit font-Merri-sans">
         <div className="w-full h-full flex flex-col justify-around xsm:gap-3 xsm:pb-4">
-          <div className="flex flex-col h-[80%] w-[80%] bg-[#CFCFEE2E] backdrop-blur-sm rounded-3xl shadow-md mx-auto xsm:w-[95%]">
+          <div className="flex flex-col h-[80%] footer_flex_content_wrapper bg-[#CFCFEE2E] backdrop-blur-sm rounded-3xl shadow-md mx-auto xsm:w-[95%]">
             <div className="w-28 h-20 mx-auto -translate-y-8">
               <Image
                 src={"/Assets/Images/logo.png"}
@@ -43,10 +46,10 @@ const Footer = () => {
               />
             </div>
 
-            <div className="flex justify-between px-10 items-center xsm:flex-col xsm:px-5">
+            <div className="flex justify-between  items-center xsm:flex-col xsm:px-5 footer_column_wrapper">
               <div className="flex justify-between w-[60%] xsm:w-[100%]">
-                <div className="pr-5 border-r-[2px] flex flex-col gap-3 xsm:hidden">
-                  <p className="text-[16px] font-semibold xsm:text-[14px]">
+                <div className="pr-5 border-r-[2px] flex flex-col gap-3 xsm:hidden footer_links">
+                  <p className="text-[17.57px] font-semibold xsm:text-[15px]">
                     ABOUT TGE
                   </p>
                   <Link href={"/about_us"} className={`${pstyle}`}>
@@ -60,8 +63,8 @@ const Footer = () => {
                     Privacy
                   </Link>
                 </div>
-                <div className="pr-5 border-r-[2px] flex flex-col gap-3">
-                  <p className="text-[16px] font-semibold xsm:text-[12px] capitalize">
+                <div className="pr-5 border-r-[2px] flex flex-col gap-3 footer_links">
+                  <p className="text-[17.57px] font-semibold xsm:text-[13px] capitalize">
                     IMPORTANT LINKS
                   </p>
                   <Link href={"/policy/refund"} className={`${pstyle}`}>
@@ -71,7 +74,7 @@ const Footer = () => {
                     Terms & Conditions
                   </Link>
                 </div>
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-3 footer_links">
                   {/* <p className="text-[16px] font-semibold xsm:text-[12px] ">
                     CONTACT US{" "}
                   </p>  */}
@@ -103,19 +106,22 @@ const Footer = () => {
               </div>
 
               <div className="xsm:my-5">
-                <p className="text-[#595858] text-xl font-semibold">
+                <p className="text-[#595858] text-[17.57px] font-semibold footer_dest_heading">
                   Travel Destinations
                 </p>
-                <div className="grid grid-cols-3 gap-2 ">
-                  {allCategory?.length > 0 &&
+                <div className="grid grid-cols-3 gap-2 footer_gallary_wrapper">
+                  {loading ? (
+                    <EmptyComponent />
+                  ) : (
+                    allCategory?.length > 0 &&
                     allCategory?.slice(0, 6)?.map((item, ind) => {
                       return (
                         <Link
                           key={ind}
                           href={`/destination?city_name=${item?.name}&cityid=${item?.city_id}`}
-                          className="h-[5rem] w-[5rem]"
+                          className="h-[5rem] w-[5rem] footer_destination_link"
                         >
-                          <span className="relative">
+                          <span className="relative travel_image_wrapper">
                             <Image
                               src={
                                 item?.image || "/Assets/Icons/places/shimla.svg"
@@ -125,13 +131,13 @@ const Footer = () => {
                               alt="..."
                               className="h-full w-full"
                             />{" "}
-                            <p className="text-white absolute bottom-2 text-[0.6rem] text-center w-full">
+                            <p className="text-white absolute bottom-2 text-[15.37px] text-center w-full footer_destination_tittle">
                               {item?.name}
                             </p>
                           </span>
                         </Link>
                       );
-                    })}
+                    }))}
                 </div>
               </div>
             </div>
@@ -146,5 +152,27 @@ const Footer = () => {
     </>
   );
 };
+
+function EmptyComponent() {
+  return (
+    <>
+    {Array(6).fill().map((_, index) => (
+      <Link
+        key={index}
+        href={`/`}
+        className="h-[5rem] w-[5rem]"
+      >
+        <span className="relative travel_image_wrapper">
+          <span className="empty_image"></span>
+          <p className="text-white absolute bottom-2 text-[15.37px] text-center w-full footer_destination_tittle">
+            loading...
+          </p>
+        </span>
+      </Link>
+    ))}
+    </>
+    
+  );
+}
 
 export default Footer;

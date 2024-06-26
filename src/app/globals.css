@@ -36,10 +36,17 @@
   font-family: Metrophobic;
   src: url("../../public/fonts/Metrophobic-Regular.ttf");
 }
+
 @font-face {
   font-family: GT-Pressura;
   src: url("../../public/fonts/GT\ Pressura\ Regular.ttf");
 }
+
+@font-face {
+  font-family: Manrope;
+  src: url("../../public/fonts/Manrope-VariableFont_wght.ttf");
+}
+
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -341,7 +348,23 @@ button.disabled {
   padding: 10px 20px;
 }
 
-
+.lastsection_left_heading{
+  font-size: 34.86px;
+  font-weight: 700;
+  line-height: 43.82px;
+}
+.lastsection_left_para{
+  font-size: 19.92px;
+  line-height: 29.88px;
+  font-weight: 400;
+  font-family: Exo;
+}
+.resuest_call_para{
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 30px;
+  font-family: Manrope;
+}
 /* css by neo sharma */
 
 @media (max-width:1440px) {
@@ -401,6 +424,7 @@ button.disabled {
 
   .footerbg .w-full {
     width: 100%;
+    max-width: fit-content;
   }
 
   .footerbg .h-full {
@@ -409,6 +433,18 @@ button.disabled {
 }
 
 @media (max-width:768px) {
+  .lastsection_left_para{
+    font-size: 15px;
+    line-height: 20px;
+  }
+  .resuest_call_para{
+    font-size: 12px;
+    line-height: 14.4px;
+  }
+  .lastsection_left_heading {
+    font-size: 21px;
+    line-height: 26.4px;
+}
   .px-\[12\.5vw\].flex.flex-col.gap-\[5vh\].xsm\:px-\[3vw\] {
     padding: 10px 20px;
   }
