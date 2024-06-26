@@ -38,7 +38,7 @@ const Cards = ({ val }) => {
 
       <div className="flex flex-col gap-4 px-3">
         <div className="flex gap-3 items-center mt-3 font-int min-h-10">
-          {val?.servies?.slice(0, 4)?.map((item, index) => (
+          {val?.servies===null?'no services found' : val?.servies?.slice(0, 4)?.map((item, index) => (
             <div
               key={index}
               className="flex items-center gap-1 text-xs font-semibold"
