@@ -11,8 +11,9 @@ const Navmenu = () => {
     const [allCategory, setAllCategory] = useState([]);
     const [activeCat, setActiveCat] = useState('tour');
     const [loading, setLoading] = useState(true); // Add loading state
+    const [activeLink, setActiveLink] = useState(''); // State to track active link
     const intervalRef = useRef(null);
-    const router=useRouter()
+    const router = useRouter()
 
     useEffect(() => {
         const fetchData = async () => {
@@ -34,9 +35,11 @@ const Navmenu = () => {
         };
     }, []);
 
-
+    const handleLinkClick = (cityName) => {
+        setActiveLink(cityName); // Set active link when clicked
+    };
     const viewAllTours = () => {
-          router.push('/all_destination')
+        router.push('/all_destination')
     };
 
 
@@ -55,7 +58,12 @@ const Navmenu = () => {
                             <div className="slider">
                                 <div className="slider-content">
                                     {allCategory.slice(0, 9).map((item, ind) => (
-                                        <Link key={ind} href={`/destination?city_name=${item?.name}&cityid=${item?.city_id}`}>
+                                        <Link
+                                            key={ind}
+                                            href={`/destination?city_name=${item?.name}&cityid=${item?.city_id}`}
+                                            onClick={() => handleLinkClick(item?.name)}
+                                            className={activeLink === item?.name ? 'active' : ''}
+                                        >
                                             <div className="desti-contect-wrapper">
                                                 <Image src={item.image || "/Assets/Icons/places/explore.svg"} width={100} height={100} alt={item?.name} />
                                                 <p>{item?.name}</p>

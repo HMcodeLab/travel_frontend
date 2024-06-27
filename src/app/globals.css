@@ -287,6 +287,10 @@ h1.desti_details_heading {
 .slider-content a {
   position: relative;
 }
+.slider-content a.active {
+  color: var(--primary);
+  border-bottom: 1.5px solid var(--primary);
+}
 
 .slider-content a::after {
   content: '';
@@ -294,7 +298,7 @@ h1.desti_details_heading {
   left: 50%;
   bottom: -3px;
   width: 0;
-  height: 1px;
+  height: 1.5px;
   background-color: var(--primary);
   transition: width 0.3s ease, left 0.3s ease;
 }
@@ -305,8 +309,6 @@ h1.desti_details_heading {
   width: 100%;
   left: 0;
 }
-
-
 
 
 .step_up_buttons {
