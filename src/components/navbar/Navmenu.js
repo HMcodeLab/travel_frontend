@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState, useRef } from 'react';
 import styles from './navbar.module.css';
 import Image from 'next/image';
@@ -10,10 +9,10 @@ import { useRouter } from 'next/navigation';
 const Navmenu = () => {
     const [allCategory, setAllCategory] = useState([]);
     const [activeCat, setActiveCat] = useState('tour');
-    const [loading, setLoading] = useState(true); // Add loading state
-    const [activeLink, setActiveLink] = useState(''); // State to track active link
+    const [loading, setLoading] = useState(true); 
+    const [activeLink, setActiveLink] = useState(''); 
     const intervalRef = useRef(null);
-    const router = useRouter()
+    const router = useRouter();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -24,11 +23,17 @@ const Navmenu = () => {
             } catch (error) {
                 console.log(error);
             } finally {
-                setLoading(false); // Set loading to false after fetching data
+                setLoading(false); 
             }
         };
 
         fetchData();
+
+        // Retrieve the active link from localStorage on component mount
+        const savedActiveLink = localStorage.getItem('activeLink');
+        if (savedActiveLink) {
+            setActiveLink(savedActiveLink);
+        }
 
         return () => {
             clearInterval(intervalRef.current);
@@ -36,12 +41,13 @@ const Navmenu = () => {
     }, []);
 
     const handleLinkClick = (cityName) => {
-        setActiveLink(cityName); // Set active link when clicked
+        setActiveLink(cityName); 
+        localStorage.setItem('activeLink', cityName); // Save active link to localStorage
     };
+
     const viewAllTours = () => {
         router.push('/all_destination')
     };
-
 
     return (
         <div className={styles.nav_menu_main}>
@@ -75,9 +81,6 @@ const Navmenu = () => {
                         )
                     )}
                 </div>
-                {/* <button onClick={handleNext} className="next-button">
-                    <ChevronRightIcon className="h-7 w-5" />
-                </button> */}
             </div>
             <div className={`${styles.menu_btn_section} act_tour_buttons`}>
                 <Link href={'/'} onClick={() => setActiveCat('tour')} className={activeCat === 'tour' ? `${styles.active}` : `${styles.inactive}`}>
@@ -97,7 +100,6 @@ const Navmenu = () => {
 
 function EmptyComponent() {
     return (
-
         <div className="slider-container emptycontainer">
             <div className="slider">
                 <div className="slider-content">
