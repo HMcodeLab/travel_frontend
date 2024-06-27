@@ -5,17 +5,18 @@ import Sun from "../../../public/Icons/sun.svg";
 import Star from "../../../public/Icons/star.svg";
 import Call from "../../../public/Icons/cardphone.svg";
 import Wtsp from "../../../public/Icons/cardwhatsapp.svg";
+import { emptyImage } from "@/Data/cardImageData";
 
 const Cards = ({ val }) => {
   return (
     <div className="rounded-lg flex flex-col shadow-lg bg-[#F4F4F4] pb-5">
       <div className="relative w-full h-[33vh] xsm:h-[100px]">
         <Image
-          src={val?.main_image}
+          src={val?.main_image || emptyImage.src}
           alt="Package image"
           layout="fill"
           objectFit="cover"
-          className="rounded-t-sm"
+          className="rounded-t-sm tour_package_img"
         />
         <div className="w-full flex justify-between absolute top-0 text-white p-3">
           <span className="flex items-center bg-black px-2 rounded gap-1">

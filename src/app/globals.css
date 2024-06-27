@@ -478,7 +478,10 @@ span.errors {
     font-size: 25px;
   }
 
-  
+  .tour_package_img{
+    min-height: 220px;
+    height: 100%;
+  }
 
   .lastsection_left_para {
     font-size: 15px;

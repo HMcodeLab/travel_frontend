@@ -62,3 +62,9 @@ export const animCardData3 = [
     },
 
 ]
+
+import emptyImage from '../../public/empty.jpg';
+
+export{
+    emptyImage,
+}
