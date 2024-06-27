@@ -84,7 +84,7 @@ const Planningtriphome = ({ planning, setPlanning }) => {
         
         <div className="w-full flex justify-end fixed top-0 z-[9999] bg-[rgba(0,0,0,0.2)] top_step_wp_wrapper">
           <div
-            className={`h-[100vh] w-[60vw] px-[40px] plantrip pt-2 xsm:w-[100vw] ${animationClass}`}
+            className={`h-[100vh] w-[60vw] px-[40px] plantrip pt-2 xsm:w-[100vw] ${animationClass} animation_class`}
           >
            
             <div className="h-12 w-12 rounded-full close_plan_tip flex justify-center items-center p-1 fixed right-2 top-2 z-20">
@@ -95,6 +95,7 @@ const Planningtriphome = ({ planning, setPlanning }) => {
                 alt="cross"
               />
             </div>
+            <div className="plan_trip_form_wrapper">
             <Tripprovider.Provider
               value={{
                 headerdata,
@@ -125,6 +126,7 @@ const Planningtriphome = ({ planning, setPlanning }) => {
               )}
              
             </Tripprovider.Provider>
+            </div>
             {/* <div className="button_wrapper">
              <div className="step_up_buttons">
                 <button

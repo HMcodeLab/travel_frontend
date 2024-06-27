@@ -131,7 +131,7 @@ const Month = () => {
           <p className="capitalize font-[500] font-Merri-sans text-xl xsm:text-md">
             Which month are you travelling?
           </p>
-          <div className="grid grid-cols-6 gap-3 pr-3 mt-12 xsm:grid-cols-3 xsm:gap-1 xsm:pr-2 xsm:mt-5">
+          <div className="grid grid-cols-6 gap-3 pr-3 mt-12 xsm:grid-cols-3 xsm:gap-1 xsm:pr-2 xsm:mt-5 moth_type_wrapper">
             {months.map((item, ind) => {
               return (
                 <>
