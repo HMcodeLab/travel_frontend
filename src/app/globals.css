@@ -273,11 +273,43 @@ h1.desti_details_heading {
 .next-button {
   margin-left: 10px;
 }
+.slider-container{
+  min-height: 100px;
+  height: 100%;
+}
 
 .slider-content {
   display: flex;
   gap: 30px;
+  height: fit-content;
 }
+
+.slider-content a {
+  position: relative;
+}
+.slider-content a.active {
+  color: var(--primary);
+  border-bottom: 1.5px solid var(--primary);
+}
+
+.slider-content a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -3px;
+  width: 0;
+  height: 1.5px;
+  background-color: var(--primary);
+  transition: width 0.3s ease, left 0.3s ease;
+}
+.slider-content a:hover {
+  color: var(--primary);
+}
+.slider-content a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
 
 .step_up_buttons {
   display: flex;
