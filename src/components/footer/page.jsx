@@ -11,7 +11,8 @@ import Youtube from "../../../public/Icons/youtube.svg";
 import "./footer.css";
 import Link from "next/link";
 import { useEffect, useState } from "react";
- 
+import { emptyImage } from "@/Data/cardImageData";
+
 const Footer = () => {
   const pstyle = "text-[14px]";
 
@@ -43,6 +44,7 @@ const Footer = () => {
                 alt="footer-logo"
                 height={1000}
                 width={1000}
+                onError={(e) => e.target.src = emptyImage.src}
               />
             </div>
 
@@ -124,13 +126,14 @@ const Footer = () => {
                           <span className="relative travel_image_wrapper">
                             <Image
                               src={
-                                item?.image || "/Assets/Icons/places/shimla.svg"
+                                item?.image || emptyImage.src
                               }
                               width={1000}
                               height={1000}
                               alt="..."
                               className="h-full w-full"
-                            />{" "}
+                              onError={(e) => e.target.src = emptyImage.src}
+                            />
                             <p className="text-white absolute bottom-2 text-[15.37px] text-center w-full footer_destination_tittle">
                               {item?.name}
                             </p>
@@ -156,22 +159,31 @@ const Footer = () => {
 function EmptyComponent() {
   return (
     <>
-    {Array(6).fill().map((_, index) => (
-      <Link
-        key={index}
-        href={`/`}
-        className="h-[5rem] w-[5rem]"
-      >
-        <span className="relative travel_image_wrapper">
-          <span className="empty_image"></span>
-          <p className="text-white absolute bottom-2 text-[15.37px] text-center w-full footer_destination_tittle">
-            loading...
-          </p>
-        </span>
-      </Link>
-    ))}
+      {Array(6).fill().map((_, index) => (
+        <Link
+          key={index}
+          href={`/`}
+          className="h-[5rem] w-[5rem]"
+        >
+          <span className="relative travel_image_wrapper">
+            <Image
+              src={
+              emptyImage.src
+              }
+              width={1000}
+              height={1000}
+              alt="..."
+              className="h-full w-full"
+              onError={(e) => e.target.src = emptyImage.src}
+            />
+            <p className="text-white absolute bottom-2 text-[15.37px] text-center w-full footer_destination_tittle">
+              loading...
+            </p>
+          </span>
+        </Link>
+      ))}
     </>
-    
+
   );
 }
 
