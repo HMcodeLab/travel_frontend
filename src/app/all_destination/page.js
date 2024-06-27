@@ -37,7 +37,7 @@ const All_destination = () => {
 
     return (
       <>
-      <div className='grid grid-cols-3 gap-[2.5rem] mt-[3vh] px-[10vw]'>
+      <div className='grid grid-cols-3 gap-[2.5rem] mt-[3vh] px-[10vw] all_destinations_wrapper'>
           {
               CardsData?.data?.map((val, ind) => {
                   return (

@@ -402,7 +402,10 @@ span.errors {
   font-weight: 700;
 }
 
+.all_destinations_wrapper{
+  width: 100%;
 
+}
 
 /* css by neo sharma */
 
@@ -413,14 +416,16 @@ span.errors {
 }
 
 @media (min-width: 1025px) and (max-width:1440px) {
-  .px-\[12\.5vw\].flex.flex-col.gap-\[5vh\].xsm\:px-\[3vw\] {
+  .px-\[12\.5vw\].flex.flex-col.gap-\[5vh\].xsm\:px-\[3vw\],
+  .all_destinations_wrapper{
     padding: 20px 40px;
   }
 }
 
 @media (min-width: 769px) and (max-width:1024px) {
 
-  .px-\[12\.5vw\].flex.flex-col.gap-\[5vh\].xsm\:px-\[3vw\] {
+  .px-\[12\.5vw\].flex.flex-col.gap-\[5vh\].xsm\:px-\[3vw\],
+  .all_destinations_wrapper{
     padding: 20px 50px;
   }
 
@@ -479,7 +484,7 @@ span.errors {
   }
 
   .tour_package_img{
-    min-height: 220px;
+    min-height: 200px;
     height: 100%;
   }
 
@@ -498,7 +503,8 @@ span.errors {
     line-height: 26.4px;
   }
 
-  .px-\[12\.5vw\].flex.flex-col.gap-\[5vh\].xsm\:px-\[3vw\] {
+  .px-\[12\.5vw\].flex.flex-col.gap-\[5vh\].xsm\:px-\[3vw\],
+  .all_destinations_wrapper{
     padding: 10px 20px;
   }
 
@@ -526,7 +532,9 @@ span.errors {
     height: auto !important;
     padding: 20px;
   }
-
+  .all_destinations_wrapper{
+    grid-template-columns: 1fr;
+  }
 }
 
 

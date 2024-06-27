@@ -18,7 +18,7 @@ const Destinationherosection = ({ resp }) => {
             alt="..."
           />
         </div>
-        <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-white space-y-4 xsm:w-max xsm:space-y-2">
+        <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-white space-y-4 xsm:w-max xsm:space-y-2 absolute_header_content">
           <p className="text-white font-extrabold text-5xl text-center xsm:text-3xl">
             {ele?.package_name}
           </p>

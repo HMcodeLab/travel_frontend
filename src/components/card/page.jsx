@@ -9,8 +9,8 @@ import { emptyImage } from "@/Data/cardImageData";
 
 const Cards = ({ val }) => {
   return (
-    <div className="rounded-lg flex flex-col shadow-lg bg-[#F4F4F4] pb-5">
-      <div className="relative w-full h-[33vh] xsm:h-[100px]">
+    <div className="rounded-lg flex flex-col shadow-lg bg-[#F4F4F4] pb-5 card_section_wrapper">
+      <div className="relative w-full h-[33vh]  card_top_section">
         <Image
           src={val?.main_image || emptyImage.src}
           alt="Package image"
@@ -33,11 +33,10 @@ const Cards = ({ val }) => {
           </span>
         </div>
       </div>
-      <div className="border-l-[3px] border-r-[3px] border-[#CA1C26] px-2 font-bold text-[18px] py-2 cardtitle">
+      <div className="border-l-[3px] border-r-[3px] border-[#CA1C26] px-2 font-bold text-[18px] py-2 cardtitle card_middle_section">
         {val?.package_name}
       </div>
-
-      <div className="flex flex-col gap-4 px-3">
+      <div className="flex flex-col gap-4 px-3 card_bottom_section">
         <div className="flex gap-3 items-center mt-3 font-int min-h-10">
           {val?.servies===null?'no services found' : val?.servies?.slice(0, 4)?.map((item, index) => (
             <div
