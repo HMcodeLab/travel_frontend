@@ -4,7 +4,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { GlobalProvider } from '../layout'
 import Cards from '@/components/card/page'
 import Pagination from '@/components/Pagination/pagination'
-import { BASE_URL } from '@/helpers/baseurl'
+
 
 const All_destination = () => {
     let PageSize = 10;
@@ -15,7 +15,7 @@ const All_destination = () => {
     const Fetchcards = async () => {
         
         try {
-            const data = await fetch(BASE_URL + `/index?page=${currentPage}&limit=9`)
+            const data = await fetch(`${process.env.NEXT_PUBLIC_URL}/apis/packages/index?page=${currentPage}&limit=9`)
             const response = await data.json();
             setCardsData(response?.data)
             window.scrollTo(0,0)

@@ -11,7 +11,7 @@ import Youtube from "../../../public/Icons/youtube.svg";
 import "./footer.css";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { BASE_URL } from "@/helpers/baseurl";
+ 
 const Footer = () => {
   const pstyle = "text-[14px]";
 
@@ -20,7 +20,7 @@ const Footer = () => {
   useEffect(() => {
     async function Fetchdata() {
       try {
-        const data = await fetch(BASE_URL + "/package_category_with_city_tge");
+        const data = await fetch(`${process.env.NEXT_PUBLIC_URL}apis/packages/package_category_with_city_tge`);
         const response = await data.json();
         setallCategory(response?.data);
       } catch (error) {

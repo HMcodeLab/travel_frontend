@@ -94,7 +94,7 @@ const HeroSection = () => {
   const handleActivitySearch = async () => {
     try {
       const apiUrl =
-        "https://staging.trackitinerary.com/apis/packages/activities_filter";
+        `${process.env.NEXT_PUBLIC_URL}/apis/packages/activities_filter`;
       const res = await axios.post(apiUrl, activitiesSearchData, {
         headers: {
           "Content-Type": "application/json",

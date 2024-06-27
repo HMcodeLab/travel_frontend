@@ -71,7 +71,7 @@ const EnquiryForm = ({ setEnquiryModal }) => {
            formData
          );
        
-         if(res.status){
+         if(res.status||null){
            toast.success('query sent successfully');
            setUser({
              name: "",

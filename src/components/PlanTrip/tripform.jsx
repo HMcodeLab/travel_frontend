@@ -54,7 +54,7 @@ const Tripform = () => {
 
       try {
         const res = await axios.post(
-          "https://staging.trackitinerary.com/apis/packages/query",
+          `${process.env.NEXT_PUBLIC_URL}/apis/packages/query`,
           formData
         );
         // console.log(res);

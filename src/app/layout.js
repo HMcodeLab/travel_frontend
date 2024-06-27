@@ -10,7 +10,7 @@ import EnquiryForm from '@/components/EnquiryForm/EnquiryForm';
 import { createContext, useEffect, useState } from 'react';
 import ContactUsHomeBtn from '@/components/ContactUsHomeBtn/ContactUsHomeBtn';
 import Planningtriphome from '@/components/PlanTrip/page';
-import { BASE_URL } from '@/helpers/baseurl';
+
  
 const inter = Inter({ subsets: ['latin'] });
 
@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
 
   const Fetchcards = async () => {
     try {
-      const data = await fetch(BASE_URL + '/index')
+      const data = await fetch(`${process.env.NEXT_PUBLIC_URL}/apis/packages/index`)
       const response = await data.json();
       setCardsData(response?.data)
 

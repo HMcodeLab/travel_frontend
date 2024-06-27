@@ -16,7 +16,7 @@ const page = () => {
   const getActivity = async () => {
     try {
       const data = await fetch(
-        "https://staging.trackitinerary.com/apis/packages/typePacakge/1"
+        `${process.env.NEXT_PUBLIC_URL}/apis/packages/typePacakge/1`
       );
       const response = await data.json();
       setActivityData(response?.data?.data);

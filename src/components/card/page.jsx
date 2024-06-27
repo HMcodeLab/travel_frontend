@@ -11,7 +11,7 @@ const Cards = ({ val }) => {
     <div className="rounded-lg flex flex-col shadow-lg bg-[#F4F4F4] pb-5">
       <div className="relative w-full h-[33vh] xsm:h-[100px]">
         <Image
-          src={val?.pdf_image}
+          src={val?.main_image}
           alt="Package image"
           layout="fill"
           objectFit="cover"

@@ -4,26 +4,26 @@ import styles from './navbar.module.css';
 import Image from 'next/image';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid';
 import Link from 'next/link';
-import { BASE_URL } from '@/helpers/baseurl';
+
 import { useRouter } from 'next/navigation';
 
 const Navmenu = () => {
     const [allCategory, setAllCategory] = useState([]);
     const [activeCat, setActiveCat] = useState('tour');
-    const [loading, setLoading] = useState(true); // Add loading state
+    const [loading, setLoading] = useState(true); 
     const intervalRef = useRef(null);
     const router=useRouter()
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const data = await fetch(BASE_URL + '/package_category_with_city_tge');
+                const data = await fetch(`${process.env.NEXT_PUBLIC_URL}/apis/packages/package_category_with_city_tge`);
                 const response = await data.json();
                 setAllCategory(response?.data || []);
             } catch (error) {
                 console.log(error);
             } finally {
-                setLoading(false); // Set loading to false after fetching data
+                setLoading(false); 
             }
         };
 
@@ -57,7 +57,7 @@ const Navmenu = () => {
                                     {allCategory.slice(0, 9).map((item, ind) => (
                                         <Link key={ind} href={`/destination?city_name=${item?.name}&cityid=${item?.city_id}`}>
                                             <div className="desti-contect-wrapper">
-                                                <Image src={item.image || "/Assets/Icons/places/explore.svg"} width={100} height={100} alt={item?.name} />
+                                                <Image src={item.icon || "/Assets/Icons/places/explore.svg"} width={100} height={100} alt={item?.name} />
                                                 <p>{item?.name}</p>
                                             </div>
                                         </Link>

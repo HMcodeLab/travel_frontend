@@ -48,7 +48,7 @@ const CUSideSection = () => {
   useEffect(() => {
     async function Fetchdata() {
       try {
-        const data = await fetch(BASE_URL + "/package_category_with_city_tge");
+        const data = await fetch(`${process.env.NEXT_PUBLIC_URL}apis/packages/package_category_with_city_tge`);
         const response = await data.json();
         setallCategory(response?.data);
       } catch (error) {

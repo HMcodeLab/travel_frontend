@@ -11,7 +11,7 @@ const Section2Cards = () => {
 
     const fetchData = async (req, res) => {
         try {
-            const data = await fetch("https://staging.trackitinerary.com/apis/packages/package_category_with_city")
+            const data = await fetch(`${process.env.NEXT_PUBLIC_URL}/apis/packages/package_category_with_city`)
             const response = await data.json();
             setMovingCard(response?.data?.data)
             // console.log(response?.data?.data);

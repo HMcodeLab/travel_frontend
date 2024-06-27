@@ -13,7 +13,7 @@ import Discount from "../discount/page";
 import LastSection from "../Detail/lastSection";
 import RequestCall from "../requestcall/page";
 import { useRouter, useSearchParams } from "next/navigation";
-import { BASE_URL } from "@/helpers/baseurl";
+
 import Down from "../../../public/Icons/arrow.svg";
 import Cap from "../ParagraphWithLargeFirstLetters/page";
 
@@ -26,7 +26,7 @@ const Destinationcontent = () => {
     async function Fetchoverview() {
       if (id && key) {
         try {
-          const data = await fetch(BASE_URL + "/details/" + id + "/" + key);
+          const data = await fetch(`${process.env.NEXT_PUBLIC_URL}/apis/packages/details/${id}/${key}`);
           const response = await data.json();
           // console.log(response?.data);
           setresponsedata(response?.data);

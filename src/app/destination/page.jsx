@@ -1,6 +1,6 @@
 "use client";
 
-import { BASE_URL } from "@/helpers/baseurl";
+
 import { useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useRef, useState } from "react";
 import Destinationherosection from "../../components/destinationherosection/page";
@@ -33,7 +33,7 @@ const DestinationContentInner = () => {
       if (city_id) {
         try {
           const response = await axios.post(
-            `${BASE_URL}/package_with_city`,
+            `${process.env.NEXT_PUBLIC_URL}/apis/packages/package_with_city`,
             formData,
             {
               headers: {

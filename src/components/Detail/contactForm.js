@@ -62,9 +62,9 @@ const ContactForm = () => {
               `${process.env.NEXT_PUBLIC_URL}/query/savequery`,
               formData
             );
-            console.log(res)
+         
           
-            if(res.status){
+            if(res.status||null){
               alert('data inserted')
               setUser({
                 name: "",
@@ -78,7 +78,7 @@ const ContactForm = () => {
             }
           } catch (error) {
             console.log(error);
-            toast.success(res.msg);
+            toast.success(res?.msg ||null);
           }
        }
     }
