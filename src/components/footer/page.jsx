@@ -132,7 +132,8 @@ const Footer = () => {
                               height={1000}
                               alt="..."
                               className="h-full w-full"
-                              onError={(e) => e.target.src = emptyImage.src}
+                              onError={(e) =>
+                                 e.target.src = emptyImage.src}
                             />
                             <p className="text-white absolute bottom-2 text-[15.37px] text-center w-full footer_destination_tittle">
                               {item?.name}
@@ -168,13 +169,14 @@ function EmptyComponent() {
           <span className="relative travel_image_wrapper">
             <Image
               src={
-              emptyImage.src
+              emptyImage.src || emptyImage.src
               }
               width={1000}
               height={1000}
               alt="..."
               className="h-full w-full"
-              onError={(e) => e.target.src = emptyImage.src}
+              onError={(e) => 
+                e.target.src = emptyImage.src}
             />
             <p className="text-white absolute bottom-2 text-[15.37px] text-center w-full footer_destination_tittle">
               loading...

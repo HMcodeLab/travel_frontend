@@ -3,6 +3,7 @@ import "./destination.css";
 import Bg from "../../../public/ladakh.jpg";
 import Down from "../../../public/Icons/arrow.svg";
 import Image from "next/image";
+import { emptyImage } from "@/Data/cardImageData";
 const Destinationherosection = ({ resp }) => {
  let {data}=resp
    return (
@@ -13,9 +14,12 @@ const Destinationherosection = ({ resp }) => {
 
         <div className="absolute top-0 w-full h-full">
           <img
-            src={ele?.pdf_image}
+            src={ele?.pdf_image || emptyImage.src}
             className="brightness-50 h-full object-cover destinations_background_image"
             alt="..."
+            onError={(e)=>{
+              e.target.src = emptyImage.src
+            }}
           />
         </div>
         <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-white space-y-4 xsm:w-max xsm:space-y-2 absolute_header_content">
