@@ -12,7 +12,7 @@ const Cards = ({ val }) => {
     <div className="rounded-lg flex flex-col shadow-lg bg-[#F4F4F4] pb-5 card_section_wrapper">
       <div className="relative w-full h-[33vh]  card_top_section">
         <Image
-          src={val?.main_image || emptyImage.src}
+          src={val?.relative_desti_img || emptyImage.src}
           alt="Package image"
           layout="fill"
           objectFit="cover"
@@ -38,23 +38,25 @@ const Cards = ({ val }) => {
       </div>
       <div className="flex flex-col gap-4 px-3 card_bottom_section">
         <div className="flex gap-3 items-center mt-3 font-int min-h-10 card_bottom_underline_section">
-          {val?.servies===null?'no services found' : val?.servies?.slice(0, 4)?.map((item, index) => (
-            <div
-              key={index}
-              className="flex items-center gap-1 text-xs font-semibold"
-            >
-              <div className="relative w-6 h-6">
-                <Image
-                  className="rounded-full"
-                  src={item?.icon}
-                  alt={`icon`}
-                  layout="fill"
-                  objectFit="contain"
-                />
-              </div>
-              {item?.service}
-            </div>
-          ))}
+          {val?.servies === null
+            ? "no services found"
+            : val?.servies?.slice(0, 4)?.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex items-center gap-1 text-xs font-semibold"
+                >
+                  <div className="relative w-6 h-6">
+                    <Image
+                      className="rounded-full"
+                      src={item?.icon}
+                      alt={`icon`}
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </div>
+                  {item?.service}
+                </div>
+              ))}
         </div>
 
         <div

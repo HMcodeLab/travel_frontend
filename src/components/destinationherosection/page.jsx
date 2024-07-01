@@ -5,7 +5,9 @@ import Down from "../../../public/Icons/arrow.svg";
 import Image from "next/image";
 import { emptyImage } from "@/Data/cardImageData";
 const Destinationherosection = ({ resp }) => {
- let {data}=resp
+  let { data } = resp
+  
+  console.log(data)
    return (
     <>
       <div className="h-[70vh] w-full  relative xsm:h-[250px]">

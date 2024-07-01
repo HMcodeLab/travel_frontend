@@ -2,12 +2,12 @@ import React from "react";
 import Cards from "../card/page";
 import Image from "next/image";
 import Pointer from "../../../public/Icons/pointer.svg";
-const Allcards = ({ data, name }) => {
+const Allcards = ({ data }) => {
   // console.log(data);
   return (
     <>
       <div className=" text-center font-bold text-3xl  w-fit border-b-4 border-[var(--primary)] mx-auto py-2 font-int xsm:text-2xl xsm:border-b-2 xsm:py-1">
-        Explore {name}
+        Explore 
       </div>
       <div className="grid grid-cols-3 w-full  gap-[50px]  h-auto bg-[#FAFAFA] xsm:grid xsm:grid-cols-1">
         {data?.data?.map((item, ind) => {
