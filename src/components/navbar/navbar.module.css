@@ -231,6 +231,16 @@
     transform: translateX(0);
   }
 }
+
+
+.nav_menu_main{
+  position: sticky !important;
+  top: 0;
+  z-index: 999999999;
+  width: 100%;
+  background-color: #fff;
+  transition: 0.3s ease;
+}
 @media (min-width: 1025px) and (max-width:1440px) {
   .top_nav_main,
   .container,

@@ -42,11 +42,11 @@ export default function RootLayout({ children }) {
  
         <GlobalProvider.Provider value={{ Fetchcards, CardsData }}>
           <div className={`${enquiryModal ? 'blurred-background' : ''}`}>
-            <div className='sticky top-0 z-[99] bg-white'>
+            {/* <div className='top-0 z-[99] bg-white'> */}
               <TopNav />
               <Navbar setEnquiryModal={setEnquiryModal} planning={Planning} setPlanning={setPlanning} />
               <Navmenu />
-            </div>
+            {/* </div> */}
             {children}
             <Footer />
           </div>

@@ -406,6 +406,13 @@ span.errors {
   width: 100%;
 
 }
+.card_top_section img{
+  border-radius: 6.68px 6.68px 0px 0px;
+}
+
+.card_bottom_underline_section{
+  border-bottom: 0.1px solid #0100804F
+}
 
 /* css by neo sharma */
 

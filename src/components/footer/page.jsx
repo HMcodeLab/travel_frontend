@@ -50,7 +50,7 @@ const Footer = () => {
 
             <div className="flex justify-between  items-center xsm:flex-col xsm:px-5 footer_column_wrapper">
               <div className="flex justify-between w-[60%] xsm:w-[100%]">
-                <div className="pr-5 border-r-[2px] flex flex-col gap-3 xsm:hidden footer_links">
+                <div className="pr-5  flex flex-col gap-3 xsm:hidden footer_links about_tge_links">
                   <p className="text-[17.57px] font-semibold xsm:text-[15px]">
                     ABOUT TGE
                   </p>
@@ -65,7 +65,7 @@ const Footer = () => {
                     Privacy
                   </Link>
                 </div>
-                <div className="pr-5 border-r-[2px] flex flex-col gap-3 footer_links">
+                <div className="pr-5  flex flex-col gap-3 footer_links important_links">
                   <p className="text-[17.57px] font-semibold xsm:text-[13px] capitalize">
                     IMPORTANT LINKS
                   </p>
@@ -76,7 +76,7 @@ const Footer = () => {
                     Terms & Conditions
                   </Link>
                 </div>
-                <div className="flex flex-col gap-3 footer_links">
+                <div className="flex flex-col gap-3 footer_links contacts_right">
                   {/* <p className="text-[16px] font-semibold xsm:text-[12px] ">
                     CONTACT US{" "}
                   </p>  */}
