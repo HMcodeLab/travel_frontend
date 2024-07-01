@@ -31,7 +31,7 @@ const Destinationherosection = ({ resp }) => {
           </p>
           <p className="flex justify-center text-center gap-1 p-1 font-semibold text-xl xsm:text-[20px]">
             <span>Get upto</span>
-            <span className="bg-[#CA1C26B2] px-1">60% off</span>
+            <span className="bg-[#CA1C26B2] px-1">{ele?.discount||null}off</span>
           </p>
           <div className="flex justify-center w-full">
             <p className="px-5 py-2 cursor-pointer bg-red-700 text-white rounded xsm:text-[12px] xsm:px-3 xsm:py-1">
