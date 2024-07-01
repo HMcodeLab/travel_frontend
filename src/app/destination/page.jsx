@@ -27,6 +27,7 @@ const DestinationContentInner = () => {
   // console.log(city_name);
   const formData = new FormData();
   formData.append("city_id", city_id);
+  formData.append("city_name", city_name);
 
   useEffect(() => {
     const fetchData = async () => {
