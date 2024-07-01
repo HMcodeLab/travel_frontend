@@ -44,7 +44,7 @@ const DestinationContentInner = ({props}) => {
             }
           );
 
-          console.log(response.data);
+          console.log(response.data.data);
           setAlldata(response.data.data || []);
         } catch (error) {
           console.error("Failed to fetch data:", error);
@@ -59,7 +59,7 @@ const DestinationContentInner = ({props}) => {
     <>
       <Destinationherosection resp={Alldata} />
       <div className="px-[var(--padding-inline)] flex flex-col gap-[5vh] my-[5vh]">
-        <Allcards data={Alldata}/>
+        <Allcards data={Alldata} cityid={props.params.slug} />
 
         <Discount />
         <LastSection data={Alldata} />

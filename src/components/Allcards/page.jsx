@@ -2,7 +2,7 @@ import React from "react";
 import Cards from "../card/page";
 import Image from "next/image";
 import Pointer from "../../../public/Icons/pointer.svg";
-const Allcards = ({ data }) => {
+const Allcards = ({ data,cityid }) => {
   // console.log(data);
   return (
     <>
@@ -13,7 +13,7 @@ const Allcards = ({ data }) => {
         {data?.data?.map((item, ind) => {
           return (
             <>
-              <Cards key={ind} val={item} />
+              <Cards key={ind} val={item} cityid={data?.idCity} />
             </>
           );
         })}
