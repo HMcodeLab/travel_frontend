@@ -37,7 +37,7 @@ const Cards = ({ val }) => {
         {val?.package_name}
       </div>
       <div className="flex flex-col gap-4 px-3 card_bottom_section">
-        <div className="flex gap-3 items-center mt-3 font-int min-h-10">
+        <div className="flex gap-3 items-center mt-3 font-int min-h-10 card_bottom_underline_section">
           {val?.servies===null?'no services found' : val?.servies?.slice(0, 4)?.map((item, index) => (
             <div
               key={index}
@@ -81,7 +81,7 @@ const Cards = ({ val }) => {
           >
             Explore now
           </Link>
-          <div className="flex items-center divide-x-[1.5px] divide-[var(--primary)] gap-1 border-2 border-[var(--primary)] rounded h-full">
+          <div className="flex items-center divide-x-[1.5px] divide-[var(--primary)] gap-1 border-2 border-[var(--primary)] rounded h-full cards_icons_wrapper">
             <Image
               src={Call}
               className="p-1"
