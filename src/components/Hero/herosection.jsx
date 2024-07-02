@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useContext } from "react";
 import styles from "./herosection.module.css";
 import Image from "next/image";
 import { Slider, duration } from "@mui/material";
@@ -10,14 +10,18 @@ import SearchScroll from "../flipAnimation/flipanimation";
 import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import { GlobalProvider } from "@/app/layout";
 
 function valuetext(value) {
   return `${value}°C`;
 }
 
+
+
 const HeroSection = () => {
   const [activeFacility, setactiveFacility] = useState("Tour");
   const [Search, setSearch] = useState(false);
+  const [searchLoader, setSearchLoader] = useState(false);
   const [value, setValue] = useState([0, 30000]);
   const [locationFilter, setLocationFilter] = useState(false);
   const [personcntFilter, setPersonFilter] = useState(false);
@@ -29,6 +33,7 @@ const HeroSection = () => {
   const [FlightDate, setFlightDate] = useState(false);
   const searchRef = useRef(null);
   const dateInputRef = useRef(null);
+  const {searchQuery,setSearchQuery}=useContext(GlobalProvider)
   const [toursearchData, setTourSearchData] = useState({
     duration: "",
     minPrice: "",
@@ -53,6 +58,7 @@ const HeroSection = () => {
     }
   };
 
+
   useEffect(() => {
     if (Search) {
       document.addEventListener("mousedown", handleClickOutside);
@@ -67,7 +73,8 @@ const HeroSection = () => {
 
   const handleTourSearch = async () => {
     console.log(toursearchData);
-    router.push("/search?data=" + JSON.stringify(toursearchData));
+    setSearchQuery({...toursearchData})
+    router.push("/search");
   };
 
   const handleLocationSelect = (selectedLocation) => {

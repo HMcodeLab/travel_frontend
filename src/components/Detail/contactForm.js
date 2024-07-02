@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import styles from './page.module.css'
 import axios from 'axios'
-import toast from 'react-hot-toast'
+import toast, { Toaster } from 'react-hot-toast'
+import { validateEmail } from '@/helpers/validation'
 
 const ContactForm = () => {
     
@@ -21,7 +22,10 @@ const ContactForm = () => {
     const errorHandler=()=>{
         let {name,email,mobile,total_no_travelers}=user
         let valid=true
-        let errorFields={}
+        let errorFields = {}
+
+        console.log(validateEmail(email))
+        
 
         if(!name){
             valid=false
@@ -31,9 +35,17 @@ const ContactForm = () => {
             valid=false
             errorFields.email='email is required'
         }
+        if (!validateEmail(email)) {
+            valid = false
+            errorFields.email="Enter a valid email"
+        }
         if(!mobile){
             valid=false
             errorFields.mobile='phone number is required'
+        }
+        if (String(mobile).length != 10) {
+            valid = false
+            errorFields.mobile='phone number should be of 10 digits'
         }
         if(!total_no_travelers){
             valid=false
@@ -76,14 +88,17 @@ const ContactForm = () => {
                 
               })
             }
+            toast.success('Contact Form Saved')
           } catch (error) {
             console.log(error);
-            toast.success(res?.msg ||null);
+            toast.error(res?.msg ||null);
           }
        }
     }
 
     return (
+        <>
+            <Toaster/>
         <div className={styles.contact_main}>
             <div className={styles.contact_inner}>
                 <h2>Get Free Quotes</h2>
@@ -117,7 +132,8 @@ const ContactForm = () => {
                     </form>
                 </div>
             </div>
-        </div>
+            </div>
+        </>
     )
 }
 
