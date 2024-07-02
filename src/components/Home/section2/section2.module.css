@@ -145,16 +145,21 @@
     overflow-x: auto;
   }
 
-  .places_card{
+  .places_card {
     flex-direction: row;
-    gap: 4vw;
-    width: 440vw;
+    margin-right: 10px;
+
   }
- .places_card img{
-  width: 263px !important;
-  height: 175px !important;
- }  
-  .anim_cards span{
+  .anim_cards{
+    width: max-content;
+    gap: 4vw;
+  }
+  .places_card img {
+    width: 70vw !important;
+    height: 175px !important;
+  }
+
+  .anim_cards span {
     animation: none;
   }
 }
