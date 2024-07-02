@@ -11,6 +11,9 @@
   padding-bottom: 5px;
 }
 
+
+
+
 .top_nav_main a {
   letter-spacing: 1px !important;
   font-family: "Merriweather-sans";
@@ -131,12 +134,12 @@
 /* navmenu starts here  */
 
 .nav_menu_main {
-  height: fit-content;
   padding-inline: 13vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-block: 10px;
+  height: 85px;
 }
 
 .nav_menu_main img {

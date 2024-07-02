@@ -222,8 +222,9 @@ h1.desti_details_heading {
   flex-wrap: nowrap;
   display: flex;
   gap: 40px;
+  width: 78%;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 
@@ -252,6 +253,8 @@ h1.desti_details_heading {
 .slider {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 100% !important;
 }
 
 .prev-button,
@@ -277,12 +280,15 @@ h1.desti_details_heading {
 .slider-container{
   min-height: 100px;
   height: 100%;
+  width: 88%;
 }
 
 .slider-content {
   display: flex;
   gap: 30px;
   height: fit-content;
+  justify-content: space-between !important;
+  width: 100%;
 }
 
 .slider-content a {
