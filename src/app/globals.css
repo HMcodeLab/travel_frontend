@@ -511,6 +511,11 @@ span.errors {
 }
 
 @media (max-width:768px) {
+  .slider-container{
+    min-height: auto;
+    height: auto;
+    width: 100%;
+  }
   .panormic_ladakh_heading {
     font-size: 25px;
   }
