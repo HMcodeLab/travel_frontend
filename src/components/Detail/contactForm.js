@@ -59,13 +59,13 @@ const ContactForm = () => {
         
         try {
             const res = await axios.post(
-              `${process.env.NEXT_PUBLIC_URL}/query/savequery`,
+              `${process.env.NEXT_PUBLIC_URL}/apis/query/savequery`,
               formData
             );
          
           
             if(res.status||null){
-              alert('data inserted')
+            //   alert('data inserted')
               setUser({
                 name: "",
                 email: "",
