@@ -426,7 +426,19 @@ span.errors {
 .card_bottom_underline_section{
   border-bottom: 0.1px solid #0100804F
 }
-
+.cards_icons_wrapper{
+  padding: 0px 10px;
+}
+.cards_icons_wrapper  a:first-child img{
+  max-width: 33px;
+  width: 100%;
+  height: 33px;
+}
+.cards_icons_wrapper a:last-child img{
+  max-width: 36px;
+  width: 100%;
+  height: 36px;
+}
 /* css by neo sharma */
 
 @media (max-width:1440px) {
@@ -560,6 +572,10 @@ span.errors {
   }
   .all_destinations_wrapper{
     grid-template-columns: 1fr;
+  }
+  .slider-container{
+    padding: 10px 0px;
+    align-items: end;
   }
 }
 

@@ -36,3 +36,12 @@
     width: 100%;
     padding: 0px 10px;
   }
+
+
+  .destination_inner_title{
+    width: fit-content;
+    border-bottom: 2px solid #B6B6B696;
+    text-align: center;
+    margin: auto;
+    padding-bottom: 10px;
+  }

@@ -89,8 +89,8 @@ const Cards = ({ val, cityid }) => {
               src={Call}
               className="p-1"
               alt="Call icon"
-              width={24}
-              height={24}
+              width={26}
+              height={26}
             /></a>
 
 
@@ -99,8 +99,8 @@ const Cards = ({ val, cityid }) => {
                 src={Wtsp}
                 className="p-1"
                 alt="WhatsApp icon"
-                width={30}
-                height={30}
+                width={32}
+                height={32}
               /></a>
           </div>
         </div>

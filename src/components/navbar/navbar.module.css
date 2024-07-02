@@ -361,5 +361,10 @@
   .menu_btn_section_sm a {
     padding-inline: 3px;
   }
+
+  .nav_menu_main{
+    height: 70px;
+    margin-top: 10px;
+  }
 }
 

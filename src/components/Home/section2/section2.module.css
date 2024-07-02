@@ -148,11 +148,12 @@
   .places_card {
     flex-direction: row;
     margin-right: 10px;
-
+    gap: 4vw;
   }
   .anim_cards{
     width: max-content;
     gap: 4vw;
+    height: 175px !important;
   }
   .places_card img {
     width: 70vw !important;
