@@ -204,6 +204,7 @@ h1.desti_details_heading {
 
 .desti_images-wrapper {
   position: relative;
+  overflow: hidden;
 }
 
 .act_tour_buttons a {
