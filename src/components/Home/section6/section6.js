@@ -10,7 +10,7 @@ const Section6 = () => {
     </h3>
     const { Fetchcards, CardsData } = useContext(GlobalProvider)
     // console.log(CardsData);
-
+     console.log(CardsData)
     return (
         <div> <CommonHeading title={tl} description={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, modi? Lorem, ipsum dolor."} />
             <div className={styles.all_cards_main}>
