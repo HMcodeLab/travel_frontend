@@ -138,14 +138,23 @@
   }
 
   .vertical_cards {
-    display: flex;
+    display: none;
     flex-direction: row;
     gap: 4vw;
     width: 218vw;
     overflow-x: auto;
   }
 
-  .anim_cards {
-    display: none;
+  .places_card{
+    flex-direction: row;
+    gap: 4vw;
+    width: 440vw;
+  }
+ .places_card img{
+  width: 263px !important;
+  height: 175px !important;
+ }  
+  .anim_cards span{
+    animation: none;
   }
 }
