@@ -7,7 +7,9 @@ import Call from "../../../public/Icons/cardphone.svg";
 import Wtsp from "../../../public/Icons/cardwhatsapp.svg";
 import { emptyImage } from "@/Data/cardImageData";
 
-const Cards = ({ val,cityid }) => {
+const Cards = ({val, cityid }) => {
+  console.log(val)
+  console.log(cityid)
   return (
     <div className="rounded-lg flex flex-col shadow-lg bg-[#F4F4F4] pb-5 card_section_wrapper">
       <div className="relative w-full h-[33vh]  card_top_section">
@@ -77,7 +79,7 @@ const Cards = ({ val,cityid }) => {
         </div>
         <div className="flex justify-between items-center h-9">
           <Link
-            href={`/${cityid}/place?id=${val?.id}&key=${val?.key}`}
+            href={`/destination/${cityid}/${val?.id}`}
             className="uppercase bg-[var(--primary)] text-white rounded px-5 h-full text-center flex items-center justify-center"
             style={{ fontFamily: "Merriweather-sans" }}
           >

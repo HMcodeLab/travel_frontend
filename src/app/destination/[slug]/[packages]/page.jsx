@@ -2,10 +2,11 @@
 import Destinationcontent from "@/components/Destinationcontent/page";
 import { Suspense } from "react";
 
-const Destination = () => {
+const Destination = (props) => {
+  // console.log(props.params)
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <Destinationcontent />
+      <Destinationcontent props={props.params } />
     </Suspense>
   );
 };

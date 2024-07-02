@@ -3,7 +3,7 @@ import Cards from "../card/page";
 import Image from "next/image";
 import Pointer from "../../../public/Icons/pointer.svg";
 const Allcards = ({ data,cityid }) => {
-  // console.log(data);
+  // console.log(data.idCity);
   return (
     <>
       <div className=" text-center font-bold text-3xl  w-fit border-b-4 border-[var(--primary)] mx-auto py-2 font-int xsm:text-2xl xsm:border-b-2 xsm:py-1">
@@ -13,7 +13,7 @@ const Allcards = ({ data,cityid }) => {
         {data?.data?.map((item, ind) => {
           return (
             <>
-              <Cards key={ind} val={item} cityid={data?.idCity} />
+              <Cards val={item} cityid={data?.idCity} />
             </>
           );
         })}
