@@ -67,21 +67,21 @@ const Tripform = () => {
     }
   };
 
-  const applyFilter = async () => {
-    try {
-      const res = await axios.post(
-        `${process.env.NEXT_PUBLIC_URL}/packages/search_filter_packages`,
-        formData
-      );
-      console.log(res);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const applyFilter = async () => {
+  //   try {
+  //     const res = await axios.post(
+  //       `${process.env.NEXT_PUBLIC_URL}/packages/search_filter_packages`,
+  //       formData
+  //     );
+  //     console.log(res);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
-  useEffect(() => {
-    applyFilter();
-  }, []);
+  // useEffect(() => {
+  //   applyFilter();
+  // }, []);
 
   return (
     <>

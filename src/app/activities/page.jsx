@@ -16,11 +16,11 @@ const page = () => {
   const getActivity = async () => {
     try {
       const data = await fetch(
-        `${process.env.NEXT_PUBLIC_URL}/apis/packages/typePacakge/1`
+        `${process.env.NEXT_PUBLIC_URL}/apis/packages/typePacakge/2`
       );
       const response = await data.json();
       setActivityData(response?.data?.data);
-      // console.log(response?.data);
+      console.log(response?.data);
     } catch (error) {
       console.error("Failed to fetch data:", error);
     }

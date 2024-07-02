@@ -19,6 +19,11 @@ export default function RootLayout({ children }) {
   const [enquiryModal, setEnquiryModal] = useState(false);
   const [Planning, setPlanning] = useState(false)
   const [CardsData, setCardsData] = useState([])
+  const [searchQuery, setSearchQuery] = useState({
+    duration: "",
+    minPrice: "",
+    maxPrice: "",
+  });
 
 
   const Fetchcards = async () => {
@@ -41,7 +46,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`relative ${inter.className}`}>
  
-        <GlobalProvider.Provider value={{ Fetchcards, CardsData }}>
+        <GlobalProvider.Provider value={{ Fetchcards, CardsData, searchQuery,setSearchQuery }}>
           <div className={`${enquiryModal ? 'blurred-background' : ''}`}>
             {/* <div className='top-0 z-[99] bg-white'> */}
               <TopNav />
