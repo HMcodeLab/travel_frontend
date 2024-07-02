@@ -564,4 +564,20 @@ span.errors {
 }
 
 
-@media (max-width:468px) {}
+@media (max-width:600px) {
+  .searching_activities {
+    grid-template-columns: 1fr;
+    row-gap: 23px;
+}
+ 
+.activities_flex {
+    justify-content: left;
+    border: unset;
+}
+.border-remover {
+    border: unset;
+}
+.activities_button {
+    justify-content: left;
+}
+}
