@@ -14,7 +14,7 @@ const Cards = ({val, cityid }) => {
     <div className="rounded-lg flex flex-col shadow-lg bg-[#F4F4F4] pb-5 card_section_wrapper">
       <div className="relative w-full h-[33vh]  card_top_section">
         <Image
-          src={val?.relative_desti_img || val?.pdf_image || emptyImage.src}
+          src={val?.relative_desti_img || emptyImage.src}
           alt="Package image"
           layout="fill"
           objectFit="cover"
@@ -79,7 +79,7 @@ const Cards = ({val, cityid }) => {
         </div>
         <div className="flex justify-between items-center h-9">
           <Link
-            href={`/destination/${val.citySlug}/${val?.id}`}
+            href={`/destination/${cityid}/${val?.id}`}
             className="uppercase bg-[var(--primary)] text-white rounded px-5 h-full text-center flex items-center justify-center"
             style={{ fontFamily: "Merriweather-sans" }}
           >

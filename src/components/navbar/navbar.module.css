@@ -299,7 +299,7 @@
 
   .places_images {
     display: flex;
-    gap: 2.5vw;
+    gap: 30px;
   }
 
   .btn_section button {

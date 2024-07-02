@@ -188,7 +188,7 @@ const HeroSection = () => {
           >
             {activeFacility === "Tour" &&
               (Search ? (
-                <div className="bg-[#F6F6F6] rounded-t-3xl rounded-b flex flex-col shadow-lg shadow-[#00000021] w-[90%] absolute top-0 xsm:w-[65vw]">
+                <div className="bg-[#F6F6F6] search_filter_outer rounded-t-3xl rounded-b flex flex-col shadow-lg shadow-[#00000021] w-[90%] absolute top-0 xsm:w-[65vw]">
                   <input
                     className="w-full text-[#000000] placeholder:text-[#848383] bg-[#F6F6F6] flex justify-center text-[14px] rounded-full pl-16 py-2 shadow-sm shadow-[#00000021] outline-none h-[55px] xsm:h-[45px] xsm:pl-5"
                     placeholder="Search For Destinations..."
@@ -318,7 +318,7 @@ const HeroSection = () => {
               ))}
 
             {activeFacility === "Activities" && (
-              <div className="bg-[#F6F6F6] rounded-md flex items-center shadow-lg shadow-[#00000021] ">
+              <div className="bg-[#F6F6F6] search_filter_outer rounded-md flex items-center shadow-lg shadow-[#00000021] ">
                 <div className="grid grid-cols-4 items-center py-3 w-full px-5">
                   <div className="border-r border-[#01008036] py-1 cursor-pointer relative">
                     <div
@@ -496,7 +496,7 @@ const HeroSection = () => {
             )}
 
             {activeFacility === "Flight" && (
-              <div className="bg-[#F6F6F6] rounded-md flex items-center shadow-lg shadow-[#00000021] w-full relative">
+              <div className="bg-[#F6F6F6] search_filter_outer rounded-md flex items-center shadow-lg shadow-[#00000021] w-full relative">
                 <div className="grid grid-cols-5 items-center py-3 w-full px-5">
                   <div className="border-r border-[#01008036] py-1 cursor-pointer relative">
                     <div
@@ -679,7 +679,7 @@ const HeroSection = () => {
             )}
 
             {activeFacility === "Railway" && (
-              <div className="bg-[#F6F6F6] rounded-md flex items-center shadow-lg shadow-[#00000021] w-full relative">
+              <div className="bg-[#F6F6F6] search_filter_outer rounded-md flex items-center shadow-lg shadow-[#00000021] w-full relative">
                 <div className="grid grid-cols-5 items-center py-3 w-full px-5">
                   <div className="border-r border-[#01008036] py-1 cursor-pointer relative">
                     <div
