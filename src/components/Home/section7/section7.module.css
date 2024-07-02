@@ -33,15 +33,15 @@
   left: 20rem;
 }
 .content_section {
-  padding-inline: 5vw;
+  max-width: 75%;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 .content_section > p {
-  font-size: 1.08rem;
-  line-height: 1.75rem;
+  font-size: 22px;
+  line-height: 40px;
   text-transform: capitalize;
   font-family: "Exo", sans-serif;
 }

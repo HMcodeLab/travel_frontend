@@ -17,20 +17,18 @@ import { useRouter, useSearchParams } from "next/navigation";
 import Down from "../../../public/Icons/arrow.svg";
 import Cap from "../ParagraphWithLargeFirstLetters/page";
 
-const Destinationcontent = ({props}) => {
-  // console.log(props)
+const Destinationcontent = () => {
   const [responsedata, setresponsedata] = useState();
   const search = useSearchParams();
-  
+  let id = search.get("id");
+  let key = search.get("key");
   useEffect(() => {
     async function Fetchoverview() {
-      if (props?.packages) {
+      if (id && key) {
         try {
-          const data = await fetch(
-            `${process.env.NEXT_PUBLIC_URL}/apis/packages/details/${props?.packages}`
-          );
+          const data = await fetch(`${process.env.NEXT_PUBLIC_URL}/apis/packages/details/${id}/${key}`);
           const response = await data.json();
-          console.log(response?.data);
+          // console.log(response?.data);
           setresponsedata(response?.data);
         } catch (error) {
           console.log(error);

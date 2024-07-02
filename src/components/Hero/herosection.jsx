@@ -132,14 +132,14 @@ const HeroSection = () => {
         style={{ backgroundImage: "url(/Assets/Images/hero_banner.jpg)" }}
       >
         <div className="flex flex-col w-fit h-fit items-center text-white relative left-[50%] top-[50%] translate-y-[-50%] translate-x-[-50%] xsm:w-[80vw]">
-          <h2 className="text-[45px] text-center font-semibold leading-[48px] xsm:text-[30px] ">
+          <h2 className="text-[45px] text-center font-semibold leading-[48px] xsm:text-[18px] main_heading_c">
             Empowering Your Travel Dreams
           </h2>
           <SearchScroll
             words={["Explore", "Connect", "Thrive", "Memories"]}
             css={"text-[93px] font-bold xsm:text-[50px]"}
           />
-          <p className="border-b border-[#CA1C26] text-[1.2rem] text-center">
+          <p className="border-b border-[#CA1C26] text-[1.2rem] text-center main_heading_bootom xsm:text-[12px]">
             Curating Unparalleled Travel Experiences, One Journey at a Time
           </p>
           <div className="flex py-4 gap-4 uppercase text-center xsm:w-[100%] xsm:gap-1">

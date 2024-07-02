@@ -38,3 +38,20 @@
   -webkit-appearance: none;
   margin: 0;
 }
+
+
+@media only screen and  (max-width:768px) {
+  .main_heading_c {
+    font-size: 16px !important;
+}
+
+p.main_heading_bootom {
+  font-size: 12px !important;
+}
+
+.hero_section {
+  height: 45vh;
+
+}
+
+}
