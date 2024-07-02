@@ -67,7 +67,7 @@ const EnquiryForm = ({ setEnquiryModal }) => {
    
        try {
          const res = await axios.post(
-           `${process.env.NEXT_PUBLIC_URL}/query/savequery`,
+           `${process.env.NEXT_PUBLIC_URL}/apis/query/savequery`,
            formData
          );
        
