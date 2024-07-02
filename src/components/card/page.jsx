@@ -7,12 +7,14 @@ import Call from "../../../public/Icons/cardphone.svg";
 import Wtsp from "../../../public/Icons/cardwhatsapp.svg";
 import { emptyImage } from "@/Data/cardImageData";
 
-const Cards = ({ val, cityid }) => {
+const Cards = ({val, cityid }) => {
+  console.log(val)
+  console.log(cityid)
   return (
     <div className="rounded-lg flex flex-col shadow-lg bg-[#F4F4F4] pb-5 card_section_wrapper">
       <div className="relative w-full h-[33vh]  card_top_section">
         <Image
-          src={val?.relative_desti_img || emptyImage.src}
+          src={val?.relative_desti_img || val?.pdf_image || emptyImage.src}
           alt="Package image"
           layout="fill"
           objectFit="cover"
@@ -41,22 +43,22 @@ const Cards = ({ val, cityid }) => {
           {val?.servies === null
             ? "no services found"
             : val?.servies?.slice(0, 4)?.map((item, index) => (
-              <div
-                key={index}
-                className="flex items-center gap-1 text-xs font-semibold"
-              >
-                <div className="relative w-6 h-6">
-                  <Image
-                    className="rounded-full"
-                    src={item?.icon}
-                    alt={`icon`}
-                    layout="fill"
-                    objectFit="contain"
-                  />
+                <div
+                  key={index}
+                  className="flex items-center gap-1 text-xs font-semibold"
+                >
+                  <div className="relative w-6 h-6">
+                    <Image
+                      className="rounded-full"
+                      src={item?.icon}
+                      alt={`icon`}
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </div>
+                  {item?.service}
                 </div>
-                {item?.service}
-              </div>
-            ))}
+              ))}
         </div>
 
         <div
@@ -77,31 +79,27 @@ const Cards = ({ val, cityid }) => {
         </div>
         <div className="flex justify-between items-center h-9">
           <Link
-            href={`/${cityid}/place?id=${val?.id}&key=${val?.key}`}
+            href={`/destination/${val.city_name.toLowerCase()}/${val?.package_name}`}
             className="uppercase bg-[var(--primary)] text-white rounded px-5 h-full text-center flex items-center justify-center"
             style={{ fontFamily: "Merriweather-sans" }}
           >
             Explore now
           </Link>
           <div className="flex items-center divide-x-[1.5px] divide-[var(--primary)] gap-1 border-2 border-[var(--primary)] rounded h-full cards_icons_wrapper">
-
-            <a href="tel:6753557043"><Image
+            <Image
               src={Call}
               className="p-1"
               alt="Call icon"
               width={24}
               height={24}
-            /></a>
-
-
-            <a href="https://api.whatsapp.com/send/?phone=6753557043&text&type=phone_number&app_absent=0" target="_blank">
-              <Image
-                src={Wtsp}
-                className="p-1"
-                alt="WhatsApp icon"
-                width={30}
-                height={30}
-              /></a>
+            />
+            <Image
+              src={Wtsp}
+              className="p-1"
+              alt="WhatsApp icon"
+              width={30}
+              height={30}
+            />
           </div>
         </div>
       </div>
