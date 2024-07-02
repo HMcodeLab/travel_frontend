@@ -14,7 +14,8 @@ const Search = () => {
     const formData=new FormData()
     const search = JSON.parse(searchParams.get('data'));
     const {searchQuery}=useContext(GlobalProvider)
-    // console.log(searchQuery)
+    console.log(searchQuery)
+    formData.append('city_id',searchQuery.city_id)
     formData.append('duration', searchQuery.duration)
     formData.append('minPrice', searchQuery.minPrice)
     formData.append('maxPrice', searchQuery.maxPrice)

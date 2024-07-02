@@ -35,6 +35,7 @@ const HeroSection = () => {
   const dateInputRef = useRef(null);
   const {searchQuery,setSearchQuery}=useContext(GlobalProvider)
   const [toursearchData, setTourSearchData] = useState({
+    city_id:"",
     duration: "",
     minPrice: "",
     maxPrice: "",
@@ -121,6 +122,8 @@ const HeroSection = () => {
     }
   };
 
+ 
+
   return (
     <>
       <Toaster />
@@ -198,7 +201,8 @@ const HeroSection = () => {
                 <div className="bg-[#F6F6F6] rounded-t-3xl rounded-b flex flex-col shadow-lg shadow-[#00000021] w-[90%] absolute top-0 xsm:w-[65vw]">
                   <input
                     className="w-full text-[#000000] placeholder:text-[#848383] bg-[#F6F6F6] flex justify-center text-[14px] rounded-full pl-16 py-2 shadow-sm shadow-[#00000021] outline-none h-[55px] xsm:h-[45px] xsm:pl-5"
-                    placeholder="Search For Destinations..."
+                    placeholder="Search For Destinations... " 
+                  value={toursearchData.city_id } onChange={(e)=>setTourSearchData({...toursearchData,city_id:e.target.value})}
                   />
                   <div className="px-16 py-4 xsm:px-5">
                     <div className="flex flex-col gap-3 border-b border-[#DADADA] py-2">
@@ -206,14 +210,14 @@ const HeroSection = () => {
                       <div className="flex items-center gap-3 text-[#848181] text-[14px] xsm:gap-3 xsm:grid xsm:grid-cols-2">
                         <div
                           className={`border border-[#EAE6E6] rounded-full px-3 py-1 cursor-pointer ${
-                            toursearchData.duration === "upto1day"
+                            toursearchData.duration == "1"
                               ? "bg-[#D7D6FD59]"
                               : "bg-white"
                           }`}
                           onClick={() =>
                             setTourSearchData({
                               ...toursearchData,
-                              duration: "upto1day",
+                              duration: 1,
                             })
                           }
                         >
@@ -221,14 +225,14 @@ const HeroSection = () => {
                         </div>
                         <div
                           className={`border border-[#EAE6E6] rounded-full px-3 py-1 cursor-pointer ${
-                            toursearchData.duration === "2to3days"
+                            toursearchData.duration == "2"
                               ? "bg-[#D7D6FD59]"
                               : "bg-white"
                           }`}
                           onClick={() =>
                             setTourSearchData({
                               ...toursearchData,
-                              duration: "2to3days",
+                              duration:2,
                             })
                           }
                         >
@@ -236,14 +240,14 @@ const HeroSection = () => {
                         </div>
                         <div
                           className={`border border-[#EAE6E6] rounded-full px-3 py-1 cursor-pointer ${
-                            toursearchData.duration === "5to7days"
+                            toursearchData.duration == "3"
                               ? "bg-[#D7D6FD59]"
                               : "bg-white"
                           }`}
                           onClick={() =>
                             setTourSearchData({
                               ...toursearchData,
-                              duration: "5to7days",
+                              duration:3,
                             })
                           }
                         >
@@ -258,7 +262,7 @@ const HeroSection = () => {
                           onClick={() =>
                             setTourSearchData({
                               ...toursearchData,
-                              duration: "7plusdays",
+                              duration: 4,
                             })
                           }
                         >

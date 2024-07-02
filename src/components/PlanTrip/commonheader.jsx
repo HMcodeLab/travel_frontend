@@ -36,12 +36,12 @@ const Commonheader = () => {
   function handleHeader(ind) {
     if (ind == 0) {
       setrender("cities");
-      setheaderdata((prevArray) => prevArray.slice(0, ind));
+      setheaderdata((prevArray) => prevArray?.slice(0, ind));
     } else if (ind == 1) {
-      setheaderdata((prevArray) => prevArray.slice(0, ind));
+      setheaderdata((prevArray) => prevArray?.slice(0, ind));
       setrender("month");
     } else {
-      setheaderdata((prevArray) => prevArray.slice(0, ind));
+      setheaderdata((prevArray) => prevArray?.slice(0, ind));
       setrender(Rendercomponentdata[ind + 1]);
     }
   }

@@ -20,6 +20,7 @@ export default function RootLayout({ children }) {
   const [Planning, setPlanning] = useState(false)
   const [CardsData, setCardsData] = useState([])
   const [searchQuery, setSearchQuery] = useState({
+    city_id:"",
     duration: "",
     minPrice: "",
     maxPrice: "",

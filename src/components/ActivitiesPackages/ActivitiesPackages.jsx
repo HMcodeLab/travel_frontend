@@ -9,7 +9,7 @@ const ActivitiesPackages = ({ data }) => {
   if (data?.length == 0 || data == undefined) {
     return <>Loading...</>;
   }
-
+    // console.log(data)
   return (
     <div className="px-[169px] py-6 flex flex-col gap-8 xsm:px-[20px]">
       <div className="flex justify-between">
@@ -32,14 +32,12 @@ const ActivitiesPackages = ({ data }) => {
       </div>
       <div className="grid grid-cols-3 gap-3 xsm:hidden">
         <div
-          className="activity-card1 h-[600px] flex font-[Merriweather_Sans] flex-col justify-end text-white rounded-md px-4 py-6 relative overflow-hidden "
+          className="activity-card1 h-[600px] flex font-[Merriweather_Sans] flex-col justify-end text-white rounded-md px-4 py-6 relative overflow-hidden cursor-pointer"
           style={{
             backgroundImage: `url(${data[0]?.pdf_image})`,
           }}
           onClick={() =>
-            router.push(
-              `/destination?city_name=${data[0]?.package_name}&cityid=${data[0]?.city_id}`
-            )
+            router.push(`/destination/${data[0]?.citySlug}/${data[0]?.id}`)
           }
         >
           <div className="relative z-10 flex items-center gap-2">
@@ -55,14 +53,12 @@ const ActivitiesPackages = ({ data }) => {
         </div>
         <div className="flex flex-col gap-3">
           <div
-            className="h-[33%] activity-card3a flex font-[Merriweather_Sans] flex-col justify-end text-white rounded-md px-4 py-6 relative overflow-hidden"
+            className="h-[33%] activity-card3a flex font-[Merriweather_Sans] flex-col justify-end text-white rounded-md px-4 py-6 relative overflow-hidden cursor-pointer"
             style={{
               backgroundImage: `url(${data[1]?.pdf_image})`,
             }}
             onClick={() =>
-              router.push(
-                `/destination?city_name=${data[1]?.package_name}&cityid=${data[1]?.city_id}`
-              )
+              router.push(`/destination/${data[1]?.citySlug}/${data[1]?.id}`)
             }
           >
             <div className="relative z-10 flex items-center gap-2">
@@ -81,14 +77,12 @@ const ActivitiesPackages = ({ data }) => {
             </p> */}
           </div>
           <div
-            className="h-[33%] activity-card3b flex font-[Merriweather_Sans] flex-col justify-end text-white rounded-md px-4 py-6 relative overflow-hidden"
+            className="h-[33%] activity-card3b flex font-[Merriweather_Sans] flex-col justify-end text-white rounded-md px-4 py-6 relative overflow-hidden cursor-pointer"
             style={{
               backgroundImage: `url(${data[2]?.pdf_image})`,
             }}
             onClick={() =>
-              router.push(
-                `/destination?city_name=${data[2]?.package_name}&cityid=${data[2]?.city_id}`
-              )
+              router.push(`/destination/${data[2]?.citySlug}/${data[2]?.id}`)
             }
           >
             <div className="relative z-10 flex items-center gap-2">
@@ -107,14 +101,12 @@ const ActivitiesPackages = ({ data }) => {
             </p> */}
           </div>
           <div
-            className="h-[33%] activity-card3c flex font-[Merriweather_Sans] flex-col justify-end text-white rounded-md px-4 py-6 relative overflow-hidden"
+            className="h-[33%] activity-card3c flex font-[Merriweather_Sans] flex-col justify-end text-white rounded-md px-4 py-6 relative overflow-hidden cursor-pointer"
             style={{
               backgroundImage: `url(${data[3]?.pdf_image})`,
             }}
             onClick={() =>
-              router.push(
-                `/destination?city_name=${data[3]?.package_name}&cityid=${data[3]?.city_id}`
-              )
+              router.push(`/destination/${data[3]?.citySlug}/${data[3]?.id}`)
             }
           >
             <div className="relative z-10 flex items-center gap-2">
@@ -134,14 +126,12 @@ const ActivitiesPackages = ({ data }) => {
           </div>
         </div>
         <div
-          className="activity-card2 h-[600px] flex font-[Merriweather_Sans] flex-col justify-end text-white rounded-md px-4 py-6 relative overflow-hidden"
+          className="activity-card2 h-[600px] flex font-[Merriweather_Sans] flex-col justify-end text-white rounded-md px-4 py-6 relative overflow-hidden cursor-pointer"
           style={{
             backgroundImage: `url(${data[4]?.pdf_image})`,
           }}
           onClick={() =>
-            router.push(
-              `/destination?city_name=${data[4]?.package_name}&cityid=${data[4]?.city_id}`
-            )
+            router.push(`/destination/${data[4]?.citySlug}/${data[4]?.id}`)
           }
         >
           <div className="relative z-10 flex items-center gap-2">

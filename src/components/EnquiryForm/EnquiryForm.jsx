@@ -4,12 +4,14 @@ import { use, useState } from "react";
 import "./EnquiryForm.css";
 import { toast, Toaster } from "react-hot-toast";
 import axios from "axios";
+import { validateEmail } from "@/helpers/validation";
 
 const EnquiryForm = ({ setEnquiryModal }) => {
   const [user, setUser] = useState({
     name: "",
     email: "",
     mobile: "",
+    starting:"",
     destination: "",
     total_no_travelers: "",
     message: "",
@@ -19,7 +21,7 @@ const EnquiryForm = ({ setEnquiryModal }) => {
   let [error,setError]=useState({})
 
   let handelErrors=()=>{
-    let {name,email,mobile,destination,total_no_travelers}=user
+    let {name,email,mobile,starting,destination,total_no_travelers}=user
     let valid=true
     let errorFields={}
     if(!name){
@@ -30,9 +32,22 @@ const EnquiryForm = ({ setEnquiryModal }) => {
       valid=false
       errorFields.email='email is required'
     }
+    if (!validateEmail(email)) {
+      valid = false;
+      errorFields.email = "Enter valid email";
+    }
     if(!mobile){
       valid=false
       errorFields.mobile='phone no. is required'
+    }
+    if (String(mobile).length !=10) {
+      valid = false;
+      errorFields.mobile = "phone no. should be of 10 digits"
+    }
+
+    if(!starting){
+      valid=false
+      errorFields.starting='field is required'
     }
     if(!destination){
       valid=false
@@ -55,11 +70,13 @@ const EnquiryForm = ({ setEnquiryModal }) => {
   };
 
   const handleSendQuery = async () => {
+    console.log(user)
     if(handelErrors()){
       let formData=new FormData()
       formData.append('name',user.name)
       formData.append('email',user.email)
       formData.append('mobile',user.mobile)
+      formData.append('starting',user.starting)
       formData.append('destination',user.destination)
       formData.append('total_no_travelers',user.total_no_travelers)
       formData.append('message',user.message)
@@ -78,6 +95,7 @@ const EnquiryForm = ({ setEnquiryModal }) => {
              name: "",
              email: "",
              mobile: "",
+             starting:"",
              destination: "",
              total_no_travelers: "",
              message: "",
@@ -122,7 +140,7 @@ const EnquiryForm = ({ setEnquiryModal }) => {
                   name="name"
                   onChange={handleChange}
                 />
-                {error.name && <span className='errors' >{error.name}</span>}
+                {error.name && <span className="errors">{error.name}</span>}
               </div>
               <div className="flex flex-col gap-[2px]">
                 <p className="text-[11px] text-[#000000] font-semibold">
@@ -135,7 +153,7 @@ const EnquiryForm = ({ setEnquiryModal }) => {
                   name="email"
                   onChange={handleChange}
                 />
-                 {error.email && <span className='errors' >{error.email}</span>}
+                {error.email && <span className="errors">{error.email}</span>}
               </div>
               <div className="flex flex-col gap-[2px]">
                 <p className="text-[11px] text-[#000000] font-semibold">
@@ -148,7 +166,7 @@ const EnquiryForm = ({ setEnquiryModal }) => {
                   value={user?.mobile}
                   onChange={handleChange}
                 />
-                 {error.mobile && <span className='errors' >{error.mobile}</span>}
+                {error.mobile && <span className="errors">{error.mobile}</span>}
               </div>
               <div className="flex flex-col gap-[2px]">
                 <p className="text-[11px] text-[#000000] font-semibold">
@@ -157,8 +175,11 @@ const EnquiryForm = ({ setEnquiryModal }) => {
                 <input
                   type="text"
                   className="border-[1.09px] border-[#B6B0B0] w-full rounded-sm p-1 outline-none"
+                  name="starting"
+                  value={user.starting}
+                  onChange={handleChange}
                 />
-                
+                {error.starting && <span className="errors">{error.starting}</span>}
               </div>
               <div className="flex flex-col gap-[2px]">
                 <p className="text-[11px] text-[#000000] font-semibold">
@@ -171,7 +192,9 @@ const EnquiryForm = ({ setEnquiryModal }) => {
                   value={user?.destination}
                   onChange={handleChange}
                 />
-                 {error.destination && <span className='errors' >{error.destination}</span>}
+                {error.destination && (
+                  <span className="errors">{error.destination}</span>
+                )}
               </div>
               <div className="flex flex-col gap-[2px]">
                 <p className="text-[11px] text-[#000000] font-semibold">
@@ -184,7 +207,9 @@ const EnquiryForm = ({ setEnquiryModal }) => {
                   value={user?.total_no_travelers}
                   onChange={handleChange}
                 />
-                 {error.total_no_travelers && <span className='errors' >{error.total_no_travelers}</span>}
+                {error.total_no_travelers && (
+                  <span className="errors">{error.total_no_travelers}</span>
+                )}
               </div>
             </div>
             <div className="w-full flex flex-col gap-[2px]">
@@ -201,13 +226,16 @@ const EnquiryForm = ({ setEnquiryModal }) => {
             </div>
           </div>
           <div>
-            <button onClick={handleSendQuery} className="flex items-center gap-2 px-5 py-2 bg-[#CA1C26] text-white text-[13px] rounded">
+            <button
+              onClick={handleSendQuery}
+              className="flex items-center gap-2 px-5 py-2 bg-[#CA1C26] text-white text-[13px] rounded"
+            >
               <img
                 src={"/Assets/Icons/map.svg"}
                 alt=""
                 className="w-[23px] h-[21px]"
               />
-              <p >Book Now</p>
+              <p>Book Now</p>
             </button>
           </div>
         </div>
