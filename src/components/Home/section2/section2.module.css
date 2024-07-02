@@ -81,7 +81,9 @@
 .places2 > div:nth-child(2n) {
   height: 33vh;
 }
-
+.anim_card_row_second{
+  flex-direction: column-reverse;
+}
 .places_card p {
   position: absolute;
   

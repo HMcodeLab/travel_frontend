@@ -144,10 +144,6 @@
   width: 22px;
 }
 
-.places_images {
-  max-width: 55vw;
-  overflow-x: auto;
-}
 .inner {
   display: flex;
   gap: 2vw;
@@ -248,10 +244,7 @@
     padding: 10px 40px;
   }
   
-.places_images {
-  max-width: 65vw;
-  overflow-x: auto;
-}
+
 }
 @media (min-width: 769px) and (max-width:1024px) {
   .top_nav_main,
@@ -304,8 +297,6 @@
   .places_images {
     display: flex;
     gap: 2.5vw;
-    max-width: 100vw;
-    overflow-x: auto;
   }
 
   .btn_section button {

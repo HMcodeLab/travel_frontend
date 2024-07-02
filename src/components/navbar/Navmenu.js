@@ -47,11 +47,12 @@ const Navmenu = () => {
                     <Image src="/Assets/Icons/places/explore.svg" width={100} height={100} alt="explore_all" />
                     Explore All
                 </button>
-                <div className="slider-container">
+                
                     {loading ? (
                         <EmptyComponent />
                     ) : (
                         allCategory.length > 0 && (
+                            <div className="slider-container">
                             <div className="slider">
                                 <div className="slider-content">
                                     {allCategory.slice(0, 9).map((item, ind) => (
@@ -64,9 +65,10 @@ const Navmenu = () => {
                                     ))}
                                 </div>
                             </div>
+                            </div>
                         )
                     )}
-                </div>
+               
                 {/* <button onClick={handleNext} className="next-button">
                     <ChevronRightIcon className="h-7 w-5" />
                 </button> */}
