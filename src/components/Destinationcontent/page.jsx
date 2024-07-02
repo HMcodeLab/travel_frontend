@@ -18,7 +18,7 @@ import Down from "../../../public/Icons/arrow.svg";
 import Cap from "../ParagraphWithLargeFirstLetters/page";
 
 const Destinationcontent = ({props}) => {
-  console.log(props)
+  // console.log(props)
   const [responsedata, setresponsedata] = useState();
   const search = useSearchParams();
   
