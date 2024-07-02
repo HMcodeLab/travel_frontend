@@ -299,7 +299,7 @@
 
   .places_images {
     display: flex;
-    gap: 2.5vw;
+    gap: 30px;
   }
 
   .btn_section button {
@@ -326,9 +326,11 @@
   }
 
   /* navmenu  */
-
+  .slider-container{
+    padding: 0;
+  }
   .nav_menu_main {
-    padding-inline: 10px;
+    padding: 0px 10px;
   }
   .nav_menu_main p {
     font-size: 0.75rem;

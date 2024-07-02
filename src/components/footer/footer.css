@@ -47,9 +47,7 @@
     width: 100%;
     padding: 50px;
 }
-.card_bottom_section{
-    margin-top: 40px;
-}
+
 .footer_column_wrapper{
     overflow: auto;
     height: 100%;
@@ -132,7 +130,7 @@
         font-size: 12.37px;
     }
     .flex.justify-between.w-\[60\%\].xsm\:w-\[100\%\] {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 
     .footerbg .justify-between {

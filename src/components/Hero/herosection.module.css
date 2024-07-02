@@ -3,8 +3,13 @@
   width: 100%;
   height: 65vh;
   position: relative;
+  z-index: 9;
 }
-
+.search_filter_outer {
+  width: 100%;
+  left: 0;
+  max-width: 100%;
+}
 .hero_section .image {
   width: 100%;
   height: 100%;

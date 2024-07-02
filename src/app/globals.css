@@ -280,7 +280,7 @@ h1.desti_details_heading {
 .slider-container{
   min-height: 100px;
   height: 100%;
-  width: 88%;
+  width: 100%;
 }
 
 .slider-content {
@@ -417,6 +417,12 @@ span.errors {
   border-radius: 6.68px 6.68px 0px 0px;
 }
 
+.card_middle_section{
+  font-size: 22.7px;
+  font-weight: 700;
+  font-family: Merriweather-sans;
+}
+
 .card_bottom_underline_section{
   border-bottom: 0.1px solid #0100804F
 }
@@ -496,7 +502,13 @@ span.errors {
   .panormic_ladakh_heading {
     font-size: 25px;
   }
-
+  .destination_nav_button{
+    width: 100%;
+  }
+  .card_top_section{
+    min-height: 220px;
+    height: 100%;
+  }
   .tour_package_img{
     min-height: 200px;
     height: 100%;
@@ -552,4 +564,20 @@ span.errors {
 }
 
 
-@media (max-width:468px) {}
+@media (max-width:600px) {
+  .searching_activities {
+    grid-template-columns: 1fr;
+    row-gap: 23px;
+}
+ 
+.activities_flex {
+    justify-content: left;
+    border: unset;
+}
+.border-remover {
+    border: unset;
+}
+.activities_button {
+    justify-content: left;
+}
+}
