@@ -75,6 +75,10 @@
   font-family: Merriweather-sans;
 }
  
+ul.list-disc {
+  list-style: none;
+}
+
 
 .footer_logo_wrapper {
   position: absolute;
