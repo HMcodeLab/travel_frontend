@@ -131,6 +131,7 @@ img.destinations_background_image {
   width: 100% !important;
   background-size: cover !important;
   height: 100% !important;
+  min-height: 500px;
 }
 
 h1.desti_details_heading {
@@ -138,10 +139,11 @@ h1.desti_details_heading {
   text-align: center;
   left: 0;
   right: 0;
-  top: 220px;
+  top: 150px;
   font-size: 56px;
   font-weight: bold;
-  color: #ca1c26;
+  color: #fff;
+  text-shadow: 0px 2px 5px #000000;
 }
 
 .destinations_wrapper {
@@ -455,15 +457,23 @@ span.errors {
 }
 
 @media (min-width: 769px) and (max-width:1024px) {
-
+  .slider{
+    margin: 20px 0px 0px !important;
+  }
+  .destination_nav_button{
+    width: 70% !important;
+  }
   .px-\[12\.5vw\].flex.flex-col.gap-\[5vh\].xsm\:px-\[3vw\],
   .all_destinations_wrapper{
     padding: 20px 50px;
   }
 
 }
-
+.destination_hero_section{
+  height: 500px;
+}
 @media (max-width:1024px) {
+  
   .discount_heading_top_first p {
     font-size: 12px;
   }
@@ -511,6 +521,7 @@ span.errors {
 }
 
 @media (max-width:768px) {
+ 
   .slider-container{
     min-height: auto;
     height: auto;
@@ -578,10 +589,7 @@ span.errors {
   .all_destinations_wrapper{
     grid-template-columns: 1fr;
   }
-  .slider-container{
-    padding: 10px 0px;
-    align-items: end;
-  }
+  
   .search_filter_outer {
     width: 100% !important;
     left: 0;
