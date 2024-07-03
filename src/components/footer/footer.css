@@ -96,7 +96,9 @@
     left: .5rem;
     bottom: 2.5rem;
 }
-
+.travel_image_wrapper img {
+    width: 167px;
+}
 .footer_flex_content_wrapper{
     height: 100% !important;
 }
