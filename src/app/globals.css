@@ -57,7 +57,15 @@
   --primary-font: "Merriweather-sans", sans-serif;
   --secondary-font: "Metrophobic", sans-serif;
 }
-
+.searching_slider {
+  max-width: 1000px;
+  margin: auto;
+  left: 0;
+  right: 0;
+  width: 100%;
+  --tw-translate-x: 0px;
+  gap: 20px;
+}
 .trendingcard:nth-child(even) {
   align-self: end;
 }
