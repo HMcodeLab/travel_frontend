@@ -2,6 +2,8 @@ import React from "react";
 import "./ActivitiesPackages.css";
 import PhoneActivitiesPackage from "./PhoneActivitiesPackage";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
+
 
 const ActivitiesPackages = ({ data }) => {
   const router = useRouter();
@@ -30,22 +32,24 @@ const ActivitiesPackages = ({ data }) => {
       <div className="xsm:block hidden">
         <PhoneActivitiesPackage data={data} />
       </div>
+      <Link href={`/destination/${data[0]?.citySlug}/${data[0]?.id}`}>
       <div className="grid grid-cols-3 gap-3 xsm:hidden">
         <div
           className="activity-card1 h-[600px] flex font-[Merriweather_Sans] flex-col justify-end text-white rounded-md px-4 py-6 relative overflow-hidden cursor-pointer"
           style={{
             backgroundImage: `url(${data[0]?.pdf_image})`,
           }}
-          onClick={() =>
-            router.push(`/destination/${data[0]?.citySlug}/${data[0]?.id}`)
-          }
+         
         >
+         
           <div className="relative z-10 flex items-center gap-2">
             <p className="uppercase text-[20px] font-normal tracking-wider">
               {data[0]?.package_name}
             </p>
             <img className="w-8 h-8" src={data[0]?.pdf_image} alt="..." />
           </div>
+         
+          
           {/* <p className="relative z-10 text-[12px] capitalize xsm:hidden">
             Let us look at some of the popular adventure sports in Himachal
             Pradesh that take the state by storm
@@ -150,6 +154,7 @@ const ActivitiesPackages = ({ data }) => {
           </p> */}
         </div>
       </div>
+      </Link>
     </div>
   );
 };
