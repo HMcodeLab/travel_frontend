@@ -78,8 +78,8 @@ const Cards = ({val, cityid }) => {
           </div>
         </div>
         <div className="flex justify-between items-center h-9">
-        <Link
-            href={`/destination/${val.city_name.toLowerCase()}/${val?.package_name.replace(/\s+/g, "-")}`}
+          <Link
+            href={`/destination/${val.city_name.toLowerCase()}/${val?.id}`}
             className="uppercase bg-[var(--primary)] text-white rounded px-5 h-full text-center flex items-center justify-center"
             style={{ fontFamily: "Merriweather-sans" }}
           >
