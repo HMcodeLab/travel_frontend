@@ -49,5 +49,8 @@ p.main_heading_bootom {
   height: 45vh;
 
 }
+.searching_parent_wrapper {
+  padding: 0px!important;
+}
 
 }

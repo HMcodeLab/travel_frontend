@@ -21,7 +21,7 @@ const Footer = () => {
   useEffect(() => {
     async function Fetchdata() {
       try {
-        const data = await fetch(`${process.env.NEXT_PUBLIC_URL}apis/packages/package_category_with_city_tge`);
+        const data = await fetch(`${process.env.NEXT_PUBLIC_URL}/apis/packages/package_category_with_city_tge`);
         const response = await data.json();
         setallCategory(response?.data);
       } catch (error) {
@@ -126,7 +126,7 @@ const Footer = () => {
                           <span className="relative travel_image_wrapper">
                             <Image
                               src={
-                                item?.image || emptyImage.src
+                                item?.main_image || emptyImage.src
                               }
                               width={1000}
                               height={1000}
