@@ -508,7 +508,7 @@ const HeroSection = () => {
 
             {activeFacility === "Flight" && (
               <div className="bg-[#F6F6F6] search_filter_outer rounded-md flex items-center shadow-lg shadow-[#00000021] w-full relative">
-                <div className="grid grid-cols-5 items-center py-3 w-full px-5">
+                <div className="grid grid-cols-5 items-center py-3 w-full px-5 searching_activities">
                   <div className="border-r border-[#01008036] py-1 cursor-pointer relative border-remover">
                     <div
                       onClick={() => setfromLocation(!fromLocation)}
@@ -691,7 +691,7 @@ const HeroSection = () => {
 
             {activeFacility === "Railway" && (
               <div className="bg-[#F6F6F6] search_filter_outer rounded-md flex items-center shadow-lg shadow-[#00000021] w-full relative">
-                <div className="grid grid-cols-5 items-center py-3 w-full px-5">
+                <div className="grid grid-cols-5 items-center py-3 w-full px-5 searching_activities">
                   <div className="border-r border-[#01008036] py-1 cursor-pointer relative border-remover">
                     <div
                       onClick={() => setfromLocation(!fromLocation)}

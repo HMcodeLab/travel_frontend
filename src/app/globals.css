@@ -582,6 +582,11 @@ span.errors {
     padding: 10px 0px;
     align-items: end;
   }
+  .search_filter_outer {
+    width: 100% !important;
+    left: 0;
+    max-width: 100% !important;
+  }
 }
 
 
