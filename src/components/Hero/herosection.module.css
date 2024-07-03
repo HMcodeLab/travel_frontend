@@ -40,6 +40,15 @@
 
 
 
+.hero_section {
+  height: 600px;
+  max-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
 
 @media only screen and (max-width:768px) {
   .main_heading_c {

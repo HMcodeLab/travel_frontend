@@ -58,6 +58,7 @@
   --secondary-font: "Metrophobic", sans-serif;
 }
 .searching_slider {
+  height: -webkit-fill-available;
   max-width: 1000px;
   margin: auto;
   left: 0;
@@ -567,6 +568,9 @@ span.errors {
 }
 
 @media (max-width:768px) {
+  .searching_slider{
+    top: 50% !important;
+  }
   .calling_flex_wrapper {
     display: flex!important;
     justify-content: space-between!important;
