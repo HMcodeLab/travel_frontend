@@ -57,7 +57,15 @@
   --primary-font: "Merriweather-sans", sans-serif;
   --secondary-font: "Metrophobic", sans-serif;
 }
-
+.searching_slider {
+  max-width: 1000px;
+  margin: auto;
+  left: 0;
+  right: 0;
+  width: 100%;
+  --tw-translate-x: 0px;
+  gap: 20px;
+}
 .trendingcard:nth-child(even) {
   align-self: end;
 }
@@ -65,7 +73,17 @@
 .cardtitle {
   font-family: Merriweather-sans;
 }
+ 
 
+.footer_logo_wrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -32px;                 
+}
+.footer_outer_wrapper {
+  margin-top: 120px;
+}
 .blurred-background {
   transition: filter 0.3s ease;
 }
@@ -400,7 +418,9 @@ span.errors {
   text-transform: uppercase;
   padding: 10px 20px;
 }
-
+.discount_section_wrapper button:hover{
+  color: var(--primary);
+}
 .lastsection_left_heading {
   font-size: 34.86px;
   font-weight: 700;
@@ -461,6 +481,7 @@ span.errors {
   width: 100%;
   height: 36px;
 }
+
 
 /* css by neo sharma */
 
