@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 
 const ContactUsHomeBtn = () => {
   let router=useRouter()
-  console.log(`this is router is the next js ${router}`)
+  // console.log(`this is router is the next js ${router}`)
   return (
     <Link
       href={"/contactus"}

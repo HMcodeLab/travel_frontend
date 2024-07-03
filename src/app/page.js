@@ -6,6 +6,7 @@ import Section6 from "@/components/Home/section6/section6";
 import Section7 from "@/components/Home/section7/section7";
 import Discount from "@/components/discount/page";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <Discount />
         <Section4 />
         <Section6 />
+        <div className='w-full flex justify-center '><Link className="py-2 px-4 bg-[#CA1C26] text-white rounded" href='/all_destination'>View all</Link></div>
         <MorphBanner />
       </div>
       <Section7 />

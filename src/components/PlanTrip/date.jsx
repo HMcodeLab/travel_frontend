@@ -12,7 +12,7 @@ const DateComponent = () => {
   const [date, setDate] = useState();
   const { headerdata, setrender, setheaderdata } = useContext(Tripprovider);
   function handleDateClick(d) {
-    console.log(d);
+    // console.log(d);
     setDate(d);
     setrender("destination");
     setheaderdata((prev) => ({ ...prev, departureDate: formatDate(d) }));
@@ -128,6 +128,9 @@ const DateComponent = () => {
     },
   ];
   console.log(date);
+  const today = new Date();
+  // Reset time part of the date to 00:00:00 for accurate comparison
+  today.setHours(0, 0, 0, 0);
   return (
     <div className="pl-14 pt-14 xsm:pl-4">
       <Commonheader />
@@ -141,6 +144,7 @@ const DateComponent = () => {
             onChange={setDate}
             onClickDay={handleDateClick}
             value={date}
+            minDate={today}
           />
         </div>
       </div>
