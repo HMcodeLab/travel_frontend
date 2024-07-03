@@ -73,7 +73,17 @@
 .cardtitle {
   font-family: Merriweather-sans;
 }
+ 
 
+.footer_logo_wrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -32px;                 
+}
+.footer_outer_wrapper {
+  margin-top: 120px;
+}
 .blurred-background {
   transition: filter 0.3s ease;
 }
