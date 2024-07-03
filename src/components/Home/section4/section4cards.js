@@ -15,6 +15,7 @@ const Section4Cards = () => {
                                 <div className={styles.content}>
                                     <Image src={val.logo} alt={"..."} height={1000} width={1000} />
                                     <h3>{val.title}</h3>
+                                    
                                 </div>
                             </div>
                         )

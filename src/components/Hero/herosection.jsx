@@ -189,10 +189,10 @@ const HeroSection = () => {
               activeFacility === "Tour"
                 ? "w-[100%] xsm:w-[100%]"
                 : activeFacility === "Activities"
-                ? "w-[100%] xsm:w-[100%]"
+                ? "w-[100%] xsm:w-[100%] searching_parent_wrapper"
                 : activeFacility === "Flight"
-                ? "w-[100%] xsm:w-[100%]"
-                : "w-[100%] xsm:w-[100%]"
+                ? "w-[100%] xsm:w-[100%] searching_parent_wrapper"
+                : "w-[100%] xsm:w-[100%] searching_parent_wrapper"
             } `}
             ref={searchRef}
           >
@@ -200,7 +200,7 @@ const HeroSection = () => {
               (Search ? (
                 <div className="bg-[#F6F6F6] search_filter_outer rounded-t-3xl rounded-b flex flex-col shadow-lg shadow-[#00000021] w-[90%] absolute top-0 xsm:w-[65vw]">
                   <input
-                    className="w-full text-[#000000] placeholder:text-[#848383] bg-[#F6F6F6] flex justify-center text-[14px] rounded-full pl-16 py-2 shadow-sm shadow-[#00000021] outline-none h-[55px] xsm:h-[45px] xsm:pl-5"
+                    className="w-full text-[#000000] placeholder:text-[#848383] bg-[#F6F6F6] flex justify-center text-[14px] rounded-full pl-16 py-2 shadow-sm shadow-[#00000021] outline-none h-[55px] xsm:h-[45px] xsm:pl-5 search_terms"
                     placeholder="Search For Destinations... " 
                   value={toursearchData.city_id } onChange={(e)=>setTourSearchData({...toursearchData,city_id:e.target.value})}
                   />
@@ -270,7 +270,7 @@ const HeroSection = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="flex flex-col gap-3 border-b border-[#DADADA] py-2">
+                    <div className="flex flex-col gap-3 border-b border-[#DADADA] py-2 search_parent_wrapper">
                       <p className="text-black text-[14px]">Price Range</p>
                       <div className="w-[80%]">
                         {/* Your Slider component */}
@@ -329,7 +329,7 @@ const HeroSection = () => {
               ))}
 
             {activeFacility === "Activities" && (
-              <div className="bg-[#F6F6F6] search_filter_outer rounded-md flex items-center shadow-lg shadow-[#00000021] ">
+              <div className="bg-[#F6F6F6] search_filter_outer rounded-md flex items-center shadow-lg shadow-[#00000021] nested_wrapper  ">
                 <div className="grid grid-cols-4 items-center py-3 w-full px-5 searching_activities">
                   <div className="border-r border-[#01008036] py-1 cursor-pointer relative border-remover">
                     <div
@@ -507,7 +507,7 @@ const HeroSection = () => {
             )}
 
             {activeFacility === "Flight" && (
-              <div className="bg-[#F6F6F6] search_filter_outer rounded-md flex items-center shadow-lg shadow-[#00000021] w-full relative">
+              <div className="bg-[#F6F6F6] search_filter_outer rounded-md flex items-center shadow-lg shadow-[#00000021] nested_wrapper  w-full relative">
                 <div className="grid grid-cols-5 items-center py-3 w-full px-5 searching_activities">
                   <div className="border-r border-[#01008036] py-1 cursor-pointer relative border-remover">
                     <div
@@ -690,7 +690,7 @@ const HeroSection = () => {
             )}
 
             {activeFacility === "Railway" && (
-              <div className="bg-[#F6F6F6] search_filter_outer rounded-md flex items-center shadow-lg shadow-[#00000021] w-full relative">
+              <div className="bg-[#F6F6F6] search_filter_outer rounded-md flex items-center shadow-lg shadow-[#00000021] nested_wrapper  w-full relative">
                 <div className="grid grid-cols-5 items-center py-3 w-full px-5 searching_activities">
                   <div className="border-r border-[#01008036] py-1 cursor-pointer relative border-remover">
                     <div

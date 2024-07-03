@@ -29,13 +29,13 @@ const Destinationherosection = ({ resp }) => {
                 <p className="text-white font-extrabold text-5xl text-center xsm:text-3xl ">
                   {resp?.title}
                 </p>
-                <p className="text-3xl  text-center xsm:text-lg destination_inner_title">
+                {/* <p className="text-3xl  text-center xsm:text-lg destination_inner_title">
                   Thrills for Soul and Spirit!
-                </p>
+                </p> */}
                 <p className="flex justify-center text-center gap-1 p-1 font-semibold text-xl xsm:text-[20px]">
                   <span>Get upto</span>
                   <span className="bg-[#CA1C26B2] px-1">
-                    {resp?.discount || null}off
+                    {resp?.discount || 0} off
                   </span>
                 </p>
                 <div className="flex justify-center w-full">
