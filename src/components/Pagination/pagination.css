@@ -28,12 +28,14 @@
 }
 
 .pagination-container .pagination-item:hover {
-  background-color: rgba(0, 0, 0, 0.04);
-  cursor: pointer;
+  background-color: #ca1c26;
+    color: #fff;
+    cursor: pointer;
 }
 
 .pagination-container .pagination-item.selected {
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: #ca1c26;
+    color: #fff;
 }
 
 .pagination-container .pagination-item .arrow::before {
