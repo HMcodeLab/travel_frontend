@@ -146,7 +146,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="flex justify-center">
+          <div className="flex justify-center footer_bottom_text">
             <p className="text-center text-[#838282] font-semibold bg-white w-max px-4 py-2 xsm:py-1 xsm:px-2">
               © 2024 TGE ALL RIGHTS RESERVED.
             </p>
