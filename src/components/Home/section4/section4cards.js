@@ -3,6 +3,7 @@ import { section4Data } from '@/Data/section4data'
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import styles from './section4.module.css'
+import Link from 'next/link'
 
 const Section4Cards = () => {
     const [data, setdata] = useState([])
@@ -22,14 +23,14 @@ fetchdata()
                 {
                     data?.map((val, ind) => {
                         return (
-                            <div className={styles.card} key={ind}>
+                            <Link href={`/trendingdestination/${val?.packageCateslug}`} className={styles.card} key={ind}>
                                 <Image src={val.banner_images_main} alt={"..."} height={100} width={100} />
                                 <div className={styles.content}>
                                     <Image src={val.banner_images} alt={"..."} height={100} width={100} />
                                     <h3>{val.package_cat_name}</h3>
                                     
                                 </div>
-                            </div>
+                            </Link>
                         )
                     })
                 }
