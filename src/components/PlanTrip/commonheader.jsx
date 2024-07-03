@@ -10,7 +10,7 @@ const Commonheader = () => {
   const { headerdata, setheaderdata, setrender } = useContext(Tripprovider);
   let items = [];
   var trimmedData = {};
-
+  const keysOrder=['to','month','date','destination','staycount','peopletype','form']
   Object.keys(headerdata).forEach((val, ind) => {
     if (ind == 0 || ind == 1 || ind == 3 || ind == 4 || ind == 8) {
       trimmedData[val] = headerdata[val];
@@ -18,7 +18,7 @@ const Commonheader = () => {
   });
 
   for (let index = 0; index < Object.keys(headerdata)?.length; index++) {
-    console.log(index, Object.keys(headerdata)[index]);
+    // console.log(index, Object.keys(headerdata)[index]);
 
     items.push(<div className="h-[6px] bg-[#FCBFC2]"></div>);
   }
@@ -34,14 +34,23 @@ const Commonheader = () => {
   ];
 
   function handleHeader(ind) {
+    console.log(ind,headerdata);
+
     if (ind == 0) {
       setrender("cities");
-      setheaderdata((prevArray) => prevArray?.slice(0, ind));
+      // setheaderdata((prevArray) => prevArray?.slice(0, ind));
+      setheaderdata(prevState => {
+        const newState = { ...prevState };
+        delete newState[key];
+        return newState;
+      });
     } else if (ind == 1) {
-      setheaderdata((prevArray) => prevArray?.slice(0, ind));
+
+      // setheaderdata((prevArray) => prevArray?.slice(0, ind));
       setrender("month");
     } else {
-      setheaderdata((prevArray) => prevArray?.slice(0, ind));
+
+      // setheaderdata((prevArray) => prevArray?.slice(0, ind));
       setrender(Rendercomponentdata[ind + 1]);
     }
   }
@@ -57,7 +66,7 @@ const Commonheader = () => {
             <>
             <div className="values_wrapper">
               <div
-                onClick={() => handleHeader(ind)}
+                onClick={() => handleHeader(item)}
                 className="border cursor-pointer border-[#CA1C2654] rounded flex items-center gap-2  p-1 selected_query_values"
               >
                 <Image src={ICONS[ind]} alt="icon" />
