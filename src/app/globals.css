@@ -545,6 +545,16 @@ span.errors {
 }
 
 @media (max-width:768px) {
+  .calling_flex_wrapper {
+    display: flex!important;
+    justify-content: space-between!important;
+    height: 3rem!important;
+    white-space: nowrap!important;
+    gap: 16px!important;
+}
+a.goto_whatsapp img {
+  display: block!important;
+}
   .slider-container{
     min-height: auto;
     height: auto;
