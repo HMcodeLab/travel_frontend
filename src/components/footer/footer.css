@@ -49,7 +49,6 @@
 }
 
 .footer_column_wrapper{
-    overflow: auto;
     height: 100%;
 }
 .footer_column_wrapper::-webkit-scrollbar{
@@ -97,8 +96,20 @@
     left: .5rem;
     bottom: 2.5rem;
 }
-
+.travel_image_wrapper img {
+    width: 167px;
+}
+.footer_flex_content_wrapper{
+    height: 100% !important;
+}
 @media (max-width:1024px) {
+    .footer_gallary_wrapper {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .travel_image_wrapper img{
+        max-width: 100% !important;
+        height: 175px !important;
+    }
     .flex.justify-between.w-\[60\%\].xsm\:w-\[100\%\] {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -123,9 +134,13 @@
     .w-\[5rem\] {
         width: 100%;
     }
+    
 }
 
 @media (max-width:520px) {
+    .footer_gallary_wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
     .footer_links a{
         font-size: 12.37px;
     }
