@@ -164,7 +164,7 @@ function EmptyComponent() {
         <Link
           key={index}
           href={`/`}
-          className="h-[5rem] w-[5rem]"
+           className="h-[5rem] w-[5rem] footer_destination_link"
         >
           <span className="relative travel_image_wrapper">
             <Image
