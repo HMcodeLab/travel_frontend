@@ -14,7 +14,7 @@ const Cards = ({val, cityid }) => {
     <div className="rounded-lg flex flex-col shadow-lg bg-[#F4F4F4] pb-5 card_section_wrapper">
       <div className="relative w-full h-[33vh]  card_top_section">
         <Image
-          src={val?.relative_desti_img || val?.pdf_image || emptyImage.src}
+          src={val?.pdf_image || val?.pdf_image || emptyImage.src}
           alt="Package image"
           layout="fill"
           objectFit="cover"

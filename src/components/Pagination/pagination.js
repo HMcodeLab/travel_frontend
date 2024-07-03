@@ -38,7 +38,7 @@ const Pagination = (props) => {
             className={classnames("pagination-container", { [className]: className })}
         >
             <li
-                className={classnames("pagination-item", {
+                className={classnames("pagination-item prev_next", {
                     disabled: currentPage === 1
                 })}
                 onClick={onPrevious}
@@ -60,7 +60,7 @@ const Pagination = (props) => {
                 );
             })}
             <li
-                className={classnames("pagination-item", {
+                className={classnames("pagination-item prev_next", {
                     disabled: currentPage === Math.ceil(totalCount / 9)
                 })}
                 onClick={onNext}
