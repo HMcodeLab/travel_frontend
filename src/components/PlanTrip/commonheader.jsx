@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Plane from "../../../public/Icons/plane.svg";
 import Calender from "../../../public/Icons/calendericon.svg";
 import Nights from "../../../public/Icons/nightsicon.svg";
@@ -8,14 +8,20 @@ import { Tripprovider } from "./page";
 
 const Commonheader = () => {
   const { headerdata, setheaderdata, setrender } = useContext(Tripprovider);
+  const [tempdata, settempdata] = useState({})
   let items = [];
   var trimmedData = {};
-  const keysOrder=['to','month','date','destination','staycount','peopletype','form']
+  
+useEffect(() => {
   Object.keys(headerdata).forEach((val, ind) => {
     if (ind == 0 || ind == 1 || ind == 3 || ind == 4 || ind == 8) {
       trimmedData[val] = headerdata[val];
     }
   });
+  settempdata(trimmedData)
+}, [])
+
+  
 
   for (let index = 0; index < Object.keys(headerdata)?.length; index++) {
     // console.log(index, Object.keys(headerdata)[index]);
@@ -27,32 +33,33 @@ const Commonheader = () => {
     "cities",
     "month",
     "date",
-    "destination",
+    "destination",  
     "staycount",
     "peopletype",
     "form",
   ];
 
-  function handleHeader(ind) {
-    console.log(ind,headerdata);
+  function handleHeader(specificKey,ind) {
+    const updatedData = {};
+    let found = false;
 
-    if (ind == 0) {
-      setrender("cities");
-      // setheaderdata((prevArray) => prevArray?.slice(0, ind));
-      setheaderdata(prevState => {
-        const newState = { ...prevState };
-        delete newState[key];
-        return newState;
-      });
-    } else if (ind == 1) {
-
-      // setheaderdata((prevArray) => prevArray?.slice(0, ind));
-      setrender("month");
-    } else {
-
-      // setheaderdata((prevArray) => prevArray?.slice(0, ind));
-      setrender(Rendercomponentdata[ind + 1]);
+    for (const key in tempdata) {
+      updatedData[key] = tempdata[key];
+      if (found) {
+        // console.log(updatedData);
+        delete updatedData[key];
+      }
+      if (key === specificKey) {
+        delete updatedData[key];
+        found = true;
+      }
     }
+
+    setrender(Rendercomponentdata[ind])
+    setheaderdata(updatedData)
+    settempdata(updatedData);
+// console.log(trimmedData);
+
   }
   //   console.log(Object.keys(headerdata));
   return (
@@ -61,12 +68,12 @@ const Commonheader = () => {
         NOW PLANNING YOUR HOLIDAY TO
       </p>
       <div className="flex  gap-4 xsm:flex xsm:flex-wrap selected_query_wrapper">
-        {Object.keys(trimmedData)?.map((item, ind) => {
+        {Object.keys(tempdata)?.map((item, ind) => {
           return (
             <>
             <div className="values_wrapper">
               <div
-                onClick={() => handleHeader(item)}
+                onClick={() => handleHeader(item,ind)}
                 className="border cursor-pointer border-[#CA1C2654] rounded flex items-center gap-2  p-1 selected_query_values"
               >
                 <Image src={ICONS[ind]} alt="icon" />
