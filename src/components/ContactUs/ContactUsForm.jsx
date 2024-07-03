@@ -35,7 +35,7 @@ const ContactUsForm = () => {
             errorFields.mobile = 'mobile is required'
         } else if (mobile.length !== 10) {
             valid = false
-            errorFields.mobile = 'max length is 10'
+            errorFields.mobile = 'max lenght of the number is ( 10 )'
         }
 
         setErrors(errorFields)

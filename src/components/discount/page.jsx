@@ -1,9 +1,22 @@
+'use client'
 import Image from "next/image";
 import Boat from "../../../public/discountboat.png";
 import Cap from "../ParagraphWithLargeFirstLetters/page";
+import EnquiryForm from "../EnquiryForm/EnquiryForm";
+import { useState } from "react";
 const Discount = () => {
+  const [enquiryModal, setEnquiryModal] = useState(false);
   return (
     <>
+
+    {
+      enquiryModal&&(
+        <div className="modal-overlay">
+        <EnquiryForm setEnquiryModal={setEnquiryModal} />
+      </div>
+      )
+    }
+     
       <div className=" font-Merri-sans relative w-full h-[35vh] bg-[#020241] flex justify-between items-center pl-[5%] rounded-xl xsm:h-[22vh]">
         <div className="w-[50%] text-white space-y-2 xsm:w-[100%] xsm:z-[2] discount_section_wrapper">
           <div className="text-[#E3E3E3] text-[17px] font-[400] uppercase xsm:text-sm discount_heading_first">
@@ -16,8 +29,9 @@ const Discount = () => {
             Version of Lorem Ipsum.Proin gravida nibh vel velit auctor aliquet.
             Aenean sollicituuis bibendum auctor
           </p>
-          <button className=" bg-white text-[#020241] font-semibold rounded xsm:text-[12px] xsm:py-1">
+          <button className=" bg-white text-[#020241] font-semibold rounded xsm:text-[12px] xsm:py-1" onClick={()=>setEnquiryModal(true)}>
             Discover More{" "}
+            
           </button>
         </div>
 
