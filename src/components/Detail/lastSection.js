@@ -5,7 +5,8 @@ import Cards from '../card/page'
 import styles from './page.module.css'
 
 const LastSection = ({ data }) => {
-    // console.log(data)
+    console.log('this is dessdfjkasjflskdfjkalsdfjaslkdfj ')
+    console.log(data)
     return (
         <div className='w-full flex justify-between xsm:flex-col xsm:overflow-hidden'>
             <div className='flex flex-col w-[30%]  flex-wrap gap-3 xsm:w-[80%]'>
