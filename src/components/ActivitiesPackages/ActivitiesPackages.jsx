@@ -13,7 +13,7 @@ const ActivitiesPackages = ({ data }) => {
   }
   // console.log(data)
   return (
-    <div className="px-[169px] py-6 flex flex-col gap-8 xsm:px-[20px]">
+    <div className="px-[169px] py-6 flex flex-col gap-8 xsm:px-[20px] acticities_packages">
       <div className="flex justify-between">
         <div className="w-[40%] xsm:w-full">
           <p className="font-Merri-sans border-l-4 border-[#CA1C26] pl-3 uppercase text-[24px] font-bold tracking-wider">
@@ -32,7 +32,7 @@ const ActivitiesPackages = ({ data }) => {
       <div className="xsm:block hidden">
         <PhoneActivitiesPackage data={data} />
       </div>
-      <div className="grid grid-cols-3 gap-3 xsm:hidden">
+      <div className="grid grid-cols-3 gap-3 xsm:hidden activities_posts">
         <Link href={`/destination/${data[0]?.citySlug}/${data[0]?.id}`}>
           <div
             className="activity-card1 h-[600px] flex font-[Merriweather_Sans] flex-col justify-end text-white rounded-md px-4 py-6 relative overflow-hidden cursor-pointer"
@@ -55,9 +55,9 @@ const ActivitiesPackages = ({ data }) => {
           </div>
         </Link>
         <Link href={`/destination/${data[1]?.citySlug}/${data[1]?.id}`}>
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-3 activities_center_section">
             <div
-              className="h-[33%] activity-card3a flex font-[Merriweather_Sans] flex-col justify-end text-white rounded-md px-4 py-6 relative overflow-hidden cursor-pointer"
+              className="h-[100%] activity-card3a flex font-[Merriweather_Sans] flex-col justify-end text-white rounded-md px-4 py-6 relative overflow-hidden cursor-pointer"
               style={{
                 backgroundImage: `url(${data[1]?.pdf_image})`,
               }}
@@ -79,7 +79,7 @@ const ActivitiesPackages = ({ data }) => {
             </div>
             <Link href={`/destination/${data[2]?.citySlug}/${data[2]?.id}`}>
               <div
-                className="h-[33%] activity-card3b flex font-[Merriweather_Sans] flex-col justify-end text-white rounded-md px-4 py-6 relative overflow-hidden cursor-pointer"
+                className="h-[100%] activity-card3b flex font-[Merriweather_Sans] flex-col justify-end text-white rounded-md px-4 py-6 relative overflow-hidden cursor-pointer"
                 style={{
                   backgroundImage: `url(${data[2]?.pdf_image})`,
                 }}
@@ -103,7 +103,7 @@ const ActivitiesPackages = ({ data }) => {
             </Link>
             <Link href={`/destination/${data[3]?.citySlug}/${data[3]?.id}`}>
               <div
-                className="h-[33%] activity-card3c flex font-[Merriweather_Sans] flex-col justify-end text-white rounded-md px-4 py-6 relative overflow-hidden cursor-pointer"
+                className="h-[100%] activity-card3c flex font-[Merriweather_Sans] flex-col justify-end text-white rounded-md px-4 py-6 relative overflow-hidden cursor-pointer"
                 style={{
                   backgroundImage: `url(${data[3]?.pdf_image})`,
                 }}

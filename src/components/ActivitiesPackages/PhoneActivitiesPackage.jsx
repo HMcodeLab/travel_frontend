@@ -1,7 +1,10 @@
 import React from "react";
 import "./ActivitiesPackages.css";
+import { useRouter } from "next/navigation";
+
 
 const PhoneActivitiesPackage = ({ data }) => {
+  const router = useRouter();
   return (
     <div className="flex flex-col gap-4">
       <div className="grid grid-cols-2 gap-4">
@@ -12,7 +15,7 @@ const PhoneActivitiesPackage = ({ data }) => {
           }}
           onClick={() =>
             router.push(
-              `/destination?city_name=${data[0]?.package_name}&cityid=${data[0]?.city_id}`
+              `/destination/${data[0]?.citySlug}/${data[0]?.id}`
             )
           }
         >
@@ -38,7 +41,7 @@ const PhoneActivitiesPackage = ({ data }) => {
           }}
           onClick={() =>
             router.push(
-              `/destination?city_name=${data[1]?.package_name}&cityid=${data[1]?.city_id}`
+              `/destination/${data[1]?.citySlug}/${data[1]?.id}`
             )
           }
         >
@@ -64,7 +67,7 @@ const PhoneActivitiesPackage = ({ data }) => {
           }}
           onClick={() =>
             router.push(
-              `/destination?city_name=${data[2]?.package_name}&cityid=${data[2]?.city_id}`
+              `/destination/${data[2]?.citySlug}/${data[2]?.id}`
             )
           }
         >
@@ -90,7 +93,7 @@ const PhoneActivitiesPackage = ({ data }) => {
           }}
           onClick={() =>
             router.push(
-              `/destination?city_name=${data[3]?.package_name}&cityid=${data[3]?.city_id}`
+              `/destination/${data[3]?.citySlug}/${data[3]?.id}`
             )
           }
         >
@@ -118,7 +121,7 @@ const PhoneActivitiesPackage = ({ data }) => {
           }}
           onClick={() =>
             router.push(
-              `/destination?city_name=${data[4]?.package_name}&cityid=${data[4]?.city_id}`
+              `/destination/${data[4]?.citySlug}/${data[4]?.id}`
             )
           }
         >
