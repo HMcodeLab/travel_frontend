@@ -499,7 +499,7 @@ span.errors {
   max-width: 999px;
   left: 0;
   right: 0;
-
+  top: 160px;
 }
 .enquiry_form_inner{
   padding: 90px 50px;
@@ -524,6 +524,15 @@ span.errors {
 }
 
 @media (min-width: 769px) and (max-width:1024px) {
+  .enquiry_form_inner{
+    padding: 40px 30px;
+  }
+  .close_enquiry_form{
+    bottom: 3rem;
+  }
+  .popup_model_form{
+    top: 70px;
+}
   .slider{
     margin: 20px 0px 0px !important;
   }
@@ -592,6 +601,9 @@ span.errors {
 }
 
 @media (max-width:768px) {
+  .close_enquiry_form{
+    bottom: 3rem;
+  }
   .enquiry_form_inner{
     padding: 90px 20px;
   }
@@ -721,12 +733,30 @@ a.goto_whatsapp img {
   }
 }
 
+@media (min-width:520px) and (max-width:768px) {
+  .enquiry_form_inner {
+    padding: 30px 20px;
+}
+  .popup_model_form{
+    top: 70px;
+  }
+  
+}
+@media (max-width:519px) {
+  .enquiry_form_inner {
+    padding: 30px 20px;
+}
+  .popup_model_form{
+    top: 20px;
+  }
+}
 @media (max-width:400px) {
   .enquiry_form_inner{
-    padding: 40px 10px;
+    height: 90vh;
+    overflow: auto;
   }
-  .close_enquiry_form{
-    bottom: 3rem;
+  .enquiry_form_inner::-webkit-scrollbar{
+    opacity: 0;
   }
   .enquiry_inputs_wrapper{
       grid-template-columns: 1fr;
