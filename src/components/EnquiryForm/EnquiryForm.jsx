@@ -114,14 +114,14 @@ const EnquiryForm = ({ setEnquiryModal }) => {
     <>
     <div className="enquiry_form_wrapper">
       <div className="min-h-[360px]mx-auto border-[1.5px] border-[#E0DEDE] rounded-lg font-[Merriweather-sans] absolute z-[50] top-48 left-[30%] fadeInTop backdrop-blur-xl popup_model_form">
-        <div className="min-h-[352px] bg-white m-[3px] rounded-md flex flex-col gap-4 px-6 py-4">
+        <div className="enquiry_form_inner min-h-[352px] h-[100%] bg-white m-[3px] rounded-md flex flex-col gap-4 px-6 py-4">
           <div className="flex justify-center relative">
-            <p className="font-[Merriweather-sans] text-[#02013D] text-[18px]">
+            <p className="font-[Merriweather-sans] text-[#02013D] text-[25px] pb-[30px] ">
               Send Your Enquiry
             </p>
             <div
               onClick={() => setEnquiryModal(false)}
-              className="absolute bottom-0 right-0 bg-[#FADDDD] rounded-full w-[25px] h-[25px] flex justify-center items-center cursor-pointer"
+              className="absolute bottom-20 right-0 bg-[#FADDDD] rounded-full w-[40px] h-[40px] flex justify-center items-center cursor-pointer close_enquiry_form"
             >
               <img
                 src={"/Assets/Icons/cross.svg"}
@@ -131,12 +131,12 @@ const EnquiryForm = ({ setEnquiryModal }) => {
             </div>
           </div>
           <div className="flex flex-col gap-4">
-            <div className="grid grid-cols-3 gap-4 gap-y-2 w-full enquiry_inputs_wrapper">
+            <div className="grid grid-cols-3 gap-4 gap-y-3 w-full enquiry_inputs_wrapper">
               <div className="flex flex-col gap-[2px]">
-                <p className="text-[11px] text-[#000000] font-semibold">Name</p>
+                <p className="text-[14px] text-[#000000] font-semibold">Name</p>
                 <input
                   type="text"
-                  className="border-[1.09px] border-[#B6B0B0] w-full rounded-sm p-1 outline-none"
+                  className="border-[1.09px] border-[#B6B0B0] w-full rounded-sm p-2 outline-none"
                   value={user?.name}
                   name="name"
                   onChange={handleChange}
@@ -144,12 +144,12 @@ const EnquiryForm = ({ setEnquiryModal }) => {
                 {error.name && <span className="errors">{error.name}</span>}
               </div>
               <div className="flex flex-col gap-[2px]">
-                <p className="text-[11px] text-[#000000] font-semibold">
+                <p className="text-[14px] text-[#000000] font-semibold">
                   Email id
                 </p>
                 <input
                   type="email"
-                  className="border-[1.09px] border-[#B6B0B0] w-full rounded-sm p-1 outline-none"
+                  className="border-[1.09px] border-[#B6B0B0] w-full rounded-sm p-2 outline-none"
                   value={user?.email}
                   name="email"
                   onChange={handleChange}
@@ -157,12 +157,12 @@ const EnquiryForm = ({ setEnquiryModal }) => {
                 {error.email && <span className="errors">{error.email}</span>}
               </div>
               <div className="flex flex-col gap-[2px]">
-                <p className="text-[11px] text-[#000000] font-semibold">
+                <p className="text-[14px] text-[#000000] font-semibold">
                   Phone No.
                 </p>
                 <input
                   type="text"
-                  className="border-[1.09px] border-[#B6B0B0] w-full rounded-sm p-1 outline-none"
+                  className="border-[1.09px] border-[#B6B0B0] w-full rounded-sm p-2 outline-none"
                   name="mobile"
                   value={user?.mobile}
                   onChange={handleChange}
@@ -170,12 +170,12 @@ const EnquiryForm = ({ setEnquiryModal }) => {
                 {error.mobile && <span className="errors">{error.mobile}</span>}
               </div>
               <div className="flex flex-col gap-[2px]">
-                <p className="text-[11px] text-[#000000] font-semibold">
+                <p className="text-[14px] text-[#000000] font-semibold">
                   Starting
                 </p>
                 <input
                   type="text"
-                  className="border-[1.09px] border-[#B6B0B0] w-full rounded-sm p-1 outline-none"
+                  className="border-[1.09px] border-[#B6B0B0] w-full rounded-sm p-2 outline-none"
                   name="starting"
                   value={user.starting}
                   onChange={handleChange}
@@ -183,12 +183,12 @@ const EnquiryForm = ({ setEnquiryModal }) => {
                 {error.starting && <span className="errors">{error.starting}</span>}
               </div>
               <div className="flex flex-col gap-[2px]">
-                <p className="text-[11px] text-[#000000] font-semibold">
+                <p className="text-[14px] text-[#000000] font-semibold">
                   Destination
                 </p>
                 <input
                   type="text"
-                  className="border-[1.09px] border-[#B6B0B0] w-full rounded-sm p-1 outline-none"
+                  className="border-[1.09px] border-[#B6B0B0] w-full rounded-sm p-2 outline-none"
                   name="destination"
                   value={user?.destination}
                   onChange={handleChange}
@@ -198,12 +198,12 @@ const EnquiryForm = ({ setEnquiryModal }) => {
                 )}
               </div>
               <div className="flex flex-col gap-[2px]">
-                <p className="text-[11px] text-[#000000] font-semibold">
+                <p className="text-[14px] text-[#000000] font-semibold">
                   No. Of Person
                 </p>
                 <input
                   type="number"
-                  className="border-[1.09px] border-[#B6B0B0] w-full rounded-sm p-1 outline-none"
+                  className="border-[1.09px] border-[#B6B0B0] w-full rounded-sm p-2 outline-none"
                   name="total_no_travelers"
                   value={user?.total_no_travelers}
                   onChange={handleChange}
@@ -214,12 +214,12 @@ const EnquiryForm = ({ setEnquiryModal }) => {
               </div>
             </div>
             <div className="w-full flex flex-col gap-[2px]">
-              <p className="text-[11px] text-[#000000] font-semibold">
+              <p className="text-[14px] text-[#000000] font-semibold">
                 Message
               </p>
               <textarea
                 type="text"
-                className="border-[1.09px] border-[#B6B0B0] w-full rounded-sm p-1 outline-none"
+                className="border-[1.09px] border-[#B6B0B0] w-full rounded-sm p-2 outline-none"
                 name="message"
                 value={user.message}
                 onChange={handleChange}
@@ -234,7 +234,7 @@ const EnquiryForm = ({ setEnquiryModal }) => {
               <img
                 src={"/Assets/Icons/map.svg"}
                 alt=""
-                className="w-[23px] h-[21px]"
+                className="enquiry_icon"
               />
               <p>Book Now</p>
             </button>
