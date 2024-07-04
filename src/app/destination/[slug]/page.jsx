@@ -23,9 +23,10 @@ const DestinationContentInner = ({props}) => {
   const [Alldata, setAlldata] = useState([]);
   const componentBRef = useRef(null);
 
-  console.log(`Alldata asdfasdfasdfasdfsd`)
+  console.log('all sdafhaskdjfhaksjd asdjkfaskjdf dsfahsjkdf ')
+  console.log('alldata ' + {Alldata})
 
-  console.log(Alldata)
+ 
  
   
  
@@ -48,6 +49,7 @@ const DestinationContentInner = ({props}) => {
             }
           );
 
+          console.log(`response.data.data asdaslkdjaklsjASDJLKAsdjlkASDJL`);
           console.log(response.data.data);
           setAlldata(response.data.data || []);
         } catch (error) {

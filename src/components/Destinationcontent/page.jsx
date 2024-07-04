@@ -21,7 +21,7 @@ const Destinationcontent = ({props}) => {
 
    let{packages}=props
    
-   console.log(packages)
+    
  
   
   const [responsedata, setresponsedata] = useState();
