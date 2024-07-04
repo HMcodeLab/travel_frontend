@@ -120,7 +120,7 @@ const Footer = () => {
                       return (
                         <Link
                           key={ind}
-                          href={`/destination?city_name=${item?.name}&cityid=${item?.city_id}`}
+                          href={`/destination/${item?.city_id}`}
                           className="h-[5rem] w-[5rem] footer_destination_link"
                         >
                           <span className="relative travel_image_wrapper">
