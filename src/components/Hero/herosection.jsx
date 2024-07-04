@@ -31,6 +31,7 @@ const HeroSection = () => {
   const [selected, setSelected] = useState();
   const [ActivityDate, setactivityDate] = useState(false);
   const [FlightDate, setFlightDate] = useState(false);
+  const [searchdata, setsearchdata] = useState([])
   const searchRef = useRef(null);
   const dateInputRef = useRef(null);
   const {searchQuery,setSearchQuery}=useContext(GlobalProvider)
@@ -40,6 +41,7 @@ const HeroSection = () => {
     minPrice: "",
     maxPrice: "",
   });
+  const [searchValue, setsearchValue] = useState("")
   const router = useRouter();
 
   const [activitiesSearchData, setActivitiesSearchData] = useState({
@@ -121,7 +123,23 @@ const HeroSection = () => {
       toast.error("Failed To send Query");
     }
   };
-
+  async function Searchapi(e){
+    const data=await fetch(process.env.NEXT_PUBLIC_URL+'/apis/packages/city/'+e.target.value)
+    const response=await data.json()
+    // console.log(response);
+    setsearchdata(response?.data)
+  }
+  async function handleTourInputchange(e){
+    setsearchValue(e.target.value)
+    setTimeout(() => {
+      Searchapi(e)
+    }, 500);
+  }
+function handleCity(item){
+  setsearchValue(item.name)
+    setTourSearchData({...toursearchData,city_id:item.id})
+setsearchdata([])
+}
  
 
   return (
@@ -199,11 +217,23 @@ const HeroSection = () => {
             {activeFacility === "Tour" &&
               (Search ? (
                 <div className="bg-[#F6F6F6] search_filter_outer rounded-t-3xl rounded-b flex flex-col shadow-lg shadow-[#00000021] w-[90%] absolute top-0 xsm:w-[65vw]">
-                  <input
+                    <div className="relative">
+                    <input
                     className="w-full text-[#000000] placeholder:text-[#848383] bg-[#F6F6F6] flex justify-center text-[14px] rounded-full pl-16 py-2 shadow-sm shadow-[#00000021] outline-none h-[55px] xsm:h-[45px] xsm:pl-5 search_terms"
                     placeholder="Search For Destinations... " 
-                  value={toursearchData.city_id } onChange={(e)=>setTourSearchData({...toursearchData,city_id:e.target.value})}
+                    value={searchValue}
+                   onChange={handleTourInputchange}
                   />
+                  <div className="w-full flex flex-col absolute top-10 text-black bg-slate-200 cursor-pointer pl-16 z-50">
+                    {
+                      searchdata?.map((item,key)=>{
+                        return(<>
+                        <p className="py-1 border-b" key={key} onClick={()=>handleCity(item)}>{item.name}</p>
+                        </>)
+                      })
+                    }
+                  </div>
+                    </div>
                   <div className="px-16 py-4 xsm:px-5">
                     <div className="flex flex-col gap-3 border-b border-[#DADADA] py-2">
                       <p className="text-black text-[14px]">Trip Durations</p>

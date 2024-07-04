@@ -50,11 +50,11 @@ const Search = () => {
 
     return (
         <div className='px-[10vw]'>
-            <div className={styles.all_cards_main}>
+           {cardsData?.length>0 ? <div className={styles.all_cards_main}>
                 {cardsData?.map((cardData, ind) => (
                     <Cards key={ind} val={cardData} />
                 ))}
-            </div>
+            </div> :<div className="w-full flex justify-center text-3xl font-bold h-[50vh] items-center" >No Packages Found!</div>}
         </div>
     );
 };
