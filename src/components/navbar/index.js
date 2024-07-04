@@ -9,6 +9,7 @@ import PlanTrip from '../../../public/Assets/Icons/planATrip.svg'
 import ArrowDown from '../../../public/Assets/Images/downarrow.gif'
 import Image from "next/image";
 import Logo from '../../../public/Assets/Images/logo.png'
+import { emptyImage } from "@/Data/cardImageData";
 
 
 
@@ -26,7 +27,8 @@ const Navbar = ({ setEnquiryModal, setPlanning }) => {
       <div className={styles.container}>
         <div className={styles.logo_container}>
           <Link href="/">
-            <Image src={Logo} alt="..." />
+            <Image src={Logo || emptyImage.src} alt="..." 
+             onError={(e) => e.target.src = emptyImage.src} />
           </Link>
         </div>
         <div className={styles.navmenu}>

@@ -5,11 +5,11 @@
 
 .all_cards span {
   width: 160vw;
-  height: 60vh;
+  height: 22vw;
   padding-block: 10px;
   /* border: 1px solid red; */
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(10, 1fr);
   gap: 2vw;
   animation: translateCards 35s linear infinite;
   justify-content: space-between;

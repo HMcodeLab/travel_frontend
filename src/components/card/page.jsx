@@ -14,7 +14,8 @@ const Cards = ({val, cityid }) => {
     <div className="rounded-lg flex flex-col shadow-lg bg-[#F4F4F4] pb-5 card_section_wrapper">
       <div className="relative w-full h-[33vh]  card_top_section">
         <Image
-          src={val?.pdf_image || val?.pdf_image || emptyImage.src}
+          src={val?.pdf_image || emptyImage.src}
+          onError={(e) => e.target.src = emptyImage.src}
           alt="Package image"
           layout="fill"
           objectFit="cover"
@@ -23,9 +24,11 @@ const Cards = ({val, cityid }) => {
         <div className="w-full flex justify-between absolute top-0 text-white p-3">
           <span className="flex items-center bg-black px-2 rounded gap-1">
             {val?.days}{" "}
-            <Image src={Moon} alt="Moon icon" width={12} height={12} /> /{" "}
+            <Image src={Moon || emptyImage.src} alt="Moon icon" width={12} height={12} /> /{" "}
+            onError={(e) => e.target.src = emptyImage.src}
             {val?.night}{" "}
-            <Image src={Sun} alt="Sun icon" width={12} height={12} />
+            <Image src={Sun ||emptyImage.src} alt="Sun icon" width={12} height={12} 
+             onError={(e) => e.target.src = emptyImage.src}/>
           </span>
           <span
             className="bg-gradient-to-r from-[#010080] to-[#BC000B] text-white px-2 rounded"
@@ -50,7 +53,8 @@ const Cards = ({val, cityid }) => {
                   <div className="relative w-6 h-6">
                     <Image
                       className="rounded-full"
-                      src={item?.icon||null}
+                      src={item?.icon|| emptyImage.src}
+                      onError={(e) => e.target.src = emptyImage.src}
                       alt={`icon`}
                       layout="fill"
                       objectFit="contain"

@@ -41,7 +41,7 @@
 
 
 .hero_section {
-  height: 600px;
+  height: 532px;
   max-height: 100%;
   display: flex;
   justify-content: center;
@@ -60,16 +60,23 @@
   }
 
   .hero_section {
-    height: 370px;
+    height: 364px;
     max-height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 20px;
+    padding-bottom: 0px;
   }
 
   .searching_parent_wrapper {
     padding: 0px !important;
   }
 
+}
+
+@media (min-width: 520px) and (max-width: 768px) {
+  .hero_section {
+    height: 470px;
+    padding: 20px 0px;
+  }
 }

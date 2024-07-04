@@ -7,6 +7,7 @@ import Snow from "../../../public/Icons/Snow.svg";
 import { Tripprovider } from "./page";
 
 import Image from "next/image";
+import { emptyImage } from "@/Data/cardImageData";
 const Staycount = () => {
   const { headerdata, setheaderdata, setrender } = useContext(Tripprovider);
 
@@ -66,7 +67,8 @@ const Staycount = () => {
                   >
                     {item.special && (
                       <div className=" absolute top-0 right-0">
-                        <Image alt="..." src={Favourite} />
+                        <Image alt="..." src={Favourite || emptyImage.src}
+                        onError={(e)=> e.target.src = emptyImage.src} />
                       </div>
                     )}
                     <div className="flex justify-center items-center  h-full   w-full">

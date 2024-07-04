@@ -487,7 +487,11 @@ span.errors {
   width: 100%;
   height: 36px;
 }
-
+.activities_center_section {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 100%;
+}
 
 /* css by neo sharma */
 
@@ -500,7 +504,9 @@ span.errors {
 @media (min-width: 1025px) and (max-width:1440px) {
 
   .px-\[12\.5vw\].flex.flex-col.gap-\[5vh\].xsm\:px-\[3vw\],
-  .all_destinations_wrapper {
+  .all_destinations_wrapper,
+  .acticities_packages,
+  .morph_banner_wrapper{
     padding: 20px 40px;
   }
 }
@@ -513,7 +519,9 @@ span.errors {
     width: 70% !important;
   }
   .px-\[12\.5vw\].flex.flex-col.gap-\[5vh\].xsm\:px-\[3vw\],
-  .all_destinations_wrapper {
+  .all_destinations_wrapper,
+  .acticities_packages,
+  .morph_banner_wrapper{
     padding: 20px 50px;
   }
 
@@ -625,7 +633,9 @@ a.goto_whatsapp img {
   }
 
   .px-\[12\.5vw\].flex.flex-col.gap-\[5vh\].xsm\:px-\[3vw\],
-  .all_destinations_wrapper {
+  .all_destinations_wrapper,
+  .acticities_packages,
+  .morph_banner_wrapper{
     padding: 10px 20px;
   }
 
@@ -668,8 +678,20 @@ a.goto_whatsapp img {
   }
 }
 
+.popup_model_form {
+  width: 100%;
+  margin: auto;
+  max-width: 608px;
+  left: 0;
+  right: 0;
+}
 
 @media (max-width:600px) {
+
+  
+  .popup_model_form{
+    top: 70px;
+}
   .searching_activities {
     grid-template-columns: 1fr;
     row-gap: 23px;
@@ -686,5 +708,11 @@ a.goto_whatsapp img {
 
   .activities_button {
     justify-content: left;
+  }
+}
+
+@media (max-width:400px) {
+  .enquiry_inputs_wrapper{
+      grid-template-columns: 1fr;
   }
 }

@@ -27,10 +27,10 @@ const page = () => {
   };
 
   return (
-    <div>
+    <div className="activities_page_outer">
       <HeroSection />
       <ActivitiesPackages data={activityData} />
-      <div className="px-[169px] py-14 xsm:px-[15px] xsm:py-6">
+      <div className="px-[169px] py-14 xsm:px-[15px] xsm:py-6 morph_banner_wrapper">
         <MorphBanner />
       </div>
       <Section7 />

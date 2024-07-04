@@ -4,6 +4,7 @@ import Search from "../../../public/Icons/search.svg";
 import Image from "next/image";
 import Commonheader from "./commonheader";
 import { Tripprovider } from "./page";
+import { emptyImage } from "@/Data/cardImageData";
 const Destinationcity = () => {
   const cities = ["Manali", "Kasol", "Shimla", "Delhi", "Bangalore"];
   const { headerdata, setheaderdata, setrender } = useContext(Tripprovider);
@@ -24,7 +25,8 @@ const Destinationcity = () => {
         <div className="relative w-full flex  h-8 mt-5 ">
           <Image
             alt="..."
-            src={Search}
+            src={Search || emptyImage.src}
+            onError={(e)=> e.target.src = emptyImage.src}
             className="absolute top-2 left-2 h-5 w-6"
           />
           <input

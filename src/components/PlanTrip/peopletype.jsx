@@ -10,6 +10,7 @@ import Group from "../../../public/Icons/group.svg";
 import { FaMinus, FaPlus } from "react-icons/fa6";
 import Image from "next/image";
 import { Tripprovider } from "./page";
+import { emptyImage } from "@/Data/cardImageData";
 
 const Peopletype = () => {
   const [familyGroup, setFamilyGroup] = useState("");
@@ -120,13 +121,15 @@ const Peopletype = () => {
             >
               {item.special && (
                 <div className="absolute top-0 right-0">
-                  <Image src={Favourite} alt="favourite" />
+                  <Image src={Favourite || emptyImage.src} alt="favourite"
+                  onError={(e)=> e.target.src = emptyImage.src} />
                 </div>
               )}
               <div className="flex justify-center items-center h-full w-full ">
                 <div className="flex flex-col gap-1 xsm:items-center xsm:justify-center">
                   <Image
-                    src={item.icon}
+                    src={item.icon || emptyImage.src}
+                    onError={(e)=> e.target.src = emptyImage.src}
                     alt="icon"
                     className="xsm:h-[80%] w-[80%]"
                   />
@@ -153,7 +156,8 @@ const Peopletype = () => {
               onClick={handleDropdown}
             >
               <p className="text-[#373A3B] capitalize">{`${totalpeople.room} room, ${totalpeople.adult} adults`}</p>
-              <Image src={Downarrow} alt="down-arrow" id="down-arrow" />
+              <Image src={Downarrow || emptyImage.src} alt="down-arrow" id="down-arrow" 
+              onError={(e)=> e.target.src = emptyImage.src}/>
             </div>
 
             <div

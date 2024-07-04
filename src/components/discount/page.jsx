@@ -4,6 +4,7 @@ import Boat from "../../../public/discountboat.png";
 import Cap from "../ParagraphWithLargeFirstLetters/page";
 import EnquiryForm from "../EnquiryForm/EnquiryForm";
 import { useState } from "react";
+import { emptyImage } from "@/Data/cardImageData";
 const Discount = () => {
   const [enquiryModal, setEnquiryModal] = useState(false);
   return (
@@ -36,9 +37,10 @@ const Discount = () => {
         </div>
 
         <Image
-          src={Boat}
+          src={Boat || emptyImage.src}
           className="w-[35%] h-full rounded-xl xsm:absolute xsm:top-0 xsm:right-0 xsm:w-[50vw] xsm:brightness-50 z-[1]"
           alt="..."
+          onError={(e) => e.target.src = emptyImage.src}
         />
       </div>
     </>

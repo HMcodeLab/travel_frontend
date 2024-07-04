@@ -1,8 +1,11 @@
 "use client"
-import { useEffect, useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import styles from './section4.module.css';
+import { section4Data } from '@/Data/section4data'
+import Image from 'next/image'
+import React, { useEffect, useState } from 'react'
+import styles from './section4.module.css'
+import Link from 'next/link'
+import { emptyImage } from '@/Data/cardImageData'
+
 
 const Section4Cards = () => {
     const [data, setData] = useState([]);
