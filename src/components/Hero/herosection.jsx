@@ -11,7 +11,8 @@ import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { GlobalProvider } from "@/app/layout";
-
+import { format } from 'date-fns';
+import 'react-day-picker/dist/style.css';
 function valuetext(value) {
   return `${value}°C`;
 }
@@ -32,6 +33,8 @@ const HeroSection = () => {
   const [ActivityDate, setactivityDate] = useState(false);
   const [FlightDate, setFlightDate] = useState(false);
   const [searchdata, setsearchdata] = useState([])
+  const [searchlocation, setsearchlocation] = useState([])
+  const [SelectedDate, setSelectedDate] = useState()
   const searchRef = useRef(null);
   const dateInputRef = useRef(null);
   const {searchQuery,setSearchQuery}=useContext(GlobalProvider)
@@ -42,11 +45,13 @@ const HeroSection = () => {
     maxPrice: "",
   });
   const [searchValue, setsearchValue] = useState("")
+  const [searchLocationValue, setsearchLocationValue] = useState("")
   const router = useRouter();
 
   const [activitiesSearchData, setActivitiesSearchData] = useState({
-    location: "",
-    adults: "1",
+    city_id: "",
+    date:"",
+    adult: "1",
     child: "1",
   });
 
@@ -80,17 +85,17 @@ const HeroSection = () => {
     router.push("/search");
   };
 
-  const handleLocationSelect = (selectedLocation) => {
-    setActivitiesSearchData((prevData) => ({
-      ...prevData,
-      location: selectedLocation,
-    }));
-  };
+  // const handleLocationSelect = (selectedLocation) => {
+  //   setActivitiesSearchData((prevData) => ({
+  //     ...prevData,
+  //     location: selectedLocation,
+  //   }));
+  // };
 
   const handleAdultsChange = (count) => {
     setActivitiesSearchData((prevData) => ({
       ...prevData,
-      adults: count,
+      adult: count,
     }));
   };
 
@@ -103,18 +108,21 @@ const HeroSection = () => {
 
   const handleActivitySearch = async () => {
     try {
+      setSearchQuery(activitiesSearchData)
+      // console.log(activitiesSearchData);
       const apiUrl =
-        `${process.env.NEXT_PUBLIC_URL}/apis/packages/activities_filter`;
+        `${process.env.NEXT_PUBLIC_URL}/apis/packages/search_filter_activity`;
       const res = await axios.post(apiUrl, activitiesSearchData, {
         headers: {
           "Content-Type": "application/json",
         },
       });
 
-      console.log(res); // Log the response for debugging
+      // console.log(res); // Log the response for debugging
 
       if (res.status === 200) {
         toast.success("Query sent successfully");
+        router.push('/search')
       } else {
         toast.error("Failed to send query");
       }
@@ -129,19 +137,62 @@ const HeroSection = () => {
     // console.log(response);
     setsearchdata(response?.data)
   }
+  async function LocationSearchapi(e){
+    const data=await fetch(process.env.NEXT_PUBLIC_URL+'/apis/packages/search_filter_activity')
+    const response=await data.json()
+    // console.log(response);
+    setsearchlocation(response?.data?.data)
+  }
   async function handleTourInputchange(e){
     setsearchValue(e.target.value)
-    setTimeout(() => {
+    if(e.target.value.length>=4){
       Searchapi(e)
-    }, 500);
+    }
+    if(e.target.value.length==0){
+      setsearchdata([])
+    }
+
+  }
+  async function handleActivityInputchange(e){
+    setsearchLocationValue(e.target.value)
+    if(e.target.value.length>=4){
+      LocationSearchapi(e)
+    }
+    if(e.target.value.length==0){
+      setsearchlocation([])
+    }
+
   }
 function handleCity(item){
   setsearchValue(item.name)
-    settourSearchData({...tourSearchData,city_id:item.id})
+    setTourSearchData({...toursearchData,city_id:item.id})
 setsearchdata([])
 }
- 
-
+function handleLocation(item){
+  // searchLocationValue
+  setsearchLocationValue(item.package_name)
+  setActivitiesSearchData((prevData) => ({
+    ...prevData,
+    city_id: item.city_id,
+  }));
+    // setTourSearchData({...toursearchData,city_id:item.id})
+setsearchlocation([])
+}
+const formatDate = (date) => {
+  if (!date) return '';
+  const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
+  return date.toLocaleDateString('en-GB', options);
+};
+function DateSelection(date){
+  setSelected(formatDate(date))
+  setActivitiesSearchData((prevData) => ({
+    ...prevData,
+    date: formatDate(date),
+  }));
+setactivityDate(false)
+}
+let todaydate=Date.now()
+const disabledDays = { before: todaydate };
   return (
     <>
       <Toaster />
@@ -316,7 +367,7 @@ setsearchdata([])
                               minPrice: newValue[0],
                               maxPrice: newValue[1],
                             });
-                            console.log(tourSearchData);
+                            // console.log(toursearchData);
                           }}
                           valueLabelDisplay="auto"
                           aria-labelledby="range-slider"
@@ -377,14 +428,23 @@ setsearchdata([])
                       />
                       <div>
                         <p className="text-[#000000] text-[12.5px]">Location</p>
-                        <p className="text-[#9E9E9E] text-[10px]">
-                          {activitiesSearchData.location === ""
-                            ? "Where Are You Going ?"
-                            : activitiesSearchData.location}
-                        </p>
+                        <div className="relative">
+                        <input value={searchLocationValue}
+                   onChange={handleActivityInputchange} placeholder="Where are you going?" className="text-[#9E9E9E] text-[10px] py-1 focus:outline-none"/>
+                        <div className="w-[200px] flex flex-col absolute top-10 text-black bg-slate-200 cursor-pointer  z-50">
+                    {
+                      searchlocation?.map((item,key)=>{
+                        return(<>
+                        <p className="py-1 border-b text-sm text-center" key={key} onClick={()=>handleLocation(item)}>{item.package_name}</p>
+                        </>)
+                      })
+                    }
+                  </div>
+                          </div>                          
+                      
                       </div>
                     </div>
-                    {locationFilter && (
+                    {/* {locationFilter && (
                       <div className="absolute bg-[#F6F6F6] top-[100%] right-0 px-3 py-2 rounded shadow-lg shadow-[#00000021]">
                         <h1 className="text-[#000000] text-[12.5px]">
                           Popular destinations
@@ -398,7 +458,7 @@ setsearchdata([])
                           </p>
                         </div>
                       </div>
-                    )}
+                    )} */}
                   </div>
                   <div className="border-r border-[#01008036] py-1 cursor-pointer relative border-remover">
                     <div
@@ -417,7 +477,7 @@ setsearchdata([])
                       <div>
                         <p className="text-[#000000] text-[12.5px]">Date</p>
                         <p className="text-[#9E9E9E] text-[10px]">
-                          d / m / year
+                          {selected}
                         </p>
                       </div>
                     </div>
@@ -425,9 +485,10 @@ setsearchdata([])
                       <div className="absolute bg-[#F6F6F6] text-[#000] top-[100%] left-0  rounded-md shadow-lg shadow-[#00000021]">
                         <DayPicker
                           mode="single"
-                          selected={selected}
-                          onSelect={setSelected}
+                          selected={todaydate}
+                          onSelect={DateSelection}
                           className=""
+                          disabled={disabledDays}
                         />
                       </div>
                     )}
@@ -450,7 +511,7 @@ setsearchdata([])
                         <p className="text-[#000000] text-[12.5px]">
                           No. of Person
                         </p>
-                        <p className="text-[#9E9E9E] text-[10px]">{`${activitiesSearchData.adults} Adult ${activitiesSearchData.child} Child`}</p>
+                        <p className="text-[#9E9E9E] text-[10px]">{`${activitiesSearchData.adult} Adult ${activitiesSearchData.child} Child`}</p>
                       </div>
                     </div>
                     {personcntFilter && (
@@ -465,13 +526,13 @@ setsearchdata([])
                                 alt=""
                                 onClick={() =>
                                   handleAdultsChange(
-                                    parseInt(activitiesSearchData.adults) - 1
+                                    parseInt(activitiesSearchData.adult) - 1
                                   )
                                 }
                               />
                             </div>
                             <p className="text-[#000000] text-[16px]">
-                              {activitiesSearchData.adults}
+                              {activitiesSearchData.adult}
                             </p>
                             <div className="bg-[#FFFFFF] rounded-full p-1">
                               <img
@@ -480,7 +541,7 @@ setsearchdata([])
                                 alt=""
                                 onClick={() =>
                                   handleAdultsChange(
-                                    parseInt(activitiesSearchData.adults) + 1
+                                    parseInt(activitiesSearchData.adult) + 1
                                   )
                                 }
                               />
