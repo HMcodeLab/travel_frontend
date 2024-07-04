@@ -10,7 +10,7 @@ const Pagination = (props) => {
         pageSize,
         className
     } = props;
-
+console.log(pageSize,totalCount);
     // const paginationRange = usePagination({
     //     currentPage,
     //     totalCount,
@@ -34,6 +34,9 @@ const Pagination = (props) => {
 
 //    console.log(first)
     return (
+        <>
+        {
+            totalCount>0 ?
         <ul
             className={classnames("pagination-container", { [className]: className })}
         >
@@ -67,8 +70,8 @@ const Pagination = (props) => {
             >
                 <div>next</div>
             </li>
-        </ul>
-    );
+        </ul>:<div className="w-full flex justify-center text-3xl font-bold h-[50vh] items-center" >No Packages Found!</div>}
+        </> );
 };
 
 export default Pagination;

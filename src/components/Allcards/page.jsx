@@ -1,8 +1,14 @@
-import React from "react";
+"use client"
+import React, { useState } from "react";
 import Cards from "../card/page";
 import Image from "next/image";
 import Pointer from "../../../public/Icons/pointer.svg";
+import Pagination from "../Pagination/pagination";
 const Allcards = ({ data,cityid }) => {
+  console.log("allcards",data);
+  let PageSize = 10;
+  const [currentPage, setCurrentPage] = useState(1);
+  const [CardsData, setCardsData] = useState([])
   // console.log(data.idCity);
   return (
     <>
@@ -18,12 +24,19 @@ const Allcards = ({ data,cityid }) => {
           );
         })}
       </div>
-      <div className="w-fit mx-auto flex items-center cursor-pointer">
+      <Pagination
+                className="pagination-bar"
+                currentPage={currentPage}
+                totalCount={data?.totalCount}
+                pageSize={PageSize}
+                onPageChange={page => setCurrentPage(page)}
+            />
+      {/* <div className="w-fit mx-auto flex items-center cursor-pointer">
         <p className="border-b-2 border-[var(--primary)] font-semibold font-Merri-sans uppercase xsm:text-[14px]">
           See More
         </p>
         <Image className="scale-down-center" src={Pointer} alt="..." />
-      </div>
+      </div> */}
     </>
   );
 };
