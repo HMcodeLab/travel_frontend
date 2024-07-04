@@ -10,7 +10,7 @@ const Trendingdestination = (props) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [CardsData, setCardsData] = useState([])
  
-    console.log("hello",props.params);
+    // console.log("hello",props.params);
 
     const Fetchcards = async () => {
         
@@ -18,6 +18,7 @@ const Trendingdestination = (props) => {
             const data = await fetch(`${process.env.NEXT_PUBLIC_URL}/apis/packages/categorybased?slug=${props.params.slug}&page=${currentPage}&limit=9`)
             const response = await data.json();
             setCardsData(response?.data)
+            // console.log("trending data",response?.data);
             window.scrollTo(0,0)
 
         } catch (error) {
