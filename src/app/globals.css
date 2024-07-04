@@ -678,8 +678,21 @@ a.goto_whatsapp img {
   }
 }
 
+.popup_model_form {
+  width: 100%;
+  margin: auto;
+  max-width: 1000px;
+  left: 0;
+  right: 0;
+}
 
 @media (max-width:600px) {
+
+  
+  .popup_model_form{
+    padding: 20px;
+    top: 120px;
+}
   .searching_activities {
     grid-template-columns: 1fr;
     row-gap: 23px;

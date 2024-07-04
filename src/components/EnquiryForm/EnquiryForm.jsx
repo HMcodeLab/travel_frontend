@@ -112,7 +112,7 @@ const EnquiryForm = ({ setEnquiryModal }) => {
 
   return (
     <>
-      <div className="w-[608px] min-h-[360px]mx-auto border-[1.5px] border-[#E0DEDE] rounded-lg font-[Merriweather-sans] absolute z-[50] top-48 left-[30%] fadeInTop backdrop-blur-xl">
+      <div className="w-[608px] min-h-[360px]mx-auto border-[1.5px] border-[#E0DEDE] rounded-lg font-[Merriweather-sans] absolute z-[50] top-48 left-[30%] fadeInTop backdrop-blur-xl popup_model_form">
         <div className="w-[600px] min-h-[352px] bg-white m-[3px] rounded-md flex flex-col gap-4 px-6 py-4">
           <div className="flex justify-center relative">
             <p className="font-[Merriweather-sans] text-[#02013D] text-[18px]">
