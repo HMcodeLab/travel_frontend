@@ -236,7 +236,7 @@ const EnquiryForm = ({ setEnquiryModal }) => {
                 alt=""
                 className="enquiry_icon"
               />
-              <p>Book Now</p>
+              <p className="text-[16px]">Book Now</p>
             </button>
           </div>
         </div>
