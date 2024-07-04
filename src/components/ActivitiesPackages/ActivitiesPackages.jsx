@@ -3,6 +3,7 @@ import "./ActivitiesPackages.css";
 import PhoneActivitiesPackage from "./PhoneActivitiesPackage";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { emptyImage } from "@/Data/cardImageData";
 
 
 const ActivitiesPackages = ({ data }) => {
@@ -46,7 +47,8 @@ const ActivitiesPackages = ({ data }) => {
               <p className="uppercase text-[20px] font-normal tracking-wider">
                 {data[0]?.package_name}
               </p>
-              <img className="w-8 h-8" src={data[0]?.pdf_image} alt="..." />
+              <img className="w-8 h-8" src={data[0]?.pdf_image || emptyImage.src} alt="..." 
+               onError={(e) => e.target.src = emptyImage.src}/>
             </div>
             {/* <p className="relative z-10 text-[12px] capitalize xsm:hidden">
             Let us look at some of the popular adventure sports in Himachal

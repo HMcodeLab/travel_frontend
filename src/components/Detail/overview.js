@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image';
 import styles from './page.module.css'
+import { emptyImage } from '@/Data/cardImageData';
 
 const Overview = ({ data }) => {
     console.log(data);
@@ -27,7 +28,7 @@ const Overview = ({ data }) => {
                 {data[0]?.amenities===null?'no amenities found ' : data[0]?.amenities.map((val, ind) => {
                     return (
                         <div className='flex justify-left items-center gap-3'>
-                            <Image key={ind} src={val.icon || ""} alt={'..'} height={50} width={50} className='h-[25px] w-[25px]' />
+                            <Image key={ind} src={val.icon || emptyImage.src} alt={'..'} height={50} width={50} className='h-[25px] w-[25px]'  onError={(e) => e.target.src = emptyImage.src}/>
                             <h3 className='text-[1.2rem] capitalize font-medium'>{val?.ammenity}</h3>
                         </div>
                     )

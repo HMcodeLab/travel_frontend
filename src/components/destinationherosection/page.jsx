@@ -20,9 +20,7 @@ const Destinationherosection = ({ resp }) => {
                   src={resp?.main_image || emptyImage.src}
                   className="brightness-50 h-full object-cover destinations_background_image"
                   alt="..."
-                  onError={(e) => {
-                    e.target.src = emptyImage.src;
-                  }}
+                  onError={(e) => e.target.src = emptyImage.src}
                 />
               </div>
               <div className="absolute top-[40%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-white space-y-4 xsm:w-max xsm:space-y-2 absolute_header_content">
@@ -45,7 +43,8 @@ const Destinationherosection = ({ resp }) => {
                 </div>
                 <div className="absolute top-[100%]  translate-y-[50%] left-[50%] translate-x-[-50%] h-16 p-1 border-2 border-white rounded-full bg-[var(--primary)] xsm:top-[80%]">
                   <Image
-                    src={Down}
+                    src={Down || emptyImage.src}
+                    onError={(e) => e.target.src = emptyImage.src}
                     className="h-10 p-auto scale-down-center"
                     alt="..."
                   />

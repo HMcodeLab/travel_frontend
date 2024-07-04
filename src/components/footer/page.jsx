@@ -82,7 +82,8 @@ const Footer = () => {
                   </p>  */}
                   <p className="flex items-center gap-1">
                     <span className="bg-[var(--primary)] rounded-full p-[6px] flex justify-center items-center">
-                      <Image src={Call} alt="..." />
+                      <Image src={Call || emptyImage.src} alt="..." 
+                       onError={(e) => e.target.src = emptyImage.src}/>
                     </span>
                     <a href={"tel:+91 67535 57043"} className={`${pstyle}`}>
                       +91 67535 57043
@@ -90,7 +91,8 @@ const Footer = () => {
                   </p>
                   <p className="flex items-center gap-1">
                     <span className="bg-[var(--primary)] rounded-full p-[6px] flex justify-center items-center">
-                      <Image src={Message} alt="..." />
+                      <Image src={Message || emptyImage.src} alt="..." 
+                       onError={(e) => e.target.src = emptyImage.src}/>
                     </span>
                     <a
                       href="mailto:tourwithtge23@gmail.com"
@@ -100,9 +102,9 @@ const Footer = () => {
                     </a>
                   </p>
                   <p className="flex gap-4">
-                    <Image src={Fb} alt="..." />
-                    <Image src={Insta} alt="..." />
-                    <Image src={Youtube} alt="..." />
+                    <Image src={Fb || emptyImage.src} alt="..."  onError={(e) => e.target.src = emptyImage.src}/>
+                    <Image src={Insta || emptyImage.src} alt="..."  onError={(e) => e.target.src = emptyImage.src}/>
+                    <Image src={Youtube || emptyImage.src} alt="..."  onError={(e) => e.target.src = emptyImage.src}/>
                   </p>
                 </div>
               </div>

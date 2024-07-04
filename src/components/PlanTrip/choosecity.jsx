@@ -3,6 +3,7 @@ import "./plantrip.css";
 import Search from "../../../public/Icons/search.svg";
 import Image from "next/image";
 import { Tripprovider } from "./page";
+import { emptyImage } from "@/Data/cardImageData";
 
 const Cities = ({ formData }) => {
   const cities = [
@@ -41,7 +42,8 @@ const Cities = ({ formData }) => {
       <div className="relative w-full flex gap-2 pl-20 h-10 mt-8 xsm:pl-0">
         <Image
           alt="..."
-          src={Search}
+          src={Search || emptyImage.src}
+          onError={(e)=> e.target.src = emptyImage.src}
           className="absolute top-4 left-[5.3rem] h-5 w-6 xsm:left-[0.5rem]"
         />
         <input
