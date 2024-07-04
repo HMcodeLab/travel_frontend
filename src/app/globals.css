@@ -505,6 +505,11 @@ span.errors {
   padding: 90px 50px;
 }
 
+span.discount_price {
+  margin-left: 10px;
+  text-decoration: line-through;
+  color: #808080;
+}
 /* css by neo sharma */
 
 @media (max-width:1440px) {
