@@ -681,7 +681,7 @@ a.goto_whatsapp img {
 .popup_model_form {
   width: 100%;
   margin: auto;
-  max-width: 1000px;
+  max-width: 608px;
   left: 0;
   right: 0;
 }
@@ -690,8 +690,7 @@ a.goto_whatsapp img {
 
   
   .popup_model_form{
-    padding: 20px;
-    top: 120px;
+    top: 70px;
 }
   .searching_activities {
     grid-template-columns: 1fr;
@@ -709,5 +708,11 @@ a.goto_whatsapp img {
 
   .activities_button {
     justify-content: left;
+  }
+}
+
+@media (max-width:400px) {
+  .enquiry_inputs_wrapper{
+      grid-template-columns: 1fr;
   }
 }
