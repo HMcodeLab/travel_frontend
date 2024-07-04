@@ -24,8 +24,9 @@ const Cards = ({val, cityid }) => {
         <div className="w-full flex justify-between absolute top-0 text-white p-3">
           <span className="flex items-center bg-black px-2 rounded gap-1">
             {val?.days}{" "}
-            <Image src={Moon || emptyImage.src} alt="Moon icon" width={12} height={12} /> /{" "}
-            onError={(e) => e.target.src = emptyImage.src}
+            <Image src={Moon || emptyImage.src} alt="Moon icon" width={12} height={12} 
+            onError={(e) => e.target.src = emptyImage.src}/> /{" "}
+            
             {val?.night}{" "}
             <Image src={Sun ||emptyImage.src} alt="Sun icon" width={12} height={12} 
              onError={(e) => e.target.src = emptyImage.src}/>

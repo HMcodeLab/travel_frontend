@@ -38,7 +38,7 @@ const HeroSection = () => {
   const searchRef = useRef(null);
   const dateInputRef = useRef(null);
   const {searchQuery,setSearchQuery}=useContext(GlobalProvider)
-  const [toursearchData, setTourSearchData] = useState({
+  const [tourSearchData, settourSearchData] = useState({
     city_id:"",
     duration: "",
     minPrice: "",
@@ -57,7 +57,7 @@ const HeroSection = () => {
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
-    setTourSearchData(minPrice);
+    settourSearchData(minPrice);
   };
 
   const handleClickOutside = (event) => {
@@ -80,8 +80,8 @@ const HeroSection = () => {
   }, [Search]);
 
   const handleTourSearch = async () => {
-    console.log(toursearchData);
-    setSearchQuery({...toursearchData})
+    console.log(tourSearchData);
+    setSearchQuery({...tourSearchData})
     router.push("/search");
   };
 
@@ -291,13 +291,13 @@ const disabledDays = { before: todaydate };
                       <div className="flex items-center gap-3 text-[#848181] text-[14px] xsm:gap-3 xsm:grid xsm:grid-cols-2">
                         <div
                           className={`border border-[#EAE6E6] rounded-full px-3 py-1 cursor-pointer ${
-                            toursearchData.duration == "1"
+                            tourSearchData.duration == "1"
                               ? "bg-[#D7D6FD59]"
                               : "bg-white"
                           }`}
                           onClick={() =>
-                            setTourSearchData({
-                              ...toursearchData,
+                            settourSearchData({
+                              ...tourSearchData,
                               duration: 1,
                             })
                           }
@@ -306,13 +306,13 @@ const disabledDays = { before: todaydate };
                         </div>
                         <div
                           className={`border border-[#EAE6E6] rounded-full px-3 py-1 cursor-pointer ${
-                            toursearchData.duration == "2"
+                            tourSearchData.duration == "2"
                               ? "bg-[#D7D6FD59]"
                               : "bg-white"
                           }`}
                           onClick={() =>
-                            setTourSearchData({
-                              ...toursearchData,
+                            settourSearchData({
+                              ...tourSearchData,
                               duration:2,
                             })
                           }
@@ -321,13 +321,13 @@ const disabledDays = { before: todaydate };
                         </div>
                         <div
                           className={`border border-[#EAE6E6] rounded-full px-3 py-1 cursor-pointer ${
-                            toursearchData.duration == "3"
+                            tourSearchData.duration == "3"
                               ? "bg-[#D7D6FD59]"
                               : "bg-white"
                           }`}
                           onClick={() =>
-                            setTourSearchData({
-                              ...toursearchData,
+                            settourSearchData({
+                              ...tourSearchData,
                               duration:3,
                             })
                           }
@@ -336,13 +336,13 @@ const disabledDays = { before: todaydate };
                         </div>
                         <div
                           className={`border border-[#EAE6E6] rounded-full px-3 py-1 cursor-pointer ${
-                            toursearchData.duration === "7plusdays"
+                            tourSearchData.duration === "7plusdays"
                               ? "bg-[#D7D6FD59]"
                               : "bg-white"
                           }`}
                           onClick={() =>
-                            setTourSearchData({
-                              ...toursearchData,
+                            settourSearchData({
+                              ...tourSearchData,
                               duration: 4,
                             })
                           }
@@ -358,12 +358,12 @@ const disabledDays = { before: todaydate };
                         <Slider
                           getAriaLabel={() => "Price range"}
                           value={[
-                            toursearchData.minPrice,
-                            toursearchData.maxPrice,
+                            tourSearchData.minPrice,
+                            tourSearchData.maxPrice,
                           ]}
                           onChange={(_, newValue) => {
-                            setTourSearchData({
-                              ...toursearchData,
+                            settourSearchData({
+                              ...tourSearchData,
                               minPrice: newValue[0],
                               maxPrice: newValue[1],
                             });
