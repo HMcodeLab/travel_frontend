@@ -33,13 +33,25 @@ const All_destination = () => {
     if (!CardsData) {
        return <h3>Loading...</h3>
    }
+
+   let {data}=CardsData
+    if(!data){
+        return <h1>loading</h1>
+    }
+    
+    let reversed=[...data].reverse()
+
+
+   
+  
+ 
   
 
     return (
       <>
       <div className='grid grid-cols-3 gap-[2.5rem] mt-[3vh] px-[10vw] all_destinations_wrapper'>
           {
-              CardsData?.data?.map((val, ind) => {
+              reversed?.map((val, ind) => {
                   return (
                       <Cards key={ind} val={val} />
                   )
