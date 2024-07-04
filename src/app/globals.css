@@ -751,6 +751,9 @@ a.goto_whatsapp img {
   }
 }
 @media (max-width:400px) {
+  .close_enquiry_form{
+    right: -20px;
+  }
   .enquiry_form_inner{
     height: 90vh;
     overflow: auto;
