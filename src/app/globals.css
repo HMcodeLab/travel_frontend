@@ -58,6 +58,7 @@
   --secondary-font: "Metrophobic", sans-serif;
 }
 .searching_slider {
+  height: -webkit-fill-available;
   max-width: 1000px;
   margin: auto;
   left: 0;
@@ -74,6 +75,10 @@
   font-family: Merriweather-sans;
 }
  
+ul.list-disc {
+  list-style: none;
+}
+
 
 .footer_logo_wrapper {
   position: absolute;
@@ -83,6 +88,7 @@
 }
 .footer_outer_wrapper {
   margin-top: 120px;
+  padding-bottom: 30px;
 }
 .blurred-background {
   transition: filter 0.3s ease;
@@ -566,6 +572,9 @@ span.errors {
 }
 
 @media (max-width:768px) {
+  .searching_slider{
+    top: 50% !important;
+  }
   .calling_flex_wrapper {
     display: flex!important;
     justify-content: space-between!important;

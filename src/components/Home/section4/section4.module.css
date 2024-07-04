@@ -62,9 +62,10 @@
   }
 }
 @media (max-width: 700px) {
+  
   .all_cards span {
     width: 460vw;
-    height: 32vh;
+    height: 100%;
     padding-block: 10px;
     /* border: 1px solid red; */
     display: grid;
@@ -89,7 +90,7 @@
   }
 
   .card > img {
-    height: 100%;
+    height: 250px;
     width: 100%;
   }
   .card:nth-child(2n) {

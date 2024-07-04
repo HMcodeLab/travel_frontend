@@ -131,7 +131,7 @@ const HeroSection = () => {
         className={` font-Merri-sans  ${styles.hero_section}`}
         style={{ backgroundImage: "url(/Assets/Images/hero_banner.jpg)" }}
       >
-        <div className="flex flex-col w-fit h-fit items-center text-white relative left-[50%] top-[50%] translate-y-[-50%] translate-x-[-50%] xsm:w-[80vw] searching_slider">
+        <div className="flex flex-col w-fit h-fit items-center text-white relative left-[50%] top-[60%] translate-y-[-50%] translate-x-[-50%] xsm:w-[80vw] searching_slider">
           <h2 className="text-[45px] text-center font-semibold leading-[48px] xsm:text-[18px] main_heading_c">
             Empowering Your Travel Dreams
           </h2>
