@@ -113,7 +113,7 @@ const EnquiryForm = ({ setEnquiryModal }) => {
   return (
     <>
     <div className="enquiry_form_wrapper">
-      <div className="min-h-[360px]mx-auto border-[1.5px] border-[#E0DEDE] rounded-lg font-[Merriweather-sans] absolute z-[50] top-48 left-[30%] fadeInTop backdrop-blur-xl popup_model_form">
+      <div className="min-h-[360px]mx-auto border-[1.5px] border-[#E0DEDE] rounded-lg font-[Merriweather-sans] absolute z-[50]  left-[30%] fadeInTop backdrop-blur-xl popup_model_form">
         <div className="enquiry_form_inner min-h-[352px] h-[100%] bg-white m-[3px] rounded-md flex flex-col gap-4 px-6 py-4">
           <div className="flex justify-center relative">
             <p className="font-[Merriweather-sans] text-[#02013D] text-[25px] pb-[30px] ">
@@ -130,7 +130,7 @@ const EnquiryForm = ({ setEnquiryModal }) => {
               />
             </div>
           </div>
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 enquiry_inputs_outer">
             <div className="grid grid-cols-3 gap-4 gap-y-3 w-full enquiry_inputs_wrapper">
               <div className="flex flex-col gap-[2px]">
                 <p className="text-[14px] text-[#000000] font-semibold">Name</p>
