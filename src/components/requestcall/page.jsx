@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import Wtsp from "../../../public/Icons/Whatsapp.svg";
+import { emptyImage } from "@/Data/cardImageData";
 
 const RequestCall = () => {
   return (
@@ -23,7 +24,8 @@ const RequestCall = () => {
           <a href="https://api.whatsapp.com/send/?phone=6753557043&text&type=phone_number&app_absent=0" className="goto_whatsapp" target="_blank">
           <Image
             alt="..."
-            src={Wtsp}
+            src={Wtsp || emptyImage.src}
+            onError={(e)=> e.target.src = emptyImage.src}
             className="h-full w-16 bg-[#64B161] p-2 rounded xsm:hidden"
           /></a>
           

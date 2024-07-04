@@ -7,6 +7,7 @@ import Snow from "../../../public/Icons/Snow.svg";
 
 import Image from "next/image";
 import { Tripprovider } from "./page";
+import { emptyImage } from "@/Data/cardImageData";
 const Month = () => {
   const { headerdata, setheaderdata, setrender } = useContext(Tripprovider);
   const months = [
@@ -146,7 +147,8 @@ const Month = () => {
                   >
                     {item.special && (
                       <div className=" absolute top-0 right-0">
-                        <Image alt="..." src={Favourite} />
+                        <Image alt="..." src={Favourite || emptyImage.src}
+                        onError={(e)=> e.target.src = emptyImage.src} />
                       </div>
                     )}
                     <div className="flex justify-center items-center h-full w-full">
@@ -155,7 +157,8 @@ const Month = () => {
                           {item.month}
                         </p>
                         <p className="flex items-center xsm:hidden">
-                          <Image src={item.icon} alt="icon" />
+                          <Image src={item.icon || emptyImage.src} alt="icon"
+                          onError={(e)=> e.target.src = emptyImage.src} />
                           <span className="text-[0.85rem]">{item.min} -</span>
                           <span className="text-[0.85rem]">{item.max}C</span>
                         </p>

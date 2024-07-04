@@ -10,6 +10,7 @@ import Staycount from "./staycount";
 import Peopletype from "./peopletype";
 import Tripform from "./tripform";
 import Thankyou from "./thankyou";
+import { emptyImage } from "@/Data/cardImageData";
 
 export const Tripprovider = createContext();
 
@@ -91,7 +92,8 @@ const Planningtriphome = ({ planning, setPlanning }) => {
               <Image
                 className="cursor-pointer"
                 onClick={() => closeModal()}
-                src={Cross}
+                src={Cross || emptyImage.src}
+                onError={(e)=> e.target.src = emptyImage.src}
                 alt="cross"
               />
             </div>

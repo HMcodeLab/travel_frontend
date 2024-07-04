@@ -5,6 +5,7 @@ import Kerela from '../../../public/kerala.png'
 import Spiti from '../../../public/spiti.png'
 import ParagraphWithLargeFirstLetters from '../ParagraphWithLargeFirstLetters/page'
 import Cap from '../ParagraphWithLargeFirstLetters/page'
+import { emptyImage } from '@/Data/cardImageData'
 const Trending = () => {
     
   return (
@@ -27,7 +28,8 @@ const Trending = () => {
                 <div className='relative h-[90%] w-[23%] trendingcard gap-6'>
                 <div className='bg-[#941A21B5] w-fit absolute top-0 text-white text-sm py-1 px-2'>4 Trip</div>
                 <div className='h-full'>
-                    <Image alt='...' src={Kerela} className='h-full'/>
+                    <Image alt='...' src={Kerela || emptyImage.src} className='h-full'
+                    onError={(e)=> e.target.src = emptyImage.src}/>
                 </div>
                 <div className='flex flex-col text-white gap-1  absolute bottom-1 left-2 text-sm'>
                     <div className='font-Merri'>Kerala</div>

@@ -11,6 +11,7 @@ import { Tripprovider } from "./page";
 import Thankyou from "./thankyou";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
+import { emptyImage } from "@/Data/cardImageData";
 
 const Tripform = () => {
   const formData = new FormData();
@@ -94,7 +95,8 @@ const Tripform = () => {
           </p>
           <div className="flex flex-col gap-5 w-[40%] font-Merri-sans pt-5 xsm:w-[100%]">
             <div className="relative ">
-              <Image alt="..." className="absolute top-2 left-5 " src={User} />
+              <Image alt="..." className="absolute top-2 left-5 " src={User || emptyImage.src}
+              onError={(e)=> e.target.src = emptyImage.src} />
               <input
                 type="text"
                 className="w-full h-10 pl-14 focus:outline-none rounded border border-[#E4E4E4]"
@@ -105,7 +107,8 @@ const Tripform = () => {
               />
             </div>
             <div className="relative ">
-              <Image alt="..." className="absolute top-2 left-5 " src={Phone} />
+              <Image alt="..." className="absolute top-2 left-5 " src={Phone || emptyImage.src}
+              onError={(e)=> e.target.src = emptyImage.src} />
               <input
                 type="text"
                 className="w-full h-10 pl-14 focus:outline-none rounded border border-[#E4E4E4]"
@@ -116,7 +119,8 @@ const Tripform = () => {
               />
             </div>
             <div className="relative ">
-              <Image alt="..." className="absolute top-2 left-5 " src={Email} />
+              <Image alt="..." className="absolute top-2 left-5 " src={Email || emptyImage.src}
+              onError={(e)=> e.target.src = emptyImage.src} />
               <input
                 type="text"
                 className="w-full h-10 pl-14 focus:outline-none rounded border border-[#E4E4E4]"
