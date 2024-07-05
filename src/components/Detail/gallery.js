@@ -38,14 +38,14 @@ const Gallery = (props) => {
         <div className={`${styles.gallery_main} ${styles.gallary_wrapper}`}>
             <h2>Gallery</h2>
             <Splide aria-label="My Favorite Images" options={options}>
-                {
-                    gallery_images?.map((item,ind)=>{
+                {gallery_images===undefined||gallery_images===null?(<p>no images found</p>):
+                    (gallery_images?.map((item,ind)=>{
                         return(<>
                          <SplideSlide >
                     <Image src={item} alt="..." height={500} width={1000} />
                 </SplideSlide>
                         </>)
-                    })
+                    }))
                 }
                
 
