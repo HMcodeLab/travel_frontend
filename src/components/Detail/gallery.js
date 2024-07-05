@@ -5,7 +5,9 @@ import Image from 'next/image';
 import styles from './page.module.css'
 
 
-const Gallery = () => {
+const Gallery = (props) => {
+    let {gallery_images}=props;
+    console.log(props);
     let options = {
         type: "loop",
         perPage: 2,
@@ -36,9 +38,16 @@ const Gallery = () => {
         <div className={`${styles.gallery_main} ${styles.gallary_wrapper}`}>
             <h2>Gallery</h2>
             <Splide aria-label="My Favorite Images" options={options}>
-                <SplideSlide >
-                    <Image src={'/Assets/Images/placeimg1.png'} alt="..." height={500} width={1000} />
+                {
+                    gallery_images?.map((item,ind)=>{
+                        return(<>
+                         <SplideSlide >
+                    <Image src={item} alt="..." height={500} width={1000} />
                 </SplideSlide>
+                        </>)
+                    })
+                }
+               
 
             </Splide >
         </div>

@@ -36,7 +36,7 @@ console.log(pageSize,totalCount);
     return (
         <>
         {
-            totalCount>0 ?
+            totalCount>10 ?
         <ul
             className={classnames("pagination-container", { [className]: className })}
         >
@@ -70,7 +70,9 @@ console.log(pageSize,totalCount);
             >
                 <div>next</div>
             </li>
-        </ul>:<div className="w-full flex justify-center text-3xl font-bold h-[50vh] items-center" >No Packages Found!</div>}
+        </ul>:
+        totalCount<=10  ? ''
+        :<div className="w-full flex justify-center text-3xl font-bold h-[50vh] items-center" >No Packages Found!</div>}
         </> );
 };
 

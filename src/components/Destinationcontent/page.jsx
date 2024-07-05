@@ -34,7 +34,7 @@ const Destinationcontent = ({props}) => {
         try {
           const data = await fetch(`${process.env.NEXT_PUBLIC_URL}/apis/packages/details/${packages}`);
           const response = await data.json();
-          // console.log(response?.data);
+          console.log("gallery",response?.data);
           setresponsedata(response?.data);
         } catch (error) {
           console.log(error);
@@ -80,7 +80,7 @@ const Destinationcontent = ({props}) => {
             {activeTab == 4 && <Policy data={responsedata} />}
           </div>
           <div className={styles.right_side}>
-            <Gallery />
+            <Gallery gallery_images={responsedata[0]?.gallery_images}/>
             <ContactForm />
           </div>
         </div>
