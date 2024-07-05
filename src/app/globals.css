@@ -524,6 +524,13 @@ span.discount_price {
   text-decoration: line-through;
   color: #808080;
 }
+
+.destination_last_section_wrapper{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
 /* css by neo sharma */
 
 @media (max-width:1440px) {
@@ -705,6 +712,10 @@ a.goto_whatsapp img {
 }
 
 @media (max-width:700px) {
+  .destination_last_section_wrapper{
+    grid-template-columns: 1fr;
+  }
+  
   .xsm\:h-\[22vh\] {
     height: auto !important;
     padding: 20px;

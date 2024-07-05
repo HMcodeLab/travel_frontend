@@ -23,8 +23,8 @@ const LastSection = () => {
     
     
     return (
-        <div className='w-full flex justify-between xsm:flex-col xsm:overflow-hidden'>
-            <div className='flex flex-col w-[30%]  flex-wrap gap-3 xsm:w-[80%]'>
+        <div className='w-full flex justify-between xsm:flex-col xsm:overflow-hidden destination_last_section_wrapper'>
+            <div className='flex flex-col w-[100%]  flex-wrap gap-3 xsm:w-[80%]'>
                 <div className='uppercase border-l-4 border-[var(--primary)]  font-bold text-2xl  flex flex-wrap pl-1 w-[80%] xsm:w-[90%] '>
                     <p className='lastsection_left_heading'>Trending, Best Selling <span className='text-[var(--primary)]'>Tours</span> And Fun <span className='text-[var(--primary)]'>Destinations</span></p>
                 </div>
