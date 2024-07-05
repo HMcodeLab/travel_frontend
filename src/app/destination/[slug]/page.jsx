@@ -50,8 +50,8 @@ const DestinationContentInner = ({props}) => {
             }
           );
 
-          console.log(`response.data.data asdaslkdjaklsjASDJLKAsdjlkASDJL`);
-          console.log(response.data.data);
+          // console.log(`response.data.data asdaslkdjaklsjASDJLKAsdjlkASDJL`);
+          // console.log(response.data.data);
           setAlldata(response.data.data || []);
         } catch (error) {
           console.error("Failed to fetch data:", error);
