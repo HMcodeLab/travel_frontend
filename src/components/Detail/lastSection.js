@@ -1,10 +1,26 @@
+"use client"
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
  
 import Cards from '../card/page'
 import styles from './page.module.css'
 
-const LastSection = ({ data }) => {
+const LastSection = () => {
+    const [data, setdata] = useState([])
+    useEffect(() => {
+      async function Fetchdata(){
+        try {
+            const data=await fetch(process.env.NEXT_PUBLIC_URL+'/apis/packages/trending_destinations')
+            const response=await data.json()
+            // console.log(response);
+            setdata(response?.data)
+        } catch (error) {
+            console.log(error);
+        }
+      }
+      Fetchdata()
+    }, [])
+    
     
     return (
         <div className='w-full flex justify-between xsm:flex-col xsm:overflow-hidden'>
@@ -20,7 +36,7 @@ const LastSection = ({ data }) => {
             </div>
             <div className={`flex h-fit justify-between ${styles.card_main}`}>
                 {
-                    data?.data?.slice(0, 4).map((val, ind) => {
+                  data?.map((val, ind) => {
                         return (
                             <div className='w-[50%]' key={ind}>
                                 <Cards val={val} />

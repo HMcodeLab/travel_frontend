@@ -79,6 +79,9 @@ ul.list-disc {
   list-style: none;
 }
 
+a.odd {
+  margin-top: 64px!important;
+}
 
 .footer_logo_wrapper {
   position: absolute;

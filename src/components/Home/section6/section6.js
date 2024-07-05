@@ -32,7 +32,7 @@ const Section6 = () => {
         />
             <div className={styles.all_cards_main}>
                 {
-                    reversed?.map((val, ind) => {
+                    reversed?.slice(0,9).map((val, ind) => {
                         return (
                             <Cards key={ind} val={val} />
                         )
