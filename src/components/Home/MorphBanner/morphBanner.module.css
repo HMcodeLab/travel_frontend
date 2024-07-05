@@ -1,22 +1,27 @@
 .banner {
-  height: 19rem;
+  min-height: 400px;
+  height: fit-content;
+  margin: auto;
+  padding: 30px 20px 20px 50px;
   width: 100%;
   object-fit: cover;
   position: relative;
   font-family: var(--primary-font);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 10px;
 }
 .banner img {
+  max-height: 400px;
   height: 100%;
   width: 100%;
   object-fit: cover;
   border-radius: 10px;
 }
 .morph {
-  width: 30rem;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 5rem;
+  max-width: 40rem;
+  width: 100%;
   padding: 30px 20px;
   display: grid;
   place-items: center;
@@ -41,6 +46,11 @@
 
 .innerMorph p {
   font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+}
+.innerMorph p span{
+  margin-bottom: 10px;
 }
 
 .innerMorph button {
@@ -57,14 +67,9 @@
     width: 100%;
     object-fit: cover;
     position: relative;
+    padding: 30px 20px 20px 20px;
   }
   .morph {
-    width: 70vw;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
     padding: 10px 20px;
     display: grid;
     place-items: center;

@@ -409,8 +409,12 @@ button.disabled {
   font-size: 17.53px;
   font-weight: 300;
   font-family: GT-Pressura;
+  display: flex;
+  flex-direction: column;
 }
-
+.discount_section_para span{
+  margin-bottom: 10px;
+}
 span.errors {
   text-transform: capitalize;
   color: #ff00007a;
@@ -438,6 +442,11 @@ span.errors {
   line-height: 29.88px;
   font-weight: 400;
   font-family: Exo;
+  display: flex;
+  flex-direction: column;
+}
+.lastsection_left_para span{
+  margin-bottom: 10px;
 }
 
 .resuest_call_para {
@@ -457,7 +466,9 @@ span.errors {
   width: 100%;
 
 }
-
+.card_section_wrapper {
+  background-color: #ffffff;
+}
 .card_top_section img {
   border-radius: 6.68px 6.68px 0px 0px;
 }

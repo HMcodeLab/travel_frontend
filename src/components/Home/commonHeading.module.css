@@ -1,13 +1,15 @@
 .container {
   display: flex;
   justify-content: space-between;
-  gap: 10vw;
+  gap: 2vw;
+align-items: center;
 }
 
 .section1 {
   border-left: 5px solid var(--primary);
   padding-inline: 1vw;
   font-variant: small-caps;
+  width: 50vw;
 }
 .section1 h3 {
   font-size: 35px;
@@ -18,20 +20,34 @@
   color: var(--primary);
 }
 .section2 {
-  width: 30vw;
+  width: 50vw;
   /* border: 1px solid red; */
 }
-.section2 p {
+.section3{
+  margin-top: 20px;
+}
+.section2 p,
+.section3 p{
   font-size: 1.1rem;
   font-family: "Exo", sans-serif;
+  display: flex;
+  flex-direction: column;
 }
+.section2 p span,
+.section3 p span{
+  margin-bottom: 10px;
+}
+
 @media (max-width: 700px) {
   .container {
     display: flex;
     justify-content: space-between;
     gap: 5vw;
   }
-
+  .section2 p span,
+  .section3 p span{
+    font-size: .875rem;
+  }
   .section2 {
     display: none;
   }
