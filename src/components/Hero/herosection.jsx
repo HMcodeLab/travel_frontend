@@ -80,7 +80,7 @@ const HeroSection = () => {
   }, [Search]);
 
   const handleTourSearch = async () => {
-    console.log(tourSearchData);
+    // console.log(tourSearchData);
     setSearchQuery({...tourSearchData})
     router.push("/search");
   };
@@ -165,7 +165,7 @@ const HeroSection = () => {
   }
 function handleCity(item){
   setsearchValue(item.name)
-    setTourSearchData({...toursearchData,city_id:item.id})
+    settourSearchData({...tourSearchData,city_id:item.id})
 setsearchdata([])
 }
 function handleLocation(item){

@@ -14,11 +14,21 @@ const Search = () => {
     const formData=new FormData()
     const search = JSON.parse(searchParams.get('data'));
     const {searchQuery}=useContext(GlobalProvider)
-    console.log(searchQuery)
-    formData.append('city_id',searchQuery.city_id)
-    formData.append('duration', searchQuery.duration)
-    formData.append('minPrice', searchQuery.minPrice)
-    formData.append('maxPrice', searchQuery.maxPrice)
+    console.log("searchQuery",searchQuery)
+    let temp=true;
+    useEffect(() => {
+        if (searchQuery && temp) {
+            temp=false;
+            Object.keys(searchQuery).forEach(key => {
+                formData.append(key, searchQuery[key]);
+            });
+        }
+    }, [])
+    
+    // formData.append('city_id',searchQuery.city_id)
+    // formData.append('duration', searchQuery.duration)
+    // formData.append('minPrice', searchQuery.minPrice)
+    // formData.append('maxPrice', searchQuery.maxPrice)
     
     // console.log(formData)
     useEffect(() => {
