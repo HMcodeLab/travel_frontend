@@ -18,8 +18,8 @@ const Discount = () => {
       )
     }
      
-      <div className=" font-Merri-sans relative w-full h-[auto] bg-[#020241] flex justify-between items-center pl-[5%] rounded-xl xsm:h-[auto]">
-        <div className="w-[50%] text-white space-y-2 xsm:w-[100%] xsm:z-[2] discount_section_wrapper py-6">
+      <div className=" font-Merri-sans relative w-full h-[auto] bg-[#020241] flex justify-between items-center pl-[4%] rounded-xl xsm:h-[auto]">
+        <div className="w-[60%] text-white space-y-2 xsm:w-[100%] xsm:z-[2] discount_section_wrapper py-6">
           <div className="text-[#E3E3E3] text-[17px]  font-[400] uppercase xsm:text-sm discount_heading_first">
             <Cap text="Enjoy Best Deals" />
           </div>

@@ -414,9 +414,12 @@ button.disabled {
   font-family: GT-Pressura;
   display: flex;
   flex-direction: column;
+  color: #d4d0d0;
 }
 .discount_section_para span{
+  letter-spacing: .16px;
   margin-bottom: 10px;
+  line-height: 26.3px;
 }
 span.errors {
   text-transform: capitalize;
@@ -715,7 +718,9 @@ a.goto_whatsapp img {
   .destination_last_section_wrapper{
     grid-template-columns: 1fr;
   }
-  
+  .discount_section_para span{
+    line-height: 20px;
+  }
   .xsm\:h-\[22vh\] {
     height: auto !important;
     padding: 20px;
