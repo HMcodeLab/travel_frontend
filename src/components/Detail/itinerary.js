@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import React, { useState } from 'react';
 import styles from './page.module.css'
-
+import demoImage from '../../../public/Assets/Images/section2cards/amritsar.png'
 
 const Itinerary = ({ data }) => {
     const [dropdown, setdropdown] = useState([true, false, false, false, false, false, false, false, false])
@@ -37,7 +37,19 @@ const Itinerary = ({ data }) => {
                             </div>
                             <div style={{ display: !dropdown[ind] ? "none" : "" }}  >
                                 <div dangerouslySetInnerHTML={{ __html: val?.tour_des }} className={styles.faq_contents} />
+                                <div class="tour-container">
+                                    <div class="tour-image">
+                                        <img src={demoImage.src} alt="Kasol Tour: A Himalayan Escape" />
+                                    </div>
+                                    <div class="tour-content">
+                                        <div class="tour-title">Kasol Tour: A Himalayan Escape</div>
+                                        <div class="tour-description">
+                                            Embark on a captivating tour of Kasol, a serene village nestled in the Parvati Valley of Himachal Pradesh. Known for its scenic beauty and vibrant culture, Kasol is the perfect destination for nature lovers, adventure seekers, and those looking to relax amidst tranquil surroundings. Experience the enchanting charm of Kasol, where natural beauty, adventure, and cultural richness come together to create an unforgettable Himalayan escape.
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+
                         </div>
                     )
                 })

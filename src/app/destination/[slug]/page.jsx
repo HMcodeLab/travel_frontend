@@ -23,6 +23,8 @@ const DestinationContentInner = ({props}) => {
   const [Alldata, setAlldata] = useState([]);
   const componentBRef = useRef(null);
 
+ 
+
   
 
  

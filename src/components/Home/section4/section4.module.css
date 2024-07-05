@@ -17,9 +17,7 @@
   /* border: 1px solid red; */
 }
 
-.card:nth-child(2n) {
-  align-self: flex-end;
-}
+
 .card {
   box-shadow: 0px 3.73px 3.73px 0px #00000012;
   /* border: 1px solid red; */

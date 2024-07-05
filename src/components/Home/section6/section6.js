@@ -20,7 +20,7 @@ const Section6 = () => {
         <div> <CommonHeading title={tl} description={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, modi? Lorem, ipsum dolor."} />
             <div className={styles.all_cards_main}>
                 {
-                    reversed?.map((val, ind) => {
+                    reversed?.slice(0,9).map((val, ind) => {
                         return (
                             <Cards key={ind} val={val} />
                         )
