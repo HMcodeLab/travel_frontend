@@ -56,11 +56,18 @@ const Section4Cards = () => {
                             <Link href={`/trendingdestination/${val?.packageCateslug}`} key={ind} className={ind%2?'odd':'even'} >
                                 <div className={styles.card}>
                                     {bannerImageMainSrc && (
-                                        <Image src={bannerImageMainSrc} alt="Banner Image Main" height={100} width={100} />
+                                        <Image src={bannerImageMainSrc} alt="Banner Image Main" height={100} width={100} 
+                                        srcset={`${bannerImageMainSrc} 480w, 
+                                        ${bannerImageMainSrc} 800w, 
+                                        ${bannerImageMainSrc} 1200w`} 
+                                sizes="(max-width: 600px) 480px, 
+                                       (max-width: 1200px) 800px, 
+                                       1200px" />
                                     )}
                                     <div className={styles.content}>
                                         {bannerImageSrc && (
-                                            <Image src={bannerImageSrc} alt="Banner Image" height={100} width={100} />
+                                            <Image src={bannerImageSrc} alt="Banner Image" height={100} width={100} 
+                                            />
                                         )}
                                         <h3>{val.package_cat_name}</h3>
                                     </div>
