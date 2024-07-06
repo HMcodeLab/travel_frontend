@@ -43,7 +43,7 @@ const Cards = ({val, cityid }) => {
         {val?.package_name}
       </div>
       <div className="flex flex-col gap-4 px-3 card_bottom_section">
-        <div className="flex gap-3 items-center mt-3 font-int min-h-10 card_bottom_underline_section">
+        <div className="flex gap-3 items-center flex-wrap pb-[10px] mt-3 font-int min-h-10 card_bottom_underline_section">
           {val?.servies === null
             ? "no services found"
             : val?.servies?.slice(0, 4)?.map((item, index) => (
@@ -53,7 +53,7 @@ const Cards = ({val, cityid }) => {
                 >
                   <div className="relative w-6 h-6">
                     <Image
-                      className="rounded-full"
+                      className="meal_icon"
                       src={item?.icon|| emptyImage.src}
                       onError={(e) => e.target.src = emptyImage.src}
                       alt={`icon`}
@@ -101,6 +101,12 @@ const Cards = ({val, cityid }) => {
               alt="Call icon"
               width={26}
               height={26}
+              srcset={`${Call} 480w, 
+                                        ${Call} 800w, 
+                                        ${Call} 1200w`} 
+                                sizes="(max-width: 600px) 480px, 
+                                       (max-width: 1200px) 800px, 
+                                       1200px" 
             /></a>
 
 
@@ -111,6 +117,12 @@ const Cards = ({val, cityid }) => {
                 alt="WhatsApp icon"
                 width={32}
                 height={32}
+                srcset={`${Wtsp} 480w, 
+                                        ${Wtsp} 800w, 
+                                        ${Wtsp} 1200w`} 
+                                sizes="(max-width: 600px) 480px, 
+                                       (max-width: 1200px) 800px, 
+                                       1200px" 
               /></a>
           </div>
         </div>
