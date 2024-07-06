@@ -550,6 +550,17 @@ span.discount_price {
   gap: 30px;
 }
 
+.search_icon{
+  box-shadow: 5px 4px 4px 5px rgb(0,0,0,0.13);
+  display: flex;
+  align-items: center;
+  justify-self: center;
+}
+
+.active_tab_color{
+  font-size: 20px;
+  font-weight: 400;
+}
 /* css by neo sharma */
 
 @media (max-width:1440px) {
@@ -660,7 +671,13 @@ span.discount_price {
   .close_enquiry_form {
     bottom: 3rem;
   }
-
+  .search_icon{
+    width: 40px;
+    height: 33px;
+  }
+  .active_tab_color{
+    font-size: 14px;
+  }
   .enquiry_form_inner {
     padding: 90px 20px;
   }
