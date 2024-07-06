@@ -48,9 +48,9 @@
 /* navbar css here  */
 .container {
   height: 79px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 20% 1fr 24%;
   border-bottom: 1px solid rgba(16, 25, 53, 0.1);
-  justify-content: space-between;
   align-items: center;
   padding-inline: 13vw;
 }
@@ -80,7 +80,7 @@
 }
 
 .btn_section {
-  width: max-content;
+  width: 100%;
   display: flex;
   gap: 20px;
   justify-content: space-between;
@@ -92,7 +92,8 @@
   background-color: var(--primary);
   color: white;
   font-weight: 400;
-  padding: 7px 14px;
+  padding: 8px 15px;
+  width: 55%;
 }
 
 .btn_section button:first-child:hover {
@@ -102,6 +103,7 @@
 .btn_section button:last-child {
   border: 1px solid black;
   font-weight: 700;
+  width: 50%;
 }
 
 .btn_section button:last-child:hover {
@@ -264,30 +266,57 @@
 }
 
 @media (min-width: 1025px) and (max-width:1440px) {
-
+  .container{
+    display: grid;
+    grid-template-columns: 17% 1fr 31%;
+    width: 100%;
+  }
   .top_nav_main,
   .container,
   .nav_menu_main {
     padding: 10px 40px;
+  }
+  .btn_section button:first-child{
+    padding: 6px 13px;
   }
   .btn_section button:first-child:hover {
     border: 1px dotted;
   }
 
 }
-
+@media (max-width:1024px) {
+  .btn_section{
+    width: auto;
+    flex-direction: column;
+  }
+  .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 13vw;
+  }
+  
+}
 
 @media (min-width: 769px) and (max-width:1024px) {
-
+.btn_section{
+  flex-direction: row;
+}
   .top_nav_main,
   .container,
   .nav_menu_main {
     padding: 20px 50px;
   }
+  .btn_section button:first-child {
+    width: fit-content !important;
+  }
 }
 
 
 @media (max-width: 768px) {
+  .btn_section button:first-child {
+    width: 100% !important;
+  }
   .top_nav_main p {
     font-size: 0.6rem;
   }
@@ -344,7 +373,7 @@
     display: flex;
     gap: 5px;
     height: fit-content;
-    width: max-content;
+    width: 100%;
     align-items: center;
     justify-content: center;
     padding: 10px !important;
