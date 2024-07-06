@@ -79,6 +79,9 @@ ul.list-disc {
   list-style: none;
 }
 
+a.odd {
+  margin-top: 64px!important;
+}
 
 .footer_logo_wrapper {
   position: absolute;
@@ -409,8 +412,15 @@ button.disabled {
   font-size: 17.53px;
   font-weight: 300;
   font-family: GT-Pressura;
+  display: flex;
+  flex-direction: column;
+  color: #d4d0d0;
 }
-
+.discount_section_para span{
+  letter-spacing: .16px;
+  margin-bottom: 10px;
+  line-height: 26.3px;
+}
 span.errors {
   text-transform: capitalize;
   color: #ff00007a;
@@ -438,6 +448,11 @@ span.errors {
   line-height: 29.88px;
   font-weight: 400;
   font-family: Exo;
+  display: flex;
+  flex-direction: column;
+}
+.lastsection_left_para span{
+  margin-bottom: 10px;
 }
 
 .resuest_call_para {
@@ -457,7 +472,9 @@ span.errors {
   width: 100%;
 
 }
-
+.card_section_wrapper {
+  background-color: #ffffff;
+}
 .card_top_section img {
   border-radius: 6.68px 6.68px 0px 0px;
 }
@@ -510,6 +527,13 @@ span.discount_price {
   text-decoration: line-through;
   color: #808080;
 }
+
+.destination_last_section_wrapper{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
 /* css by neo sharma */
 
 @media (max-width:1440px) {
@@ -691,6 +715,12 @@ a.goto_whatsapp img {
 }
 
 @media (max-width:700px) {
+  .destination_last_section_wrapper{
+    grid-template-columns: 1fr;
+  }
+  .discount_section_para span{
+    line-height: 20px;
+  }
   .xsm\:h-\[22vh\] {
     height: auto !important;
     padding: 20px;

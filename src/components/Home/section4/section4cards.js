@@ -14,7 +14,7 @@ const Section4Cards = () => {
 
     const fetchData = async () => {
         try {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/apis/packages/category?page=1&limit=10`);
+            const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/apis/packages/category?page=1&limit=9`);
             if (!res.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -42,6 +42,7 @@ const Section4Cards = () => {
     if (!data || data.length === 0) {
         return <div>No data available</div>;
     }
+    
 
     return (
         <div className={styles.all_cards}>
@@ -52,7 +53,7 @@ const Section4Cards = () => {
                         const bannerImageSrc = val.banner_images || ''; // Default to empty string if null/undefined
 
                         return (
-                            <Link href={`/trendingdestination/${val?.packageCateslug}`} key={ind}>
+                            <Link href={`/trendingdestination/${val?.packageCateslug}`} key={ind} className={ind%2?'odd':'even'} >
                                 <div className={styles.card}>
                                     {bannerImageMainSrc && (
                                         <Image src={bannerImageMainSrc} alt="Banner Image Main" height={100} width={100} />

@@ -410,3 +410,15 @@
     margin-top: 10px;
   }
 }
+
+@media (max-width:350px) {
+  .btn_section button:first-child {
+    padding: 7px !important;
+  }
+  .menu_btn_section_sm span{
+    gap: 0px ;
+  }
+  .menu_btn_section_sm a {
+    padding: 3px;
+  }
+}
