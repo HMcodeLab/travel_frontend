@@ -268,7 +268,7 @@
 @media (min-width: 1025px) and (max-width:1440px) {
   .container{
     display: grid;
-    grid-template-columns: 17% 1fr 31%;
+    grid-template-columns: 20% 1fr 26%;
     width: 100%;
   }
   .top_nav_main,
