@@ -138,10 +138,10 @@ const HeroSection = () => {
     setsearchdata(response?.data)
   }
   async function LocationSearchapi(e){
-    const data=await fetch(process.env.NEXT_PUBLIC_URL+'/apis/packages/search_filter_activity')
+    const data=await fetch(process.env.NEXT_PUBLIC_URL+'/apis/packages/city/'+e.target.value)
     const response=await data.json()
     // console.log(response);
-    setsearchlocation(response?.data?.data)
+    setsearchlocation(response?.data)
   }
   async function handleTourInputchange(e){
     setsearchValue(e.target.value)
@@ -170,10 +170,10 @@ setsearchdata([])
 }
 function handleLocation(item){
   // searchLocationValue
-  setsearchLocationValue(item.package_name)
+  setsearchLocationValue(item.name)
   setActivitiesSearchData((prevData) => ({
     ...prevData,
-    city_id: item.city_id,
+    city_id: item.id,
   }));
     // setTourSearchData({...toursearchData,city_id:item.id})
 setsearchlocation([])
@@ -435,7 +435,7 @@ const disabledDays = { before: todaydate };
                     {
                       searchlocation?.map((item,key)=>{
                         return(<>
-                        <p className="py-1 border-b text-sm text-center" key={key} onClick={()=>handleLocation(item)}>{item.package_name}</p>
+                        <p className="py-1 border-b text-sm text-center" key={key} onClick={()=>handleLocation(item)}>{item.name}</p>
                         </>)
                       })
                     }

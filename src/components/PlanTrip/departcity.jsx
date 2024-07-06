@@ -7,11 +7,32 @@ import { Tripprovider } from "./page";
 import { emptyImage } from "@/Data/cardImageData";
 const Destinationcity = () => {
   const cities = ["Manali", "Kasol", "Shimla", "Delhi", "Bangalore"];
+  const [searchValue, setsearchValue] = useState("")
+  const [result, setresult] = useState([])
   const { headerdata, setheaderdata, setrender } = useContext(Tripprovider);
   function handleItem(item) {
-    setheaderdata((prevItems) => ({ ...prevItems, from: item }));
+    setheaderdata((prevItems) => ({ ...prevItems, from: item.name }));
     setrender("staycount");
   }
+  async function Fetchcities(city){
+    try {
+      const data=await fetch(process.env.NEXT_PUBLIC_URL+'/apis/packages/city/'+city)
+        const response=await data.json()
+        setresult(response?.data)
+    } catch (error) {
+      console.log(error);
+    }
+      }
+    function handleCity(e){
+      let {value}=e.target;
+      setsearchValue(value)
+      if(value.length>=4){
+        Fetchcities(value)
+      }
+      if(value.length==0){
+        setresult([])
+      }
+    }
   let [searchTerm, setSearchTerm] = useState('')
 
   let filterCities = cities.filter((e) =>  e.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase()) )
@@ -32,25 +53,26 @@ const Destinationcity = () => {
           <input
             className="w-[60%] rounded pl-9 focus:outline-none xsm:w-full"
             placeholder="Type departing City "
-            value={searchTerm}
-            onChange={(e) => { setSearchTerm(e.target.value) }}
+            value={searchValue}
+          onChange={handleCity}
           />
         </div>
         <div className="flex flex-col gap-5 pl-5 mt-5 font-Merri-sans xsm:gap-3">
-          {filterCities.length !== 0 ? (
-            filterCities.map((item, index) => (
-              <p
-                key={index}
-                className="font-semibold text-xl cursor-pointer xsm:text-[1.1rem]"
-                onClick={() => handleItem(item)}
-              >
-                {item}
-              </p>
-            ))
-          ) : (
-            <p className="font-semibold text-xl xsm:text-[1.1rem]">No results found</p>
-          )}
-
+        {result.length > 0 ? (
+          result.map((item, index) => (
+            <p
+              key={index}
+              className="font-semibold text-[1.5rem] cursor-pointer xsm:text-[1.1rem]"
+              onClick={() => handleItem(item)}
+            >
+              {item?.name}
+            </p>
+          ))
+        ) : 
+        result.length==0 && searchValue.length>=4 ?
+        (
+          <p className="font-semibold text-[1.5rem] xsm:text-[1.1rem]">No results found</p>
+        ):""}
 
         </div>
       </div>
