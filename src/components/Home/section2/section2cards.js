@@ -141,6 +141,7 @@ const Section2Cards = () => {
                 {movingCard?.slice(0, 3).map((val, ind) => (
                     <div key={ind}>
                         <Link href={`/destination/${val.city_id}`}>
+                        <span></span>
                             <Image src={val.main_image || emptyImage.src} height={1000} width={1000} 
                             onError={(e) => e.target.src = emptyImage.src} />
                             <p>{val?.name}</p>
@@ -154,6 +155,7 @@ const Section2Cards = () => {
                         {shuffledCardSet1.map((data, ind) => (
                             <div key={ind}>
                                 <Link href={`/destination/${data?.city_id}`}>
+                                <strong></strong>
                                     <Image src={data.main_image || emptyImage.src} height={1000} width={1000} 
                                      onError={(e) => e.target.src = emptyImage.src}/>
                                     <p>{data?.name}</p>
@@ -165,6 +167,7 @@ const Section2Cards = () => {
                         {shuffledCardSet2.map((data, ind) => (
                             <div key={ind}>
                                 <Link href={`/destination/${data?.city_id}`}>
+                                <strong></strong>
                                     <Image src={data.main_image || emptyImage.src} height={1000} width={1000} 
                                      onError={(e) => e.target.src = emptyImage.src}/>
                                     <p>{data?.name}</p>
@@ -176,6 +179,7 @@ const Section2Cards = () => {
                         {shuffledCardSet3.map((data, ind) => (
                             <div key={ind}>
                                 <Link href={`/destination/${data?.city_id}`}>
+                                <strong></strong>
                                     <Image src={data.main_image || emptyImage.src} height={1000} width={1000} 
                                      onError={(e) => e.target.src = emptyImage.src}/>
                                     <p>{data?.name}</p>
