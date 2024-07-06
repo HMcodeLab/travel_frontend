@@ -270,13 +270,12 @@
   .nav_menu_main {
     padding: 10px 40px;
   }
-
+  .btn_section button:first-child:hover {
+    border: 1px dotted;
+  }
 
 }
 
-.btn_section button:first-child {
-  border: 1px solid transparent;
-}
 
 @media (min-width: 769px) and (max-width:1024px) {
 
