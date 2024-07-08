@@ -769,6 +769,10 @@ span.discount_price {
   .destination_last_section_wrapper {
     grid-template-columns: 1fr;
   }
+  .mobile_heading_wrapper .mobile_third_heading {
+    margin: 0;
+  }
+
 
   .discount_section_para span {
     line-height: 20px;

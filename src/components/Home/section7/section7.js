@@ -5,7 +5,7 @@ import styles from './section7.module.css'
 import Image from 'next/image'
 
 const Section7 = () => {
-    const tl = <h3 style={{ color: "white" }}>WORLD BEST  <span>TRAVEL AGENCY </span><br /> COMPANY SINCE 2015
+    const tl = <h3 style={{ color: "#fff",fontFamily: 'Merriweather-sans'}}>WORLD BEST  <span>TRAVEL AGENCY </span><br /> COMPANY SINCE 2015.
     </h3>
     return (
         <div className={styles.main_container}>
@@ -16,7 +16,7 @@ const Section7 = () => {
                     <Image src={'/Assets/Images/section7img1.png'} width={1000} height={1000} alt="..." />
                 </div>
                 <div className={styles.content_section}>
-                    <span className={styles.hide_desktop}>  <CommonHeading title={tl} description={""} /> </span>
+                    <span className={styles.hide_desktop}> <div className="mobile_heading_wrapper"><CommonHeading title={tl} description={""} /> </div> </span>
                     <p>you're looking for a family holiday, a romantic escape, an adventure somewhere extraordinary, or a special event, we can arrange it.Whether you're looking for a family holiday, a romantic escape, an adventure somewhere extraordinary,</p>
                     <div className={styles.buttons}>
                         <button>

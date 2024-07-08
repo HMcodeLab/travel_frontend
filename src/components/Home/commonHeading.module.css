@@ -44,12 +44,16 @@ align-items: center;
     justify-content: space-between;
     gap: 5vw;
   }
+
   .section2 p span,
   .section3 p span{
     font-size: .875rem;
   }
   .section2 {
     display: none;
+  }
+  .section1{
+    width: 100%;
   }
 
   .section1 h3 {

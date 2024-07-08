@@ -9,7 +9,13 @@ const TopNav = () => {
         <div className={styles.top_nav_main}>
             <div>
                 <span>
-                    <Image alt='...' src={'Assets/Icons/email.svg'} width={1000} height={1000} />
+                    <Image alt='...' src={'/Assets/Icons/email.svg'} width={70} height={70}
+                    srcset={`/Assets/Icons/email.svg 480w, 
+                    /Assets/Icons/email.svg 800w, 
+                    /Assets/Icons/email.svg 1200w`} 
+            sizes="(max-width: 600px) 480px, 
+                   (max-width: 1200px) 800px, 
+                   1200px"  />
                 </span>
                 <a href='mailto:tourwithtge23@gmail.com'>tourwithtge23@gmail.com</a>
             </div>

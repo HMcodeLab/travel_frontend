@@ -65,10 +65,10 @@ function handleCity(e){
           alt="..."
           src={Search || emptyImage.src}
           onError={(e)=> e.target.src = emptyImage.src}
-          className="absolute top-4 left-[5.3rem] h-5 w-6 xsm:left-[0.5rem]"
+          className="absolute top-3 left-[6.5rem] h-6 w-6 xsm:left-[1rem]"
         />
         <input
-          className="w-[90%] h-[30px] rounded pl-9 focus:outline-none xsm:w-full search_for_destinations"
+          className="w-[90%] h-[30px] rounded pl-[4.2rem] focus:outline-none xsm:w-full search_for_destinations"
           placeholder="Pick your destination"
           value={searchValue}
           onChange={handleCity}

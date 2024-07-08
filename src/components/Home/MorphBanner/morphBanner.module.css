@@ -37,17 +37,22 @@
   gap: 0.8rem;
 }
 .innerMorph h2 {
-  font-size: 1.3rem;
+  font-size: 31.97px;
+  font-weight: 700;
 }
 
 .innerMorph h3 {
-  font-size: 1rem;
+  font-size: 24.75px;
+  font-weight: 400;
 }
 
 .innerMorph p {
-  font-size: 0.8rem;
+  font-size: 17.53px;
+  font-weight: 300;
+  line-height: 26.3px;
   display: flex;
   flex-direction: column;
+  font-family: GT-Pressura;
 }
 .innerMorph p span{
   margin-bottom: 10px;
@@ -57,13 +62,13 @@
   background-color: white;
   color: black;
   width: fit-content;
-  padding: 7px 14px;
-  font-size: 0.8rem;
+  padding: 15.47px 25.78px;
+  font-size: 18.56px;
   border-radius: 5px;
 }
 @media (max-width: 700px) {
   .banner {
-    height: 15rem;
+    height: auto;
     width: 100%;
     object-fit: cover;
     position: relative;
@@ -75,21 +80,22 @@
     place-items: center;
   }
   .innerMorph h2 {
-    font-size: 1rem;
+    font-size: 20px;
   }
 
   .innerMorph h3 {
-    font-size: 0.8rem;
+    font-size: 18px;
   }
 
   .innerMorph p {
-    font-size: 0.6rem;
+    font-size: 14px;
+    line-height: 20px;
   }
   .innerMorph button {
     background-color: white;
     color: black;
     width: fit-content;
-    padding: 5px 10px;
+    padding: 10px 20px;
     font-size: 0.7rem;
     border-radius: 5px;
   }
