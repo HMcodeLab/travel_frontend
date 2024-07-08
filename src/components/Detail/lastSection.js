@@ -34,11 +34,11 @@ const LastSection = () => {
                     <span>Don't miss out on the excitement! Check out our trending destinations and start planning your next fun-filled adventure today. Your perfect getaway is just a click away!</span>
                     </p>
             </div>
-            <div className={`flex h-fit justify-between ${styles.card_main}`}>
+            <div className={`flex h-fit justify-between ${styles.card_main} last_section_cards`}>
                 {
                   data?.map((val, ind) => {
                         return (
-                            <div className='w-[50%]' key={ind}>
+                            <div className='w-[100%]' key={ind}>
                                 <Cards val={val} />
                             </div>
 

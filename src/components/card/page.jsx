@@ -71,7 +71,7 @@ const Cards = ({val, cityid }) => {
           style={{ fontFamily: "Montserrat" }}
         >
           <div className="flex items-center gap-1">
-            <p className="font-bold text-xl flex flex-nowrap">₹{val?.starting_cost}/- <span className="discount_price"> ₹{val?.discount || 0}</span></p>
+            <p className="font-bold text-xl flex flex-nowrap">₹{val?.starting_cost}/- </p>
             <strike className="text-[#5F5D5D] text-sm font-semibold">
               {val?.discount || ""}
             </strike>

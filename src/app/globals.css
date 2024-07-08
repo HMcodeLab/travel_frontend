@@ -58,6 +58,10 @@
   --secondary-font: "Metrophobic", sans-serif;
 }
 
+body{
+  overflow-x: hidden;
+}
+
 .searching_slider {
   height: -webkit-fill-available;
   max-width: 1000px;
@@ -488,7 +492,10 @@ span.errors {
 .card_section_wrapper {
   background-color: #ffffff;
 }
-
+.last_section_cards .card_section_wrapper {
+  max-width: 100%;
+  width: 320px;
+}
 .card_top_section img {
   border-radius: 6.68px 6.68px 0px 0px;
 }
@@ -670,6 +677,10 @@ span.discount_price {
 }
 
 @media (max-width:768px) {
+  .last_section_cards .card_section_wrapper {
+    max-width: 700px;
+    width: 100%;
+  }
   .close_enquiry_form {
     bottom: 3rem;
   }
