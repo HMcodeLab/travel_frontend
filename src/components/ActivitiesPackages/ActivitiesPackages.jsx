@@ -17,7 +17,7 @@ const ActivitiesPackages = ({ data }) => {
     <div className="px-[169px] py-6 flex flex-col gap-8 xsm:px-[20px] acticities_packages">
       <div className="flex justify-between">
         <div className="w-[40%] xsm:w-full">
-          <p className="font-Merri-sans border-l-4 border-[#CA1C26] pl-3 uppercase text-[24px] font-bold tracking-wider">
+          <p className="font-Merri-sans border-l-4 border-[#CA1C26] pl-3 uppercase text-[24px] font-bold tracking-wider xsm:text-[18px]">
             Explore Our <br /> Best{" "}
             <span className="text-[#CA1C26]">Activities Packages</span>
           </p>
@@ -38,7 +38,7 @@ const ActivitiesPackages = ({ data }) => {
           <div
             className="activity-card1 h-[600px] flex font-[Merriweather_Sans] flex-col justify-end text-white rounded-md px-4 py-6 relative overflow-hidden cursor-pointer"
             style={{
-              backgroundImage: `url(${data[0]?.pdf_image})`,
+              backgroundImage: `url(${data[0]?.pdf_image || emptyImage.src})`,backgroundSize: 'cover',backgroundPosition: 'bottom'
             }}
 
           >
@@ -61,7 +61,7 @@ const ActivitiesPackages = ({ data }) => {
             <div
               className="h-[100%] activity-card3a flex font-[Merriweather_Sans] flex-col justify-end text-white rounded-md px-4 py-6 relative overflow-hidden cursor-pointer"
               style={{
-                backgroundImage: `url(${data[1]?.pdf_image})`,
+                backgroundImage: `url(${data[1]?.pdf_image || emptyImage.src })`,backgroundSize: 'cover',backgroundPosition: 'bottom'
               }}
             >
               <div className="relative z-10 flex items-center gap-2">
@@ -83,7 +83,7 @@ const ActivitiesPackages = ({ data }) => {
               <div
                 className="h-[100%] activity-card3b flex font-[Merriweather_Sans] flex-col justify-end text-white rounded-md px-4 py-6 relative overflow-hidden cursor-pointer"
                 style={{
-                  backgroundImage: `url(${data[2]?.pdf_image})`,
+                  backgroundImage: `url(${data[2]?.pdf_image || emptyImage.src})`,backgroundSize: 'cover',backgroundPosition: 'bottom'
                 }}
 
               >
@@ -107,7 +107,7 @@ const ActivitiesPackages = ({ data }) => {
               <div
                 className="h-[100%] activity-card3c flex font-[Merriweather_Sans] flex-col justify-end text-white rounded-md px-4 py-6 relative overflow-hidden cursor-pointer"
                 style={{
-                  backgroundImage: `url(${data[3]?.pdf_image})`,
+                  backgroundImage: `url(${data[3]?.pdf_image || emptyImage.src})`,backgroundSize: 'cover',backgroundPosition: 'bottom'
                 }}
               >
                 <div className="relative z-10 flex items-center gap-2">
@@ -132,7 +132,7 @@ const ActivitiesPackages = ({ data }) => {
           <div
             className="activity-card2 h-[600px] flex font-[Merriweather_Sans] flex-col justify-end text-white rounded-md px-4 py-6 relative overflow-hidden cursor-pointer"
             style={{
-              backgroundImage: `url(${data[4]?.pdf_image})`,
+              backgroundImage: `url(${data[4]?.pdf_image || emptyImage.src})`,backgroundSize: 'cover',backgroundPosition: 'bottom'
             }}
           >
             <div className="relative z-10 flex items-center gap-2">

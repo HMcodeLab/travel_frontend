@@ -11,7 +11,7 @@ const PhoneActivitiesPackage = ({ data }) => {
         <div
           className="activity-card1 h-[200px] flex font-[Merriweather_Sans] flex-col justify-end text-white rounded-md px-4 py-6 relative overflow-hidden"
           style={{
-            backgroundImage: `url(${data[0]?.pdf_image})`,
+            backgroundImage: `url(${data[0]?.pdf_image})`,backgroundSize: 'cover',backgroundPosition: 'bottom'
           }}
           onClick={() =>
             router.push(
@@ -20,7 +20,7 @@ const PhoneActivitiesPackage = ({ data }) => {
           }
         >
           <div className="relative z-10 flex items-center gap-2">
-            <p className="uppercase text-[20px] font-normal tracking-wider smallcaps">
+            <p className="uppercase text-[13px] font-normal tracking-wider smallcaps">
               {data[0]?.package_name}
             </p>
             <img
@@ -37,7 +37,7 @@ const PhoneActivitiesPackage = ({ data }) => {
         <div
           className="activity-card1 h-[200px] flex font-[Merriweather_Sans] flex-col justify-end text-white rounded-md px-4 py-6 relative overflow-hidden"
           style={{
-            backgroundImage: `url(${data[1]?.pdf_image})`,
+            backgroundImage: `url(${data[1]?.pdf_image})`,backgroundSize: 'cover',backgroundPosition: 'bottom'
           }}
           onClick={() =>
             router.push(
@@ -46,7 +46,7 @@ const PhoneActivitiesPackage = ({ data }) => {
           }
         >
           <div className="relative z-10 flex items-center gap-2">
-            <p className="uppercase text-[20px] font-normal tracking-wider smallcaps">
+            <p className="uppercase text-[13px] font-normal tracking-wider smallcaps">
               {data[1]?.package_name}
             </p>
             <img
@@ -63,7 +63,7 @@ const PhoneActivitiesPackage = ({ data }) => {
         <div
           className="activity-card1 h-[200px] flex font-[Merriweather_Sans] flex-col justify-end text-white rounded-md px-4 py-6 relative overflow-hidden"
           style={{
-            backgroundImage: `url(${data[2]?.pdf_image})`,
+            backgroundImage: `url(${data[2]?.pdf_image})`,backgroundSize: 'cover',backgroundPosition: 'bottom'
           }}
           onClick={() =>
             router.push(
@@ -72,7 +72,7 @@ const PhoneActivitiesPackage = ({ data }) => {
           }
         >
           <div className="relative z-10 flex items-center gap-2">
-            <p className="uppercase text-[20px] font-normal tracking-wider smallcaps">
+            <p className="uppercase text-[13px] font-normal tracking-wider smallcaps">
               {data[2]?.package_name}
             </p>
             <img
@@ -89,7 +89,7 @@ const PhoneActivitiesPackage = ({ data }) => {
         <div
           className="activity-card1 h-[200px] flex font-[Merriweather_Sans] flex-col justify-end text-white rounded-md px-4 py-6 relative overflow-hidden"
           style={{
-            backgroundImage: `url(${data[3]?.pdf_image})`,
+            backgroundImage: `url(${data[3]?.pdf_image})`,backgroundSize: 'cover',backgroundPosition: 'bottom'
           }}
           onClick={() =>
             router.push(
@@ -98,7 +98,7 @@ const PhoneActivitiesPackage = ({ data }) => {
           }
         >
           <div className="relative z-10 flex items-center gap-2">
-            <p className="uppercase text-[20px] font-normal tracking-wider smallcaps">
+            <p className="uppercase text-[13px] font-normal tracking-wider smallcaps">
               {data[3]?.package_name}
             </p>
             <img
@@ -117,7 +117,7 @@ const PhoneActivitiesPackage = ({ data }) => {
         <div
           className="activity-card1 h-[230px] flex font-[Merriweather_Sans] flex-col justify-end text-white rounded-md px-4 py-6 relative overflow-hidden"
           style={{
-            backgroundImage: `url(${data[4]?.pdf_image})`,
+            backgroundImage: `url(${data[4]?.pdf_image})`,backgroundSize: 'cover',backgroundPosition: 'bottom'
           }}
           onClick={() =>
             router.push(
@@ -126,7 +126,7 @@ const PhoneActivitiesPackage = ({ data }) => {
           }
         >
           <div className="relative z-10 flex items-center gap-2 justify-center">
-            <p className="uppercase text-[20px] font-normal tracking-wider smallcaps">
+            <p className="uppercase text-[13px] font-normal tracking-wider smallcaps">
               {data[4]?.package_name}
             </p>
             <img
