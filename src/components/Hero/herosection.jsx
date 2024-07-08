@@ -81,6 +81,7 @@ const HeroSection = () => {
 
   const handleTourSearch = async () => {
     // console.log(tourSearchData);
+    
     setSearchQuery({...tourSearchData})
     router.push("/search");
   };
@@ -123,10 +124,10 @@ const HeroSection = () => {
       });
 
       // console.log(res); // Log the response for debugging
-      console.log("test",res);
+      // console.log("test",res);
       if (res.status === 200) {
         toast.success("Query sent successfully");
-        router.push('/search')
+        router.push('/activitysearch')
       } else {
         toast.error("Failed to send query");
       }
