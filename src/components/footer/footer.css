@@ -151,6 +151,11 @@
     }
     
 }
+@media (min-width:521px) and (max-width:640px){
+    .flex.justify-between.w-\[60\%\].xsm\:w-\[100\%\]{
+        grid-template-columns: 1fr 1fr;
+    }
+}
 
 @media (max-width:520px) {
     .footerbg .justify-between{
