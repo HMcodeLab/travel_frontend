@@ -571,6 +571,11 @@ span.discount_price {
 
 
 /* css by neo sharma */
+@media (min-width:1441px) and (max-width:1600px) {
+  .popup_model_form {
+    top: 50px;
+  }
+}
 
 @media (max-width:1440px) {
   .last_section_inner {
