@@ -270,7 +270,7 @@
   }
   .container{
     display: grid;
-    grid-template-columns: 18% 1fr 28%;
+    grid-template-columns: 15% 1fr 28%;
     width: 100%;
   }
   .btn_section button:first-child{
