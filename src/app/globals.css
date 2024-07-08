@@ -879,7 +879,8 @@ span.discount_price {
   }
 
   .enquiry_form_inner {
-    height: auto;
+    height: 95vh;
+    overflow: auto;
   }
 
   .enquiry_form_inner::-webkit-scrollbar {
@@ -897,5 +898,8 @@ span.discount_price {
 
   .enquiry_inputs_wrapper {
     grid-template-columns: 1fr;
+  }
+  span.errors{
+    font-size: 11px !important;
   }
 }
