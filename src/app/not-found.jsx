@@ -63,11 +63,27 @@ const NotFound = () => {
 
               <div className={styles.contactInfo}>
                 <div className={styles.contactItem}>
-                  <img src={'Assets/Icons/email.svg'} alt="Email" className={styles.contactIcon} />
+                  <img src={'Assets/Icons/email.svg'}
+                    srcset={`/Assets/Icons/email.svg 480w, 
+                    /Assets/Icons/email.svg 800w, 
+                    /Assets/Icons/email.svg 1200w`}
+                    sizes="(max-width: 600px) 480px, 
+                   (max-width: 1200px) 800px, 
+                   1200px"
+                    alt="Email"
+                    className={styles.contactIcon} />
                   <a href="mailto:support@example.com" className={styles.contactLink}>support@example.com</a>
                 </div>
                 <div className={styles.contactItem}>
-                  <img src={'/Assets/Icons/phone_nav.svg'} alt="Phone" className={styles.contactIcon} />
+                  <img src={'/Assets/Icons/phone_nav.svg'}
+                    srcset={`/Assets/Icons/phone_nav.svg 480w, 
+                    /Assets/Icons/phone_nav.svg 800w, 
+                    /Assets/Icons/phone_nav.svg 1200w`}
+                    sizes="(max-width: 600px) 480px, 
+                   (max-width: 1200px) 800px, 
+                   1200px"
+                    alt="Phone"
+                    className={styles.contactIcon} />
                   <a href="tel:+1234567890" className={styles.contactLink}>+1 (234) 567-890</a>
                 </div>
               </div>
