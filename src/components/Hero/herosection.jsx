@@ -105,24 +105,28 @@ const HeroSection = () => {
       child: count,
     }));
   };
+  let formData=new FormData()
 
   const handleActivitySearch = async () => {
     try {
+      Object.keys(activitiesSearchData).forEach(key => {
+        formData.append(key, activitiesSearchData[key]);
+    });
       setSearchQuery(activitiesSearchData)
       // console.log(activitiesSearchData);
       const apiUrl =
         `${process.env.NEXT_PUBLIC_URL}/apis/packages/search_filter_activity`;
-      const res = await axios.post(apiUrl, activitiesSearchData, {
+      const res = await axios.post(apiUrl, formData, {
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "multipart/form-data",
         },
       });
 
       // console.log(res); // Log the response for debugging
-
+      console.log("test",res);
       if (res.status === 200) {
         toast.success("Query sent successfully");
-        router.push('/search')
+        // router.push('/search')
       } else {
         toast.error("Failed to send query");
       }
