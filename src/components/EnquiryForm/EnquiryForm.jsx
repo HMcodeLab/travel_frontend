@@ -119,7 +119,7 @@ const EnquiryForm = ({ setEnquiryModal }) => {
       <div className="min-h-[360px]mx-auto border-[1.5px] border-[#E0DEDE] rounded-lg font-[Merriweather-sans] absolute z-[50]  left-[30%] fadeInTop backdrop-blur-xl popup_model_form">
         <div className="enquiry_form_inner min-h-[352px] h-[100%] bg-white m-[3px] rounded-md flex flex-col gap-4 px-6 py-4">
           <div className="flex justify-center relative">
-            <p className="font-[Merriweather-sans] text-[#02013D] text-[25px] pb-[30px] ">
+            <p className="font-[Merriweather-sans] text-[#02013D] text-[25px] pb-[30px] xsm:pb-[10px]">
               Send Your Enquiry
             </p>
             <div
@@ -232,14 +232,14 @@ const EnquiryForm = ({ setEnquiryModal }) => {
           <div>
             <button
               onClick={handleSendQuery}
-              className="flex items-center gap-2 px-5 py-2 bg-[#CA1C26] text-white text-[13px] rounded"
+              className="flex items-center gap-2 px-5 py-2 bg-[#CA1C26] text-white text-[13px] rounded xsm:px-4 " 
             >
               <img
                 src={"/Assets/Icons/map.svg"}
                 alt=""
                 className="enquiry_icon"
               />
-              <p className="text-[16px]">Book Now</p>
+              <p className="text-[16px] xsm:text-[12px]">Book Now</p>
             </button>
           </div>
         </div>

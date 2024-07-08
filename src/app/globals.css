@@ -58,7 +58,7 @@
   --secondary-font: "Metrophobic", sans-serif;
 }
 
-body{
+body {
   overflow-x: hidden;
 }
 
@@ -492,10 +492,12 @@ span.errors {
 .card_section_wrapper {
   background-color: #ffffff;
 }
+
 .last_section_cards .card_section_wrapper {
   max-width: 100%;
   width: 320px;
 }
+
 .card_top_section img {
   border-radius: 6.68px 6.68px 0px 0px;
 }
@@ -557,14 +559,14 @@ span.discount_price {
   gap: 30px;
 }
 
-.search_icon{
-  box-shadow: 5px 4px 4px 5px rgb(0,0,0,0.13);
+.search_icon {
+  box-shadow: 5px 4px 4px 5px rgb(0, 0, 0, 0.13);
   display: flex;
   align-items: center;
   justify-self: center;
 }
 
-.active_tab_color{
+.active_tab_color {
   font-size: 20px;
   font-weight: 400;
 }
@@ -603,7 +605,7 @@ span.discount_price {
   }
 
   .close_enquiry_form {
-    bottom: 3rem;
+    bottom: 2rem;
   }
 
   .popup_model_form {
@@ -686,16 +688,20 @@ span.discount_price {
     max-width: 700px;
     width: 100%;
   }
+
   .close_enquiry_form {
-    bottom: 3rem;
+    bottom: 2rem;
   }
-  .search_icon{
+
+  .search_icon {
     width: 40px;
     height: 33px;
   }
-  .active_tab_color{
+
+  .active_tab_color {
     font-size: 14px;
   }
+
   .enquiry_form_inner {
     padding: 90px 20px;
   }
@@ -786,6 +792,7 @@ span.discount_price {
   .destination_last_section_wrapper {
     grid-template-columns: 1fr;
   }
+
   .mobile_heading_wrapper .mobile_third_heading {
     margin: 0;
   }
@@ -868,16 +875,24 @@ span.discount_price {
 
 @media (max-width:400px) {
   .close_enquiry_form {
-    right: -20px;
+    right: -12px;
   }
 
   .enquiry_form_inner {
-    height: 90vh;
-    overflow: auto;
+    height: auto;
   }
 
   .enquiry_form_inner::-webkit-scrollbar {
     opacity: 0;
+  }
+  .enquiry_inputs_wrapper p{
+    font-size: 12px;
+  }
+  .enquiry_inputs_wrapper input {
+    padding: 3px 10px;
+  }
+  .enquiry_inputs_wrapper input::placeholder{
+    font-size: 12px !important;
   }
 
   .enquiry_inputs_wrapper {
