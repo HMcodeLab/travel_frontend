@@ -126,7 +126,7 @@ const HeroSection = () => {
       console.log("test",res);
       if (res.status === 200) {
         toast.success("Query sent successfully");
-        // router.push('/search')
+        router.push('/search')
       } else {
         toast.error("Failed to send query");
       }
