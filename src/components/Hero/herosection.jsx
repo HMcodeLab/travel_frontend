@@ -150,7 +150,7 @@ const HeroSection = () => {
   }
   async function handleTourInputchange(e){
     setsearchValue(e.target.value)
-    if(e.target.value.length>=4){
+    if(e.target.value.length>=3){
       Searchapi(e)
     }
     if(e.target.value.length==0){
@@ -160,7 +160,7 @@ const HeroSection = () => {
   }
   async function handleActivityInputchange(e){
     setsearchLocationValue(e.target.value)
-    if(e.target.value.length>=4){
+    if(e.target.value.length>=3){
       LocationSearchapi(e)
     }
     if(e.target.value.length==0){
@@ -296,7 +296,7 @@ const disabledDays = { before: todaydate };
                       <div className="flex items-center gap-3 text-[#848181] text-[14px] xsm:gap-3 xsm:grid xsm:grid-cols-2">
                         <div
                           className={`border border-[#EAE6E6] rounded-full px-3 py-1 cursor-pointer ${
-                            tourSearchData.duration == "1"
+                            tourSearchData.duration == 1
                               ? "bg-[#D7D6FD59]"
                               : "bg-white"
                           }`}
@@ -311,7 +311,7 @@ const disabledDays = { before: todaydate };
                         </div>
                         <div
                           className={`border border-[#EAE6E6] rounded-full px-3 py-1 cursor-pointer ${
-                            tourSearchData.duration == "2"
+                            tourSearchData.duration == 2
                               ? "bg-[#D7D6FD59]"
                               : "bg-white"
                           }`}
@@ -326,14 +326,14 @@ const disabledDays = { before: todaydate };
                         </div>
                         <div
                           className={`border border-[#EAE6E6] rounded-full px-3 py-1 cursor-pointer ${
-                            tourSearchData.duration == "3"
+                            tourSearchData.duration == 5
                               ? "bg-[#D7D6FD59]"
                               : "bg-white"
                           }`}
                           onClick={() =>
                             settourSearchData({
                               ...tourSearchData,
-                              duration:3,
+                              duration:5,
                             })
                           }
                         >
@@ -341,14 +341,14 @@ const disabledDays = { before: todaydate };
                         </div>
                         <div
                           className={`border border-[#EAE6E6] rounded-full px-3 py-1 cursor-pointer ${
-                            tourSearchData.duration === "7plusdays"
+                            tourSearchData.duration == 7
                               ? "bg-[#D7D6FD59]"
                               : "bg-white"
                           }`}
                           onClick={() =>
                             settourSearchData({
                               ...tourSearchData,
-                              duration: 4,
+                              duration: 7,
                             })
                           }
                         >

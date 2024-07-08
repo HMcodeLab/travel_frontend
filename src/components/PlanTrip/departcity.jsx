@@ -26,7 +26,7 @@ const Destinationcity = () => {
     function handleCity(e){
       let {value}=e.target;
       setsearchValue(value)
-      if(value.length>=4){
+      if(value.length>=3){
         Fetchcities(value)
       }
       if(value.length==0){
@@ -69,7 +69,7 @@ const Destinationcity = () => {
             </p>
           ))
         ) : 
-        result.length==0 && searchValue.length>=4 ?
+        result.length==0 && searchValue.length>=3 ?
         (
           <p className="font-semibold text-[1.5rem] xsm:text-[1.1rem]">No results found</p>
         ):""}
