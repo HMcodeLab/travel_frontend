@@ -1,3 +1,7 @@
+@font-face {
+  font-family: Merriweather;
+  src: url(../../../../public/fonts/Merriweather.ttf);
+}
 .card_section_main {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -31,11 +35,13 @@
 .vertical_cards p {
   position: absolute;
   bottom: 1rem;
-  left: 2rem;
+  left: 30.91px;
+  letter-spacing: 2px;
   text-transform: capitalize;
-  color: white;
-  font-family: 'Merriweather-sans';
+  color: #ffffff;
+  font-family: Merriweather;
   font-size: 22px;
+  font-weight: 900;
 }
 
 .vertical_cards img {
@@ -47,6 +53,7 @@
 
 .anim_cards {
   overflow-y: hidden;
+  position: relative;
 }
 
 .anim_cards span {
@@ -111,21 +118,30 @@
   bottom: 6rem;
 }
 
-
+.anim_cards a::before,
 .vertical_cards a:before {
   content: "";
   position: absolute;
   width: 100%;
-  /* background: #06060699;  */
   z-index: 0;
   top: auto;
   bottom: 0;
   left: 0;
   height: 100%;
   border-radius: 15px;
-  box-shadow: 6px -42px 23px 7px inset #00000059;
+  box-shadow: -6px -68px 19px 4px inset #00000059;
 }
-
+.anim_cards strong,
+.vertical_cards span {
+  display: block;
+  width: 100%;
+  min-height: 60px;
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  background: linear-gradient(182.93deg, rgba(255, 255, 255, 0) 14.86%, rgba(0, 0, 0, 0.36) 46.98%, rgba(0, 0, 0, 1.81) 109.13%);
+  border-radius: 0px 0px 20px 20px;
+}
 .vertical_cards {
   position: relative;
 }

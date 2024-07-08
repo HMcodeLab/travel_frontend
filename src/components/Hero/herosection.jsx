@@ -224,7 +224,7 @@ const disabledDays = { before: todaydate };
                   : ""
               }`}
             >
-              <p className="text-[15px] xsm:text-[12px] ">Tour</p>
+              <p className="xsm:text-[12px] active_tab_color">Tour</p>
             </div>
             <div
               onClick={() => setactiveFacility("Activities")}
@@ -234,7 +234,7 @@ const disabledDays = { before: todaydate };
                   : ""
               }`}
             >
-              <p className="text-[15px] xsm:text-[12px] ">Activities</p>
+              <p className="xsm:text-[12px] active_tab_color">Activities</p>
             </div>
             <div
               onClick={() => setactiveFacility("Flight")}
@@ -244,7 +244,7 @@ const disabledDays = { before: todaydate };
                   : ""
               }`}
             >
-              <p className="text-[15px] xsm:text-[12px] ">Flight</p>
+              <p className="xsm:text-[12px] active_tab_color">Flight</p>
             </div>
             <div
               onClick={() => setactiveFacility("Railway")}
@@ -254,7 +254,7 @@ const disabledDays = { before: todaydate };
                   : ""
               }`}
             >
-              <p className="text-[15px] xsm:text-[12px] ">Railway</p>
+              <p className="xsm:text-[12px] active_tab_color">Railway</p>
             </div>
           </div>
           <div
@@ -395,7 +395,7 @@ const disabledDays = { before: todaydate };
               ) : (
                 <div
                   onClick={() => setSearch(true)}
-                  className="bg-[#F6F6F6] rounded-full flex items-center justify-between shadow-md shadow-[#00000021] cursor-pointer w-full h-[55px] xsm:h-[45px]"
+                  className="bg-[#F6F6F6] rounded-full flex items-center justify-between shadow-md shadow-[#00000021] cursor-pointer  h-[60px] xsm:h-[45px] search_input"
                 >
                   <div className="w-full text-[#848383] flex justify-center text-[14px] xsm:text-[13px]">
                     <p>
@@ -403,7 +403,7 @@ const disabledDays = { before: todaydate };
                       <span className="text-[#000000]">Himachal</span>
                     </p>
                   </div>
-                  <div className="w-[44px] flex items-center justify-center h-[44px] bg-[#FFFFFF] p-2 rounded-full my-1 mx-2">
+                  <div className="w-[44px] flex items-center justify-center h-[44px] bg-[#FFFFFF] p-2 rounded-full my-1 mx-2 search_icon">
                     <img
                       className="w-5 h-5"
                       src={"/Assets/Icons/HeroSearch.svg"}
