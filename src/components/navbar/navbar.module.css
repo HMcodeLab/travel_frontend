@@ -264,7 +264,25 @@
   padding-top: 10px !important;
   transition: 0.3s ease;
 }
-
+@media (min-width: 1441px) and (max-width:1600px) {
+  .btn_section p{
+    font-size: 13px !important;
+  }
+  .container{
+    display: grid;
+    grid-template-columns: 18% 1fr 28%;
+    width: 100%;
+  }
+  .btn_section button:first-child{
+    padding: 6px 13px;
+  }
+  .btn_section button:last-child {
+    padding: 5px 11px;
+  }
+  .btn_section button:first-child:hover {
+    border: 1px dotted;
+  }
+}
 @media (min-width: 1025px) and (max-width:1440px) {
   .container{
     display: grid;
