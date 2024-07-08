@@ -19,13 +19,17 @@ export default function RootLayout({ children }) {
   const [enquiryModal, setEnquiryModal] = useState(false);
   const [Planning, setPlanning] = useState(false)
   const [CardsData, setCardsData] = useState([])
-  const [searchQuery, setSearchQuery] = useState({
-    city_id:"",
-    duration: "",
-    minPrice: "",
-    maxPrice: "",
-  });
-
+  const [searchQuery, setSearchQuery] = useState({});
+  let temp=true;
+  let formData=new FormData()
+  useEffect(() => {
+      if (searchQuery && temp) {
+          temp=false;
+          Object.keys(searchQuery).forEach(key => {
+              formData.append(key, searchQuery[key]);
+          });
+      }
+  }, [])
 
   const Fetchcards = async () => {
     try {
