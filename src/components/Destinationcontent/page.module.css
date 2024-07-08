@@ -202,8 +202,13 @@
     display: none;
   }
 }
-
-
+.details_section_bg{
+  position: relative;
+  width: 100vw;
+  background-position: fixed center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
 .scaledowncenter {
   -webkit-animation: scale-down-center 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite both;
   animation: scale-down-center 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite both;
@@ -234,6 +239,10 @@
 
 
 @media (min-width: 320px) and (max-width: 519px) {
+  .details_section_bg{
+    background-position: right top; 
+    background-size: auto;
+  }
   .tabs_container{
     padding: 20px 0px;
   }

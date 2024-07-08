@@ -28,7 +28,7 @@ const Overview = ({ data }) => {
             <div className={`${styles.amenities_section}`}>
                 <div>
                     <h2 className='text-2xl mb-3'>Popular Amenities</h2>
-                    <div className='grid grid-cols-3 my-4'>
+                    <div className='grid grid-cols-3 my-4 gap-3'>
                         {data[0]?.amenities === null ? 'no amenities found ' : data[0]?.amenities.map((val, ind) => {
                             return (
                                 <div className='flex justify-left items-center gap-3'>
@@ -40,7 +40,7 @@ const Overview = ({ data }) => {
                                         className='h-[25px] w-[25px] amenities_icon'
                                         onError={handleError}
                                     />
-                                    <h3 className='text-[1.2rem] capitalize font-medium'>{val?.ammenity}</h3>
+                                    <h3 className='text-[1rem] capitalize font-medium'>{val?.ammenity}</h3>
                                 </div>
                             )
                         })}
@@ -48,7 +48,7 @@ const Overview = ({ data }) => {
                 </div>
                 <div>
                     <h2 className='text-2xl mb-3'> Activities</h2>
-                    <div className='grid grid-cols-3 my-4'>
+                    <div className='grid grid-cols-3 my-4 gap-3'>
                         {data[0]?.activities === null ? 'no activities found' : data[0]?.activities.map((val, ind) => {
                             return (
                                 <div className='flex justify-left items-center gap-3' key={ind}>

@@ -13,6 +13,8 @@ import Discount from "../discount/page";
 import LastSection from "../Detail/lastSection";
 import RequestCall from "../requestcall/page";
 import { useRouter, useSearchParams } from "next/navigation";
+import detail_page_bg from '../../../public/Notfound/detail_page_bg.png';
+
 
 import Down from "../../../public/Icons/arrow.svg";
 import Cap from "../ParagraphWithLargeFirstLetters/page";
@@ -72,7 +74,9 @@ const Destinationcontent = ({props}) => {
       <div className=" flex flex-col gap-[5vw] xsm:px-0">
         <CommonHead data={responsedata} />
         <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
-        <div className={`pl-[13%] pr-[9%] xsm:px-[20px] ${styles.details_flex}`}>
+        <div className={styles.details_section_bg} style={{ backgroundImage: `url(${detail_page_bg.src})` }}>
+        
+        <div className={`pl-[13%] pr-[13%] xsm:px-[20px] ${styles.details_flex}`}>
           <div >
             {activeTab == 1 && <Overview data={responsedata} />}
             {activeTab == 2 && <Itinerary data={responsedata} />}
@@ -80,9 +84,13 @@ const Destinationcontent = ({props}) => {
             {activeTab == 4 && <Policy data={responsedata} />}
           </div>
           <div className={styles.right_side}>
+            
             <Gallery gallery_images={responsedata[0]?.gallery_images}/>
             <ContactForm />
           </div>
+        </div>
+        
+
         </div>
         <div className="pl-[13%] pr-[9%] flex flex-col gap-[5vw] xsm:px-[20px] last_section_inner">
           <Discount />

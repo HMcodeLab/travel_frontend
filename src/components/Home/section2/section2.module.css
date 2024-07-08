@@ -84,6 +84,7 @@
 .places_card img {
   height: 100%;
   border-radius: 15px;
+  object-fit: cover;
 }
 
 .places2>div:nth-child(2n + 1) {

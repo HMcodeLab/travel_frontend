@@ -5,7 +5,7 @@ import styles from './section7.module.css'
 import Image from 'next/image'
 
 const Section7 = () => {
-    const tl = <h3 style={{ color: "white" }}>WORLD BEST  <span>TRAVEL AGENCY </span><br /> COMPANY SINCE 2015
+    const tl = <h3 style={{ color: "#fff",fontFamily: 'Merriweather-sans'}}>WORLD BEST  <span>TRAVEL AGENCY </span><br /> COMPANY SINCE 2015.
     </h3>
     return (
         <div className={styles.main_container}>

@@ -8,7 +8,7 @@ const MorphBanner = () => {
             {/* <Image src={'/Assets/Images/banner.jpg'} height={1000} width={1000} alt="..." /> */}
             <div className={styles.morph}>
                 <div className={styles.innerMorph}>
-                    <h3>ENJOY BEST DEALS</h3>
+                    <h3 >ENJOY BEST DEALS</h3>
                     <h2>UP TO 40% DISCOUNT!</h2>
                     <p>
                         <span>Enjoy incredible savings on flights, accommodations, and tour packages without compromising on quality. From last-minute escapes to early bird specials, our discounted deals cater to every budget and travel style. Imagine sipping cocktails on a pristine beach, exploring ancient cities, or traveling  through breathtaking landscapes – all at a fraction of the cost.</span>

@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 5vh 10vw;
+  padding: 5vh 13vw;
   background-color: #02012d;
   background-image: url("/Assets/Images/luggage.png");
   background-repeat: no-repeat;
@@ -16,7 +16,8 @@
 .main_section {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 30rem;
+  height: auto;
+  column-gap: 20px;
 }
 .image_section {
   position: relative;
@@ -44,8 +45,19 @@
   line-height: 40px;
   text-transform: capitalize;
   font-family: "Exo", sans-serif;
+  position: relative;
 }
+.content_section  p::before{
+  content: "";
+  width: 3px;
+  height: 30px;
+  background-color: #ca1c26;
+  display: block;
+  position: absolute;
+  left: -10px;
+  top: 3px;
 
+}
 .buttons {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -55,7 +67,8 @@
   padding: 8.5px 15px;
   display: flex;
   align-items: center;
-  font-size: 1rem;
+  font-size: 20.1px;
+  font-weight: 400;
   gap: 6px;
   justify-content: left;
   background-color: rgba(255, 255, 255, 0.5);
@@ -126,6 +139,9 @@
   
 }
 @media (max-width: 700px) {
+  .content_section  p::before{
+    display: none;
+  }
   .image_section,
   .content_section{
     padding: 0px;
