@@ -101,7 +101,6 @@
 
 .places_card p {
   position: absolute;
-
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -164,6 +163,15 @@
 }
 
 @media (max-width: 700px) {
+  .places_card p{
+    left: 25%;
+    bottom: 20%;
+    top: auto;
+  }
+  .places2 p,
+  .places3 p {
+    bottom: 20% !important;
+  }
   .card_section_main {
     display: grid;
     grid-template-columns: unset;
@@ -186,6 +194,7 @@
     flex-direction: row;
     margin-right: 10px;
     gap: 4vw;
+
   }
   .anim_cards{
     width: max-content;

@@ -37,7 +37,7 @@ const Footer = () => {
     <>
       <div className="w-full h-[100%] footerbg  flex justify-center mt-10 xsm:h-fit font-Merri-sans footer_outer_wrapper">
         <div className="w-full h-full flex flex-col justify-around xsm:gap-3 xsm:pb-4">
-          <div className="flex flex-col flex-wrap h-[80%] footer_flex_content_wrapper bg-[#c4e3e954] backdrop-blur-sm rounded-3xl shadow-md mx-auto xsm:w-[95%]">
+          <div className="flex flex-col flex-wrap h-[80%] footer_flex_content_wrapper bg-[#CFCFEE2E] backdrop-blur-sm rounded-3xl shadow-md mx-auto xsm:w-[95%]">
             <div className="w-28 h-20 mx-auto -translate-y-8 footer_logo_wrapper">
               <Image
                 src={"/Assets/Images/logo.png"}

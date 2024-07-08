@@ -16,7 +16,7 @@ const CommonHeading = ({ title, description, bottomDescription }) => {
                         </p>
                     </div>
                 </div>
-                <div className={`${styles.section3} `}>
+                <div className={`${styles.section3} mobile_third_heading`}>
                     <p>{bottomDescription}
                     </p>
                 </div>
