@@ -81,7 +81,7 @@ const Footer = () => {
                     CONTACT US{" "}
                   </p>  */}
                   <p className="flex items-center gap-1">
-                    <span className="bg-[var(--primary)] rounded-full p-[6px] flex justify-center items-center">
+                    <span className="bg-[var(--primary)] rounded-full p-[6px] flex justify-center items-center xsm:p-[4px]">
                       <Image src={Call || emptyImage.src} alt="..." 
                        onError={(e) => e.target.src = emptyImage.src}/>
                     </span>
@@ -90,7 +90,7 @@ const Footer = () => {
                     </a>
                   </p>
                   <p className="flex items-center gap-1">
-                    <span className="bg-[var(--primary)] rounded-full p-[6px] flex justify-center items-center">
+                    <span className="bg-[var(--primary)] rounded-full p-[6px] flex justify-center items-center xsm:p-[4px]">
                       <Image src={Message || emptyImage.src} alt="..." 
                        onError={(e) => e.target.src = emptyImage.src}/>
                     </span>
@@ -109,7 +109,7 @@ const Footer = () => {
                 </div>
               </div>
 
-              <div className="xsm:my-5">
+              <div className="xsm:my-5 footer_destinations_wrapper">
                 <p className="text-[#595858] text-[17.57px] font-semibold footer_dest_heading">
                   Travel Destinations
                 </p>

@@ -685,7 +685,8 @@ span.discount_price {
   }
 
   .searching_slider {
-    top: 50% !important;
+    top: 55% !important;
+    gap: 10px;
   }
 
   .calling_flex_wrapper {

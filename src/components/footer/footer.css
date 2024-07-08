@@ -153,11 +153,46 @@
 }
 
 @media (max-width:520px) {
+    .footerbg .justify-between{
+        gap: 0;
+    }
+    .important_links{
+        width: fit-content !important;
+        padding-right: 20px !important;
+    }
     .footer_links a{
-        font-size: 12.37px;
+        font-size: 11px;
+    }
+    .contacts_right::before {
+        content: "Contact us";
+        text-transform: uppercase;
+        font-size: 13px;
+        font-weight: 600;
+    }
+    
+    .contacts_right {
+        position: relative;
+    }
+    .footer_dest_heading{
+        font-size: 15.61px;
+    }
+    .footer_destination_tittle{
+        font-size: 10px;
+    }
+    .travel_image_wrapper img,
+    .travel_image_wrapper .empty_image{
+        min-height: 90px !important;
+        height: 100% !important;
+        object-fit: cover;
+        filter: brightness(.8);
+    }
+    .footer_destinations_wrapper{
+        max-width: 75%;
+        width: 100%;
+        margin: auto;
     }
     .flex.justify-between.w-\[60\%\].xsm\:w-\[100\%\] {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 45% 1fr;
     }
 
     .footerbg .justify-between {
