@@ -52,6 +52,7 @@
   text-transform: capitalize;
   font-family: "Exo", sans-serif;
   position: relative;
+  margin-bottom: 40px;
 }
 
 .content_section p::before {
@@ -63,7 +64,7 @@
   position: absolute;
   left: -10px;
   top: 3px;
-
+ 
 }
 
 .buttons {
@@ -94,6 +95,7 @@
   height: 40px;
   width: 40px;
 }
+
 
 @media (min-width: 1025px) and (max-width:1440px) {
   .main_container {
