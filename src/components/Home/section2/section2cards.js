@@ -115,7 +115,7 @@ const Section2Cards = () => {
 
     const fetchData = async () => {
         try {
-            const data = await fetch(`${process.env.NEXT_PUBLIC_URL}/apis/packages/package_category_with_city`);
+            const data = await fetch(`${process.env.NEXT_PUBLIC_URL}/apis/packages/package_tranding_tge`);
             const response = await data.json();
             setMovingCard(response?.data?.data);
         } catch (error) {
