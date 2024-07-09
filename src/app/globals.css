@@ -920,12 +920,10 @@ span.discount_price {
   }
 
 }
-
-@media (max-width:400px) {
-  .close_enquiry_form {
-    right: -12px;
+@media (max-width:480px) {
+  .enquiry_inputs_wrapper {
+    grid-template-columns: 1fr;
   }
-
   .enquiry_form_inner {
     height: 95vh;
     overflow: auto;
@@ -944,10 +942,15 @@ span.discount_price {
     font-size: 12px !important;
   }
 
-  .enquiry_inputs_wrapper {
-    grid-template-columns: 1fr;
-  }
+ 
   span.errors{
     font-size: 11px !important;
   }
+}
+
+@media (max-width:400px) {
+  .close_enquiry_form {
+    right: -12px;
+  }
+
 }

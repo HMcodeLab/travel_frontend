@@ -47,10 +47,10 @@ const Staycount = () => {
   }
   return (
     <>
-      <div className="pl-14 pt-14 xsm:pl-4 xsm:pb-10">
+      <div className="pl-14 pt-14 xsm:pl-4 xsm:pb-10 xsm:pt-8">
         <Commonheader />
         <div className="flex flex-col mt-8">
-          <p className="capitalize font-[500] font-Merri-sans text-xl">
+          <p className="capitalize font-[500] font-Merri-sans text-xl xsm:text-[15px]">
             What is the duration of your holiday?
           </p>
           <div className="grid grid-cols-6 gap-3 pr-3 mt-12 xsm:grid-cols-2 stay_count_wrapper">
@@ -72,7 +72,7 @@ const Staycount = () => {
                       </div>
                     )}
                     <div className="flex justify-center items-center  h-full   w-full">
-                      <p className="text-center font-[500] text-lg font-Merri-sans capitalize">
+                      <p className="text-center font-[500] text-lg font-Merri-sans capitalize xsm:text-[14px]">
                         {item.title}
                       </p>
                     </div>

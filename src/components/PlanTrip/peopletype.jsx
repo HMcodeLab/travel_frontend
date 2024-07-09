@@ -109,7 +109,7 @@ const Peopletype = () => {
     <div className="pl-14 pt-10 relative xsm:pl-4">
       <Commonheader />
       <div className="flex flex-col  people_type_wrapper_outer">
-        <p className="capitalize font-[550] font-Merri-sans text-xl">
+        <p className="capitalize font-[550] font-Merri-sans text-xl xsm:text-[15px]">
           Who is travelling with you?
         </p>
         <div className="grid grid-cols-5 pr-3 xsm:grid-cols-2 xsm:gap-2 people_type_wrapper">

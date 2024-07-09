@@ -132,10 +132,10 @@ const DateComponent = () => {
   // Reset time part of the date to 00:00:00 for accurate comparison
   today.setHours(0, 0, 0, 0);
   return (
-    <div className="pl-14 pt-14 xsm:pl-4 xsm:pb-10">
+    <div className="pl-14 pt-14 xsm:pl-4 xsm:pb-10 xsm:pt-8">
       <Commonheader />
       <div className="flex flex-col mt-8">
-        <p className="capitalize font-[500] font-Merri-sans text-xl">
+        <p className="capitalize font-[500] font-Merri-sans text-xl xsm:text-[15px]">
           When is your departure date?
         </p>
         <div className="flex justify-center w-full mt-10">

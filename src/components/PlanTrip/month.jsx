@@ -126,10 +126,10 @@ const Month = () => {
   }
   return (
     <>
-      <div className="pl-14 pt-14 xsm:pl-2">
+      <div className="pl-14 pt-14 xsm:pl-2 xsm:pt-8">
         <Commonheader />
         <div className="flex flex-col mt-8">
-          <p className="capitalize font-[500] font-Merri-sans text-xl xsm:text-md">
+          <p className="capitalize font-[500] font-Merri-sans text-xl xsm:text-[15px]">
             Which month are you travelling?
           </p>
           <div className="grid grid-cols-6 gap-3 pr-3 mt-12 xsm:grid-cols-3 xsm:gap-1 xsm:pr-2 xsm:mt-5 moth_type_wrapper">
@@ -153,7 +153,7 @@ const Month = () => {
                     )}
                     <div className="flex justify-center items-center h-full w-full">
                       <div className="flex flex-col justify-center gap-1">
-                        <p className="text-center font-[500] text-lg font-Merri-sans capitalize text-[1rem]">
+                        <p className="text-center font-[500] text-lg font-Merri-sans capitalize text-[1rem] xsm:text-[14px]">
                           {item.month}
                         </p>
                         <p className="flex items-center xsm:hidden">

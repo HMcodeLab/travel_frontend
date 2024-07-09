@@ -124,7 +124,6 @@ span.query_values_border {
 .moth_type_wrapper,
 .stay_count_wrapper{
   display: flex;
-  flex-wrap: wrap;
   gap: 20px;
   align-items: center;
 }
@@ -134,6 +133,18 @@ span.query_values_border {
 }
 }
 @media (max-width: 570px) {
+  .selected_query_values{
+    padding: 1px 12px;
+  }
+  .people_type_wrapper,
+.moth_type_wrapper,
+.stay_count_wrapper{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  margin-top: 12px;
+  margin-bottom: 20px;
+  font-size: 14px !important;
+}
   .plantrip {
     background-image: url("../../../public/boat.png");
     background-repeat: no-repeat;
