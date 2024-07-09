@@ -38,7 +38,7 @@ const Destinationcity = () => {
   let filterCities = cities.filter((e) =>  e.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase()) )
   return (
     <>
-      <div className="pl-14 pt-14 xsm:pl-4">
+      <div className="pl-14 pt-14 xsm:pl-4 xsm:pb-10">
         <Commonheader />
         <p className="capitalize font-[500] font-Merri-sans text-xl mt-8">
           Where are you travelling from?
@@ -48,10 +48,10 @@ const Destinationcity = () => {
             alt="..."
             src={Search || emptyImage.src}
             onError={(e)=> e.target.src = emptyImage.src}
-            className="absolute top-2 left-2 h-5 w-6"
+            className="absolute top-3 left-[1.7rem] h-6 w-6 xsm:left-[1rem]"
           />
           <input
-            className="w-[60%] rounded pl-9 focus:outline-none xsm:w-full"
+            className="w-[90%] h-[30px] xsm:h-[40px!important] rounded pl-[4.5rem] focus:outline-none xsm:w-full search_for_destinations"
             placeholder="Type departing City "
             value={searchValue}
           onChange={handleCity}

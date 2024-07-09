@@ -47,7 +47,7 @@ const Staycount = () => {
   }
   return (
     <>
-      <div className="pl-14 pt-14 xsm:pl-4">
+      <div className="pl-14 pt-14 xsm:pl-4 xsm:pb-10">
         <Commonheader />
         <div className="flex flex-col mt-8">
           <p className="capitalize font-[500] font-Merri-sans text-xl">

@@ -391,6 +391,11 @@ h1.desti_details_heading {
   background: unset;
   color: #000;
   border-radius: 4px;
+  text-transform: capitalize;
+}
+.step_up_buttons button:hover{
+  background: #ca1c25ce;
+  transition: .2s ease;
 }
 
 button.btn {
@@ -495,7 +500,7 @@ span.errors {
 
 .last_section_cards .card_section_wrapper {
   max-width: 100%;
-  width: 320px;
+  width: 320px !important;
 }
 
 .card_top_section img {
@@ -571,6 +576,26 @@ span.discount_price {
   font-weight: 400;
 }
 
+.tour-container {
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 3px solid var(--primary);
+}
+
+.tour-container img {
+  max-width: 80px;
+  min-height: 80px;
+  height: 100%;
+  border: 3px dotted var(--primary);
+}
+
+.tour-title {
+  color: var(--primary);
+  text-transform: capitalize;
+}
 
 /* css by neo sharma */
 @media (min-width:1441px) and (max-width:1600px) {
@@ -594,7 +619,8 @@ span.discount_price {
   .px-\[12\.5vw\].flex.flex-col.gap-\[5vh\].xsm\:px-\[3vw\],
   .all_destinations_wrapper,
   .acticities_packages,
-  .morph_banner_wrapper {
+  .morph_banner_wrapper,
+  .destination_slug_posts{
     padding: 20px 40px;
   }
 }
@@ -623,7 +649,8 @@ span.discount_price {
   .px-\[12\.5vw\].flex.flex-col.gap-\[5vh\].xsm\:px-\[3vw\],
   .all_destinations_wrapper,
   .acticities_packages,
-  .morph_banner_wrapper {
+  .morph_banner_wrapper,
+  .destination_slug_posts{
     padding: 20px 50px;
   }
 
@@ -682,6 +709,7 @@ span.discount_price {
     height: 100%;
   }
 }
+
 
 @media (max-width:768px) {
   .last_section_cards .card_section_wrapper {
@@ -742,6 +770,8 @@ span.discount_price {
     height: 100%;
   }
 
+  
+
   .tour_package_img {
     min-height: 200px;
     height: 100%;
@@ -765,7 +795,8 @@ span.discount_price {
   .px-\[12\.5vw\].flex.flex-col.gap-\[5vh\].xsm\:px-\[3vw\],
   .all_destinations_wrapper,
   .acticities_packages,
-  .morph_banner_wrapper {
+  .morph_banner_wrapper,
+  .destination_slug_posts{
     padding: 10px 20px;
   }
 
@@ -789,6 +820,22 @@ span.discount_price {
 }
 
 @media (max-width:700px) {
+  .tour-container{
+    font-size: 14px;
+    border-bottom: 1px solid var(--primary);
+  }
+  .tour-container img {
+    max-width: 60px;
+    min-height: 60px;
+    height: 100%;
+    border: 2px dotted var(--primary);
+  }
+  
+
+  .step_up_buttons button{
+    padding: 3px 14px;
+    font-size: 14px;
+  }
   .destination_last_section_wrapper {
     grid-template-columns: 1fr;
   }
@@ -871,6 +918,7 @@ span.discount_price {
   .popup_model_form {
     top: 20px;
   }
+
 }
 
 @media (max-width:400px) {

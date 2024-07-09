@@ -54,13 +54,13 @@ function handleCity(e){
 }
   return (
     <>
-      <div className="flex items-center uppercase font-bold text-2xl w-full justify-center font-Merri-sans gap-1 mt-8 flex-wrap xsm:text-md ">
+      <div className="flex items-center uppercase font-bold text-2xl w-full justify-center font-Merri-sans gap-1 mt-8 flex-wrap xsm:text-md  xsm:text-[18px] ">
         <p>Where are </p>
         <p className="text-[var(--primary)]">You Planning</p>
         <p>To Go ?</p>
       </div>
 
-      <div className="relative w-full flex gap-2 pl-20 h-10 mt-8 xsm:pl-0">
+      <div className="relative w-full flex gap-2 pl-20 h-10 mt-8 xsm:pl-0 sticky top-0">
         <Image
           alt="..."
           src={Search || emptyImage.src}
@@ -68,14 +68,14 @@ function handleCity(e){
           className="absolute top-3 left-[6.5rem] h-6 w-6 xsm:left-[1rem]"
         />
         <input
-          className="w-[90%] h-[30px] rounded pl-[4.2rem] focus:outline-none xsm:w-full search_for_destinations"
+          className="w-[90%] h-[30px] xsm:h-[40px!important] rounded pl-[4.2rem] focus:outline-none xsm:w-full search_for_destinations"
           placeholder="Pick your destination"
           value={searchValue}
           onChange={handleCity}
         />
       </div>
       
-      <div className="flex flex-col gap-5 pl-28 mt-5 font-Merri-sans xsm:pl-5">
+      <div className="flex flex-col gap-5 pl-28 mt-5 font-Merri-sans xsm:pl-5 xsm:gap-3">
         {result.length > 0 ? (
           result.map((item, index) => (
             <p

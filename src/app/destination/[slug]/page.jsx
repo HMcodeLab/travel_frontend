@@ -65,7 +65,7 @@ const DestinationContentInner = ({props}) => {
   return (
     <>
       <Destinationherosection resp={Alldata} />
-      <div className="px-[var(--padding-inline)] flex flex-col gap-[5vh] my-[5vh]">
+      <div className="px-[13vw] flex flex-col gap-[5vh] my-[5vh] destination_slug_posts">
         <Allcards data={Alldata} cityid={props.params.slug} />
 
         <Discount />

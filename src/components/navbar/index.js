@@ -28,7 +28,13 @@ const Navbar = ({ setEnquiryModal, setPlanning }) => {
         <div className={styles.logo_container}>
           <Link href="/">
             <Image src={Logo || emptyImage.src} alt="..." 
-             onError={(e) => e.target.src = emptyImage.src} />
+             onError={(e) => e.target.src = emptyImage.src}
+             srcset={`${Logo || emptyImage.src} 480w, 
+             ${Logo || emptyImage.src} 800w, 
+             ${Logo || emptyImage.src} 1200w`}
+             sizes="(max-width: 600px) 480px, 
+             (max-width: 1200px) 800px, 
+             1200px"/>
           </Link>
         </div>
         <div className={styles.navmenu}>

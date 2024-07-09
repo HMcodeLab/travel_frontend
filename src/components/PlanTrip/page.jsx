@@ -87,13 +87,15 @@ const Planningtriphome = ({ planning, setPlanning }) => {
           <div
             className={` h-[100vh] w-[60vw] px-[40px] plantrip pt-2 xsm:w-[100vw] ${animationClass} animation_class`}
           >
-           <div className="flex gap-3 ">
-              <p className="cursor-pointer" onClick={handlePrev}>prev</p>
-              <p className="cursor-pointer" onClick={handleNext}>next</p>
+            <div className="button_wrapper">
+           <div className="flex gap-3 step_up_buttons">
+              <button className="cursor-pointer btn" onClick={handlePrev}>prev</button>
+              <button className="cursor-pointer btn" onClick={handleNext}>next</button>
            </div>
-            <div className="h-12 w-12 rounded-full close_plan_tip flex justify-center items-center p-1 fixed right-2 top-2 z-20">
+           </div>
+            <div className="h-12 w-12 rounded-full close_plan_tip flex justify-center items-center p-1 fixed right-2 top-2 z-20 xsm:h-8 xsm:w-8">
               <Image
-                className="cursor-pointer"
+                className="cursor-pointer xsm:h-3 xsm:w-3"
                 onClick={() => closeModal()}
                 src={Cross || emptyImage.src}
                 onError={(e)=> e.target.src = emptyImage.src}

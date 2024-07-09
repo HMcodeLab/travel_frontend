@@ -113,8 +113,16 @@ export const CommonHead = ({ data }) => {
       <div className={styles.section1}>
         <div className={`xsm:text-[16px] ${styles.highlightfirstletter}`}>
           {/* <Cap text="Panormic Ladakh with umling la pass package" /> */}
-          <p className="panormic_ladakh_heading"><span>Panormic Ladakh </span> with umling <br className="xsm:hidden"/>
-          <span>la pass</span> package</p>
+          {data && data.map((ele,ind)=> {
+            return (
+              <>
+              <p className="panormic_ladakh_heading" key={ind}><span>Panormic {ele.city_name}</span> with umling <br className="xsm:hidden"/>
+          <span><span >{ele.package_name}</span>
+          </span> package</p>
+              </>
+            )
+          
+          })}
           
         </div>
       </div>

@@ -12,7 +12,7 @@ const Included = ({ data }) => {
         <div className={styles.included_tab_content_wrapper}>
         <div className='flex flex-col gap-[13px]'>
             <h1 className='text-[1.5rem] '>INCLUDED</h1>
-            <ul className='list-disc flex flex-col gap-2'>
+            <ul className={`list-disc flex flex-col gap-2`}>
                 {
                     data[0]?.special_inc_meta?.map((val, ind) => {
                         return (
@@ -24,7 +24,7 @@ const Included = ({ data }) => {
             <hr />
             <div className='flex flex-col gap-[10px]'>
                 <h1 className='text-[1.3rem] '>TOUR INCLUSIONS</h1>
-                <ul className='list-disc flex flex-col gap-2'>
+                <ul className={`list-disc flex flex-col gap-2 ${styles.icon_before}`}>
                     {
                         data[0]?.inc_meta?.map((val, ind) => {
                             return (
@@ -36,7 +36,7 @@ const Included = ({ data }) => {
             </div>
             <div className='flex flex-col gap-[10px]'>
                 <h1 className='text-[1.3rem] '>TOUR EXCLUSIONS</h1>
-                <ul className='list-disc flex flex-col gap-2'>
+                <ul className={`list-disc flex flex-col gap-2 ${styles.icon_before}`}>
                     {
                         data[0]?.exc_meta?.map((val, ind) => {
                             return (

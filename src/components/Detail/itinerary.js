@@ -17,13 +17,12 @@ const Itinerary = ({ data }) => {
 
     console.log(data[0]?.daywise_meta)
     const newdata = data ? data[0]?.daywise_meta : []
-    console.log("newdata",newdata);
 
 
 
     const handleDropdownToggle = (index) => {
         setdropdown(prevState =>
-            prevState?.map((item, ind) => (ind === index ? !item : item))
+            prevState?.map((item, ind) => (ind === index ? !item : false))
         );
     };
     return (
@@ -33,7 +32,7 @@ const Itinerary = ({ data }) => {
 
                     return (
                         <div className={styles.faq_section}>
-                            <div className=" py-[12px] bg-[var(--primary)] text-white px-[10px] rounded-xl cursor-pointer" onClick={() => handleDropdownToggle(ind)}>
+                            <div className=" py-[12px] bg-[var(--primary)] text-white px-[10px] rounded-xl cursor-pointer xsm:text-[14px]" onClick={() => handleDropdownToggle(ind)}>
                                 Day {val.tour_day}  ({val?.tour_name})
                             </div>
                             <div style={{ display: !dropdown[ind] ? "none" : "" }}  >
@@ -43,7 +42,7 @@ const Itinerary = ({ data }) => {
                                     return(<>
                                       <div class="tour-container" key={index}>
                                     <div class="tour-image">
-                                        <img src={it?.attractionimage} alt={it?.hot_des} />
+                                        <img src={it?.attractionimage} alt={it?.hot_des}  className='rounded-full'/>
                                     </div>
                                     <div class="tour-content">
                                         <div class="tour-title">{it?.hot_des}</div>

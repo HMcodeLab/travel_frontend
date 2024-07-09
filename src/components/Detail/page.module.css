@@ -4,7 +4,10 @@
 
 .gallery_main img {
   height: 9rem;
+  cursor: pointer;
+  border-radius: 6px;
 }
+
 
 /* contact page  */
 
@@ -30,7 +33,7 @@
   text-align: center;
 }
 
-.contact_inner span{
+.contact_inner span {
   color: #ca1c26;
 }
 
@@ -39,15 +42,18 @@
   flex-direction: column;
   gap: 8px;
 }
-.contact_inner li{
+
+.contact_inner li {
   font-size: 14px !important;
   font-weight: 500;
 }
+
 .faq_section_inner {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
+
 .faq_contents {
   padding: 20px 10px;
 }
@@ -124,21 +130,42 @@
 .overview_tab_content_wrapper .first_heading,
 .second_heading,
 .included_tab_content_wrapper h1,
-.policy_tab_content_wrapper h2{
+.policy_tab_content_wrapper h2 {
   font-size: 32.77px;
   font-weight: 400;
   color: #000000;
 
 }
-.amenities_section{
+
+.included_tab_content_wrapper li{
+  position: relative;
+  margin-left: 30px;
+}
+
+.included_tab_content_wrapper .icon_before li::before{
+  content: " ";
+  position: absolute;
+  left: -30px;
+  top: 5px;
+  width: 15px;
+  height: 15px;
+  background-image: url(../../../public/Star.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.amenities_section {
   margin-top: 20px;
 }
-.amenities_section h2{
+
+.amenities_section h2 {
   font-size: 20px;
   font-weight: 600;
- 
+
 }
-.amenities_section h3{
+
+.amenities_section h3 {
   font-size: 16px;
   font-weight: 500;
 }
@@ -148,7 +175,7 @@
 .faq_contents p,
 .included_tab_content_wrapper li,
 .policy_tab_content_wrapper span,
-  .policy_tab_content_wrapper p{
+.policy_tab_content_wrapper p {
   font-size: 18px !important;
   font-weight: 400;
   line-height: 27px;
@@ -171,75 +198,154 @@
 }
 
 
+.view_popup_gallery {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
 
+.popup_content {
+  position: relative;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 1200px;
+  width: 100%;
+  max-height: 800px;
+  height: 100%;
+}
+
+.popup_content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.close_btn_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  padding: 8px;
+  border-radius: 50px;
+  background-color: #ca1c26;
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 1;
+}
+
+.close_btn {
+  font-size: 20px;
+  font-weight: 600;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+}
+
+.close_btn_wrapper:hover {
+  background-color: #000000;
+  color: #fff;
+}
 
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .card_main>div {
     width: 100%;
   }
+
+  .popup_content {
+    max-height: 600px;
+  }
 }
 
 @media (max-width:768px) {
-  .contact_inner li{
+  .close_btn {
+    font-size: 14px;
+  }
+
+  .popup_content {
+    max-height: 400px;
+  }
+
+  .contact_inner li {
     font-size: 12px !important;
   }
+
   .contact_inner h2 {
     font-size: 25px;
   }
+
   .gallary_wrapper h2 {
     font-size: 25px;
   }
+
   .overview_tab_content_wrapper .first_heading,
   .second_heading,
   .included_tab_content_wrapper h1,
-  .policy_tab_content_wrapper h2{
+  .policy_tab_content_wrapper h2 {
     font-size: 15px;
   }
- 
-  .amenities_section h3{
+
+  .amenities_section h3 {
     font-size: 12.5px;
   }
-  .amenities_section h2{
+
+  .amenities_section h2 {
     font-size: 16px;
   }
+
   .overview_tab_content_wrapper .first_heading_description span,
   .second_heading_description span,
   .faq_contents p,
   .included_tab_content_wrapper li,
   .policy_tab_content_wrapper span,
-  .policy_tab_content_wrapper p{
+  .policy_tab_content_wrapper p {
     font-size: 12px !important;
   }
-  .card_main {
+
+  /* .card_main {
     max-width: 700px;
     overflow: auto;
     display: flex;
     flex-direction: column;
     width: 100%;
-  }
+  } */
   .card_main::-webkit-scrollbar {
     opacity: 0;
   }
 
-  .card_main>div {
+  /* .card_main>div {
     animation: none;
     width: 100%;
-  }
+  } */
 
 }
 
 @media (max-width: 700px) {
+  .popup_content {
+    padding: 10px;
+  }
+
   .card_main {
-    max-width: 100%;
-    width: 100%;
-    overflow: auto;
+    width: 100vw;
   }
 
 }
 
 @media (min-width: 320px) and (max-width: 519px) {
-  .contact_inner{
+  .contact_inner {
     padding: 20px 10px;
   }
 }

@@ -16,12 +16,12 @@ const RequestCall = () => {
         </p>
 
         <div className="flex items-center h-12 gap-14 xsm:h-8 calling_flex_wrapper">
-          <a href='tel:6753557043' className="bg-[var(--primary)] text-white px-10 h-full rounded xsm:text-[10px] xsm:px-5 go_to_dial_num">
+          <a href='tel:6753557043' className="bg-[var(--primary)] text-white px-10 h-full rounded xsm:text-[10px] xsm:h-[60%] xsm:px-5 go_to_dial_num">
           +91 67535 57043
           </a>
          
            
-          <a href="https://api.whatsapp.com/send/?phone=6753557043&text&type=phone_number&app_absent=0" className="goto_whatsapp" target="_blank">
+          <a href="https://api.whatsapp.com/send/?phone=6753557043&text&type=phone_number&app_absent=0" className="logo_whatsapp" target="_blank">
           <Image
             alt="..."
             src={Wtsp || emptyImage.src}

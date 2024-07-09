@@ -38,7 +38,7 @@ const LastSection = () => {
                 {
                   data?.map((val, ind) => {
                         return (
-                            <div className='w-[100%]' key={ind}>
+                            <div key={ind}>
                                 <Cards val={val} />
                             </div>
 

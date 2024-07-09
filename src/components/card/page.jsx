@@ -7,7 +7,7 @@ import Call from "../../../public/Icons/cardphone.svg";
 import Wtsp from "../../../public/Icons/cardwhatsapp.svg";
 import { emptyImage } from "@/Data/cardImageData";
 
-const Cards = ({val, cityid }) => {
+const Cards = ({ val, cityid }) => {
   console.log(val)
   console.log(cityid)
   return (
@@ -24,12 +24,12 @@ const Cards = ({val, cityid }) => {
         <div className="w-full flex justify-between absolute top-0 text-white p-3">
           <span className="flex items-center bg-black px-2 rounded gap-1">
             {val?.days}{" "}
-            <Image src={Moon || emptyImage.src} alt="Moon icon" width={12} height={12} 
-            onError={(e) => e.target.src = emptyImage.src}/> /{" "}
-            
+            <Image src={Moon || emptyImage.src} alt="Moon icon" width={12} height={12}
+              onError={(e) => e.target.src = emptyImage.src} /> /{" "}
+
             {val?.night}{" "}
-            <Image src={Sun ||emptyImage.src} alt="Sun icon" width={12} height={12} 
-             onError={(e) => e.target.src = emptyImage.src}/>
+            <Image src={Sun || emptyImage.src} alt="Sun icon" width={12} height={12}
+              onError={(e) => e.target.src = emptyImage.src} />
           </span>
           <span
             className="bg-gradient-to-r from-[#010080] to-[#BC000B] text-white px-2 rounded"
@@ -47,23 +47,23 @@ const Cards = ({val, cityid }) => {
           {val?.servies === null
             ? "no services found"
             : val?.servies?.slice(0, 4)?.map((item, index) => (
-                <div
-                  key={index}
-                  className="flex items-center gap-1 text-xs font-semibold"
-                >
-                  <div className="relative w-6 h-6">
-                    <Image
-                      className="meal_icon"
-                      src={item?.icon|| emptyImage.src}
-                      onError={(e) => e.target.src = emptyImage.src}
-                      alt={`icon`}
-                      layout="fill"
-                      objectFit="contain"
-                    />
-                  </div>
-                  {item?.service}
+              <div
+                key={index}
+                className="flex items-center gap-1 text-xs font-semibold"
+              >
+                <div className="relative w-6 h-6">
+                  <Image
+                    className="meal_icon"
+                    src={item?.icon || emptyImage.src}
+                    onError={(e) => e.target.src = emptyImage.src}
+                    alt={`icon`}
+                    layout="fill"
+                    objectFit="contain"
+                  />
                 </div>
-              ))}
+                {item?.service}
+              </div>
+            ))}
         </div>
 
         <div
@@ -71,9 +71,9 @@ const Cards = ({val, cityid }) => {
           style={{ fontFamily: "Montserrat" }}
         >
           <div className="flex items-center gap-1">
-            <p className="font-bold text-xl flex flex-nowrap">₹{val?.starting_cost}/- </p>
+            <p className="font-bold text-xl flex flex-nowrap">₹ {val?.starting_cost}/- </p>
             <strike className="text-[#5F5D5D] text-sm font-semibold">
-              {val?.discount || ""}
+            ₹ {val?.discount || ""}
             </strike>
           </div>
           <div className="flex items-center justify-end gap-1 flex-wrap">
@@ -99,11 +99,11 @@ const Cards = ({val, cityid }) => {
               width={26}
               height={26}
               srcset={`${Call} 480w, 
-                                        ${Call} 800w, 
-                                        ${Call} 1200w`} 
-                                sizes="(max-width: 600px) 480px, 
-                                       (max-width: 1200px) 800px, 
-                                       1200px" 
+              ${Call} 800w, 
+              ${Call} 1200w`}
+              sizes="(max-width: 600px) 480px, 
+              (max-width: 1200px) 800px, 
+              1200px"
             /></a>
 
 
@@ -115,11 +115,11 @@ const Cards = ({val, cityid }) => {
                 width={32}
                 height={32}
                 srcset={`${Wtsp} 480w, 
-                                        ${Wtsp} 800w, 
-                                        ${Wtsp} 1200w`} 
-                                sizes="(max-width: 600px) 480px, 
-                                       (max-width: 1200px) 800px, 
-                                       1200px" 
+                ${Wtsp} 800w, 
+                ${Wtsp} 1200w`}
+                sizes="(max-width: 600px) 480px, 
+                (max-width: 1200px) 800px, 
+                1200px"
               /></a>
           </div>
         </div>

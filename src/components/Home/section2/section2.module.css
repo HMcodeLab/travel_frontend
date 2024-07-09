@@ -210,3 +210,14 @@
     animation: none;
   }
 }
+
+@media (min-width: 701px) and (max-width: 900px) {
+
+  .places_card>div:nth-child(2n + 1) {
+    height: 28vh;
+  }
+  
+  .places_card>div:nth-child(2n) {
+    height: 22vh;
+  }
+}
