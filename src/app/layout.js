@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
     try {
       const data = await fetch(`${process.env.NEXT_PUBLIC_URL}/apis/packages/index`)
       const response = await data.json();
-      console.log(response)
+      // console.log(response)
       setCardsData(response?.data)
 
     } catch (error) {

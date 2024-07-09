@@ -15,8 +15,9 @@ const Itinerary = ({ data }) => {
         )
     }
 
-    // console.log(data[0]?.daywise_meta)
-    const newdata = data ? JSON?.parse(data[0]?.daywise_meta) : []
+    console.log(data[0]?.daywise_meta)
+    const newdata = data ? data[0]?.daywise_meta : []
+    console.log("newdata",newdata);
 
 
 
@@ -37,17 +38,24 @@ const Itinerary = ({ data }) => {
                             </div>
                             <div style={{ display: !dropdown[ind] ? "none" : "" }}  >
                                 <div dangerouslySetInnerHTML={{ __html: val?.tour_des }} className={styles.faq_contents} />
-                                <div class="tour-container">
+                               {
+                                val?.hot_des?.map((it,index)=>{
+                                    return(<>
+                                      <div class="tour-container" key={index}>
                                     <div class="tour-image">
-                                        <img src={demoImage.src} alt="Kasol Tour: A Himalayan Escape" />
+                                        <img src={it?.attractionimage} alt={it?.hot_des} />
                                     </div>
                                     <div class="tour-content">
-                                        <div class="tour-title">Kasol Tour: A Himalayan Escape</div>
+                                        <div class="tour-title">{it?.hot_des}</div>
                                         <div class="tour-description">
-                                            Embark on a captivating tour of Kasol, a serene village nestled in the Parvati Valley of Himachal Pradesh. Known for its scenic beauty and vibrant culture, Kasol is the perfect destination for nature lovers, adventure seekers, and those looking to relax amidst tranquil surroundings. Experience the enchanting charm of Kasol, where natural beauty, adventure, and cultural richness come together to create an unforgettable Himalayan escape.
+                                            {it?.description}
                                         </div>
                                     </div>
                                 </div>
+                                    </>)
+                                })
+                               }
+                              
                             </div>
 
                         </div>
