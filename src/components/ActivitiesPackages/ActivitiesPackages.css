@@ -66,6 +66,9 @@
   z-index: 1;
 }
 
+.bottom_description span{
+  margin-bottom: 10px;
+}
 .activity-card3b::before {
   content: "";
   position: absolute;
