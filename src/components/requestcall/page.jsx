@@ -21,7 +21,7 @@ const RequestCall = () => {
           </a>
          
            
-          <a href="https://api.whatsapp.com/send/?phone=6753557043&text&type=phone_number&app_absent=0" className="logo_whatsapp" target="_blank">
+          <a href="https://api.whatsapp.com/send/?phone=6753557043&text&type=phone_number&app_absent=0" className="goto_whatsapp" target="_blank">
           <Image
             alt="..."
             src={Wtsp || emptyImage.src}

@@ -751,9 +751,7 @@ span.discount_price {
     gap: 16px !important;
   }
 
-  a.goto_whatsapp img {
-    display: block !important;
-  }
+  
 
   .slider-container {
     min-height: auto;
@@ -824,6 +822,9 @@ span.discount_price {
 }
 
 @media (max-width:700px) {
+  .goto_whatsapp{
+    display: none;
+  }
   .tour-container{
     font-size: 14px;
     border-bottom: 1px solid var(--primary);
