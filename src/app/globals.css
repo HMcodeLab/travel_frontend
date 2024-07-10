@@ -500,7 +500,7 @@ span.errors {
 
 .last_section_cards .card_section_wrapper {
   max-width: 100%;
-  width: 320px !important;
+  width: 450px !important;
 }
 
 .card_top_section img {
@@ -508,6 +508,7 @@ span.errors {
 }
 
 .card_middle_section {
+  text-transform: capitalize;
   font-size: 22.7px;
   font-weight: 700;
   font-family: Merriweather-sans;
@@ -715,6 +716,9 @@ span.discount_price {
   .last_section_cards .card_section_wrapper {
     max-width: 700px;
     width: 100%;
+  }
+  .last_section_cards .card_section_wrapper {
+    width: 350px !important;
   }
 
   .close_enquiry_form {

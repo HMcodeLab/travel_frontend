@@ -487,7 +487,7 @@ const disabledDays = { before: todaydate };
                       </div>
                     </div>
                     {ActivityDate && (
-                      <div className="absolute bg-[#F6F6F6] text-[#000] top-[100%] left-0  rounded-md shadow-lg shadow-[#00000021]">
+                      <div className="absolute bg-[#F6F6F6] text-[#000] top-[100%] left-0  rounded-md shadow-lg shadow-[#00000021] z-10">
                         <DayPicker
                           mode="single"
                           selected={todaydate}
@@ -697,7 +697,7 @@ const disabledDays = { before: todaydate };
                       </div>
                     </div>
                     {FlightDate && (
-                      <div className="absolute bg-[#F6F6F6] text-[#000] top-[100%] left-0  rounded-md shadow-lg shadow-[#00000021]">
+                      <div className="absolute bg-[#F6F6F6] text-[#000] top-[100%] left-0  rounded-md shadow-lg shadow-[#00000021] z-10">
                         <DayPicker
                           mode="single"
                           selected={selected}
@@ -880,7 +880,7 @@ const disabledDays = { before: todaydate };
                       </div>
                     </div>
                     {FlightDate && (
-                      <div className="absolute bg-[#F6F6F6] text-[#000] top-[100%] left-0  rounded-md shadow-lg shadow-[#00000021]">
+                      <div className="absolute bg-[#F6F6F6] text-[#000] top-[100%] left-0  rounded-md shadow-lg shadow-[#00000021] z-10">
                         <DayPicker
                           mode="single"
                           selected={selected}
