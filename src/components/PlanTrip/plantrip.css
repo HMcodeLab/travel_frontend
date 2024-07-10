@@ -124,6 +124,7 @@ span.query_values_border {
 .moth_type_wrapper,
 .stay_count_wrapper{
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   align-items: center;
 }
