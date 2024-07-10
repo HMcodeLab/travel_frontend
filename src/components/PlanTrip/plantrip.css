@@ -128,10 +128,9 @@ span.query_values_border {
   gap: 20px;
   align-items: center;
 }
-
-@media (min-width:1025px) and (max-width:1600px) {
-  button.btn {
-    padding: 5px 20px;
+@media (max-width:1600px) {
+  .styacount_wrapper{
+    min-height: fit-content;
   }
   .month_outer,
   .date_outer,
@@ -139,8 +138,13 @@ span.query_values_border {
   .staycount_outer,
   .peopleType_outer,
   .tripform_outer{
-    padding-top: 20px;
+    padding-top: 20px !important;
     margin-bottom: 40px;
+  }
+}
+@media (min-width:1025px) and (max-width:1600px) {
+  button.btn {
+    padding: 5px 20px;
   }
   .month_outer p,
   .date_outer p,
@@ -175,6 +179,7 @@ span.query_values_border {
 }
 }
 @media (max-width: 570px) {
+  
   .selected_query_values{
     padding: 1px 12px;
   }

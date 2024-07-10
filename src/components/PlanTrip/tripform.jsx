@@ -132,7 +132,7 @@ const Tripform = () => {
             </div>
             <button
               onClick={handleSubmit}
-              className="bg-[#CA1C26] py-2 px-4 w-[35%] rounded text-white font-Merri-sans"
+              className="bg-[#CA1C26] py-2 px-4 w-[35%] rounded text-white font-Merri-sans xsm:text-[12px]"
             >
               SUBMIT
             </button>
