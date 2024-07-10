@@ -129,7 +129,7 @@ export const CommonHead = ({ data }) => {
         <div className={`xsm:text-[16px] ${styles.highlightfirstletter}`}>
           {/* <Cap text="Panormic Ladakh with umling la pass package" /> */}
           
-              <p className="panormic_ladakh_heading" key={ind}><span>Panormic {secondlastslug}</span> with umling <br className="xsm:hidden"/>
+              <p className="panormic_ladakh_heading" key={ind}><span>Panormic {secondlastslug || "tour"} </span> with umling <br className="xsm:hidden"/>
           <span><span >{ele.package_name}</span>
           </span> package</p>
              
