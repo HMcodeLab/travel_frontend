@@ -155,6 +155,10 @@
   background-size: cover;
 }
 
+.explore_the_area h1{
+  line-height: 30.26px;
+}
+
 .amenities_section img{
   width: 35px;
   height: 35px;

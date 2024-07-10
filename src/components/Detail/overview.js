@@ -10,7 +10,7 @@ const Overview = ({ data }) => {
     const [imgSrc, setImgSrc] = useState(emptyImage.src);
     const handleError = () => {
         setImgSrc(emptyImage.src);
-      };
+    };
     if (data === undefined) {
         return (
             <>Loading...</>
@@ -23,7 +23,10 @@ const Overview = ({ data }) => {
         <div className={`${styles.overview_tab_content_wrapper}`} >
             <h1 className={`${styles.first_heading}`}>OVERVIEW</h1>
             <div dangerouslySetInnerHTML={{ __html: data[0]?.overview }} style={{ marginTop: '10px' }} className={`${styles.first_heading_description}`} />
-            <h2 className={`${styles.second_heading}`} style={{ marginTop: '30px' }}>Explore the Area</h2>
+            <div className={`my-[20px] border-t border-b border-solid border-[#01008036] py-[20px] text-[#000] text-[20px] xsm:text-[16px] font-inter font-medium ${styles.explore_the_area}`}>
+                <h1>{data[0].package_routing}</h1>
+            </div>
+            <h2 className={`${styles.second_heading}`} >Explore the Area</h2>
             <div dangerouslySetInnerHTML={{ __html: data[0]?.explore_the_area }} style={{ marginTop: '10px' }} className={`${styles.second_heading_description}`} />
             <div className={`${styles.amenities_section}`}>
                 <div>
