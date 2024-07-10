@@ -263,6 +263,8 @@
   background-color: #fff;
   padding-top: 10px !important;
   transition: 0.3s ease;
+  border-bottom: 1px solid #8080805b;
+  box-shadow: 0px 1px 5px 0px #8080804f; 
 }
 @media (min-width: 1441px) and (max-width:1600px) {
   .btn_section p{
