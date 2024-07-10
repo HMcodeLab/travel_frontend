@@ -180,7 +180,7 @@
   }
   .places2 p,
   .places3 p {
-    bottom: 20% !important;
+    bottom: 5% !important;
   }
   .card_section_main {
     display: grid;
