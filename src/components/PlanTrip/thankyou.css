@@ -37,7 +37,7 @@
 .thankyou_popup_wrapper {
   max-width: 840px;
   width: 100%;
-  min-height: 543px;
+  min-height: 520px;
   padding: 50px; 
   font-family: Merriweather-sans;
 }
@@ -52,6 +52,12 @@
   line-height: 25.14px;
 }
 
+@media (min-width:769px) and (max-width:1600px) {
+  .thankyou_popup_wrapper {
+    min-height: 440px;
+    padding: 0px 20px;
+}
+}
 @media (max-width:700px) {
   .thankyou_popup_wrapper {
     padding: 10px; 
