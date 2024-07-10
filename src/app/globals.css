@@ -621,7 +621,8 @@ span.discount_price {
   .all_destinations_wrapper,
   .acticities_packages,
   .morph_banner_wrapper,
-  .destination_slug_posts{
+  .destination_slug_posts,
+  .search_page_wrapper{
     padding: 20px 40px;
   }
 }
@@ -651,7 +652,8 @@ span.discount_price {
   .all_destinations_wrapper,
   .acticities_packages,
   .morph_banner_wrapper,
-  .destination_slug_posts{
+  .destination_slug_posts,
+  .search_page_wrapper{
     padding: 20px 50px;
   }
 
@@ -798,7 +800,8 @@ span.discount_price {
   .all_destinations_wrapper,
   .acticities_packages,
   .morph_banner_wrapper,
-  .destination_slug_posts{
+  .destination_slug_posts,
+  .search_page_wrapper{
     padding: 10px 20px;
   }
 

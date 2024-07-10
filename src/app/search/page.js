@@ -59,7 +59,7 @@ const Search = () => {
     }
 
     return (
-        <div className='px-[10vw]'>
+        <div className='px-[13vw] search_page_wrapper'>
            {cardsData?.length>0 ? <div className={styles.all_cards_main}>
                 {cardsData?.map((cardData, ind) => (
                     <Cards key={ind} val={cardData} />
