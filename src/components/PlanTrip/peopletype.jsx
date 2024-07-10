@@ -106,7 +106,7 @@ const Peopletype = () => {
   }, [totalpeople]);
 
   return (
-    <div className="pl-14 pt-10 relative xsm:pl-4">
+    <div className="pl-14 pt-10 relative xsm:pl-4 peopleType_outer">
       <Commonheader />
       <div className="flex flex-col  people_type_wrapper_outer">
         <p className="capitalize font-[550] font-Merri-sans text-xl xsm:text-[15px]">

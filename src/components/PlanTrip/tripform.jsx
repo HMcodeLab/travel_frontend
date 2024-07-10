@@ -87,7 +87,7 @@ const Tripform = () => {
   return (
     <>
       <Toaster />
-      <div className="pl-14 pt-14 xsm:pl-4 xsm:pb-10">
+      <div className="pl-14 pt-14 xsm:pl-4 xsm:pb-10 tripform_outer">
         <Commonheader />
         <div className="flex flex-col mt-8">
           <p className="capitalize font-[500] font-Merri-sans text-xl xsm:text-[0.9rem]">

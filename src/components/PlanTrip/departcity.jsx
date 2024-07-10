@@ -38,7 +38,7 @@ const Destinationcity = () => {
   let filterCities = cities.filter((e) =>  e.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase()) )
   return (
     <>
-      <div className="pl-14 pt-14 xsm:pl-4 xsm:pb-10 xsm:pt-8">
+      <div className="pl-14 pt-14 xsm:pl-4 xsm:pb-10 xsm:pt-8 departcity_outer">
         <Commonheader />
         <p className="capitalize font-[500] font-Merri-sans text-xl mt-8 xsm:text-[15px]">
           Where are you travelling from?

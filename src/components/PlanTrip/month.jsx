@@ -126,7 +126,7 @@ const Month = () => {
   }
   return (
     <>
-      <div className="pl-14 pt-14 xsm:pl-2 xsm:pt-8">
+      <div className="pl-14 pt-14 xsm:pl-2 xsm:pt-8 month_outer">
         <Commonheader />
         <div className="flex flex-col mt-8">
           <p className="capitalize font-[500] font-Merri-sans text-xl xsm:text-[15px]">

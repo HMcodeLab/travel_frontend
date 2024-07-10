@@ -128,6 +128,47 @@ span.query_values_border {
   gap: 20px;
   align-items: center;
 }
+
+@media (min-width:1025px) and (max-width:1600px) {
+  button.btn {
+    padding: 5px 20px;
+  }
+  .month_outer,
+  .date_outer,
+  .departcity_outer,
+  .staycount_outer,
+  .peopleType_outer,
+  .tripform_outer{
+    padding-top: 20px;
+    margin-bottom: 40px;
+  }
+  .month_outer p,
+  .date_outer p,
+  .departcity_outer p,
+  .staycount_outer p,
+  .peopleType_outer p,
+  .tripform_outer p{
+    font-size: 18px;
+  }
+  .values_wrapper span{
+    font-size: 14px;
+  }
+
+  .moth_type_wrapper,
+  .date_wrapper,
+  .stay_count_wrapper,
+  .people_type_wrapper{
+    margin-top: 20px;
+  }
+  .moth_type_wrapper p,
+  .date_wrapper p,
+  .stay_count_wrapper p,
+  .people_type_wrapper p{
+    font-size: 14px;
+  }
+
+}
+
 @media (max-width: 1024px) {
   .flex.flex-col.gap-5.w-\[40\%\].font-Merri-sans.pt-5.xsm\:w-\[100\%\] {
     width: 70%;
