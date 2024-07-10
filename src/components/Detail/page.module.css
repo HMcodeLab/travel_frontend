@@ -137,12 +137,15 @@
 
 }
 
-.included_tab_content_wrapper li{
+.included_tab_content_wrapper li,
+.policy_tab_content_wrapper li{
   position: relative;
   margin-left: 30px;
+  margin-bottom: 10px;
 }
 
-.included_tab_content_wrapper .icon_before li::before{
+.included_tab_content_wrapper .icon_before li::before,
+.policy_tab_content_wrapper ul li::before{
   content: " ";
   position: absolute;
   left: -30px;
