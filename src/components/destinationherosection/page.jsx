@@ -33,7 +33,7 @@ const Destinationherosection = ({ resp }) => {
                 <p className="flex justify-center text-center gap-1 p-1 font-semibold text-xl xsm:text-[20px]">
                   <span>Get upto</span>
                   <span className="bg-[#CA1C26B2] px-1">
-                    {resp?.discount ||  `₹ 0`} off
+                    {resp?.discount ||  `₹ 20`} off
                   </span>
                 </p>
                 <div className="flex justify-center w-full">

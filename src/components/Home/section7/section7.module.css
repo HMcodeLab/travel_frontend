@@ -89,6 +89,7 @@
 .buttons button p {
   text-align: left;
   font-family: var(--primary-font);
+  margin: 0;
 }
 
 .buttons img {

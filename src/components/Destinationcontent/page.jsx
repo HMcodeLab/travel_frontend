@@ -14,10 +14,13 @@ import LastSection from "../Detail/lastSection";
 import RequestCall from "../requestcall/page";
 import { useRouter, useSearchParams } from "next/navigation";
 import detail_page_bg from '../../../public/Notfound/detail_page_bg.png';
+import Moon from "../../../public/Icons/moon.svg";
+import Sun from "../../../public/Icons/sun.svg";
 
 
 import Down from "../../../public/Icons/arrow.svg";
 import Cap from "../ParagraphWithLargeFirstLetters/page";
+import { emptyImage } from "@/Data/cardImageData";
 
 const Destinationcontent = ({props}) => {
 
@@ -110,24 +113,31 @@ export default Destinationcontent;
 export const CommonHead = ({ data }) => {
   return (
     <div className={`pl-[13%] pr-[9%] xsm:px-[20px] ${styles.commonHeadcontainer}`}>
+      {data && data.map((ele,ind)=> {
+            return (
+              <>
       <div className={styles.section1}>
         <div className={`xsm:text-[16px] ${styles.highlightfirstletter}`}>
           {/* <Cap text="Panormic Ladakh with umling la pass package" /> */}
-          {data && data.map((ele,ind)=> {
-            return (
-              <>
+          
               <p className="panormic_ladakh_heading" key={ind}><span>Panormic {ele.city_name}</span> with umling <br className="xsm:hidden"/>
           <span><span >{ele.package_name}</span>
           </span> package</p>
-              </>
-            )
-          
-          })}
+             
           
         </div>
       </div>
       <div className={styles.section2}>
-        <h4>6 Nights / 7 Days</h4>
+       
+        <span className="flex items-center bg-black text-[#fff] px-2 rounded gap-1 text-[18px] xsm:text-[12px]">
+            {ele?.days}{" "}
+            <Image src={Moon || emptyImage.src} alt="Moon icon" width={12} height={12}
+              onError={(e) => e.target.src = emptyImage.src} /> /{" "}
+
+            {ele?.night}{" "}
+            <Image src={Sun || emptyImage.src} alt="Sun icon" width={12} height={12}
+              onError={(e) => e.target.src = emptyImage.src} />
+          </span>
         <div className={styles.right}>
           <div className="flex gap-1">
             <Image
@@ -156,9 +166,13 @@ export const CommonHead = ({ data }) => {
             />
           </div>
           <h4>4.4 / 5</h4>
-          <p>(354 reviews)</p>
+          <p className="text-[18px] xsm:text-[12px]">(354 reviews)</p>
         </div>
       </div>
+       </>
+      )
+    
+    })}
     </div>
   );
 };

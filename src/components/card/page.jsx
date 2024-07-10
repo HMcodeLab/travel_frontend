@@ -79,7 +79,7 @@ const Cards = ({ val, cityid }) => {
           <div className="flex items-center justify-end gap-1 flex-wrap">
             <Image src={`/Assets/Images/Star.svg`} alt="Star icon" width={16} height={16} />
             <p className="font-semibold ">{val?.rating} / 5</p>
-            <p className="text-[#969191] text-xs">({val?.reviews || 'no'} reviews)</p>
+            <p className="text-[#969191] text-xs">({val?.reviews || '354'} reviews)</p>
           </div>
         </div>
         <div className="flex justify-between items-center h-9">
