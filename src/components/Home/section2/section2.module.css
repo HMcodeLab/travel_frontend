@@ -161,11 +161,21 @@
     transform: translateY(0);
   }
 }
+@media (min-width: 701px) and (max-width: 900px) {
+
+  .places_card>div:nth-child(2n + 1) {
+    height: 28vh;
+  }
+  
+  .places_card>div:nth-child(2n) {
+    height: 22vh;
+  }
+}
 
 @media (max-width: 700px) {
   .places_card p{
     left: 25%;
-    bottom: 20%;
+    bottom: 5%;
     top: auto;
   }
   .places2 p,
@@ -201,9 +211,16 @@
     gap: 4vw;
     height: 175px !important;
   }
+  .places_card>div:nth-child(2n + 1) {
+    height: 175px;
+  }
+  
+  .places_card>div:nth-child(2n) {
+    height: 175px;
+  }
   .places_card img {
     width: 70vw !important;
-    height: 175px !important;
+    height: 100% !important;
   }
 
   .anim_cards span {
@@ -211,13 +228,4 @@
   }
 }
 
-@media (min-width: 701px) and (max-width: 900px) {
 
-  .places_card>div:nth-child(2n + 1) {
-    height: 28vh;
-  }
-  
-  .places_card>div:nth-child(2n) {
-    height: 22vh;
-  }
-}
