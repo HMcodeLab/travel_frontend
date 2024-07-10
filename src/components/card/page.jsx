@@ -70,12 +70,15 @@ const Cards = ({ val, cityid }) => {
           className="w-full flex justify-between items-center"
           style={{ fontFamily: "Montserrat" }}
         >
-          <div className="flex items-center gap-1">
-            <p className="font-bold text-xl flex flex-nowrap">₹ {val?.discount || val?.starting_cost || ""}/- </p>
-            <strike className="text-[#5F5D5D] text-sm font-semibold">
-            ₹ {val?.starting_cost || val?.pakage_discounted_cost || ""}
+          <div className="flex items-center gap-1" style={{ whiteSpace: 'nowrap' }}>
+            <p className="font-bold text-xl" style={{ whiteSpace: 'nowrap' }}>
+              ₹ {val?.discount || val?.starting_cost || ""}/-
+            </p>
+            <strike className="text-[#5F5D5D] text-sm font-semibold" style={{ whiteSpace: 'nowrap' }}>
+              ₹ {val?.starting_cost || val?.pakage_discounted_cost || ""}
             </strike>
           </div>
+
           <div className="flex items-center justify-end gap-1 flex-wrap">
             <Image src={`/Assets/Images/Star.svg`} alt="Star icon" width={16} height={16} />
             <p className="font-semibold ">{val?.rating} / 5</p>
