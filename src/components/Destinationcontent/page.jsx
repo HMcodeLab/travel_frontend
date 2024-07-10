@@ -12,7 +12,7 @@ import ContactForm from "../Detail/contactForm";
 import Discount from "../discount/page";
 import LastSection from "../Detail/lastSection";
 import RequestCall from "../requestcall/page";
-import { useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import detail_page_bg from '../../../public/Notfound/detail_page_bg.png';
 import Moon from "../../../public/Icons/moon.svg";
 import Sun from "../../../public/Icons/sun.svg";
@@ -23,6 +23,8 @@ import Cap from "../ParagraphWithLargeFirstLetters/page";
 import { emptyImage } from "@/Data/cardImageData";
 
 const Destinationcontent = ({props}) => {
+
+ 
 
    let{packages}=props
    
@@ -53,6 +55,8 @@ const Destinationcontent = ({props}) => {
   const [activeTab, setActiveTab] = useState(1);
 
   return (
+    <>
+    
     <div className= {styles.main_container}>
       {responsedata?.map((ele)=>{
         return <div className="desti_details_wrapper">
@@ -105,12 +109,17 @@ const Destinationcontent = ({props}) => {
         </div>
       })}
     </div>
+    </>
   );
 };
 
 export default Destinationcontent;
 
 export const CommonHead = ({ data }) => {
+  let pathname=usePathname()
+
+  let segament=pathname.split('/')
+  let secondlastslug=segament[segament.length-2]
   return (
     <div className={`pl-[13%] pr-[9%] xsm:px-[20px] ${styles.commonHeadcontainer}`}>
       {data && data.map((ele,ind)=> {
@@ -120,7 +129,7 @@ export const CommonHead = ({ data }) => {
         <div className={`xsm:text-[16px] ${styles.highlightfirstletter}`}>
           {/* <Cap text="Panormic Ladakh with umling la pass package" /> */}
           
-              <p className="panormic_ladakh_heading" key={ind}><span>Panormic {ele.city_name}</span> with umling <br className="xsm:hidden"/>
+              <p className="panormic_ladakh_heading" key={ind}><span>Panormic {secondlastslug}</span> with umling <br className="xsm:hidden"/>
           <span><span >{ele.package_name}</span>
           </span> package</p>
              
