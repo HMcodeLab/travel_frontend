@@ -102,9 +102,9 @@ const Footer = () => {
                     </a>
                   </p>
                   <p className="flex gap-4">
-                    <Image src={Fb || emptyImage.src} alt="..."  onError={(e) => e.target.src = emptyImage.src}/>
-                    <Image src={Insta || emptyImage.src} alt="..."  onError={(e) => e.target.src = emptyImage.src}/>
-                    <Image src={Youtube || emptyImage.src} alt="..."  onError={(e) => e.target.src = emptyImage.src}/>
+                    <Link href={`/`}><Image src={Fb || emptyImage.src} alt="..."  onError={(e) => e.target.src = emptyImage.src}/></Link>
+                    <Link href={`/`}><Image src={Insta || emptyImage.src} alt="..."  onError={(e) => e.target.src = emptyImage.src}/></Link>
+                    <Link href={`/`}><Image src={Youtube || emptyImage.src} alt="..."  onError={(e) => e.target.src = emptyImage.src}/></Link>
                   </p>
                 </div>
               </div>

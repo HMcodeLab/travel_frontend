@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import './ContactUs.css';
 import toast, { Toaster } from 'react-hot-toast';
 import Thankyou from '../thankyou/thankyou';
+import Link from 'next/link';
  
 
 const ContactUsForm = () => {
@@ -116,13 +117,19 @@ const ContactUsForm = () => {
                     <button className='bg-[#CA1C26] text-white uppercase font-int font-semibold text-[22px] px-[50px] py-[10px] rounded-sm xsm:text-[13px] xsm:px-7 xsm:py-[6px]' onClick={submitHandler}>SUBMIT</button>
                     <div className='flex items-center gap-4 xsm:gap-2'>
                         <div className='bg-[#CA1C26] rounded-full p-[10px] xsm:p-[6px]'>
+                        <Link href={`/`}>
                             <img className='w-5 h-5 xsm:w-3 xsm:h-3' src={'/Assets/Icons/CUfacebook.svg'} alt="" />
+                            </Link>
                         </div>
                         <div className='bg-[#CA1C26] rounded-full p-[10px] xsm:p-[6px]'>
+                        <Link href={`/`}>
                             <img className='w-5 h-5 xsm:w-3 xsm:h-3' src={'/Assets/Icons/CUInsta.svg'} alt="" />
+                            </Link>
                         </div>
                         <div className='bg-[#CA1C26] rounded-full p-[10px] xsm:p-[6px]'>
+                        <Link href={`/`}>
                             <img className='w-5 h-5 xsm:w-3 xsm:h-3' src={'/Assets/Icons/CUYoutube.svg'} alt="" />
+                            </Link>
                         </div>
                     </div>
                 </div>
