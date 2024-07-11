@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import './ContactUs.css';
 import toast, { Toaster } from 'react-hot-toast';
+import Thankyou from '../thankyou/thankyou';
  
 
 const ContactUsForm = () => {
@@ -63,7 +64,7 @@ const ContactUsForm = () => {
                 
                 if (data.status) {
                    
-                    toast.success(data.msg)
+                    toast.success(<Thankyou name={user.name}/>)
                     console.log(resp)
 
                     setUser({

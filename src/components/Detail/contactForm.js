@@ -3,6 +3,7 @@ import styles from './page.module.css'
 import axios from 'axios'
 import toast, { Toaster } from 'react-hot-toast'
 import { validateEmail } from '@/helpers/validation'
+import Thankyou from '../thankyou/thankyou'
 
 const ContactForm = () => {
     
@@ -77,7 +78,7 @@ const ContactForm = () => {
          
           
             if(res.status||null){
-            //   alert('data inserted')
+                
               setUser({
                 name: "",
                 email: "",
@@ -88,7 +89,7 @@ const ContactForm = () => {
                 
               })
             }
-            toast.success('Contact Form Saved')
+            toast.success(<Thankyou name={user.name}/>)
           } catch (error) {
             console.log(error);
             toast.error(res?.msg ||null);

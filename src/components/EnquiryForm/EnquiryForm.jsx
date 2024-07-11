@@ -5,6 +5,7 @@ import "./EnquiryForm.css";
 import { toast, Toaster } from "react-hot-toast";
 import axios from "axios";
 import { validateEmail } from "@/helpers/validation";
+import Thankyou from "../thankyou/thankyou";
 
 const EnquiryForm = ({ setEnquiryModal }) => {
   const [user, setUser] = useState({
@@ -90,7 +91,7 @@ const EnquiryForm = ({ setEnquiryModal }) => {
          console.log(res)
        
          if(res.status||null){
-           toast.success('query sent successfully');
+           toast.success(<Thankyou name={user.name}/>);
            setUser({
              name: "",
              email: "",
