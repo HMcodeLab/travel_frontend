@@ -8,7 +8,7 @@ const Terms = () => {
 
     return (
         <Wrapper>
-            <div className="cont">
+            <div className="cont terms_page">
                 <h2 className="py-8 font-extrabold">Terms and Conditions</h2>
                 <ul>
                     <li>There is no Contract between the company and the client until the company has received the initial deposit amount per person as specified for each tour package. The full payment must be received in accordance with procedures laid down under Payments Terms. If not paid in that time, the company reserves the right to cancel the booking with consequent loss of deposit and apply scale of cancellation charges as mentioned in the cancellation policy here under.</li> <br />

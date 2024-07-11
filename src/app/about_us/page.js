@@ -8,7 +8,7 @@ const About_us = () => {
 
     return (
         <Wrapper>
-            <div className="cont">
+            <div className="cont about_us_page">
                 <h2 className="py-8 font-extrabold">About Us</h2>
                 <br />
                 <p>Welcome to Trip Go Easy, your passport to a world of travel experiences! At Trip Go Easy, we're passionate about exploring the globe and helping you discover the wonders it holds.</p>
@@ -36,12 +36,12 @@ const About_us = () => {
                     </strong>
                 </p>
                 <div>
-                    1. <strong>	Expertise:</strong> Our team of travel experts possesses first hand knowledge of destinations worldwide, ensuring that every aspect of your journey is seamlessly planned and executed. <br /> <br />
-                    2. <strong>	Personalization: </strong> We understand that no two travelers are alike. That's why we offer customizable itineraries designed to match your interests, preferences, and budget. <br /> <br />
-                    3.<strong>	Quality: </strong> From accommodations to transportation and activities, we partner with trusted suppliers to deliver exceptional quality and value at every step of your journey. <br /> <br />
-                    4.<strong> Support:</strong> Your satisfaction is our top priority. Our dedicated customer support team is available around the clock to assist you before, during, and after your trip.
+                    1. <strong>	Expertise:</strong> <span>Our team of travel experts possesses first hand knowledge of destinations worldwide, ensuring that every aspect of your journey is seamlessly planned and executed.</span> <br /> <br />
+                    2. <strong>	Personalization: </strong> <span>We understand that no two travelers are alike. That's why we offer customizable itineraries designed to match your interests, preferences, and budget.</span> <br /> <br />
+                    3.<strong>	Quality: </strong><span> From accommodations to transportation and activities, we partner with trusted suppliers to deliver exceptional quality and value at every step of your journey.</span> <br /> <br />
+                    4.<strong> Support:</strong> <span>Your satisfaction is our top priority. Our dedicated customer support team is available around the clock to assist you before, during, and after your trip.</span>
                     <br /> <br />
-                    5.<strong>	Sustainability:</strong> We are committed to promoting responsible travel practices that minimize our environmental impact and support local communities.
+                    5.<strong>	Sustainability:</strong> <span>We are committed to promoting responsible travel practices that minimize our environmental impact and support local communities.</span>
 
                 </div>
 
@@ -54,11 +54,6 @@ const About_us = () => {
                     Embark on your next adventure with Trip Go Easy and unlock a world of possibilities. Whether you're dreaming of a tropical escape, a cultural odyssey, or an epic road trip, we're here to turn your travel dreams into reality.
                 </p>
                 <p className="py-2">Let's explore together and create memories that will last a lifetime!</p>
-
-
-
-
-
             </div >
         </Wrapper >
 
@@ -67,7 +62,7 @@ const About_us = () => {
 
 const Wrapper = styled.div`
   background-color: #e3dfdf;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Merriweather-sans;
   text-align: justify;
   .cont {
     width: 70%;
@@ -79,6 +74,7 @@ const Wrapper = styled.div`
       text-align: center;
       font-size: 2rem;
     }
+
     p,
     strong {
       font-size: 1rem;

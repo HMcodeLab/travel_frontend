@@ -8,7 +8,7 @@ const Copyright = () => {
 
     return (
         <Wrapper>
-            <div className="cont">
+            <div className="cont copyright_policy_page">
                 <h2 className="py-8 font-extrabold">COPYRIGHT</h2>
                 <p>
                     {/* <strong>What are the delivery charges?</strong> */}

@@ -8,7 +8,7 @@ const Privacy = () => {
 
     return (
         <Wrapper>
-            <div className="cont">
+            <div className="cont privacy_policy_page">
                 <h2 className="py-8 font-extrabold">Privacy Policy</h2>
                 <p>
                     {/* <strong>What are the delivery charges?</strong> */}

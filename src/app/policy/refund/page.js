@@ -8,7 +8,7 @@ const Refund = () => {
 
     return (
         <Wrapper>
-            <div className="cont">
+            <div className="cont refund_policy_page">
                 <h2 className="py-8 font-extrabold">Refund Policy</h2>
                 <p>
                     {/* <strong>What are the delivery charges?</strong> */}

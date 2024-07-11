@@ -598,6 +598,13 @@ span.discount_price {
   text-transform: capitalize;
 }
 
+.cont h1,h2,h3,h4,h5,h6,strong{
+  font-family: Merriweather-sans;
+}
+
+.cont p,span,li{
+  font-family: Exo;
+}
 /* css by neo sharma */
 @media (min-width:1441px) and (max-width:1600px) {
   .popup_model_form {
