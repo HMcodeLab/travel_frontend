@@ -119,7 +119,7 @@ function FormWrapper({ setEnquiryModal }) {
                     </div>
                     <div className="enquiry_right_section">
                         <h2 className="form_heading">Hurry! Fill Form & Get Best Travel Deals</h2>
-                        <FormFields />
+                        <FormFields  setEnquiryModal={setEnquiryModal}/>
                     </div>
                 </div>
                 <div className="form_footer">
