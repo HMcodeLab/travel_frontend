@@ -59,10 +59,10 @@ const CUSideSection = () => {
   }, []);
 
   return (
-    <div className="bg-[#02013D] w-[43%] pl-[5.3%] pt-14 pb-12 relative flex flex-col gap-4 h-full xsm:w-full xsm:h-[65vh]">
+    <div className="bg-[#02013D] w-[43%] pl-[5.3%] pt-14 pb-12 relative flex flex-col gap-4 h-full xsm:w-full xsm:h-[30vh]">
       <div className="absolute bottom-0 right-0 z-[1]">
         <img
-          className="w-[200px] xsm:w-[165px]"
+          className="w-[200px] xsm:w-[120px]"
           src="/Assets/Images/CUSideSectionSideImg.png"
           alt="..."
         />
