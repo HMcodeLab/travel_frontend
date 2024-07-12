@@ -172,17 +172,15 @@
     bottom: 40px;
     left: 20px;
     border-radius: 50px;
+    font-family: 'Exo';
   }
   .features {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
   }
-  
-  .feature {
-    flex: 1 1 calc(50% - 10px);
-    display: flex;
-    align-items: center;
+  .features p{
+    font-family: 'Exo';
   }
   
   .feature_icon {
