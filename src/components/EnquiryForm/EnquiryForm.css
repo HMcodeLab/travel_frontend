@@ -142,6 +142,7 @@
   }
   .left_heading{
     border-bottom: 1px solid #01008036;
+    color: #02013D;
   }
   .left_heading_bottom {
     position: absolute;
@@ -243,8 +244,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+   }
 
- }
   .enquiry_right_section {
     flex: 1;
     padding: 20px;
@@ -277,11 +278,12 @@
     font-family: 'Merriweather-sans';
   }
 
-  .form_last_field{
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-  }
+  .form_last_field {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    gap: 20px;
+}
 
   .form_last_field input,
   .form-field input,
