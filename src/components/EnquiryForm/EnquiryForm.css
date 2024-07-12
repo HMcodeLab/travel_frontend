@@ -377,6 +377,9 @@
   }
 
   @media (max-width:999px) {
+    .enquiry_form_sections_inner {
+      grid-template-columns: 1fr;
+  }
     .enquiry_form_outer_section{
       max-width: 90%;
       width: 100%;
