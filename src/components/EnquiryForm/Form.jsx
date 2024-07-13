@@ -146,10 +146,10 @@ function FormFields({ setEnquiryModal }) {
           {error.mobile && <span className="errors">{error.mobile}</span>}
         </div>
         <div className="form-field">
-          <label>Starting</label>
+          <label>Travel Date</label>
           <input
-          placeholder="Travel Date"
-            type="text"
+          placeholder="mm/dd/yy"
+            type="date"
             name="starting"
             value={user.starting}
             onChange={handleChange}
