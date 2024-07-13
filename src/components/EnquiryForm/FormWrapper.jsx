@@ -63,7 +63,7 @@ function FormWrapper({ setEnquiryModal }) {
                                 (max-width: 1200px) 800px, 1200px"
                             />
                             <h3 className="dmc_heading">Explore the World with Trip Go Easy</h3>
-                            <Link href={`/all_destination`}>
+                            <Link href={`/all_destination`}  onClick={() => setEnquiryModal(false)}>
                                 Explore Now
                             </Link>
                             <button className="arrow arrow-left" onClick={handlePrevImage}>
