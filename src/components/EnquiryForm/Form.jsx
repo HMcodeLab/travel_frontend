@@ -148,7 +148,7 @@ function FormFields({ setEnquiryModal }) {
         <div className="form-field">
           <label>Starting</label>
           <input
-          placeholder="Staring price"
+          placeholder="Travel Date"
             type="text"
             name="starting"
             value={user.starting}

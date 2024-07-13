@@ -296,7 +296,7 @@
   }
   
   .form-field .errors {
-    color: #d4d0d0;
+    color: red;
     font-size: 12px;
     margin-top: 5px;
   }
