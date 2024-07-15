@@ -10,6 +10,7 @@ import ArrowDown from '../../../public/Assets/Images/downarrow.gif'
 import Image from "next/image";
 import Logo from '../../../public/Assets/Images/logo.png'
 import { emptyImage } from "@/Data/cardImageData";
+import { useTab } from "@/app/contexts/TabContext";
 
 
 
@@ -21,12 +22,40 @@ const Navbar = ({ setEnquiryModal, setPlanning }) => {
 
   const router = useRouter();
 
+  const { activeTab, setActiveTab } = useTab();
+
+  // Update active tab based on URL or localStorage
+  useEffect(() => {
+      const savedTab = localStorage.getItem('activeTab');
+      if (savedTab) {
+          setActiveTab(savedTab);
+      } else {
+          const currentPath = router.asPath;
+          const tab = Object.keys(tabUrls).find(tab => tabUrls[tab] === currentPath);
+          setActiveTab(tab || 'Tour');
+      }
+  }, [router.asPath]);
+
+  // URLs associated with each tab
+  const tabUrls = {
+      'Tour': '/',
+  };
+
+  // Handle tab clicks
+  const handleTabClick = (tab) => {
+      setActiveTab(tab);
+      localStorage.setItem('activeTab', tab); // Save active tab to localStorage
+      router.push(tabUrls[tab]); // Navigate to tab URL
+  };
 
   return (
     <>
       <div className={styles.container}>
         <div className={styles.logo_container}>
-          <Link href="/">
+          <Link 
+           href={'/'}
+           onClick={() => handleTabClick('Tour')}
+          >
             <Image src={Logo || emptyImage.src} alt="..." 
              onError={(e) => e.target.src = emptyImage.src}
              srcset={`${Logo || emptyImage.src} 480w, 
