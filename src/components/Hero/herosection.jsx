@@ -13,6 +13,8 @@ import { useRouter } from "next/navigation";
 import { GlobalProvider } from "@/app/layout";
 import { format } from 'date-fns';
 import 'react-day-picker/dist/style.css';
+import { useTab } from "@/app/contexts/TabContext";
+import Link from "next/link";
 function valuetext(value) {
   return `${value}°C`;
 }
@@ -20,7 +22,9 @@ function valuetext(value) {
 
 
 const HeroSection = () => {
-  const [activeFacility, setactiveFacility] = useState("Tour");
+  // const [activeTab, setactiveTab] = useState("Tour");
+  const { activeTab, setActiveTab } = useTab();
+
   const [Search, setSearch] = useState(false);
   const [searchLoader, setSearchLoader] = useState(false);
   const [value, setValue] = useState([0, 30000]);
@@ -37,9 +41,9 @@ const HeroSection = () => {
   const [SelectedDate, setSelectedDate] = useState()
   const searchRef = useRef(null);
   const dateInputRef = useRef(null);
-  const {searchQuery,setSearchQuery}=useContext(GlobalProvider)
+  const { searchQuery, setSearchQuery } = useContext(GlobalProvider)
   const [tourSearchData, settourSearchData] = useState({
-    city_id:"",
+    city_id: "",
     duration: "",
     minPrice: "",
     maxPrice: "",
@@ -50,7 +54,7 @@ const HeroSection = () => {
 
   const [activitiesSearchData, setActivitiesSearchData] = useState({
     city_id: "",
-    date:"",
+    date: "",
     adult: "1",
     child: "1",
   });
@@ -81,8 +85,8 @@ const HeroSection = () => {
 
   const handleTourSearch = async () => {
     // console.log(tourSearchData);
-    
-    setSearchQuery({...tourSearchData})
+
+    setSearchQuery({ ...tourSearchData })
     router.push("/search");
   };
 
@@ -106,13 +110,13 @@ const HeroSection = () => {
       child: count,
     }));
   };
-  let formData=new FormData()
+  let formData = new FormData()
 
   const handleActivitySearch = async () => {
     try {
       Object.keys(activitiesSearchData).forEach(key => {
         formData.append(key, activitiesSearchData[key]);
-    });
+      });
       setSearchQuery(activitiesSearchData)
       // console.log(activitiesSearchData);
       const apiUrl =
@@ -136,68 +140,100 @@ const HeroSection = () => {
       toast.error("Failed To send Query");
     }
   };
-  async function Searchapi(e){
-    const data=await fetch(process.env.NEXT_PUBLIC_URL+'/apis/packages/city/'+e.target.value)
-    const response=await data.json()
+  async function Searchapi(e) {
+    const data = await fetch(process.env.NEXT_PUBLIC_URL + '/apis/packages/city/' + e.target.value)
+    const response = await data.json()
     // console.log(response);
     setsearchdata(response?.data)
   }
-  async function LocationSearchapi(e){
-    const data=await fetch(process.env.NEXT_PUBLIC_URL+'/apis/packages/city/'+e.target.value)
-    const response=await data.json()
+  async function LocationSearchapi(e) {
+    const data = await fetch(process.env.NEXT_PUBLIC_URL + '/apis/packages/city/' + e.target.value)
+    const response = await data.json()
     // console.log(response);
     setsearchlocation(response?.data)
   }
-  async function handleTourInputchange(e){
+  async function handleTourInputchange(e) {
     setsearchValue(e.target.value)
-    if(e.target.value.length>=3){
+    if (e.target.value.length >= 3) {
       Searchapi(e)
     }
-    if(e.target.value.length==0){
+    if (e.target.value.length == 0) {
       setsearchdata([])
     }
 
   }
-  async function handleActivityInputchange(e){
+  async function handleActivityInputchange(e) {
     setsearchLocationValue(e.target.value)
-    if(e.target.value.length>=3){
+    if (e.target.value.length >= 3) {
       LocationSearchapi(e)
     }
-    if(e.target.value.length==0){
+    if (e.target.value.length == 0) {
       setsearchlocation([])
     }
 
   }
-function handleCity(item){
-  setsearchValue(item.name)
-    settourSearchData({...tourSearchData,city_id:item.id})
-setsearchdata([])
-}
-function handleLocation(item){
-  // searchLocationValue
-  setsearchLocationValue(item.name)
-  setActivitiesSearchData((prevData) => ({
-    ...prevData,
-    city_id: item.id,
-  }));
+  function handleCity(item) {
+    setsearchValue(item.name)
+    settourSearchData({ ...tourSearchData, city_id: item.id })
+    setsearchdata([])
+  }
+  function handleLocation(item) {
+    // searchLocationValue
+    setsearchLocationValue(item.name)
+    setActivitiesSearchData((prevData) => ({
+      ...prevData,
+      city_id: item.id,
+    }));
     // setTourSearchData({...toursearchData,city_id:item.id})
-setsearchlocation([])
-}
-const formatDate = (date) => {
-  if (!date) return '';
-  const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
-  return date.toLocaleDateString('en-GB', options);
-};
-function DateSelection(date){
-  setSelected(formatDate(date))
-  setActivitiesSearchData((prevData) => ({
-    ...prevData,
-    date: formatDate(date),
-  }));
-setactivityDate(false)
-}
-let todaydate=Date.now()
-const disabledDays = { before: todaydate };
+    setsearchlocation([])
+  }
+  const formatDate = (date) => {
+    if (!date) return '';
+    const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
+    return date.toLocaleDateString('en-GB', options);
+  };
+  function DateSelection(date) {
+    setSelected(formatDate(date))
+    setActivitiesSearchData((prevData) => ({
+      ...prevData,
+      date: formatDate(date),
+    }));
+    setactivityDate(false)
+  }
+  let todaydate = Date.now()
+  const disabledDays = { before: todaydate };
+
+
+
+  // Define a mapping of tabs to URLs
+  const tabUrls = {
+    'Tour': '/',
+    'Activities': '/activities',
+    'Flight': '', // Placeholder URL
+    'Railway': '' // Placeholder URL
+  };
+
+  // Function to handle tab change
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
+    localStorage.setItem('activeTab', tab); // Save the active tab to localStorage
+    router.push(tabUrls[tab]); // Navigate to the URL for the tab
+  };
+
+  // Set the active tab based on URL and localStorage
+  useEffect(() => {
+    // Retrieve active tab from localStorage
+    const savedTab = localStorage.getItem('activeTab');
+    if (savedTab && Object.keys(tabUrls).includes(savedTab)) {
+      setActiveTab(savedTab);
+    } else {
+      // Determine active tab from URL
+      const currentPath = router.asPath;
+      const foundTab = Object.keys(tabUrls).find(tab => tabUrls[tab] === currentPath);
+      setActiveTab(foundTab || 'Tour'); // Default to 'Tour' if no match found
+    }
+  }, [router.asPath]); // Re-run when the URL changes
+
   return (
     <>
       <Toaster />
@@ -216,11 +252,11 @@ const disabledDays = { before: todaydate };
           <p className="border-b border-[#CA1C26] text-[1.2rem] text-center main_heading_bootom xsm:text-[12px]">
             Curating Unparalleled Travel Experiences, One Journey at a Time
           </p>
-          <div className="flex py-4 gap-4 uppercase text-center xsm:w-[100%] xsm:gap-1">
+          {/* <div className="flex py-4 gap-4 uppercase text-center xsm:w-[100%] xsm:gap-1">
             <div
-              onClick={() => setactiveFacility("Tour")}
+              onClick={() => setactiveTab("Tour")}
               className={`w-fit flex justify-center items-center px-6 py-[6px] xsm:py-[3px] xsm:px-2 cursor-pointer ${
-                activeFacility === "Tour"
+                activeTab === "Tour"
                   ? "bg-white text-black rounded-full"
                   : ""
               }`}
@@ -228,9 +264,9 @@ const disabledDays = { before: todaydate };
               <p className="xsm:text-[12px] active_tab_color">Tour</p>
             </div>
             <div
-              onClick={() => setactiveFacility("Activities")}
+              onClick={() => setactiveTab("Activities")}
               className={`w-fit flex justify-center items-center px-6 py-[6px] xsm:py-[3px] xsm:px-2 cursor-pointer ${
-                activeFacility === "Activities"
+                activeTab === "Activities"
                   ? "bg-white text-black rounded-full"
                   : ""
               }`}
@@ -238,9 +274,9 @@ const disabledDays = { before: todaydate };
               <p className="xsm:text-[12px] active_tab_color">Activities</p>
             </div>
             <div
-              onClick={() => setactiveFacility("Flight")}
+              onClick={() => setactiveTab("Flight")}
               className={`w-fit flex justify-center items-center px-6 py-[6px] xsm:py-[3px] xsm:px-2 cursor-pointer ${
-                activeFacility === "Flight"
+                activeTab === "Flight"
                   ? "bg-white text-black rounded-full "
                   : ""
               }`}
@@ -248,58 +284,69 @@ const disabledDays = { before: todaydate };
               <p className="xsm:text-[12px] active_tab_color">Flight</p>
             </div>
             <div
-              onClick={() => setactiveFacility("Railway")}
+              onClick={() => setactiveTab("Railway")}
               className={`w-fit flex justify-center items-center px-6 py-[6px] xsm:py-[3px] xsm:px-2 cursor-pointer ${
-                activeFacility === "Railway"
+                activeTab === "Railway"
                   ? "bg-white text-black rounded-full "
                   : ""
               }`}
             >
               <p className="xsm:text-[12px] active_tab_color">Railway</p>
             </div>
-          </div>
+          </div> */}
+           <div className="flex py-4 gap-4 uppercase text-center xsm:w-[100%] xsm:gap-1">
+      {Object.keys(tabUrls).map(tab => (
+        <div
+          key={tab}
+          onClick={() => handleTabClick(tab)}
+          className={`w-fit flex justify-center items-center px-6 py-[6px] xsm:py-[3px] xsm:px-2 cursor-pointer ${
+            activeTab === tab ? 'bg-white text-black rounded-full' : ''
+          }`}
+        >
+          <p className="xsm:text-[12px] active_tab_color">{tab}</p>
+        </div>
+      ))}
+    </div>
           <div
-            className={`px-8 z-[999999999] relative ${
-              activeFacility === "Tour"
+            className={`px-8 z-[999999999] relative ${activeTab === "Tour"
                 ? "w-[100%] xsm:w-[100%]"
-                : activeFacility === "Activities"
-                ? "w-[100%] xsm:w-[100%] searching_parent_wrapper"
-                : activeFacility === "Flight"
-                ? "w-[100%] xsm:w-[100%] searching_parent_wrapper"
-                : "w-[100%] xsm:w-[100%] searching_parent_wrapper"
-            } `}
+                : activeTab === "Activities"
+                  ? "w-[100%] xsm:w-[100%] searching_parent_wrapper"
+                  : activeTab === "Flight"
+                    ? "w-[100%] xsm:w-[100%] searching_parent_wrapper"
+                    : "w-[100%] xsm:w-[100%] searching_parent_wrapper"
+              } `}
             ref={searchRef}
           >
-            {activeFacility === "Tour" &&
+            {activeTab === "Tour" &&
               (Search ? (
                 <div className="bg-[#F6F6F6] search_filter_outer rounded-t-3xl rounded-b flex flex-col shadow-lg shadow-[#00000021] w-[90%] absolute top-0 xsm:w-[65vw]">
-                    <div className="relative">
+                  <div className="relative">
                     <input
-                    className="w-full text-[#000000] placeholder:text-[#848383] bg-[#F6F6F6] flex justify-center text-[14px] rounded-full pl-16 py-2 shadow-sm shadow-[#00000021] outline-none h-[55px] xsm:h-[45px] xsm:pl-5 search_terms"
-                    placeholder="Search For Destinations... " 
-                    value={searchValue}
-                   onChange={handleTourInputchange}
-                  />
-                  <div className="w-full flex flex-col absolute top-10 text-black bg-slate-200 cursor-pointer pl-16 z-50">
-                    {
-                      searchdata?.map((item,key)=>{
-                        return(<>
-                        <p className="py-1 border-b" key={key} onClick={()=>handleCity(item)}>{item.name}</p>
-                        </>)
-                      })
-                    }
-                  </div>
+                      className="w-full text-[#000000] placeholder:text-[#848383] bg-[#F6F6F6] flex justify-center text-[14px] rounded-full pl-16 py-2 shadow-sm shadow-[#00000021] outline-none h-[55px] xsm:h-[45px] xsm:pl-5 search_terms"
+                      placeholder="Search For Destinations... "
+                      value={searchValue}
+                      onChange={handleTourInputchange}
+                    />
+                    <div className="w-full flex flex-col absolute top-10 text-black bg-slate-200 cursor-pointer pl-16 z-50">
+                      {
+                        searchdata?.map((item, key) => {
+                          return (<>
+                            <p className="py-1 border-b" key={key} onClick={() => handleCity(item)}>{item.name}</p>
+                          </>)
+                        })
+                      }
                     </div>
+                  </div>
                   <div className="px-16 py-4 xsm:px-5">
                     <div className="flex flex-col gap-3 border-b border-[#DADADA] py-2">
                       <p className="text-black text-[14px]">Trip Durations</p>
                       <div className="flex items-center gap-3 text-[#848181] text-[14px] xsm:gap-3 xsm:grid xsm:grid-cols-2">
                         <div
-                          className={`border border-[#EAE6E6] rounded-full px-3 py-1 cursor-pointer ${
-                            tourSearchData.duration == 1
+                          className={`border border-[#EAE6E6] rounded-full px-3 py-1 cursor-pointer ${tourSearchData.duration == 1
                               ? "bg-[#D7D6FD59]"
                               : "bg-white"
-                          }`}
+                            }`}
                           onClick={() =>
                             settourSearchData({
                               ...tourSearchData,
@@ -310,41 +357,38 @@ const disabledDays = { before: todaydate };
                           <p>Upto 1 day</p>
                         </div>
                         <div
-                          className={`border border-[#EAE6E6] rounded-full px-3 py-1 cursor-pointer ${
-                            tourSearchData.duration == 2
+                          className={`border border-[#EAE6E6] rounded-full px-3 py-1 cursor-pointer ${tourSearchData.duration == 2
                               ? "bg-[#D7D6FD59]"
                               : "bg-white"
-                          }`}
+                            }`}
                           onClick={() =>
                             settourSearchData({
                               ...tourSearchData,
-                              duration:2,
+                              duration: 2,
                             })
                           }
                         >
                           <p>2 to 3 days</p>
                         </div>
                         <div
-                          className={`border border-[#EAE6E6] rounded-full px-3 py-1 cursor-pointer ${
-                            tourSearchData.duration == 5
+                          className={`border border-[#EAE6E6] rounded-full px-3 py-1 cursor-pointer ${tourSearchData.duration == 5
                               ? "bg-[#D7D6FD59]"
                               : "bg-white"
-                          }`}
+                            }`}
                           onClick={() =>
                             settourSearchData({
                               ...tourSearchData,
-                              duration:5,
+                              duration: 5,
                             })
                           }
                         >
                           <p>5 to 7 days</p>
                         </div>
                         <div
-                          className={`border border-[#EAE6E6] rounded-full px-3 py-1 cursor-pointer ${
-                            tourSearchData.duration == 7
+                          className={`border border-[#EAE6E6] rounded-full px-3 py-1 cursor-pointer ${tourSearchData.duration == 7
                               ? "bg-[#D7D6FD59]"
                               : "bg-white"
-                          }`}
+                            }`}
                           onClick={() =>
                             settourSearchData({
                               ...tourSearchData,
@@ -414,7 +458,7 @@ const disabledDays = { before: todaydate };
                 </div>
               ))}
 
-            {activeFacility === "Activities" && (
+            {activeTab === "Activities" && (
               <div className="bg-[#F6F6F6] search_filter_outer rounded-md flex items-center shadow-lg shadow-[#00000021] nested_wrapper  ">
                 <div className="grid grid-cols-4 items-center py-3 w-full px-5 searching_activities">
                   <div className="border-r border-[#01008036] py-1 cursor-pointer relative border-remover">
@@ -434,19 +478,19 @@ const disabledDays = { before: todaydate };
                       <div>
                         <p className="text-[#000000] text-[12.5px]">Location</p>
                         <div className="relative">
-                        <input value={searchLocationValue}
-                   onChange={handleActivityInputchange} placeholder="Where are you going?" className="text-[#9E9E9E] text-[10px] py-1 focus:outline-none"/>
-                        <div className="w-[200px] flex flex-col absolute top-10 text-black bg-slate-200 cursor-pointer  z-50">
-                    {
-                      searchlocation?.map((item,key)=>{
-                        return(<>
-                        <p className="py-1 border-b text-sm text-center" key={key} onClick={()=>handleLocation(item)}>{item.name}</p>
-                        </>)
-                      })
-                    }
-                  </div>
-                          </div>                          
-                      
+                          <input value={searchLocationValue}
+                            onChange={handleActivityInputchange} placeholder="Where are you going?" className="text-[#9E9E9E] text-[10px] py-1 focus:outline-none" />
+                          <div className="w-[200px] flex flex-col absolute top-10 text-black bg-slate-200 cursor-pointer  z-50">
+                            {
+                              searchlocation?.map((item, key) => {
+                                return (<>
+                                  <p className="py-1 border-b text-sm text-center" key={key} onClick={() => handleLocation(item)}>{item.name}</p>
+                                </>)
+                              })
+                            }
+                          </div>
+                        </div>
+
                       </div>
                     </div>
                     {/* {locationFilter && (
@@ -602,7 +646,7 @@ const disabledDays = { before: todaydate };
               </div>
             )}
 
-            {activeFacility === "Flight" && (
+            {activeTab === "Flight" && (
               <div className="bg-[#F6F6F6] search_filter_outer rounded-md flex items-center shadow-lg shadow-[#00000021] nested_wrapper  w-full relative">
                 <div className="grid grid-cols-5 items-center py-3 w-full px-5 searching_activities">
                   <div className="border-r border-[#01008036] py-1 cursor-pointer relative border-remover">
@@ -785,7 +829,7 @@ const disabledDays = { before: todaydate };
               </div>
             )}
 
-            {activeFacility === "Railway" && (
+            {activeTab === "Railway" && (
               <div className="bg-[#F6F6F6] search_filter_outer rounded-md flex items-center shadow-lg shadow-[#00000021] nested_wrapper  w-full relative">
                 <div className="grid grid-cols-5 items-center py-3 w-full px-5 searching_activities">
                   <div className="border-r border-[#01008036] py-1 cursor-pointer relative border-remover">
